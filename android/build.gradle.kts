@@ -15,6 +15,14 @@ subprojects {
     val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
     project.layout.buildDirectory.value(newSubprojectBuildDir)
 }
+// onnxruntime 1.4.1 pins compileSdk 33; its AndroidX deps need >= 34.
+subprojects {
+    if (name == "onnxruntime") {
+        afterEvaluate {
+            extensions.configure<com.android.build.gradle.LibraryExtension> { compileSdk = 36 }
+        }
+    }
+}
 subprojects {
     project.evaluationDependsOn(":app")
 }

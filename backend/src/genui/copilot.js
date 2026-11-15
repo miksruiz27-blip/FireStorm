@@ -3,6 +3,7 @@ import { GenUI } from '../schemas.js';
 import { scoreExperiment } from '../scoring.js';
 import { askLLM } from './llm.js';
 import { HABITAT_ES, buildWidgets, conditionsFrom, level, say } from './rules.js';
+import { compose, extraWidgets } from './extras.js';
 
 const MAX_SOURCES = 8;
 
@@ -28,7 +29,7 @@ export async function copilot({ question, habitat: habitatId, lang = 'en' }, { l
       .slice(0, 5)
       .map((x) => x.e);
   }
-  const [mocs, points, all] = await Promise.all([repo.mocs(), repo.testPoints(), repo.experiments()]);
+  const [mocs, points, all, habitats] = await Promise.all([repo.mocs(), repo.testPoints(), repo.experiments(), repo.habitats()]);
   const byId = Object.fromEntries(all.map((e) => [e.id, e]));
   const spreadPoints = points.filter((t) => t.spread_rate_mm_s != null);
 
@@ -45,7 +46,7 @@ export async function copilot({ question, habitat: habitatId, lang = 'en' }, { l
 
   // b+c) physics forecast at the habitat (or the question's what-if) → widgets.
   const cond = conditionsFrom(question, h);
-  const { widgets, cite: ruleCite, forecast: f } = buildWidgets({
+  const { widgets: ruleWidgets, cite: ruleCite, forecast: f } = buildWidgets({
     question, habitat: h, cond, experiments,
     mocs,
     spreadPoints: spreadPoints.filter((t) => sources.some((s) => s.key === `exp:${t.experiment_id}`)),
@@ -53,11 +54,19 @@ export async function copilot({ question, habitat: habitatId, lang = 'en' }, { l
     lang,
   });
 
+  const extras = extraWidgets({ question, habitat: h, cond, forecast: f, points, habitats, lang });
+  const widgets = compose(ruleWidgets, extras);
+
   // d/e) LLM writes the answer. It is rejected unless it cites at least one numbered (resolvable)
-  // source; then the rule answer + rule citations stand in.
-  const llmOut = await llm({ question, habitat: h, widgets, sources, lang });
+  // source; one retry with that reminder, then the rule answer + rule citations stand in.
   const valid = new Set(sources.map((s) => s.n));
-  const llmCite = llmOut ? [...new Set(llmOut.cite)].filter((n) => valid.has(n)) : [];
+  const cited = (o) => (o ? [...new Set(o.cite)].filter((n) => valid.has(n)) : []);
+  const started = Date.now();
+  const ctx = { question, habitat: h, widgets, sources, lang, coverage: extras.coverage?.text };
+  let llmOut = await llm(ctx, 7000);
+  const left = 13000 - (Date.now() - started);
+  if (!cited(llmOut).length && left > 1500) llmOut = await llm({ ...ctx, retry: true }, left);
+  const llmCite = cited(llmOut);
   const out = llmCite.length ? llmOut : null;
   const cite = out ? llmCite : ruleCite;
   const t = say(lang);

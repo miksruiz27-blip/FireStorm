@@ -11,7 +11,7 @@ const ES = Object.fromEntries(
   Object.entries(JSON.parse(readFileSync(new URL('../../data/translations_en.json', import.meta.url), 'utf8'))).map(([es, en]) => [en, es]),
 );
 export const toLang = (lang, s) => (lang === 'es' ? ES[s] ?? s : s);
-const REGIME_ES = { 'self-extinguishes': 'se autoextingue', marginal: 'marginal', sustained: 'sostenida', vigorous: 'vigorosa' };
+export const REGIME_ES = { 'self-extinguishes': 'se autoextingue', marginal: 'marginal', sustained: 'sostenida', vigorous: 'vigorosa' };
 
 export const level = (p) => (p == null ? 'warning' : p >= 0.5 ? 'critical' : p >= 0.3 ? 'warning' : 'info');
 

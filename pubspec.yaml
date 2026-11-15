@@ -44,6 +44,7 @@ dependencies:
   url_launcher: ^6.3.3
   pdf: ^3.13.1
   printing: ^5.15.1
+  onnxruntime: ^1.4.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -70,6 +71,8 @@ flutter:
     - assets/i18n/
     - assets/fonts/
     - backend/data/translations_en.json
+    - backend/data/material_moc.json
+    - assets/models/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

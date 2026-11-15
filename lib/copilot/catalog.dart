@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:genui/genui.dart';
 import 'package:go_router/go_router.dart';
 import 'package:json_schema_builder/json_schema_builder.dart';
@@ -8,6 +9,9 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../app/i18n.dart';
 import '../app/theme.dart';
+import 'session.dart';
+
+part 'catalog_extras.dart';
 
 /// The copilot's visual vocabulary. The model may only compose answers from these
 /// components, so every answer renders in the Habitat Fire Atlas design system.
@@ -23,6 +27,10 @@ final copilotCatalog = Catalog(
     _coverageWarning,
     _riskCard,
     _dataChart,
+    _metricTiles,
+    _comparisonTable,
+    _nextTests,
+    _followUps,
   ],
   catalogId: copilotCatalogId,
   systemPromptFragments: [

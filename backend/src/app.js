@@ -6,9 +6,9 @@ import * as repo from './repo.js';
 import { domainCheck, meta, modelReady, predict } from './model.js';
 import { ClassifyIn, CopilotIn, FlowIn, PredictIn } from './schemas.js';
 import { classifiersReady, classifyFlow, classifyText } from './classifiers.js';
-import { PSI_TO_KPA, grid, pointsNear, priority, scoreExperiment, why } from './scoring.js';
+import { scoreExperiment } from './scoring.js';
+import { recommend } from './genui/extras.js';
 import { copilot } from './genui/copilot.js';
-import { CABIN_FLOW } from './genui/rules.js';
 import { flame, params as flameParams } from './flame.js';
 
 export const app = express();
@@ -76,26 +76,7 @@ app.get('/gapmap', async (req, res) => {
 
 app.get('/recommendations', async (req, res) => {
   const h = await habitatFrom(req);
-  const points = await repo.testPoints();
-  const cells = grid();
-  const ranked = cells.map((cell) => {
-    const near = pointsNear(cell, points);
-    const fc = flame({ ...cell, pressure_kpa: h.pressure_psia * PSI_TO_KPA, flow_cm_s: CABIN_FLOW });
-    // Physics extrapolated past every test is unverified: maximal uncertainty, whatever p it computes.
-    const p = fc.extrapolated.length ? 0.5 : fc.p_burn;
-    const f = priority(cell, h, near.length, p);
-    return { cell, priority: f.priority, why: why(cell, f, near.length, fc), sources: [...new Set(near.map((t) => t.source))] };
-  });
-  // Spread the picks: skip cells within ±2 % O₂ of a better one at the same gravity.
-  const picks = [];
-  for (const r of ranked.sort((a, b) => b.priority - a.priority)) {
-    const close = picks.some(
-      (p) => p.cell.gravity_g === r.cell.gravity_g && Math.abs(p.cell.o2_pct - r.cell.o2_pct) <= 2,
-    );
-    if (!close) picks.push(r);
-    if (picks.length === 5) break;
-  }
-  res.json(picks);
+  res.json(recommend(h, await repo.testPoints()).map(({ cell, priority, why, sources }) => ({ cell, priority, why, sources })));
 });
 
 app.get('/model', (_req, res) => res.json(meta));

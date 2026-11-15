@@ -11,6 +11,7 @@ import '../data/gap_map.dart';
 import '../data/habitats.dart';
 import '../data/investigations.dart';
 import 'catalog.dart';
+import 'offline.dart' show askCopilotOrOffline;
 
 typedef Turn = ({String question, String surfaceId});
 typedef Json = Map<String, Object?>;
@@ -22,7 +23,7 @@ class CopilotSession extends ChangeNotifier {
     required this.habitat,
     required this.marks,
     required this.experiments,
-    this.backend = askCopilot,
+    this.backend = askCopilotOrOffline,
     this.tick = const Duration(milliseconds: 350),
   }) {
     _seed();
@@ -249,16 +250,33 @@ List<Json> genuiToA2ui(Map<String, Object?> body, String source) {
             },
         ],
       },
+      'metrics' => {'component': 'MetricTiles', 'items': w['items']},
+      'coverage' => {'component': 'CoverageWarning', 'text': w['text']},
+      'table' => {
+        'component': 'ComparisonTable',
+        'title': w['title'],
+        'columns': w['columns'],
+        'rows': w['rows'],
+        'highlight': ?w['highlight'],
+      },
+      'next_tests' => {'component': 'NextTests', 'items': w['items']},
+      'follow_ups' => {'component': 'FollowUps', 'questions': w['questions']},
       _ => null,
     };
     if (c != null) widgets.add({'id': id, ...c});
   }
+  // Coverage warnings go above the answer text; follow-ups below the sources.
+  bool isCoverage(Json w) => w['component'] == 'CoverageWarning';
+  bool isFollowUp(Json w) => w['component'] == 'FollowUps';
   return [
     {
       ..._card(_answerTitle, null, [
+        for (final w in widgets.where(isCoverage)) w['id'] as String,
         'text',
-        for (final w in widgets) w['id'] as String,
+        for (final w in widgets)
+          if (!isCoverage(w) && !isFollowUp(w)) w['id'] as String,
         'sources',
+        for (final w in widgets.where(isFollowUp)) w['id'] as String,
       ]),
       // "N sources · AI grounded" only when N > 0 resolvable citations back the answer.
       'tags': [
@@ -267,6 +285,8 @@ List<Json> genuiToA2ui(Map<String, Object?> body, String source) {
             'llm' => tr('AI grounded', 'IA fundamentada'),
             'ollama' => tr('AI local', 'IA local'),
             'snapshot' => tr('Offline cache', 'Caché sin conexión'),
+            'onnx' => tr('On-device AI · ONNX', 'IA en el dispositivo · ONNX'),
+            'rules' => tr('Offline · rule-based', 'Sin conexión · reglas'),
             _ => tr('Rule-based', 'Basado en reglas'),
           }}'
         else

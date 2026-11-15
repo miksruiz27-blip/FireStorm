@@ -107,6 +107,23 @@ export const Widget = z.discriminatedUnion('type', [
     threshold: z.number().optional(), // bar: habitat O₂ line; above = safe, at/below = burns
   }),
   z.object({ type: z.literal('experiment_list'), ids: z.array(z.string()) }),
+  z.object({ type: z.literal('coverage'), text: z.string() }),
+  z.object({
+    type: z.literal('metrics'),
+    items: z.array(z.object({ label: z.string(), value: z.string(), unit: z.string(), level: Level.optional() })).min(1),
+  }),
+  z.object({
+    type: z.literal('table'),
+    title: z.string(),
+    columns: z.array(z.string()).min(1),
+    rows: z.array(z.array(z.string())),
+    highlight: z.number().int().optional(),
+  }),
+  z.object({
+    type: z.literal('next_tests'),
+    items: z.array(z.object({ title: z.string(), priority: z.number(), body: z.string() })),
+  }),
+  z.object({ type: z.literal('follow_ups'), questions: z.array(z.string()) }),
 ]);
 
 export const GenUI = z.object({

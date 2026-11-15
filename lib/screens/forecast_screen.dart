@@ -10,6 +10,7 @@ import '../app/page.dart';
 import '../app/theme.dart';
 import '../copilot/session.dart';
 import '../data/flame.dart';
+import '../data/predictor.dart';
 import '../data/gap_map.dart' show fmtO2;
 import '../data/habitats.dart';
 import '../widgets/habitat_flame_3d_card.dart';
@@ -54,6 +55,7 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
     final h = ref.watch(selectedHabitatProvider);
     final model = ref.watch(flameModelProvider).value;
     final measured = ref.watch(spreadPointsProvider).value ?? const [];
+    final regression = ref.watch(burnPredictorProvider).value;
     if (model == null) {
       return const Center(child: CircularProgressIndicator());
     }
@@ -102,7 +104,12 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
       gravityG: c.band.g,
       materialName: f.name, // English key: the 3D card matches on it
     );
-    final readout = _Readout(f: f, c: c, quiet: at(flow: 0));
+    final readout = _Readout(
+      f: f,
+      c: c,
+      quiet: at(flow: 0),
+      regression: regression,
+    );
     final charts = [
       _ChartCard(
         title: tr('FLAME SPREAD VS O₂', 'PROPAGACIÓN DE LLAMA VS O₂'),
@@ -300,9 +307,15 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
 }
 
 class _Readout extends StatelessWidget {
-  const _Readout({required this.f, required this.c, required this.quiet});
+  const _Readout({
+    required this.f,
+    required this.c,
+    required this.quiet,
+    this.regression,
+  });
   final FlameForecast f, quiet;
   final _Cond c;
+  final BurnPredictor? regression;
 
   @override
   Widget build(BuildContext context) {
@@ -412,6 +425,7 @@ class _Readout extends StatelessWidget {
               tr('· untested: $e', '· sin ensayar: $e'),
               style: AppText.mono.copyWith(fontSize: 11),
             ),
+          if (regression case final m?) _RegressionRow(m, c),
         ],
       ),
     );
@@ -698,4 +712,57 @@ class _RankCard extends StatelessWidget {
       ),
     ),
   );
+}
+
+/// Second opinion from the data: the ISS-trained logistic regression, on-device. Outside its
+/// training domain it says so instead of answering (extrapolating, it would read p ≈ 0 or 1).
+class _RegressionRow extends StatelessWidget {
+  const _RegressionRow(this.m, this.c);
+  final BurnPredictor m;
+  final _Cond c;
+
+  @override
+  Widget build(BuildContext context) {
+    final r = m.predict(o2: c.o2, kpa: c.kpa, flow: c.flow, g: c.band.g);
+    final burns = r.p >= .5;
+    final acc = m.accuracy == null ? '' : ' · ${tr('accuracy', 'precisión')} ${(m.accuracy! * 100).round()} %';
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 8,
+      children: [
+        Wrap(
+          spacing: 10,
+          runSpacing: 8,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            Text(
+              tr('DATA MODEL · LOGISTIC REGRESSION (ISS) · ON-DEVICE', 'MODELO DE DATOS · REGRESIÓN LOGÍSTICA (ISS) · EN EL DISPOSITIVO'),
+              style: AppText.label,
+            ),
+            if (r.outside.isEmpty)
+              AppTag(
+                '${burns ? tr('BURNS', 'ARDE') : tr('GOES OUT', 'SE APAGA')} · p ${(r.p * 100).round()} %',
+                mono: true,
+                level: burns ? TagLevel.critical : TagLevel.neutral,
+              )
+            else
+              AppTag(
+                tr('OUTSIDE TRAINING DATA · NO ANSWER', 'FUERA DE LOS DATOS DE ENTRENAMIENTO · SIN RESPUESTA'),
+                mono: true,
+                level: TagLevel.high,
+              ),
+          ],
+        ),
+        Text(
+          r.outside.isEmpty
+              ? tr(
+                  'Trained in Python on ISS burn/extinct tests (O₂, pressure, flow); coefficients run here, no network$acc.',
+                  'Entrenada en Python con ensayos arde/se apaga de la ISS (O₂, presión, flujo); los coeficientes corren aquí, sin red$acc.',
+                )
+              : tr('Outside its training range (value vs trained): ', 'Fuera de su rango de entrenamiento (valor vs entrenado): ') + r.outside.join(' · '),
+          style: AppText.mono.copyWith(fontSize: 11),
+        ),
+      ],
+    );
+  }
 }

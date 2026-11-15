@@ -4,19 +4,36 @@ import { LlmOut } from '../schemas.js';
 const LANGUAGE = { en: 'English', es: 'Spanish' };
 const system = (lang = 'en') =>
   `You are the Habitat Fire Atlas copilot. Respond in ${LANGUAGE[lang] ?? 'English'}, whatever the language of the question. ` +
-  'Answer in at most 60 words, grounded only in the numbered NASA sources. ' +
-  'For any question about which materials are safe, always give both lists from the widgets: ' +
-  'SAFE (MOC above the habitat O2) and BURNS (MOC at or below it), even if one is empty. ' +
+  'Answer in at most 60 words, grounded only in the numbered NASA sources and the widgets. ' +
+  'Answer exactly what was asked, using the widget made for it: the habitat table for comparisons, ' +
+  'the suggested next tests for what to test, the SAFE/BURNS cards for materials, the forecast for what-ifs. ' +
+  'Give the verdict first, then at most 2-3 numbers from the widgets with symbols (%, mm/s, g). ' +
+  'If coverage says there is no test data, say once that it is physics extrapolation, untested. ' +
+  'Plain prose: no brackets, no markdown, no lists, no source numbers in the text. ' +
   'Reply with JSON only: {"answer": "...", "cite": [numbers]}. Cite only numbers from the list.';
 
-const prompt = ({ question, habitat, widgets, sources }) =>
+const describe = (w) =>
+  w.type === 'answer_card' ? `${w.title}: ${w.body}`
+  : w.type === 'metrics' ? `Key numbers: ${w.items.map((i) => `${i.label} ${i.value} ${i.unit}`).join(', ')}`
+  : w.type === 'table' ? `${w.title}: ${w.rows.map((r) => r.join(' / ')).join('; ')}`
+  : w.type === 'next_tests' ? `Suggested next tests: ${w.items.map((i) => `${i.title} (priority ${i.priority})`).join('; ')}`
+  : w.type === 'chart' ? `Chart (${w.kind}): ${w.y} by ${w.x}`
+  : null;
+
+const prompt = ({ question, habitat, widgets, sources, coverage, retry }) =>
   [
     `Question: ${question}`,
     `Habitat: ${habitat.name} · ${habitat.o2_pct} % O2 · ${habitat.pressure_psia} psia · ${habitat.gravity_g} g`,
-    `Physics flame forecast (state it; say "untested" if extrapolated): ${widgets[0].body}`,
-    `Widgets shown: ${widgets.map((w) => w.title ?? `${w.type}${w.kind ? ` ${w.kind}` : ''}`).join('; ')}`,
+    ...(coverage ? [`Coverage: ${coverage}`] : []),
+    // Materials question: both lists, always, even if one is empty.
+    ...(widgets.some((w) => /^(SAFE|SEGUROS) /.test(w.title ?? ''))
+      ? ['Give both lists from the SAFE and BURNS cards (MOC above vs at/below the habitat O2), even if one is empty.']
+      : []),
+    'Widgets shown (rule-built from the physics model and NASA data; the first card is the physics forecast):',
+    ...widgets.map(describe).filter(Boolean).map((d) => `- ${d}`),
     'Sources:',
     ...sources.map((s) => `[${s.n}] ${s.title}${s.text ? ` — ${s.text}` : ''}`),
+    ...(retry ? ['Your previous reply cited no valid source. "cite" MUST contain at least one number from the Sources list.'] : []),
   ].join('\n');
 
 const post = async (url, headers, body, ms) => {
@@ -63,7 +80,9 @@ const providers = {
 };
 
 const parse = (text) => {
-  const r = LlmOut.safeParse(JSON.parse(text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1)));
+  // Models sometimes emit a stray "\u" (not followed by 4 hex digits): escape it instead of losing the answer.
+  const json = text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1).replace(/\\u(?![0-9a-fA-F]{4})/g, '\\\\u');
+  const r = LlmOut.safeParse(JSON.parse(json));
   if (!r.success) throw new Error('invalid LLM JSON');
   const words = r.data.answer.trim().split(/\s+/);
   return { answer: words.length > 60 ? `${words.slice(0, 60).join(' ')}…` : words.join(' '), cite: r.data.cite };
