@@ -428,11 +428,11 @@ class CitationMark extends StatelessWidget {
   final int n;
 
   @override
+  // No `alignment`: inside a WidgetSpan an aligned Container fills the line, which drew each
+  // citation as an empty full-width bar.
   Widget build(BuildContext context) => Container(
-    height: 16,
-    constraints: const BoxConstraints(minWidth: 18),
-    padding: const EdgeInsets.symmetric(horizontal: 3),
-    alignment: Alignment.center,
+    constraints: const BoxConstraints(minWidth: 18, minHeight: 16),
+    padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
     decoration: BoxDecoration(
       border: Border.all(color: AppColors.lineStrong),
       borderRadius: BorderRadius.circular(3),

@@ -98,6 +98,8 @@ test('POST /copilot without LLM → template, valid GenUI, real citations', asyn
     .send({ question: 'Which materials stay safe at 34% oxygen?', habitat: 'lunar' })
     .expect(200);
   exact(GenUI, r.body);
+  assert.ok(r.body.citations.length >= 1);
+  for (const c of r.body.citations) assert.ok(c.title && c.ref && /^https?:\/\//.test(c.url), JSON.stringify(c));
   if (!process.env.LLM_API_KEY && !process.env.OLLAMA_URL) assert.equal(r.headers['x-copilot-source'], 'template');
   await request(app).post('/copilot').send({ question: '', habitat: 'lunar' }).expect(400);
 });
@@ -115,4 +117,12 @@ test('copilot: an LLM citation outside the list is discarded', async () => {
   exact(GenUI, body);
   assert.equal(source, 'llm');
   assert.deepEqual(body.citations.map((c) => c.n), [1]);
+});
+
+test('copilot: an LLM answer with no resolvable citation is rejected → template', async () => {
+  const fake = async () => ({ answer: 'Ungrounded answer.', cite: [99], source: 'llm' });
+  const { body, source } = await copilot({ question: 'What has been tested?', habitat: 'lunar' }, { llm: fake });
+  exact(GenUI, body);
+  assert.equal(source, 'template');
+  assert.notEqual(body.answer, 'Ungrounded answer.');
 });

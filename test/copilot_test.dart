@@ -35,7 +35,7 @@ void main() {
 
     final byId = {for (final c in out) c['id']: c};
     expect(byId['root']!['children'], ['text', 'w0', 'w1', 'w2', 'sources']);
-    expect(byId['root']!['tags'], ['2 sources', 'AI · grounded']);
+    expect(byId['root']!['tags'], ['2 sources · AI grounded']);
     expect(byId['text']!['citations'], [1, 2]);
     expect(byId['w0']!['component'], 'RiskCard');
     expect(byId['w1']!['component'], 'DataChart');
@@ -45,5 +45,17 @@ void main() {
       'investigation': 'bass-ii',
     });
     expect((byId['sources']!['sources'] as List).first['ref'], 'psi.nasa.gov');
+  });
+
+  test('no resolvable citations → no "AI grounded" badge', () {
+    final out = genuiToA2ui({
+      'answer': 'x',
+      'widgets': [
+        {'type': 'answer_card', 'title': 't', 'body': 'b', 'level': 'info'},
+      ],
+      'citations': [],
+    }, 'llm');
+    final root = out.firstWhere((m) => m['id'] == 'root');
+    expect(root['tags'], ['No sources']);
   });
 }

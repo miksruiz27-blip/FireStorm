@@ -107,7 +107,10 @@ export const Widget = z.discriminatedUnion('type', [
 export const GenUI = z.object({
   answer: z.string().min(1),
   widgets: z.array(Widget).min(1),
-  citations: z.array(z.object({ n: z.number().int().positive(), title: z.string(), url: z.string() })).min(1),
+  // Only resolvable sources: a real title, a PSI/NTRS ref and an http(s) link.
+  citations: z.array(
+    z.object({ n: z.number().int().positive(), title: z.string().min(1), ref: z.string().min(1), url: z.url() }),
+  ),
 });
 
 export const LlmOut = z.object({

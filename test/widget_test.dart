@@ -121,7 +121,7 @@ void main() {
 
       // Tests have no network → snapshot. Turn 1 is in the cached demo script.
       expect(find.text('COPILOT · ANSWER'), findsWidgets);
-      expect(find.text('OFFLINE CACHE'), findsOneWidget);
+      expect(find.textContaining('OFFLINE CACHE'), findsOneWidget);
       expect(
         find.text('WHAT-IF · 34 % O₂'),
         findsOneWidget,

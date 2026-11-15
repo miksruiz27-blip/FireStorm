@@ -224,14 +224,17 @@ List<Json> genuiToA2ui(Map<String, Object?> body, String source) {
         for (final w in widgets) w['id'] as String,
         'sources',
       ]),
+      // "N sources · AI grounded" only when N > 0 resolvable citations back the answer.
       'tags': [
-        '${cites.length} source${cites.length == 1 ? '' : 's'}',
-        switch (source) {
-          'llm' => 'AI · grounded',
-          'ollama' => 'AI · local',
-          'snapshot' => 'Offline cache',
-          _ => 'Rule-based',
-        },
+        if (cites.isNotEmpty)
+          '${cites.length} source${cites.length == 1 ? '' : 's'} · ${switch (source) {
+            'llm' => 'AI grounded',
+            'ollama' => 'AI local',
+            'snapshot' => 'Offline cache',
+            _ => 'Rule-based',
+          }}'
+        else
+          'No sources',
       ],
     },
     {
@@ -248,7 +251,9 @@ List<Json> genuiToA2ui(Map<String, Object?> body, String source) {
         for (final c in cites)
           {
             'title': c['title'],
+            'url': c['url'],
             'ref':
+                c['ref'] ??
                 Uri.tryParse(c['url'] as String? ?? '')?.host
                     .replaceFirst('www.', '') ??
                 '',

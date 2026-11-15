@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:genui/genui.dart';
 import 'package:go_router/go_router.dart';
 import 'package:json_schema_builder/json_schema_builder.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../app/theme.dart';
 
@@ -320,9 +321,10 @@ final _sourceList = CatalogItem(
         items: S.object(
           properties: {
             'title': S.string(),
-            'ref': S.string(description: 'PSI investigation or dataset ID.'),
+            'ref': S.string(description: 'PSI investigation or NTRS ID.'),
+            'url': S.string(description: 'Link to the record.'),
           },
-          required: ['title', 'ref'],
+          required: ['title', 'ref', 'url'],
         ),
       ),
     },
@@ -335,23 +337,41 @@ final _sourceList = CatalogItem(
       spacing: 8,
       children: [
         for (final (i, s) in _list<_Json>(_data(c)['sources']).indexed)
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 8,
-            children: [
-              SizedBox(width: 28, child: Text('[${i + 1}]', style: mono)),
-              Expanded(
-                child: Text(
-                  s['title'] as String,
-                  style: AppText.caption.copyWith(
-                    fontSize: 13,
-                    height: 19 / 13,
-                    color: AppColors.textSoft,
+          Tappable(
+            label:
+                'Source ${i + 1}: ${s['title']}, ${s['ref']}. Opens ${s['url']}',
+            onTap: () => launchUrl(Uri.parse(s['url'] as String)),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 8,
+              children: [
+                SizedBox(width: 28, child: Text('[${i + 1}]', style: mono)),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 2,
+                    children: [
+                      Text(
+                        s['title'] as String,
+                        style: AppText.caption.copyWith(
+                          fontSize: 13,
+                          height: 19 / 13,
+                          color: AppColors.textSoft,
+                        ),
+                      ),
+                      Text(
+                        s['url'] as String,
+                        style: mono.copyWith(
+                          fontSize: 11,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              Text(s['ref'] as String, style: mono),
-            ],
+                Text(s['ref'] as String, style: mono),
+              ],
+            ),
           ),
       ],
     );

@@ -46,7 +46,7 @@ test('what-if title; gravity question → limit by gravity; no topic → experim
   assert.deepEqual(types(buildWidgets(ctx('What has been tested at lunar gravity?')).widgets), ['answer_card', 'bar', 'experiment_list']);
   const { widgets, cite } = buildWidgets(ctx('hello'));
   assert.deepEqual(types(widgets), ['answer_card', 'experiment_list']);
-  GenUI.parse({ answer: 'x', widgets, citations: cite.map((n) => ({ n, title: 't', url: '' })) });
+  GenUI.parse({ answer: 'x', widgets, citations: cite.map((n) => ({ n, title: 't', ref: 'PSI-25', url: 'https://psi.nasa.gov' })) });
 });
 
 test('modifications question → the retrieved experiments’ required modifications, cited', () => {
