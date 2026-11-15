@@ -286,32 +286,10 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
           _buildExperimentBar(tel),
           const SizedBox(height: 12),
           _buildKpiGrid(tel),
-          const SizedBox(height: 14),
-          LayoutBuilder(
-            builder: (context, constraints) {
-              final wide = constraints.maxWidth >= 820;
-              final controlsPanel = _buildControlsPanel(tel);
-              final viewportPanel = _buildViewportCard(tel);
-              if (wide) {
-                return Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 335, child: controlsPanel),
-                    const SizedBox(width: 14),
-                    Expanded(child: viewportPanel),
-                  ],
-                );
-              }
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  viewportPanel,
-                  const SizedBox(height: 14),
-                  controlsPanel,
-                ],
-              );
-            },
-          ),
+          const SizedBox(height: 12),
+          _buildDropdownBar(),
+          const SizedBox(height: 12),
+          _buildViewportCard(tel),
           const SizedBox(height: 14),
           LayoutBuilder(
             builder: (context, constraints) {
@@ -562,154 +540,115 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
     );
   }
 
-  Widget _buildControlsPanel(Flame3DTelemetry tel) {
+  Widget _buildDropdownBar() {
+    final presetCol = Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _dropdownLabel('1. HABITAT / GRAVITY PRESET'),
+        const SizedBox(height: 5),
+        _buildStyledDropdown<String>(
+          value: _selectedPreset,
+          items: const [
+            DropdownMenuItem(value: 'CUSTOM', child: Text('Custom / Slider Conditions', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            DropdownMenuItem(value: 'ISS', child: Text('ISS Destiny (0.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            DropdownMenuItem(value: 'LUNAR', child: Text('Lunar Artemis SEA (0.166g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            DropdownMenuItem(value: 'MARS', child: Text('Mars Habitat (0.38g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            DropdownMenuItem(value: 'EARTH', child: Text('Earth Sea Level (1.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            DropdownMenuItem(value: 'VAC_HYPOXIC', child: Text('Hypoxic Extinguish (0.0g · 15.2% O2 · 6 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            DropdownMenuItem(value: 'HYPER_O2', child: Text('Hyperbaric Enriched (1.0g · 42% O2 · 30 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            DropdownMenuItem(value: 'INVERTED_G', child: Text('Inverted Gravity (-1.0g · Downward Buoyancy)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            DropdownMenuItem(value: 'CENTRIFUGE_2G', child: Text('Hypergravity Centrifuge (+2.0g · 26% O2)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+          ],
+          onChanged: (v) {
+            if (v != null && v != 'CUSTOM') _applyHabitatPreset(v);
+          },
+        ),
+      ],
+    );
+
+    final diluentCol = Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _dropdownLabel('2. DILUENT GAS'),
+        const SizedBox(height: 5),
+        _buildStyledDropdown<String>(
+          value: _diluentKey,
+          items: const [
+            DropdownMenuItem(value: 'N2', child: Text('N₂ — Nitrogen (Standard Cabin)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            DropdownMenuItem(value: 'CO2', child: Text('CO₂ — Carbon Dioxide (Radiative Reabsorption)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            DropdownMenuItem(value: 'He', child: Text('He — Helium (High Thermal Diffusivity)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            DropdownMenuItem(value: 'Ar', child: Text('Ar — Argon (Low Cp · High Temp)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+          ],
+          onChanged: (v) {
+            if (v != null) {
+              setState(() {
+                _diluentKey = v;
+                _selectedExpIndex = null;
+              });
+            }
+          },
+        ),
+      ],
+    );
+
+    final fuelCol = Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _dropdownLabel('3. FUEL SPECIMEN & BURNER FAMILY'),
+        const SizedBox(height: 5),
+        _buildStyledDropdown<int>(
+          value: _fuelIdx,
+          items: [
+            for (final entry in FirestormPhysicsEngine.fuelProps.entries)
+              DropdownMenuItem(
+                value: entry.key,
+                child: Text(entry.value.name, overflow: TextOverflow.ellipsis, maxLines: 1),
+              ),
+          ],
+          onChanged: (v) {
+            if (v != null) {
+              setState(() {
+                _fuelIdx = v;
+                _selectedExpIndex = null;
+              });
+              _notifyParent();
+            }
+          },
+        ),
+      ],
+    );
+
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: _bgPanel,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: _border),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const Text(
-            'SIMULATION CONTROLS · MULTI-REGIME',
-            style: TextStyle(
-              color: Color(0xFFE2E8F0),
-              fontSize: 11,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 0.9,
-            ),
-          ),
-          const SizedBox(height: 10),
-          _buildSliderRow(
-            label: 'OXYGEN (O₂ %)',
-            valueText: '${_o2Pct.toStringAsFixed(1)} %',
-            value: _o2Pct,
-            min: 12.5,
-            max: 45.0,
-            activeColor: _accentRed,
-            onChanged: (v) {
-              setState(() {
-                _o2Pct = v;
-                _selectedPreset = 'CUSTOM';
-                _selectedExpIndex = null;
-              });
-              _notifyParent();
-            },
-          ),
-          _buildSliderRow(
-            label: 'PRESSURE (psi / kPa)',
-            valueText: '${_pressPsi.toStringAsFixed(1)} psi (${(_pressPsi * 6.89476).round()} kPa)',
-            value: _pressPsi,
-            min: 4.3,
-            max: 44.1,
-            activeColor: _accentAmber,
-            onChanged: (v) {
-              setState(() {
-                _pressPsi = v;
-                _selectedPreset = 'CUSTOM';
-                _selectedExpIndex = null;
-              });
-              _notifyParent();
-            },
-          ),
-          _buildSliderRow(
-            label: 'FORCED FLOW (HVAC cm/s)',
-            valueText: '${_flowCmS.toStringAsFixed(1)} cm/s',
-            value: _flowCmS,
-            min: 0.0,
-            max: 45.0,
-            activeColor: _accentCyan,
-            onChanged: (v) {
-              setState(() {
-                _flowCmS = v;
-                _selectedPreset = 'CUSTOM';
-                _selectedExpIndex = null;
-              });
-              _notifyParent();
-            },
-          ),
-          _buildSliderRow(
-            label: 'GRAVITY ACCEL (g)',
-            valueText: '${_gravG >= 0 ? '+' : ''}${_gravG.toStringAsFixed(3)} g',
-            value: _gravG,
-            min: -2.0,
-            max: 2.0,
-            activeColor: _gravG < 0 ? _accentPurple : _accentGreen,
-            onChanged: (v) {
-              setState(() {
-                _gravG = v;
-                _selectedPreset = 'CUSTOM';
-                _selectedExpIndex = null;
-              });
-              _notifyParent();
-            },
-          ),
-          const Divider(color: _border, height: 18),
-          _dropdownLabel('1. HABITAT / GRAVITY PRESET'),
-          const SizedBox(height: 5),
-          _buildStyledDropdown<String>(
-            value: _selectedPreset,
-            items: const [
-              DropdownMenuItem(value: 'CUSTOM', child: Text('Custom / Slider Conditions', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'ISS', child: Text('ISS Destiny (0.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'LUNAR', child: Text('Lunar Artemis SEA (0.166g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'MARS', child: Text('Mars Habitat (0.38g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'EARTH', child: Text('Earth Sea Level (1.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'VAC_HYPOXIC', child: Text('Hypoxic Extinguish (0.0g · 15.2% O2 · 6 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'HYPER_O2', child: Text('Hyperbaric Enriched (1.0g · 42% O2 · 30 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'INVERTED_G', child: Text('Inverted Gravity (-1.0g · Downward Buoyancy)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'CENTRIFUGE_2G', child: Text('Hypergravity Centrifuge (+2.0g · 26% O2)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth >= 660) {
+            return Row(
+              children: [
+                Expanded(child: presetCol),
+                const SizedBox(width: 10),
+                Expanded(child: diluentCol),
+                const SizedBox(width: 10),
+                Expanded(child: fuelCol),
+              ],
+            );
+          }
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              presetCol,
+              const SizedBox(height: 8),
+              diluentCol,
+              const SizedBox(height: 8),
+              fuelCol,
             ],
-            onChanged: (v) {
-              if (v != null && v != 'CUSTOM') _applyHabitatPreset(v);
-            },
-          ),
-          const SizedBox(height: 10),
-          _dropdownLabel('2. DILUENT GAS'),
-          const SizedBox(height: 5),
-          _buildStyledDropdown<String>(
-            value: _diluentKey,
-            items: const [
-              DropdownMenuItem(value: 'N2', child: Text('N₂ — Nitrogen (Standard Cabin)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'CO2', child: Text('CO₂ — Carbon Dioxide (Radiative Reabsorption)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'He', child: Text('He — Helium (High Thermal Diffusivity)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'Ar', child: Text('Ar — Argon (Low Cp · High Temp)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            ],
-            onChanged: (v) {
-              if (v != null) {
-                setState(() {
-                  _diluentKey = v;
-                  _selectedExpIndex = null;
-                });
-              }
-            },
-          ),
-          const SizedBox(height: 10),
-          _dropdownLabel('3. FUEL SPECIMEN & BURNER FAMILY'),
-          const SizedBox(height: 5),
-          _buildStyledDropdown<int>(
-            value: _fuelIdx,
-            items: [
-              for (final entry in FirestormPhysicsEngine.fuelProps.entries)
-                DropdownMenuItem(
-                  value: entry.key,
-                  child: Text(entry.value.name, overflow: TextOverflow.ellipsis),
-                ),
-            ],
-            onChanged: (v) {
-              if (v != null) {
-                setState(() {
-                  _fuelIdx = v;
-                  _selectedExpIndex = null;
-                });
-                _notifyParent();
-              }
-            },
-          ),
-        ],
+          );
+        },
       ),
     );
   }
@@ -722,65 +661,6 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
         fontSize: 9.5,
         fontWeight: FontWeight.w700,
         letterSpacing: 0.8,
-      ),
-    );
-  }
-
-  Widget _buildSliderRow({
-    required String label,
-    required String valueText,
-    required double value,
-    required double min,
-    required double max,
-    required Color activeColor,
-    required ValueChanged<double> onChanged,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 6),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(
-                child: Text(
-                  label,
-                  style: const TextStyle(
-                    color: Color(0xFFCBD5E1),
-                    fontSize: 10.5,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-              Text(
-                valueText,
-                style: TextStyle(
-                  color: activeColor,
-                  fontSize: 11,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ],
-          ),
-          SliderTheme(
-            data: SliderTheme.of(context).copyWith(
-              activeTrackColor: activeColor,
-              inactiveTrackColor: const Color(0xFF252B3B),
-              thumbColor: activeColor,
-              overlayColor: activeColor.withValues(alpha: 0.16),
-              trackHeight: 3.5,
-              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6.5),
-            ),
-            child: Slider(
-              value: value.clamp(min, max),
-              min: min,
-              max: max,
-              onChanged: onChanged,
-            ),
-          ),
-        ],
       ),
     );
   }
