@@ -68,8 +68,8 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
   bool _forceCoolFlame = false;
 
   // 3D camera controls
-  double _yaw = 0.35;
-  double _pitch = 0.22;
+  double _yaw = 0.16;
+  double _pitch = 0.12;
   double _zoom = 1.0;
   bool _autoOrbit = true;
   int _camMode = 3; // 0: Cool NTC, 1: 0g Top, 2: Nozzle Profile, 3: 3D Orbit
@@ -86,7 +86,7 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
         setState(() {
           _time = elapsed.inMilliseconds / 1000.0;
           if (_autoOrbit) {
-            _yaw += 0.004;
+            _yaw = 0.16 + 0.22 * math.sin(_time * 0.55);
           }
         });
       });
@@ -1597,36 +1597,50 @@ class _MultiRegimeFlamePainter extends CustomPainter {
     final y2 = y * cp - z1 * sp;
     final z2 = y * sp + z1 * cp;
 
-    final scale = (size.height * 0.42) * zoom / (3.8 + z2 * 0.35);
-    return (size.width * 0.34 + x1 * scale, size.height * 0.56 - y2 * scale, z2);
+    final scale = (size.height * 0.88) * zoom / (2.7 + z2 * 0.28);
+    return (size.width * 0.34 + x1 * scale, size.height * 0.52 - y2 * scale, z2);
   }
 
   @override
   void paint(Canvas canvas, Size size) {
-    // Subtle dark grid
+    // 1. Perspective Floor Grid
     final gridPaint = Paint()
-      ..color = const Color(0xFF192130)
-      ..strokeWidth = 0.8;
-    for (double gx = -1.6; gx <= 2.4; gx += 0.4) {
-      final p1 = _project(gx, -0.8, -0.8, size);
-      final p2 = _project(gx, -0.8, 0.8, size);
+      ..color = const Color(0xFF1A2639).withValues(alpha: 0.75)
+      ..strokeWidth = 0.9;
+    for (double gx = -2.2; gx <= 3.4; gx += 0.45) {
+      final p1 = _project(gx, -0.82, -1.35, size);
+      final p2 = _project(gx, -0.82, 1.35, size);
+      canvas.drawLine(Offset(p1.$1, p1.$2), Offset(p2.$1, p2.$2), gridPaint);
+    }
+    for (double gz = -1.35; gz <= 1.35; gz += 0.45) {
+      final p1 = _project(-2.2, -0.82, gz, size);
+      final p2 = _project(3.4, -0.82, gz, size);
       canvas.drawLine(Offset(p1.$1, p1.$2), Offset(p2.$1, p2.$2), gridPaint);
     }
 
-    // 1. Solid De Laval Nozzle + Fuel Specimen Holder
+    // 2. Solid De Laval Nozzle + Back-to-Front Painter's Sort
     final nozzlePoints = <List<(double, double, double)>>[];
-    const segs = 14;
-    const rings = 10;
+    const segs = 18;
+    const rings = 12;
     for (int i = 0; i <= rings; i++) {
       final t = i / rings;
       final x = -1.35 + t * 1.35;
-      // Convergent-divergent De Laval profile
       double r;
-      if (t < 0.4) {
-        r = 0.24 - 0.12 * (t / 0.4);
+      if (t < 0.18) {
+        // Injector dome taper
+        final dt = t / 0.18;
+        r = 0.06 + 0.21 * math.sin(dt * math.pi * 0.5);
+      } else if (t < 0.42) {
+        // Combustion chamber
+        r = 0.27;
+      } else if (t < 0.62) {
+        // Convergent throat
+        final dt = (t - 0.42) / 0.20;
+        r = 0.27 - 0.12 * math.sin(dt * math.pi * 0.5);
       } else {
-        final dt = (t - 0.4) / 0.6;
-        r = 0.12 + 0.14 * dt * dt + 0.04 * dt;
+        // Divergent bell nozzle
+        final dt = (t - 0.62) / 0.38;
+        r = 0.15 + 0.15 * math.pow(dt, 0.82);
       }
       final ring = <(double, double, double)>[];
       for (int j = 0; j < segs; j++) {
@@ -1636,104 +1650,133 @@ class _MultiRegimeFlamePainter extends CustomPainter {
       nozzlePoints.add(ring);
     }
 
+    final faces = <(double z, Path path, Color fill)>[];
     for (int i = 0; i < rings; i++) {
+      final t = i / rings;
       for (int j = 0; j < segs; j++) {
         final nj = (j + 1) % segs;
         final a = nozzlePoints[i][j];
         final b = nozzlePoints[i + 1][j];
         final c = nozzlePoints[i + 1][nj];
         final d = nozzlePoints[i][nj];
-        final shade = (0.35 + 0.4 * ((a.$3 + b.$3) * 0.5 + 0.3)).clamp(0.15, 0.9);
+        final avgZ = (a.$3 + b.$3 + c.$3 + d.$3) * 0.25;
+        final ny = math.sin(((j + 0.5) / segs) * 2 * math.pi);
+        final light = (0.45 + 0.45 * ny + 0.15 * (-avgZ)).clamp(0.12, 1.0);
+        final baseColor = t < 0.42
+            ? Color.lerp(const Color(0xFF1F1612), const Color(0xFF7C3AED).withValues(alpha: 0.0), 0.0)!
+            : const Color(0xFF451A03);
+        final hiColor = t < 0.60
+            ? const Color(0xFF9A4A18)
+            : const Color(0xFFD97724);
+        final fill = Color.lerp(
+          t < 0.42 ? const Color(0xFF231814) : baseColor,
+          hiColor,
+          light,
+        )!;
         final path = Path()
           ..moveTo(a.$1, a.$2)
           ..lineTo(b.$1, b.$2)
           ..lineTo(c.$1, c.$2)
           ..lineTo(d.$1, d.$2)
           ..close();
-        canvas.drawPath(
-          path,
-          Paint()
-            ..color = Color.lerp(
-              const Color(0xFF334155),
-              const Color(0xFFB45309),
-              (i / rings) * shade,
-            )!
-            ..style = PaintingStyle.fill,
-        );
-        canvas.drawPath(
-          path,
-          Paint()
-            ..color = Colors.white.withValues(alpha: 0.08)
-            ..style = PaintingStyle.stroke
-            ..strokeWidth = 0.7,
-        );
+        faces.add((avgZ, path, fill));
       }
     }
+    faces.sort((u, v) => v.$1.compareTo(u.$1));
+    final ribPaint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.14)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 0.7;
+    for (final f in faces) {
+      canvas.drawPath(
+        f.$2,
+        Paint()
+          ..color = f.$3
+          ..style = PaintingStyle.fill,
+      );
+      canvas.drawPath(f.$2, ribPaint);
+    }
 
-    // 2. Multi-Regime Flame Body
+    // Regenerative cooling bypass pipes (top & bottom silver manifolds)
+    final pipePaint = Paint()
+      ..color = const Color(0xFFCBD5E1).withValues(alpha: 0.8)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2.2
+      ..strokeCap = StrokeCap.round;
+    for (final sign in [-1.0, 1.0]) {
+      final p0 = _project(-1.12, sign * 0.30, 0, size);
+      final p1 = _project(-0.78, sign * 0.34, 0, size);
+      final p2 = _project(-0.48, sign * 0.21, 0, size);
+      final p3 = _project(-0.04, sign * 0.33, 0, size);
+      final pipePath = Path()
+        ..moveTo(p0.$1, p0.$2)
+        ..lineTo(p1.$1, p1.$2)
+        ..lineTo(p2.$1, p2.$2)
+        ..lineTo(p3.$1, p3.$2);
+      canvas.drawPath(pipePath, pipePaint);
+    }
+
+    // 3. Multi-Regime Volumetric Flame Body
     if (tel.prob < 0.06 && !tel.isCool) {
-      // Quenched smoke/vapor wisps
       final smokePaint = Paint()
-        ..color = Colors.white.withValues(alpha: 0.12)
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8);
-      for (int k = 0; k < 4; k++) {
-        final sx = 0.15 + k * 0.28 + 0.05 * math.sin(time * 2 + k);
-        final p = _project(sx, 0.04 * math.sin(time + k), 0.0, size);
-        canvas.drawCircle(Offset(p.$1, p.$2), 10 + k * 4.0, smokePaint);
+        ..color = Colors.white.withValues(alpha: 0.16)
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
+      for (int k = 0; k < 5; k++) {
+        final sx = 0.12 + k * 0.32 + 0.06 * math.sin(time * 2 + k);
+        final p = _project(sx, 0.05 * math.sin(time + k), 0.0, size);
+        canvas.drawCircle(Offset(p.$1, p.$2), 14 + k * 5.0, smokePaint);
       }
+      _drawAxisGizmo(canvas, size);
       return;
     }
 
     final pulse = tel.isPulsating
-        ? (0.72 + 0.28 * math.sin(time * 7.5))
-        : (0.94 + 0.06 * math.sin(time * 12.0));
-    final liftoffX = (tel.liftoffMm / 25.0).clamp(0.0, 0.45);
+        ? (0.76 + 0.24 * math.sin(time * 7.5))
+        : (0.95 + 0.05 * math.sin(time * 12.0));
+    final liftoffX = (tel.liftoffMm / 28.0).clamp(0.0, 0.38);
     final isSphere = tel.effVel < 3.5;
 
     final flameLen = isSphere
-        ? 0.65 * pulse
-        : (0.9 + (tel.aspectLD * 0.28).clamp(0.2, 1.9)) * pulse;
+        ? 0.72 * pulse
+        : (1.45 + (tel.aspectLD * 0.32).clamp(0.3, 1.85)) * pulse;
     final flameRad = isSphere
-        ? (0.34 + 0.08 * tel.prob) * pulse
-        : (0.24 + 0.07 * (o2Pct / 45.0)) * pulse;
+        ? (0.38 + 0.08 * tel.prob) * pulse
+        : (0.28 + 0.07 * (o2Pct / 45.0)) * pulse;
+    final buoyCurve = (gravityG / 2.0) * 0.42;
 
-    // Gravity buoyancy curve (+g pushes up, -g pushes down)
-    final buoyCurve = (gravityG / 2.0) * 0.38;
-
-    final Color outerColor;
-    final Color innerColor;
+    final Color sheathColor;
+    final Color coreColor;
+    final Color tailColor;
     if (tel.isCool) {
-      outerColor = const Color(0xFF7C3AED).withValues(alpha: 0.55);
-      innerColor = const Color(0xFF38BDF8).withValues(alpha: 0.75);
-    } else if (o2Pct >= 28.0 && tel.soot < 0.4) {
-      outerColor = const Color(0xFF2563EB).withValues(alpha: 0.75);
-      innerColor = const Color(0xFFE0F2FE).withValues(alpha: 0.95);
+      sheathColor = const Color(0xFF6D28D9).withValues(alpha: 0.65);
+      coreColor = const Color(0xFF38BDF8).withValues(alpha: 0.88);
+      tailColor = const Color(0xFFA855F7).withValues(alpha: 0.55);
+    } else if (o2Pct >= 28.0 && tel.soot < 0.35) {
+      sheathColor = const Color(0xFF0EA5E9).withValues(alpha: 0.68);
+      coreColor = const Color(0xFFFFFFFF).withValues(alpha: 0.96);
+      tailColor = const Color(0xFF38BDF8).withValues(alpha: 0.75);
     } else {
-      outerColor = Color.lerp(
-        const Color(0xFF38BDF8),
-        const Color(0xFFEF4444),
-        (tel.soot * 1.1).clamp(0.15, 1.0),
-      )!
-          .withValues(alpha: 0.78);
-      innerColor = Color.lerp(
-        const Color(0xFFBAE6FD),
+      sheathColor = const Color(0xFF0EA5E9).withValues(alpha: 0.58);
+      coreColor = const Color(0xFFFFFFFF).withValues(alpha: 0.96);
+      tailColor = Color.lerp(
         const Color(0xFFFDE047),
-        (tel.soot * 0.9).clamp(0.1, 0.95),
+        const Color(0xFFEA580C),
+        (tel.soot * 0.85).clamp(0.25, 0.95),
       )!
-          .withValues(alpha: 0.95);
+          .withValues(alpha: 0.88);
     }
 
     if (isSphere) {
-      final center = _project(0.22 + liftoffX, buoyCurve * 0.3, 0, size);
-      final edge = _project(0.22 + liftoffX + flameRad, buoyCurve * 0.3, 0, size);
-      final rPx = (edge.$1 - center.$1).abs().clamp(16.0, 110.0);
+      final center = _project(0.28 + liftoffX, buoyCurve * 0.25, 0, size);
+      final edge = _project(0.28 + liftoffX + flameRad, buoyCurve * 0.25, 0, size);
+      final rPx = (edge.$1 - center.$1).abs().clamp(26.0, 125.0);
 
       canvas.drawCircle(
         Offset(center.$1, center.$2),
-        rPx * 1.35,
+        rPx * 1.45,
         Paint()
-          ..color = outerColor.withValues(alpha: 0.35)
-          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 18),
+          ..color = sheathColor.withValues(alpha: 0.42)
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 24),
       );
       canvas.drawCircle(
         Offset(center.$1, center.$2),
@@ -1742,95 +1785,182 @@ class _MultiRegimeFlamePainter extends CustomPainter {
           ..shader = ui.Gradient.radial(
             Offset(center.$1, center.$2),
             rPx,
-            [innerColor, outerColor, outerColor.withValues(alpha: 0.0)],
-            [0.0, 0.55, 1.0],
+            [coreColor, sheathColor, sheathColor.withValues(alpha: 0.0)],
+            [0.0, 0.52, 1.0],
           ),
       );
     } else {
-      final base = _project(0.02 + liftoffX, 0, 0, size);
-      final mid = _project(
-        0.02 + liftoffX + flameLen * 0.45,
-        buoyCurve * 0.35,
-        0,
-        size,
-      );
+      final x0 = 0.04 + liftoffX;
+      final base = _project(x0, 0, 0, size);
+      final mid = _project(x0 + flameLen * 0.45, buoyCurve * 0.32, 0, size);
       final tip = _project(
-        0.02 + liftoffX + flameLen,
+        x0 + flameLen,
         buoyCurve + 0.04 * math.sin(time * 9.0),
         0,
         size,
       );
-      final rBasePx = flameRad * (size.height * 0.25);
+      final rBasePx = flameRad * (size.height * 0.30);
 
-      // Outer glow plume
-      final outerPath = Path()
-        ..moveTo(base.$1, base.$2 - rBasePx)
+      // Layer 1: Wide Cyan CH* Sheath
+      final sheathPath = Path()
+        ..moveTo(base.$1 - 8, base.$2 - rBasePx * 1.15)
         ..quadraticBezierTo(
           mid.$1,
-          mid.$2 - rBasePx * 0.85,
+          mid.$2 - rBasePx * 1.05,
           tip.$1,
-          tip.$2 - (tel.isTipOpen ? rBasePx * 0.35 : 0),
+          tip.$2 - (tel.isTipOpen ? rBasePx * 0.45 : rBasePx * 0.16),
         )
-        ..lineTo(tip.$1, tip.$2 + (tel.isTipOpen ? rBasePx * 0.35 : 0))
+        ..lineTo(tip.$1, tip.$2 + (tel.isTipOpen ? rBasePx * 0.45 : rBasePx * 0.16))
         ..quadraticBezierTo(
           mid.$1,
-          mid.$2 + rBasePx * 0.85,
-          base.$1,
-          base.$2 + rBasePx,
+          mid.$2 + rBasePx * 1.05,
+          base.$1 - 8,
+          base.$2 + rBasePx * 1.15,
         )
         ..close();
 
       canvas.drawPath(
-        outerPath,
+        sheathPath,
         Paint()
-          ..color = outerColor
-          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10),
+          ..color = sheathColor
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 18),
       );
 
-      // Inner core
-      final corePath = Path()
-        ..moveTo(base.$1, base.$2 - rBasePx * 0.52)
-        ..quadraticBezierTo(mid.$1, mid.$2 - rBasePx * 0.42, tip.$1 * 0.72 + base.$1 * 0.28, mid.$2 * 0.6 + tip.$2 * 0.4)
-        ..quadraticBezierTo(mid.$1, mid.$2 + rBasePx * 0.42, base.$1, base.$2 + rBasePx * 0.52)
+      // Layer 2: Luminous Plume Body (white-cyan -> gold-orange tail)
+      final plumePath = Path()
+        ..moveTo(base.$1, base.$2 - rBasePx * 0.65)
+        ..quadraticBezierTo(
+          mid.$1,
+          mid.$2 - rBasePx * 0.48,
+          tip.$1,
+          tip.$2 - (tel.isTipOpen ? rBasePx * 0.25 : 2),
+        )
+        ..lineTo(tip.$1, tip.$2 + (tel.isTipOpen ? rBasePx * 0.25 : 2))
+        ..quadraticBezierTo(
+          mid.$1,
+          mid.$2 + rBasePx * 0.48,
+          base.$1,
+          base.$2 + rBasePx * 0.65,
+        )
         ..close();
 
       canvas.drawPath(
-        corePath,
+        plumePath,
         Paint()
-          ..color = innerColor
-          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4),
+          ..shader = ui.Gradient.linear(
+            Offset(base.$1, base.$2),
+            Offset(tip.$1, tip.$2),
+            [coreColor, const Color(0xFFBAE6FD), tailColor, tailColor.withValues(alpha: 0.0)],
+            [0.0, 0.28, 0.72, 1.0],
+          )
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6),
       );
 
-      // Liftoff ring if H_L > 1.0mm
+      // Layer 3: Mach Shock Diamonds / Standing Nodes along centerline
+      const nodes = 5;
+      for (int k = 0; k < nodes; k++) {
+        final frac = 0.08 + k * 0.19;
+        final nx = x0 + flameLen * frac;
+        final ny = buoyCurve * (frac * frac) +
+            0.025 * math.sin(time * 10.0 - k * 1.4);
+        final np = _project(nx, ny, 0, size);
+        final nodeRx = rBasePx * (0.62 - frac * 0.34);
+        final nodeRy = rBasePx * (0.46 - frac * 0.26);
+        final nodeColor = k < 2
+            ? Colors.white
+            : Color.lerp(const Color(0xFFFEF08A), tailColor, (k - 1) / 3.0)!;
+        canvas.drawOval(
+          Rect.fromCenter(
+            center: Offset(np.$1, np.$2),
+            width: nodeRx * 2.2,
+            height: nodeRy * 1.7,
+          ),
+          Paint()
+            ..color = nodeColor.withValues(alpha: 0.88 - frac * 0.35)
+            ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 7),
+        );
+      }
+
+      // Layer 4: Lifted Triple-Flame Crescent Ring if H_L > 1.0mm
       if (tel.liftoffMm > 1.0) {
         canvas.drawOval(
           Rect.fromCenter(
             center: Offset(base.$1, base.$2),
-            width: 8,
-            height: rBasePx * 1.9,
+            width: 10,
+            height: rBasePx * 1.65,
           ),
           Paint()
-            ..color = const Color(0xFF38BDF8).withValues(alpha: 0.75)
+            ..color = const Color(0xFF7DD3FC).withValues(alpha: 0.9)
             ..style = PaintingStyle.stroke
-            ..strokeWidth = 2.0,
+            ..strokeWidth = 2.6
+            ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2),
         );
       }
     }
 
-    // Soot / SiO2 particles
-    if (tel.soot > 0.25 || fuelIdx == 1) {
+    // 4. Soot / SiO2 Particles
+    if (tel.soot > 0.20 || fuelIdx == 1) {
       final pColor = fuelIdx == 1
-          ? Colors.white.withValues(alpha: 0.65)
-          : const Color(0xFFF59E0B).withValues(alpha: 0.55);
+          ? Colors.white.withValues(alpha: 0.72)
+          : const Color(0xFFFBBF24).withValues(alpha: 0.72);
       final pPaint = Paint()..color = pColor;
-      for (int i = 0; i < 14; i++) {
-        final phase = ((time * 0.8 + i * 0.17) % 1.0);
-        final px = 0.2 + liftoffX + phase * (flameLen + 0.45);
-        final py = buoyCurve * phase + math.sin(i * 2.1 + time * 3) * 0.14;
-        final pt = _project(px, py, 0, size);
-        canvas.drawCircle(Offset(pt.$1, pt.$2), 1.8, pPaint);
+      for (int i = 0; i < 18; i++) {
+        final phase = ((time * 0.75 + i * 0.13) % 1.0);
+        final px = 0.25 + liftoffX + phase * (flameLen + 0.55);
+        final py = buoyCurve * (phase * phase) +
+            math.sin(i * 2.3 + time * 3.5) * 0.16;
+        final pt = _project(px, py, math.cos(i * 1.7) * 0.12, size);
+        canvas.drawCircle(Offset(pt.$1, pt.$2), 2.0, pPaint);
       }
     }
+
+    // 5. Bottom-left 3D Axis Gizmo (+Y BUOY, +X FLOW, +Z)
+    _drawAxisGizmo(canvas, size);
+  }
+
+  void _drawAxisGizmo(Canvas canvas, Size size) {
+    const ox = 28.0;
+    final oy = size.height - 24.0;
+    canvas.drawLine(
+      Offset(ox, oy),
+      Offset(ox, oy - 22),
+      Paint()
+        ..color = const Color(0xFF22C55E)
+        ..strokeWidth = 1.8,
+    );
+    canvas.drawLine(
+      Offset(ox, oy),
+      Offset(ox + 22, oy),
+      Paint()
+        ..color = const Color(0xFFEF4444)
+        ..strokeWidth = 1.8,
+    );
+    canvas.drawLine(
+      Offset(ox, oy),
+      Offset(ox + 10, oy + 8),
+      Paint()
+        ..color = const Color(0xFF38BDF8)
+        ..strokeWidth = 1.6,
+    );
+
+    void label(String txt, Offset pos, Color col) {
+      final tp = TextPainter(
+        text: TextSpan(
+          text: txt,
+          style: TextStyle(
+            color: col,
+            fontSize: 9,
+            fontWeight: FontWeight.w700,
+            fontFamily: 'monospace',
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      tp.paint(canvas, pos);
+    }
+
+    label('+Y (BUOY)', Offset(ox + 4, oy - 24), const Color(0xFF4ADE80));
+    label('+Z +X (FLOW)', Offset(ox + 6, oy + 2), const Color(0xFFF87171));
   }
 
   @override
