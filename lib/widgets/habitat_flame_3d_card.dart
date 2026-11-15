@@ -1,29 +1,30 @@
 import 'dart:math' as math;
 import 'dart:ui' as ui;
+
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import '../app/i18n.dart';
+
 import '../data/flame_3d_physics.dart';
 
-/// ============================================================================
-/// WIDGET EMBEBIBLE DISEÑADO CON EL TEMA EXACTO DE "HABITAT FIRE ATLAS"
-/// Integra el análisis completo de los 26 programas de combustión de NASA PSI:
-/// - Propulsor 3D Aeroespacial Sólido Sombreado (Cabezal TVC, Colector, Garganta M=1,
-///   Campana De Laval con canales regenerativos, aros rígidos y tuberías LOX/Fuel)
-/// - Transición morfológica continua: Esfera de Difusión 0g (ACME s-Flame PSI-23) <->
-///   Cono de Capa Límite / Chorro Supersónico (BASS / SAFFIRE / SPICE)
-/// - Desprendimiento Tri-Braquial (Liftoff H_L en CLD PSI-21 / SLICE PSI-106) y Blowoff (Da < 1)
-/// - Apertura Radiativa de Punta (Tip-Opening Soot Wings en SPICE PSI-107) y Humo SAME (CMD μm)
-/// - Inestabilidad Pulsante Difusivo-Térmica por Número de Lewis (Le > 1 en Ar / PSI-23)
-/// - Régimen de Llama Fría NTC de 2 Etapas (Formaldehído Excitado HCHO* 665K en FLEX-2 / CFI)
-/// ============================================================================
+/// Interactive Multi-Regime 3D Combustion & NASA PSI Atlas Panel.
+/// Includes 36 NASA PSI presets, 4 reactive KPIs, 4 atmosphere/gravity sliders,
+/// 3 categorized dropdowns, 3D De Laval Thruster & Multi-Regime Flame Canvas,
+/// Dual Telemetry HUD, 4 camera presets, and 2 live `fl_chart` plots.
 class HabitatFlame3DCard extends StatefulWidget {
   final double o2Percent;
   final double pressurePsi;
   final double forcedFlowCmS;
   final double gravityG;
   final String materialName;
-  final String diluentGas; // 'N2', 'CO2', 'He', 'Ar'
+  final String diluentGas;
+  final void Function({
+    double? o2Percent,
+    double? pressurePsi,
+    double? forcedFlowCmS,
+    double? gravityG,
+    String? materialName,
+  })? onSyncConditions;
 
   const HabitatFlame3DCard({
     super.key,
@@ -33,6 +34,7 @@ class HabitatFlame3DCard extends StatefulWidget {
     required this.gravityG,
     this.materialName = 'PMMA',
     this.diluentGas = 'N2',
+    this.onSyncConditions,
   });
 
   @override
@@ -41,275 +43,741 @@ class HabitatFlame3DCard extends StatefulWidget {
 
 class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
     with SingleTickerProviderStateMixin {
-  late final Ticker _ticker;
+  static const _bgCard = Color(0xFF141820);
+  static const _bgPanel = Color(0xFF11151E);
+  static const _bgInner = Color(0xFF0A0D14);
+  static const _border = Color(0xFF232834);
+  static const _accentRed = Color(0xFFE53935);
+  static const _accentCyan = Color(0xFF38BDF8);
+  static const _accentAmber = Color(0xFFF59E0B);
+  static const _accentGreen = Color(0xFF10B981);
+  static const _accentPurple = Color(0xFFA855F7);
 
+  Ticker? _ticker;
   double _time = 0.0;
-  double _camYaw = 0.24;
-  double _camPitch = 0.16;
-  final double _camDist = 2.20;
-  bool _autoRotate = true;
-  bool _coolFlameMode = false;
 
-  double _rProb = 0.9;
-  double _rO2 = 30.0;
-  double _rFlow = 5.0;
-  double _rGrav = 0.166;
-  double _rSoot = 0.3;
+  // Interactive simulation state (synced with parent props on change)
+  late double _o2Pct;
+  late double _pressPsi;
+  late double _flowCmS;
+  late double _gravG;
+  late int _fuelIdx;
+  late String _diluentKey;
+  String _selectedPreset = 'CUSTOM';
+  int? _selectedExpIndex;
+  bool _forceCoolFlame = false;
 
-  int get _fuelIdx {
-    final m = widget.materialName.toLowerCase();
-    if (m.contains('cotton') || m.contains('sibal')) return 3;
-    if (m.contains('silicone')) return 1;
-    if (m.contains('heptane') || m.contains('decane') || m.contains('droplet')) return 2;
-    if (m.contains('ethylene') || m.contains('methane') || m.contains('jet')) return 4;
-    if (m.contains('nomex') || m.contains('aramid')) return 5;
-    return 0; // PMMA
-  }
+  // 3D camera controls
+  double _yaw = 0.35;
+  double _pitch = 0.22;
+  double _zoom = 1.0;
+  bool _autoOrbit = true;
+  int _camMode = 3; // 0: Cool NTC, 1: 0g Top, 2: Nozzle Profile, 3: 3D Orbit
 
   @override
   void initState() {
     super.initState();
-    final isTest = WidgetsBinding.instance.runtimeType.toString().contains('Test');
-    _ticker = createTicker((elapsed) {
-      final res = _evalCurrent();
-      const k = 0.10;
-      setState(() {
-        _time = elapsed.inMilliseconds / 1000.0;
-        _rProb += (res.burnProb - _rProb) * k;
-        _rO2   += (widget.o2Percent - _rO2) * k;
-        _rFlow += (widget.forcedFlowCmS - _rFlow) * k;
-        _rGrav += (widget.gravityG - _rGrav) * k;
-        _rSoot += (res.sootLevel - _rSoot) * k;
-        if (_autoRotate) {
-          _camYaw = 0.26 * math.sin(_time * 0.65);
-          _camPitch = 0.16 + 0.07 * math.cos(_time * 0.50);
-        }
-      });
-    });
+    _syncFromWidget(initial: true);
+    final isTest =
+        WidgetsBinding.instance.runtimeType.toString().contains('Test');
     if (!isTest) {
-      _ticker.start();
+      _ticker = createTicker((elapsed) {
+        if (!mounted) return;
+        setState(() {
+          _time = elapsed.inMilliseconds / 1000.0;
+          if (_autoOrbit) {
+            _yaw += 0.004;
+          }
+        });
+      });
+      _ticker?.start();
     }
   }
 
-  FlamePhysicsResult _evalCurrent() {
-    final pressureKpa = widget.pressurePsi * 6.89476;
-    return FirestormPhysicsEngine.evaluate(
-      o2Pct: widget.o2Percent,
-      pressureKpa: pressureKpa,
-      flowCmS: widget.forcedFlowCmS,
-      gravityG: widget.gravityG,
-      fuelIdx: _fuelIdx > 3 ? 0 : _fuelIdx,
-      forceCoolFlame: _coolFlameMode,
-    );
+  void _syncFromWidget({bool initial = false}) {
+    _o2Pct = widget.o2Percent.clamp(12.5, 45.0);
+    _pressPsi = widget.pressurePsi.clamp(4.3, 44.1);
+    _flowCmS = widget.forcedFlowCmS.clamp(0.0, 45.0);
+    _gravG = widget.gravityG.clamp(-2.0, 2.0);
+    _fuelIdx = _mapMaterialToFuelIdx(widget.materialName);
+    _diluentKey = FirestormPhysicsEngine.diluentProps.containsKey(widget.diluentGas)
+        ? widget.diluentGas
+        : 'N2';
+    if (initial) {
+      _selectedPreset = _detectPreset(_o2Pct, _pressPsi, _flowCmS, _gravG);
+    }
+  }
+
+  int _mapMaterialToFuelIdx(String matName) {
+    final lower = matName.toLowerCase();
+    if (lower.contains('silicone')) return 1;
+    if (lower.contains('heptane')) return 2;
+    if (lower.contains('cotton') || lower.contains('sibal')) return 3;
+    if (lower.contains('ethylene') || lower.contains('methane') || lower.contains('c2h4')) return 4;
+    if (lower.contains('nomex') || lower.contains('aramid')) return 5;
+    return 0;
+  }
+
+  String _mapFuelIdxToAppMaterial(int idx) {
+    switch (idx) {
+      case 1:
+        return 'silicone';
+      case 3:
+        return 'cotton-fiberglass fabric';
+      case 5:
+        return 'aramid fabric';
+      default:
+        return 'PMMA';
+    }
+  }
+
+  String _detectPreset(double o2, double psi, double flow, double g) {
+    if ((g - 0.0).abs() < 0.01 && (o2 - 21.0).abs() < 0.5) return 'ISS';
+    if ((g - 0.166).abs() < 0.02 && (o2 - 34.0).abs() < 0.5) return 'LUNAR';
+    if ((g - 0.38).abs() < 0.03) return 'MARS';
+    if ((g - 1.0).abs() < 0.05) return 'EARTH';
+    return 'CUSTOM';
+  }
+
+  @override
+  void didUpdateWidget(covariant HabitatFlame3DCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.o2Percent != widget.o2Percent ||
+        oldWidget.pressurePsi != widget.pressurePsi ||
+        oldWidget.forcedFlowCmS != widget.forcedFlowCmS ||
+        oldWidget.gravityG != widget.gravityG ||
+        oldWidget.materialName != widget.materialName ||
+        oldWidget.diluentGas != widget.diluentGas) {
+      setState(() {
+        _syncFromWidget();
+        _selectedPreset = _detectPreset(_o2Pct, _pressPsi, _flowCmS, _gravG);
+        _selectedExpIndex = null;
+      });
+    }
   }
 
   @override
   void dispose() {
-    _ticker.dispose();
+    _ticker?.dispose();
     super.dispose();
+  }
+
+  void _notifyParent() {
+    widget.onSyncConditions?.call(
+      o2Percent: _o2Pct,
+      pressurePsi: _pressPsi,
+      forcedFlowCmS: _flowCmS,
+      gravityG: _gravG,
+      materialName: _mapFuelIdxToAppMaterial(_fuelIdx),
+    );
+  }
+
+  void _applyHabitatPreset(String preset) {
+    setState(() {
+      _selectedPreset = preset;
+      _selectedExpIndex = null;
+      _forceCoolFlame = false;
+      switch (preset) {
+        case 'ISS':
+          _o2Pct = 21.0;
+          _pressPsi = 14.7;
+          _flowCmS = 10.0;
+          _gravG = 0.0;
+          _diluentKey = 'N2';
+          break;
+        case 'LUNAR':
+          _o2Pct = 34.0;
+          _pressPsi = 8.2;
+          _flowCmS = 18.0;
+          _gravG = 0.166;
+          _diluentKey = 'N2';
+          break;
+        case 'MARS':
+          _o2Pct = 34.0;
+          _pressPsi = 8.2;
+          _flowCmS = 12.0;
+          _gravG = 0.38;
+          _diluentKey = 'N2';
+          break;
+        case 'EARTH':
+          _o2Pct = 21.0;
+          _pressPsi = 14.7;
+          _flowCmS = 5.0;
+          _gravG = 1.0;
+          _diluentKey = 'N2';
+          break;
+        case 'VAC_HYPOXIC':
+          _o2Pct = 15.2;
+          _pressPsi = 6.0;
+          _flowCmS = 1.5;
+          _gravG = 0.0;
+          _diluentKey = 'N2';
+          break;
+        case 'HYPER_O2':
+          _o2Pct = 42.0;
+          _pressPsi = 30.0;
+          _flowCmS = 22.0;
+          _gravG = 1.0;
+          _diluentKey = 'N2';
+          break;
+        case 'INVERTED_G':
+          _o2Pct = 24.0;
+          _pressPsi = 14.7;
+          _flowCmS = 8.0;
+          _gravG = -1.0;
+          _diluentKey = 'N2';
+          break;
+        case 'CENTRIFUGE_2G':
+          _o2Pct = 26.0;
+          _pressPsi = 18.0;
+          _flowCmS = 14.0;
+          _gravG = 2.0;
+          _diluentKey = 'N2';
+          break;
+      }
+    });
+    _notifyParent();
+  }
+
+  void _applyNasaExperiment(int idx) {
+    final exp = nasaPsiExperiments[idx];
+    setState(() {
+      _selectedExpIndex = idx;
+      _selectedPreset = 'CUSTOM';
+      _o2Pct = exp.o2.clamp(12.5, 45.0);
+      _pressPsi = (exp.pKpa / 6.89476).clamp(4.3, 44.1);
+      _flowCmS = exp.flow.clamp(0.0, 45.0);
+      _gravG = exp.g.clamp(-2.0, 2.0);
+      _fuelIdx = exp.mat;
+      _diluentKey = exp.diluent;
+      _forceCoolFlame = exp.out == 'cool';
+      if (_forceCoolFlame) {
+        _camMode = 0;
+        _autoOrbit = false;
+        _yaw = 0.0;
+        _pitch = 0.12;
+      }
+    });
+    _notifyParent();
   }
 
   @override
   Widget build(BuildContext context) {
-    final res = _evalCurrent();
-    final pressKpa = widget.pressurePsi * 6.89476;
-    final absGrav = widget.gravityG.abs();
-    final uBuoyMag = 26.2 * math.sqrt(absGrav) * math.pow(pressKpa / 101.3, 0.35);
-    final uBuoy = (widget.gravityG >= 0 ? 1.0 : -1.0) * uBuoyMag;
-    final effVel = math.sqrt(widget.forcedFlowCmS * widget.forcedFlowCmS + uBuoyMag * uBuoyMag);
-
-    // Propiedades del diluyente (N2, CO2, He, Ar)
-    final alphaFactor = widget.diluentGas == 'He' ? 2.65 : (widget.diluentGas == 'CO2' ? 0.78 : 1.0);
-    final leFactor = widget.diluentGas == 'He' ? 1.48 : (widget.diluentGas == 'Ar' ? 1.32 : (widget.diluentGas == 'CO2' ? 0.86 : 1.0));
-    final lewisNumber = 1.08 * leFactor * (1.0 + math.max(0.0, 2.0 - effVel) * 0.06);
-
-    final tauFlow = 14.5 / math.max(0.7, effVel * alphaFactor);
-    final tauChem = 1.12 * math.pow(20.9 / math.max(10.0, widget.o2Percent), 2.1) * math.pow(101.3 / pressKpa, 0.75);
-    final damkohler = tauFlow / tauChem;
-
-    final strainRatio = widget.forcedFlowCmS / math.max(12.0, 22.0 + (widget.o2Percent - 18.0) * 1.15);
-    final liftoffMm = math.max(0.0, (strainRatio - 0.52) * 26.0 + math.max(0.0, (18.5 - widget.o2Percent) * 0.85));
-    final sootPpm = res.sootLevel * 3.40;
-    final isTipOpen = !res.isCoolFlame && res.burnProb >= 0.25 && sootPpm > 1.35;
-    final isPulsating = !res.isCoolFlame && res.burnProb >= 0.14 && ((res.burnProb < 0.42 && lewisNumber > 1.05) || widget.diluentGas == 'Ar');
-    final smokeCmdUm = res.burnProb >= 0.20 ? (0.36 * (0.75 + 0.65 * res.sootLevel) * math.pow(pressKpa / 101.3, 0.4)) : 0.0;
-    final expRatio = (101.3 / pressKpa) * (1.0 + (widget.forcedFlowCmS / 25.0) * 0.65 + (widget.o2Percent / 30.0) * 0.35);
-
-    final isCritical = res.burnProb >= 0.70;
-    final isExtinct = res.burnProb < 0.20 && !res.isCoolFlame;
+    final tel = FirestormPhysicsEngine.evaluateFull(
+      o2Pct: _o2Pct,
+      pressurePsi: _pressPsi,
+      flowCmS: _flowCmS,
+      gravityG: _gravG,
+      fuelIdx: _fuelIdx,
+      diluentKey: _diluentKey,
+      forceCoolFlame: _forceCoolFlame,
+    );
 
     return Container(
-      height: 440,
       decoration: BoxDecoration(
-        color: const Color(0xFF16191E),
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: const Color(0xFF2D333B), width: 1),
+        color: _bgCard,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: _border),
+      ),
+      padding: const EdgeInsets.all(14),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _buildExperimentBar(tel),
+          const SizedBox(height: 12),
+          _buildKpiGrid(tel),
+          const SizedBox(height: 14),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final wide = constraints.maxWidth >= 820;
+              final controlsPanel = _buildControlsPanel(tel);
+              final viewportPanel = _buildViewportCard(tel);
+              if (wide) {
+                return Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(width: 335, child: controlsPanel),
+                    const SizedBox(width: 14),
+                    Expanded(child: viewportPanel),
+                  ],
+                );
+              }
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  viewportPanel,
+                  const SizedBox(height: 14),
+                  controlsPanel,
+                ],
+              );
+            },
+          ),
+          const SizedBox(height: 14),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final wide = constraints.maxWidth >= 760;
+              final chart1 = _buildPBurnChart(tel);
+              final chart2 = _buildSpreadChart(tel);
+              if (wide) {
+                return Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(child: chart1),
+                    const SizedBox(width: 14),
+                    Expanded(child: chart2),
+                  ],
+                );
+              }
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  chart1,
+                  const SizedBox(height: 12),
+                  chart2,
+                ],
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildExperimentBar(Flame3DTelemetry tel) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+      decoration: BoxDecoration(
+        color: _bgPanel,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: _border),
+      ),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final isNarrow = constraints.maxWidth < 600;
+          final dropdown = _buildStyledDropdown<int?>(
+            value: _selectedExpIndex,
+            hint: 'Seleccionar experimento NASA PSI (36 disponibles)...',
+            items: [
+              const DropdownMenuItem<int?>(
+                value: null,
+                child: Text(
+                  'Modo libre — ajustado por controles / hábitat',
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              for (int i = 0; i < nasaPsiExperiments.length; i++)
+                DropdownMenuItem<int?>(
+                  value: i,
+                  child: Text(
+                    '${nasaPsiExperiments[i].id} · ${nasaPsiExperiments[i].study} (${nasaPsiExperiments[i].o2.toStringAsFixed(1)}% O2, ${nasaPsiExperiments[i].g}g)',
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+            ],
+            onChanged: (val) {
+              if (val != null) _applyNasaExperiment(val);
+            },
+          );
+
+          final badge = Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+            decoration: BoxDecoration(
+              color: _accentCyan.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(7),
+              border: Border.all(color: _accentCyan.withValues(alpha: 0.35)),
+            ),
+            child: Text(
+              'NEAREST: ${tel.bestExp.id} (${tel.bestExp.out.toUpperCase()})',
+              style: const TextStyle(
+                color: _accentCyan,
+                fontSize: 11,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 0.6,
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          );
+
+          if (isNarrow) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Text(
+                  'LOAD NASA PSI EXPERIMENT (36 PRESETS)',
+                  style: TextStyle(
+                    color: Color(0xFF94A3B8),
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.0,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                dropdown,
+                const SizedBox(height: 8),
+                badge,
+              ],
+            );
+          }
+
+          return Row(
+            children: [
+              const Text(
+                'NASA PSI:',
+                style: TextStyle(
+                  color: Color(0xFF94A3B8),
+                  fontSize: 10.5,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.0,
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(child: dropdown),
+              const SizedBox(width: 10),
+              badge,
+            ],
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildKpiGrid(Flame3DTelemetry tel) {
+    final probPct = (tel.prob * 100).round();
+    final probColor = tel.isCool
+        ? _accentPurple
+        : (probPct >= 65
+            ? _accentRed
+            : (probPct >= 35 ? _accentAmber : _accentGreen));
+    final margin = _o2Pct - tel.mocActual;
+
+    final cards = [
+      _kpiCard(
+        title: 'P(BURN) · MODEL v2.2',
+        value: '$probPct%',
+        subtitle: '${tel.regime} · ROC 0.9947',
+        accent: probColor,
+      ),
+      _kpiCard(
+        title: 'SPREAD / REGRESSION',
+        value: '${tel.spread.toStringAsFixed(2)} mm/s',
+        subtitle: 'T_f ${tel.tempK.round()} K · B ${tel.bNumber.toStringAsFixed(2)}',
+        accent: _accentAmber,
+      ),
+      _kpiCard(
+        title: 'FLAMMABILITY LIMIT (MOC)',
+        value: '${tel.mocActual.toStringAsFixed(1)}% O₂',
+        subtitle: 'Margin ${margin >= 0 ? '+' : ''}${margin.toStringAsFixed(1)}% · Le ${tel.lewisNumber.toStringAsFixed(2)}',
+        accent: margin >= 0 ? _accentRed : _accentGreen,
+      ),
+      _kpiCard(
+        title: 'MIXED FLOW & SOOT',
+        value: '${tel.effVel.toStringAsFixed(1)} cm/s',
+        subtitle: 'u_b ${tel.uBuoy >= 0 ? '+' : ''}${tel.uBuoy.toStringAsFixed(1)} · Soot ${tel.sootPpm.toStringAsFixed(1)} ppm',
+        accent: _accentCyan,
+      ),
+    ];
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth >= 720) {
+          return Row(
+            children: [
+              for (int i = 0; i < cards.length; i++) ...[
+                Expanded(child: cards[i]),
+                if (i < cards.length - 1) const SizedBox(width: 10),
+              ],
+            ],
+          );
+        }
+        return Column(
+          children: [
+            Row(
+              children: [
+                Expanded(child: cards[0]),
+                const SizedBox(width: 8),
+                Expanded(child: cards[1]),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                Expanded(child: cards[2]),
+                const SizedBox(width: 8),
+                Expanded(child: cards[3]),
+              ],
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _kpiCard({
+    required String title,
+    required String value,
+    required String subtitle,
+    required Color accent,
+  }) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 10),
+      decoration: BoxDecoration(
+        color: _bgPanel,
+        borderRadius: BorderRadius.circular(9),
+        border: Border.all(color: accent.withValues(alpha: 0.35)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              color: Color(0xFF94A3B8),
+              fontSize: 9.5,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.7,
+            ),
+            overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(height: 4),
+          Text(
+            value,
+            style: TextStyle(
+              color: accent,
+              fontSize: 18,
+              fontWeight: FontWeight.w800,
+            ),
+            overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(height: 2),
+          Text(
+            subtitle,
+            style: const TextStyle(
+              color: Color(0xFFCBD5E1),
+              fontSize: 10.5,
+            ),
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildControlsPanel(Flame3DTelemetry tel) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: _bgPanel,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: _border),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 11, 16, 9),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      tr(
-                        '3D REGENERATIVE DE LAVAL THRUSTER & MULTI-REGIME CONE · NASA PSI',
-                        'PROPULSOR DE LAVAL REGENERATIVO 3D Y CONO MULTIRRÉGIMEN · NASA PSI',
-                      ),
-                      style: const TextStyle(
-                        color: Color(0xFFB0BEC5),
-                        fontSize: 10,
-                        letterSpacing: 1.3,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    const SizedBox(height: 3),
-                    Text(
-                      res.regimeName.toUpperCase(),
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ],
-                  ),
-                ),
-                const SizedBox(width: 8),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: isExtinct
-                        ? const Color(0xFF2E7D32)
-                        : (res.isCoolFlame
-                            ? const Color(0xFF6D28D9)
-                            : (isCritical ? const Color(0xFFE51937) : const Color(0xFFD97706))),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Text(
-                    isExtinct
-                        ? tr('QUENCHED', 'APAGADA')
-                        : (res.isCoolFlame
-                            ? tr('COOL FLAME NTC', 'LLAMA FRÍA NTC')
-                            : (isPulsating
-                                ? tr('LEWIS PULSATING', 'PULSANTE (LEWIS)')
-                                : (liftoffMm > 4.0
-                                    ? tr('LIFTED TRIPLE-FLAME', 'LLAMA TRIPLE DESPEGADA')
-                                    : tr('SUSTAINED CONE BURN', 'COMBUSTIÓN EN CONO SOSTENIDA')))),
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 9.5,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 1.0,
-                    ),
-                  ),
-                ),
-              ],
+          const Text(
+            'SIMULATION CONTROLS · MULTI-REGIME',
+            style: TextStyle(
+              color: Color(0xFFE2E8F0),
+              fontSize: 11,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.9,
             ),
           ),
-          const Divider(height: 1, color: Color(0xFF2D333B)),
-          Expanded(
-            child: Stack(
-              children: [
-                Positioned.fill(
-                  child: GestureDetector(
-                    onPanStart: (_) => _autoRotate = false,
-                    onPanUpdate: (d) {
-                      setState(() {
-                        _camYaw -= d.delta.dx * 0.01;
-                        _camPitch = (_camPitch + d.delta.dy * 0.01).clamp(-1.3, 1.3);
-                      });
-                    },
-                    child: CustomPaint(
-                      painter: _RealisticThruster3DPainter(
-                        time: _time,
-                        camYaw: _camYaw,
-                        camPitch: _camPitch,
-                        camDist: _camDist,
-                        burnProb: _rProb,
-                        o2: _rO2,
-                        flow: _rFlow,
-                        gravity: _rGrav,
-                        effVel: effVel,
-                        uBuoy: uBuoy,
-                        soot: _rSoot,
-                        tempK: res.tempK,
-                        expRatio: expRatio,
-                        liftoffMm: liftoffMm,
-                        isTipOpen: isTipOpen,
-                        isPulsating: isPulsating,
-                        isSilicone: _fuelIdx == 1,
-                        coolFlame: _coolFlameMode ? 1.0 : 0.0,
-                      ),
-                    ),
-                  ),
+          const SizedBox(height: 10),
+          _buildSliderRow(
+            label: 'OXYGEN (O₂ %)',
+            valueText: '${_o2Pct.toStringAsFixed(1)} %',
+            value: _o2Pct,
+            min: 12.5,
+            max: 45.0,
+            activeColor: _accentRed,
+            onChanged: (v) {
+              setState(() {
+                _o2Pct = v;
+                _selectedPreset = 'CUSTOM';
+                _selectedExpIndex = null;
+              });
+              _notifyParent();
+            },
+          ),
+          _buildSliderRow(
+            label: 'PRESSURE (psi / kPa)',
+            valueText: '${_pressPsi.toStringAsFixed(1)} psi (${(_pressPsi * 6.89476).round()} kPa)',
+            value: _pressPsi,
+            min: 4.3,
+            max: 44.1,
+            activeColor: _accentAmber,
+            onChanged: (v) {
+              setState(() {
+                _pressPsi = v;
+                _selectedPreset = 'CUSTOM';
+                _selectedExpIndex = null;
+              });
+              _notifyParent();
+            },
+          ),
+          _buildSliderRow(
+            label: 'FORCED FLOW (HVAC cm/s)',
+            valueText: '${_flowCmS.toStringAsFixed(1)} cm/s',
+            value: _flowCmS,
+            min: 0.0,
+            max: 45.0,
+            activeColor: _accentCyan,
+            onChanged: (v) {
+              setState(() {
+                _flowCmS = v;
+                _selectedPreset = 'CUSTOM';
+                _selectedExpIndex = null;
+              });
+              _notifyParent();
+            },
+          ),
+          _buildSliderRow(
+            label: 'GRAVITY ACCEL (g)',
+            valueText: '${_gravG >= 0 ? '+' : ''}${_gravG.toStringAsFixed(3)} g',
+            value: _gravG,
+            min: -2.0,
+            max: 2.0,
+            activeColor: _gravG < 0 ? _accentPurple : _accentGreen,
+            onChanged: (v) {
+              setState(() {
+                _gravG = v;
+                _selectedPreset = 'CUSTOM';
+                _selectedExpIndex = null;
+              });
+              _notifyParent();
+            },
+          ),
+          const Divider(color: _border, height: 18),
+          _dropdownLabel('1. HABITAT / GRAVITY PRESET'),
+          const SizedBox(height: 5),
+          _buildStyledDropdown<String>(
+            value: _selectedPreset,
+            items: const [
+              DropdownMenuItem(value: 'CUSTOM', child: Text('Custom / Slider Conditions', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'ISS', child: Text('ISS Destiny (0.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'LUNAR', child: Text('Lunar Artemis SEA (0.166g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'MARS', child: Text('Mars Habitat (0.38g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'EARTH', child: Text('Earth Sea Level (1.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'VAC_HYPOXIC', child: Text('Hypoxic Extinguish (0.0g · 15.2% O2 · 6 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'HYPER_O2', child: Text('Hyperbaric Enriched (1.0g · 42% O2 · 30 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'INVERTED_G', child: Text('Inverted Gravity (-1.0g · Downward Buoyancy)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'CENTRIFUGE_2G', child: Text('Hypergravity Centrifuge (+2.0g · 26% O2)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            ],
+            onChanged: (v) {
+              if (v != null && v != 'CUSTOM') _applyHabitatPreset(v);
+            },
+          ),
+          const SizedBox(height: 10),
+          _dropdownLabel('2. DILUENT GAS'),
+          const SizedBox(height: 5),
+          _buildStyledDropdown<String>(
+            value: _diluentKey,
+            items: const [
+              DropdownMenuItem(value: 'N2', child: Text('N₂ — Nitrogen (Standard Cabin)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'CO2', child: Text('CO₂ — Carbon Dioxide (Radiative Reabsorption)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'He', child: Text('He — Helium (High Thermal Diffusivity)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'Ar', child: Text('Ar — Argon (Low Cp · High Temp)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            ],
+            onChanged: (v) {
+              if (v != null) {
+                setState(() {
+                  _diluentKey = v;
+                  _selectedExpIndex = null;
+                });
+              }
+            },
+          ),
+          const SizedBox(height: 10),
+          _dropdownLabel('3. FUEL SPECIMEN & BURNER FAMILY'),
+          const SizedBox(height: 5),
+          _buildStyledDropdown<int>(
+            value: _fuelIdx,
+            items: [
+              for (final entry in FirestormPhysicsEngine.fuelProps.entries)
+                DropdownMenuItem(
+                  value: entry.key,
+                  child: Text(entry.value.name, overflow: TextOverflow.ellipsis),
                 ),
-                Positioned(
-                  top: 9,
-                  left: 11,
-                  right: 11,
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF0B0E14).withValues(alpha: 0.88),
-                      border: Border.all(color: const Color(0xFF2D333B)),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: Text(
-                      'T_FLAME: ${res.tempK.round()} K  |  Da: ${damkohler.toStringAsFixed(2)}  |  Le: ${lewisNumber.toStringAsFixed(2)}\n'
-                      '${tr('LIFTOFF', 'DESPEGUE')} H_L: ${liftoffMm.toStringAsFixed(1)} mm  |  ${tr('SOOT', 'HOLLÍN')} f_v: ${sootPpm.toStringAsFixed(2)} ppm (CMD ${smokeCmdUm.toStringAsFixed(2)}μm)',
-                      style: const TextStyle(
-                        color: Color(0xFFB0BEC5),
-                        fontSize: 11.5,
-                        height: 1.45,
-                        fontFamily: 'monospace',
-                      ),
-                    ),
+            ],
+            onChanged: (v) {
+              if (v != null) {
+                setState(() {
+                  _fuelIdx = v;
+                  _selectedExpIndex = null;
+                });
+                _notifyParent();
+              }
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _dropdownLabel(String text) {
+    return Text(
+      text,
+      style: const TextStyle(
+        color: Color(0xFF94A3B8),
+        fontSize: 9.5,
+        fontWeight: FontWeight.w700,
+        letterSpacing: 0.8,
+      ),
+    );
+  }
+
+  Widget _buildSliderRow({
+    required String label,
+    required String valueText,
+    required double value,
+    required double min,
+    required double max,
+    required Color activeColor,
+    required ValueChanged<double> onChanged,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 6),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                child: Text(
+                  label,
+                  style: const TextStyle(
+                    color: Color(0xFFCBD5E1),
+                    fontSize: 10.5,
+                    fontWeight: FontWeight.w600,
                   ),
-                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
-                Positioned(
-                  bottom: 10,
-                  left: 12,
-                  right: 12,
-                  child: Wrap(
-                    alignment: WrapAlignment.end,
-                    spacing: 6,
-                    runSpacing: 6,
-                    children: [
-                      _miniBtn(tr('COOL FLAME NTC', 'LLAMA FRÍA NTC'), _coolFlameMode, () {
-                        setState(() => _coolFlameMode = !_coolFlameMode);
-                      }),
-                      _miniBtn(tr('0g TOP', 'VISTA SUPERIOR 0g'), false, () {
-                        setState(() {
-                          _autoRotate = false;
-                          _camYaw = 0.0;
-                          _camPitch = 1.3;
-                        });
-                      }),
-                      _miniBtn(tr('NOZZLE PROFILE', 'PERFIL DE TOBERA'), false, () {
-                        setState(() {
-                          _autoRotate = false;
-                          _camYaw = 0.0;
-                          _camPitch = 0.05;
-                        });
-                      }),
-                      _miniBtn(tr('3D ORBIT', 'ÓRBITA 3D'), _autoRotate, () {
-                        setState(() => _autoRotate = !_autoRotate);
-                      }),
-                    ],
-                  ),
+              ),
+              Text(
+                valueText,
+                style: TextStyle(
+                  color: activeColor,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w700,
                 ),
-              ],
+              ),
+            ],
+          ),
+          SliderTheme(
+            data: SliderTheme.of(context).copyWith(
+              activeTrackColor: activeColor,
+              inactiveTrackColor: const Color(0xFF252B3B),
+              thumbColor: activeColor,
+              overlayColor: activeColor.withValues(alpha: 0.16),
+              trackHeight: 3.5,
+              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6.5),
+            ),
+            child: Slider(
+              value: value.clamp(min, max),
+              min: min,
+              max: max,
+              onChanged: onChanged,
             ),
           ),
         ],
@@ -317,295 +785,1012 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
     );
   }
 
-  Widget _miniBtn(String label, bool active, VoidCallback onTap) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-        decoration: BoxDecoration(
-          color: active ? const Color(0xFFE51937) : const Color(0xFF0D0F12).withValues(alpha: 0.85),
-          border: Border.all(color: active ? const Color(0xFFE51937) : const Color(0xFF2D333B)),
-          borderRadius: BorderRadius.circular(4),
-        ),
-        child: Text(
-          label,
-          style: TextStyle(
-            color: active ? Colors.white : const Color(0xFFB0BEC5),
-            fontSize: 9.5,
-            fontWeight: FontWeight.w700,
-            letterSpacing: 0.8,
+  Widget _buildStyledDropdown<T>({
+    required T value,
+    required List<DropdownMenuItem<T>> items,
+    required ValueChanged<T?> onChanged,
+    String? hint,
+  }) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+      decoration: BoxDecoration(
+        color: _bgInner,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: _border),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<T>(
+          value: value,
+          isExpanded: true,
+          isDense: true,
+          dropdownColor: _bgPanel,
+          hint: hint != null
+              ? Text(
+                  hint,
+                  style: const TextStyle(color: Color(0xFF94A3B8), fontSize: 12),
+                  overflow: TextOverflow.ellipsis,
+                )
+              : null,
+          style: const TextStyle(
+            color: Color(0xFFE2E8F0),
+            fontSize: 11.5,
+            fontWeight: FontWeight.w500,
           ),
+          iconEnabledColor: const Color(0xFF94A3B8),
+          items: items,
+          onChanged: onChanged,
         ),
+      ),
+    );
+  }
+
+  Widget _buildViewportCard(Flame3DTelemetry tel) {
+    final badgeColor = tel.isCool
+        ? _accentPurple
+        : (tel.prob < 0.35
+            ? _accentGreen
+            : (tel.prob < 0.65 ? _accentAmber : _accentRed));
+
+    return Container(
+      decoration: BoxDecoration(
+        color: _bgPanel,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: _border),
+      ),
+      padding: const EdgeInsets.all(12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              const Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '3D REGENERATIVE DE LAVAL THRUSTER & MULTI-REGIME CONE',
+                      style: TextStyle(
+                        color: Color(0xFF94A3B8),
+                        fontSize: 9.5,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1.0,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(height: 2),
+                    Text(
+                      'MULTI-REGIME COMBUSTION VIEWPORT',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 13.5,
+                        fontWeight: FontWeight.w800,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 8),
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: badgeColor.withValues(alpha: 0.16),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(color: badgeColor.withValues(alpha: 0.5)),
+                  ),
+                  child: Text(
+                    tel.regime,
+                    style: TextStyle(
+                      color: badgeColor,
+                      fontSize: 10.5,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 0.7,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          // 3D Canvas + Dual HUD
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final narrow = constraints.maxWidth < 500;
+              return Container(
+                height: narrow ? 280 : 330,
+                decoration: BoxDecoration(
+                  color: _bgInner,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: _border),
+                ),
+                child: Stack(
+                  children: [
+                    Positioned.fill(
+                      child: GestureDetector(
+                        onPanUpdate: (d) {
+                          setState(() {
+                            _autoOrbit = false;
+                            _yaw += d.delta.dx * 0.01;
+                            _pitch = (_pitch + d.delta.dy * 0.01).clamp(-1.2, 1.2);
+                          });
+                        },
+                        child: CustomPaint(
+                          painter: _MultiRegimeFlamePainter(
+                            time: _time,
+                            yaw: _yaw,
+                            pitch: _pitch,
+                            zoom: _zoom,
+                            o2Pct: _o2Pct,
+                            pressPsi: _pressPsi,
+                            flowCmS: _flowCmS,
+                            gravityG: _gravG,
+                            fuelIdx: _fuelIdx,
+                            diluentKey: _diluentKey,
+                            tel: tel,
+                          ),
+                        ),
+                      ),
+                    ),
+                    // Top-Left HUD: Multi-Regime Combustion Telemetry
+                    Positioned(
+                      top: 8,
+                      left: 8,
+                      child: Container(
+                        constraints: BoxConstraints(
+                          maxWidth: narrow ? constraints.maxWidth - 16 : 265,
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 9, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF0A0D14).withValues(alpha: 0.85),
+                          borderRadius: BorderRadius.circular(7),
+                          border: Border.all(
+                            color: _accentCyan.withValues(alpha: 0.3),
+                          ),
+                        ),
+                        child: Text(
+                          'T_f: ${tel.tempK.round()} K | Da: ${tel.damkohler.toStringAsFixed(2)} | Le: ${tel.lewisNumber.toStringAsFixed(2)}\n'
+                          'Liftoff H_L: ${tel.liftoffMm.toStringAsFixed(1)} mm | Soot: ${tel.sootPpm.toStringAsFixed(1)} ppm\n'
+                          'Rad Loss: ${(tel.radLossFraction * 100).round()}% | L/D: ${tel.aspectLD.toStringAsFixed(2)} | Re: ${tel.reynolds}',
+                          style: const TextStyle(
+                            color: Color(0xFFE2E8F0),
+                            fontSize: 9.8,
+                            height: 1.35,
+                            fontFamily: 'monospace',
+                          ),
+                        ),
+                      ),
+                    ),
+                    // Top-Right HUD (wide only): Matched NASA PSI Experiment
+                    if (!narrow)
+                      Positioned(
+                        top: 8,
+                        right: 8,
+                        child: Container(
+                          constraints: const BoxConstraints(maxWidth: 255),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 9, vertical: 6),
+                          decoration: BoxDecoration(
+                            color:
+                                const Color(0xFF0A0D14).withValues(alpha: 0.85),
+                            borderRadius: BorderRadius.circular(7),
+                            border: Border.all(
+                              color: _accentAmber.withValues(alpha: 0.35),
+                            ),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                'NASA MATCH: ${tel.bestExp.id}',
+                                style: const TextStyle(
+                                  color: _accentAmber,
+                                  fontSize: 9.8,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                              Text(
+                                tel.bestExp.study,
+                                style: const TextStyle(
+                                  color: Color(0xFFE2E8F0),
+                                  fontSize: 9.5,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                textAlign: TextAlign.right,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              Text(
+                                tel.bestExp.desc,
+                                style: const TextStyle(
+                                  color: Color(0xFF94A3B8),
+                                  fontSize: 9,
+                                ),
+                                textAlign: TextAlign.right,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 10),
+          // Active phenomena tags & 4 Camera preset buttons
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final pills = _buildPhenomenaPills(tel);
+              final cams = _buildCameraButtons();
+              if (constraints.maxWidth >= 600) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Flexible(child: pills),
+                    const SizedBox(width: 8),
+                    cams,
+                  ],
+                );
+              }
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  pills,
+                  const SizedBox(height: 8),
+                  cams,
+                ],
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPhenomenaPills(Flame3DTelemetry tel) {
+    final List<(String, Color)> tags = [];
+    if (tel.isCool) tags.add(('NTC COOL FLAME (HCHO*)', _accentPurple));
+    if (tel.isPulsating) tags.add(('LEWIS PULSATING (Le > 1)', _accentAmber));
+    if (tel.isTipOpen) tags.add(('TIP-OPENING SOOT WINGS', _accentAmber));
+    if (tel.liftoffMm > 1.2) tags.add(('LIFTED TRIPLE-FLAME', _accentCyan));
+    if (_gravG.abs() < 0.05) tags.add(('0g DIFFUSION SPHERE', _accentCyan));
+    if (_gravG < -0.05) tags.add(('INVERTED BUOYANCY (-g)', _accentPurple));
+    if (_fuelIdx == 1) tags.add(('SiO₂ ASH SHELL', Colors.white70));
+    if (tags.isEmpty) {
+      tags.add((
+        tel.prob >= 0.45 ? 'ATTACHED CONE BURN' : 'RADIATIVE / BLOWOFF QUENCH',
+        tel.prob >= 0.45 ? _accentRed : _accentGreen,
+      ));
+    }
+
+    return Wrap(
+      spacing: 6,
+      runSpacing: 6,
+      children: [
+        for (final t in tags)
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(
+              color: t.$2.withValues(alpha: 0.14),
+              borderRadius: BorderRadius.circular(5),
+              border: Border.all(color: t.$2.withValues(alpha: 0.45)),
+            ),
+            child: Text(
+              t.$1,
+              style: TextStyle(
+                color: t.$2,
+                fontSize: 9.5,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+
+  Widget _buildCameraButtons() {
+    final defs = [
+      (0, 'COOL FLAME NTC'),
+      (1, '0g TOP'),
+      (2, 'NOZZLE PROFILE'),
+      (3, '3D ORBIT'),
+    ];
+    return Wrap(
+      spacing: 6,
+      runSpacing: 6,
+      children: [
+        for (final d in defs)
+          InkWell(
+            onTap: () {
+              setState(() {
+                _camMode = d.$1;
+                if (d.$1 == 0) {
+                  _forceCoolFlame = !_forceCoolFlame;
+                  _autoOrbit = false;
+                  _yaw = 0.0;
+                  _pitch = 0.15;
+                  _zoom = 1.1;
+                } else if (d.$1 == 1) {
+                  _autoOrbit = false;
+                  _yaw = 0.0;
+                  _pitch = 1.15;
+                  _zoom = 1.05;
+                } else if (d.$1 == 2) {
+                  _autoOrbit = false;
+                  _yaw = 0.0;
+                  _pitch = 0.0;
+                  _zoom = 1.12;
+                } else {
+                  _forceCoolFlame = false;
+                  _autoOrbit = true;
+                  _yaw = 0.35;
+                  _pitch = 0.22;
+                  _zoom = 1.0;
+                }
+              });
+            },
+            borderRadius: BorderRadius.circular(6),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+              decoration: BoxDecoration(
+                color: (_camMode == d.$1 && (d.$1 != 0 || _forceCoolFlame))
+                    ? _accentRed
+                    : const Color(0xFF1A202C),
+                borderRadius: BorderRadius.circular(6),
+                border: Border.all(
+                  color: (_camMode == d.$1 && (d.$1 != 0 || _forceCoolFlame))
+                      ? _accentRed
+                      : _border,
+                ),
+              ),
+              child: Text(
+                d.$2,
+                style: TextStyle(
+                  color: (_camMode == d.$1 && (d.$1 != 0 || _forceCoolFlame))
+                      ? Colors.white
+                      : const Color(0xFFCBD5E1),
+                  fontSize: 9.5,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+
+  // FL_CHART 1: P(burn) U-Curve vs Forced Flow (0..45 cm/s)
+  Widget _buildPBurnChart(Flame3DTelemetry tel) {
+    final List<FlSpot> curveSpots = [];
+    for (int f = 0; f <= 45; f += 2) {
+      final t = FirestormPhysicsEngine.evaluateFull(
+        o2Pct: _o2Pct,
+        pressurePsi: _pressPsi,
+        flowCmS: f.toDouble(),
+        gravityG: _gravG,
+        fuelIdx: _fuelIdx,
+        diluentKey: _diluentKey,
+        forceCoolFlame: false,
+      );
+      curveSpots.add(FlSpot(f.toDouble(), t.prob * 100.0));
+    }
+
+    final List<FlSpot> nasaBurnSpots = [];
+    final List<FlSpot> nasaExtinctSpots = [];
+    for (final exp in nasaPsiExperiments) {
+      if ((exp.o2 - _o2Pct).abs() <= 7.5 && exp.flow <= 45.0) {
+        final y = exp.out == 'extinct' ? 12.0 : 88.0;
+        if (exp.out == 'extinct') {
+          nasaExtinctSpots.add(FlSpot(exp.flow, y));
+        } else {
+          nasaBurnSpots.add(FlSpot(exp.flow, y));
+        }
+      }
+    }
+
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: _bgPanel,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: _border),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'FL_CHART 1 · P(BURN) U-CURVE VS FLOW (0–45 cm/s)',
+            style: TextStyle(
+              color: Color(0xFFE2E8F0),
+              fontSize: 10.5,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.8,
+            ),
+          ),
+          const SizedBox(height: 10),
+          SizedBox(
+            height: 180,
+            child: LineChart(
+              LineChartData(
+                minX: 0,
+                maxX: 45,
+                minY: 0,
+                maxY: 100,
+                gridData: FlGridData(
+                  show: true,
+                  drawVerticalLine: true,
+                  horizontalInterval: 25,
+                  verticalInterval: 10,
+                  getDrawingHorizontalLine: (_) =>
+                      const FlLine(color: Color(0xFF1E2433), strokeWidth: 1),
+                  getDrawingVerticalLine: (_) =>
+                      const FlLine(color: Color(0xFF1E2433), strokeWidth: 1),
+                ),
+                borderData: FlBorderData(
+                  show: true,
+                  border: Border.all(color: _border),
+                ),
+                titlesData: FlTitlesData(
+                  topTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false)),
+                  rightTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false)),
+                  bottomTitles: AxisTitles(
+                    sideTitles: SideTitles(
+                      showTitles: true,
+                      interval: 15,
+                      reservedSize: 22,
+                      getTitlesWidget: (v, _) => Text(
+                        '${v.toInt()}',
+                        style: const TextStyle(
+                            color: Color(0xFF64748B), fontSize: 10),
+                      ),
+                    ),
+                  ),
+                  leftTitles: AxisTitles(
+                    sideTitles: SideTitles(
+                      showTitles: true,
+                      interval: 25,
+                      reservedSize: 30,
+                      getTitlesWidget: (v, _) => Text(
+                        '${v.toInt()}%',
+                        style: const TextStyle(
+                            color: Color(0xFF64748B), fontSize: 9.5),
+                      ),
+                    ),
+                  ),
+                ),
+                extraLinesData: ExtraLinesData(
+                  verticalLines: [
+                    VerticalLine(
+                      x: _flowCmS,
+                      color: _accentCyan.withValues(alpha: 0.7),
+                      strokeWidth: 1.5,
+                      dashArray: [4, 4],
+                    ),
+                  ],
+                  horizontalLines: [
+                    HorizontalLine(
+                      y: 50,
+                      color: Colors.white24,
+                      strokeWidth: 1,
+                      dashArray: [4, 4],
+                    ),
+                  ],
+                ),
+                lineBarsData: [
+                  LineChartBarData(
+                    spots: curveSpots,
+                    isCurved: true,
+                    color: _accentRed,
+                    barWidth: 2.5,
+                    dotData: const FlDotData(show: false),
+                    belowBarData: BarAreaData(
+                      show: true,
+                      color: _accentRed.withValues(alpha: 0.12),
+                    ),
+                  ),
+                  if (nasaBurnSpots.isNotEmpty)
+                    LineChartBarData(
+                      spots: nasaBurnSpots,
+                      barWidth: 0,
+                      color: Colors.transparent,
+                      dotData: FlDotData(
+                        show: true,
+                        getDotPainter: (_, _, _, _) => FlDotCirclePainter(
+                          radius: 3,
+                          color: _accentAmber,
+                          strokeWidth: 0,
+                        ),
+                      ),
+                    ),
+                  if (nasaExtinctSpots.isNotEmpty)
+                    LineChartBarData(
+                      spots: nasaExtinctSpots,
+                      barWidth: 0,
+                      color: Colors.transparent,
+                      dotData: FlDotData(
+                        show: true,
+                        getDotPainter: (_, _, _, _) => FlDotCirclePainter(
+                          radius: 3,
+                          color: _accentGreen,
+                          strokeWidth: 0,
+                        ),
+                      ),
+                    ),
+                  LineChartBarData(
+                    spots: [FlSpot(_flowCmS, tel.prob * 100.0)],
+                    barWidth: 0,
+                    color: Colors.transparent,
+                    dotData: FlDotData(
+                      show: true,
+                      getDotPainter: (_, _, _, _) => FlDotCirclePainter(
+                        radius: 5,
+                        color: _accentCyan,
+                        strokeWidth: 2,
+                        strokeColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // FL_CHART 2: Spread Rate vs O2 (12.5..45%) with MOC & NASA PSI scatter
+  Widget _buildSpreadChart(Flame3DTelemetry tel) {
+    final List<FlSpot> spreadSpots = [];
+    double maxY = 3.5;
+    for (double o2 = 13.0; o2 <= 45.0; o2 += 2.0) {
+      final t = FirestormPhysicsEngine.evaluateFull(
+        o2Pct: o2,
+        pressurePsi: _pressPsi,
+        flowCmS: _flowCmS,
+        gravityG: _gravG,
+        fuelIdx: _fuelIdx,
+        diluentKey: _diluentKey,
+        forceCoolFlame: false,
+      );
+      if (t.spread > maxY) maxY = t.spread + 0.5;
+      spreadSpots.add(FlSpot(o2, t.spread));
+    }
+
+    final List<FlSpot> nasaScatter = [
+      for (final exp in nasaPsiExperiments)
+        if (exp.o2 >= 12.5 && exp.o2 <= 45.0)
+          FlSpot(exp.o2, exp.rate.clamp(0.0, maxY)),
+    ];
+
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: _bgPanel,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: _border),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'FL_CHART 2 · SPREAD RATE VS O₂% + MOC & NASA PSI',
+            style: TextStyle(
+              color: Color(0xFFE2E8F0),
+              fontSize: 10.5,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.8,
+            ),
+          ),
+          const SizedBox(height: 10),
+          SizedBox(
+            height: 180,
+            child: LineChart(
+              LineChartData(
+                minX: 12.5,
+                maxX: 45,
+                minY: 0,
+                maxY: maxY,
+                gridData: FlGridData(
+                  show: true,
+                  drawVerticalLine: true,
+                  horizontalInterval: (maxY / 4).clamp(0.5, 5.0),
+                  verticalInterval: 8,
+                  getDrawingHorizontalLine: (_) =>
+                      const FlLine(color: Color(0xFF1E2433), strokeWidth: 1),
+                  getDrawingVerticalLine: (_) =>
+                      const FlLine(color: Color(0xFF1E2433), strokeWidth: 1),
+                ),
+                borderData: FlBorderData(
+                  show: true,
+                  border: Border.all(color: _border),
+                ),
+                titlesData: FlTitlesData(
+                  topTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false)),
+                  rightTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false)),
+                  bottomTitles: AxisTitles(
+                    sideTitles: SideTitles(
+                      showTitles: true,
+                      interval: 8,
+                      reservedSize: 22,
+                      getTitlesWidget: (v, _) => Text(
+                        '${v.toInt()}%',
+                        style: const TextStyle(
+                            color: Color(0xFF64748B), fontSize: 9.5),
+                      ),
+                    ),
+                  ),
+                  leftTitles: AxisTitles(
+                    sideTitles: SideTitles(
+                      showTitles: true,
+                      reservedSize: 30,
+                      getTitlesWidget: (v, _) => Text(
+                        v.toStringAsFixed(1),
+                        style: const TextStyle(
+                            color: Color(0xFF64748B), fontSize: 9.5),
+                      ),
+                    ),
+                  ),
+                ),
+                extraLinesData: ExtraLinesData(
+                  verticalLines: [
+                    VerticalLine(
+                      x: tel.mocActual.clamp(12.5, 45.0),
+                      color: _accentRed.withValues(alpha: 0.8),
+                      strokeWidth: 1.5,
+                      dashArray: [5, 4],
+                    ),
+                    VerticalLine(
+                      x: _o2Pct,
+                      color: _accentCyan.withValues(alpha: 0.7),
+                      strokeWidth: 1.5,
+                      dashArray: [3, 3],
+                    ),
+                  ],
+                ),
+                lineBarsData: [
+                  LineChartBarData(
+                    spots: spreadSpots,
+                    isCurved: true,
+                    color: _accentAmber,
+                    barWidth: 2.5,
+                    dotData: const FlDotData(show: false),
+                    belowBarData: BarAreaData(
+                      show: true,
+                      color: _accentAmber.withValues(alpha: 0.12),
+                    ),
+                  ),
+                  LineChartBarData(
+                    spots: nasaScatter,
+                    barWidth: 0,
+                    color: Colors.transparent,
+                    dotData: FlDotData(
+                      show: true,
+                      getDotPainter: (_, _, _, _) => FlDotCirclePainter(
+                        radius: 2.5,
+                        color: Colors.white54,
+                        strokeWidth: 0,
+                      ),
+                    ),
+                  ),
+                  LineChartBarData(
+                    spots: [FlSpot(_o2Pct, tel.spread.clamp(0.0, maxY))],
+                    barWidth: 0,
+                    color: Colors.transparent,
+                    dotData: FlDotData(
+                      show: true,
+                      getDotPainter: (_, _, _, _) => FlDotCirclePainter(
+                        radius: 5,
+                        color: _accentCyan,
+                        strokeWidth: 2,
+                        strokeColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
 
-class _ThrusterDrawItem {
-  final String type;
-  final double z;
-  final List<Offset>? pts;
-  final Color? fill;
-  final Color? stroke;
-  final bool hasRing;
-  final bool isHotExit;
-  final Offset? proj;
-  final double? rPx;
-  final double? t;
-  final double? shock;
+class _MultiRegimeFlamePainter extends CustomPainter {
+  final double time;
+  final double yaw;
+  final double pitch;
+  final double zoom;
+  final double o2Pct;
+  final double pressPsi;
+  final double flowCmS;
+  final double gravityG;
+  final int fuelIdx;
+  final String diluentKey;
+  final Flame3DTelemetry tel;
 
-  _ThrusterDrawItem({
-    required this.type,
-    required this.z,
-    this.pts,
-    this.fill,
-    this.stroke,
-    this.hasRing = false,
-    this.isHotExit = false,
-    this.proj,
-    this.rPx,
-    this.t,
-    this.shock,
-  });
-}
-
-class _RealisticThruster3DPainter extends CustomPainter {
-  final double time, camYaw, camPitch, camDist, burnProb, o2, flow, gravity, effVel, uBuoy, soot, tempK, expRatio, liftoffMm, coolFlame;
-  final bool isTipOpen, isPulsating, isSilicone;
-
-  _RealisticThruster3DPainter({
+  const _MultiRegimeFlamePainter({
     required this.time,
-    required this.camYaw,
-    required this.camPitch,
-    required this.camDist,
-    required this.burnProb,
-    required this.o2,
-    required this.flow,
-    required this.gravity,
-    required this.effVel,
-    required this.uBuoy,
-    required this.soot,
-    required this.tempK,
-    required this.expRatio,
-    required this.liftoffMm,
-    required this.isTipOpen,
-    required this.isPulsating,
-    required this.isSilicone,
-    required this.coolFlame,
+    required this.yaw,
+    required this.pitch,
+    required this.zoom,
+    required this.o2Pct,
+    required this.pressPsi,
+    required this.flowCmS,
+    required this.gravityG,
+    required this.fuelIdx,
+    required this.diluentKey,
+    required this.tel,
   });
 
-  double _smoothstep(double e0, double e1, double x) {
-    final t = ((x - e0) / (e1 - e0)).clamp(0.0, 1.0);
-    return t * t * (3.0 - 2.0 * t);
+  (double, double, double) _project(double x, double y, double z, Size size) {
+    final cy = math.cos(yaw);
+    final sy = math.sin(yaw);
+    final cp = math.cos(pitch);
+    final sp = math.sin(pitch);
+
+    final x1 = x * cy - z * sy;
+    final z1 = x * sy + z * cy;
+    final y2 = y * cp - z1 * sp;
+    final z2 = y * sp + z1 * cp;
+
+    final scale = (size.height * 0.42) * zoom / (3.8 + z2 * 0.35);
+    return (size.width * 0.34 + x1 * scale, size.height * 0.56 - y2 * scale, z2);
   }
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = const Color(0xFF080A0F));
-
-    final cosY = math.cos(camYaw), sinY = math.sin(camYaw);
-    final cosP = math.cos(camPitch), sinP = math.sin(camPitch);
-    final fov = size.shortestSide * 0.96;
-
-    ({Offset pt, double z, double scale}) proj(double wx, double wy, double wz) {
-      final x1 = wx * cosY - wz * sinY;
-      final z1 = wx * sinY + wz * cosY;
-      final y2 = wy * cosP - z1 * sinP;
-      final z2 = math.max(0.35, wy * sinP + z1 * cosP + camDist);
-      final p = fov / z2;
-      return (
-        pt: Offset(size.width * 0.5 + x1 * p, size.height * 0.55 - y2 * p),
-        z: z2,
-        scale: p
-      );
+    // Subtle dark grid
+    final gridPaint = Paint()
+      ..color = const Color(0xFF192130)
+      ..strokeWidth = 0.8;
+    for (double gx = -1.6; gx <= 2.4; gx += 0.4) {
+      final p1 = _project(gx, -0.8, -0.8, size);
+      final p2 = _project(gx, -0.8, 0.8, size);
+      canvas.drawLine(Offset(p1.$1, p1.$2), Offset(p2.$1, p2.$2), gridPaint);
     }
 
-    final buoyPitch = math.atan2(uBuoy * 0.18, math.max(2.5, flow + 3.0)) * 0.45;
-    final dirX = math.cos(buoyPitch);
-    final dirY = math.sin(buoyPitch);
-    final upX = -dirY;
-    final upY = dirX;
-
-    final sphereBlend = math.max(0.0, 1.0 - _smoothstep(0.25, 2.8, effVel));
-    final lewisPulse = isPulsating ? (0.72 + 0.28 * math.sin(time * 24.0)) : 1.0;
-
-    final rawLen = 0.68 * sphereBlend +
-        (1.0 - sphereBlend) * (1.22 + math.min(1.20, flow * 0.028) + (o2 - 15.0) * 0.024);
-    final coneLen = rawLen * (0.40 + 0.60 * math.min(1.0, burnProb * 1.25)) * (0.88 + 0.12 * lewisPulse);
-    final nozX = -dirX * 0.38;
-    final nozY = -dirY * 0.38;
-
-    final List<_ThrusterDrawItem> list = [];
-
-    // Perfil 3D realista del propulsor De Laval
-    final profile = [
-      (ax: -0.76, r: 0.035, m: [75, 85, 102],   h: 0.00, ring: false),
-      (ax: -0.66, r: 0.095, m: [95, 108, 128],  h: 0.00, ring: true),
-      (ax: -0.56, r: 0.145, m: [120, 132, 150], h: 0.05, ring: true),
-      (ax: -0.46, r: 0.142, m: [88, 98, 115],   h: 0.18, ring: false),
-      (ax: -0.36, r: 0.118, m: [78, 88, 104],   h: 0.42, ring: true),
-      (ax: -0.27, r: 0.076, m: [70, 78, 94],    h: 0.85, ring: true),
-      (ax: -0.19, r: 0.108, m: [64, 72, 86],    h: 0.65, ring: false),
-      (ax: -0.11, r: 0.142, m: [58, 65, 78],    h: 0.50, ring: true),
-      (ax: -0.04, r: 0.168, m: [52, 58, 70],    h: 0.60, ring: false),
-      (ax:  0.00, r: 0.182, m: [48, 54, 66],    h: 0.92, ring: true),
-    ];
-
-    final glowFactor = burnProb > 0.18 ? ((tempK - 720.0) / 1080.0).clamp(0.0, 1.0) : 0.0;
-    const int nAz = 22;
-
-    for (int i = 0; i < profile.length - 1; i++) {
-      final s0 = profile[i];
-      final s1 = profile[i + 1];
-      final c0x = nozX + dirX * s0.ax, c0y = nozY + dirY * s0.ax;
-      final c1x = nozX + dirX * s1.ax, c1y = nozY + dirY * s1.ax;
-
-      for (int k = 0; k < nAz; k++) {
-        final a0 = (k / nAz) * math.pi * 2;
-        final a1 = ((k + 1) / nAz) * math.pi * 2;
-        final aMid = (a0 + a1) * 0.5;
-
-        final p00 = proj(c0x + upX * math.cos(a0) * s0.r, c0y + upY * math.cos(a0) * s0.r, math.sin(a0) * s0.r);
-        final p01 = proj(c0x + upX * math.cos(a1) * s0.r, c0y + upY * math.cos(a1) * s0.r, math.sin(a1) * s0.r);
-        final p11 = proj(c1x + upX * math.cos(a1) * s1.r, c1y + upY * math.cos(a1) * s1.r, math.sin(a1) * s1.r);
-        final p10 = proj(c1x + upX * math.cos(a0) * s1.r, c1y + upY * math.cos(a0) * s1.r, math.sin(a0) * s1.r);
-
-        final nx = upX * math.cos(aMid);
-        final ny = upY * math.cos(aMid);
-        final nz = math.sin(aMid);
-        final ndotl = math.max(0.08, nx * -0.45 + ny * 0.72 + nz * 0.52);
-        final spec = math.pow(math.max(0.0, ndotl), 9.0) * 0.65;
-        final groove = (k % 2 == 0) ? 0.92 : 1.06;
-        final avgH = ((s0.h + s1.h) * 0.5) * glowFactor;
-
-        final rC = (s0.m[0] * ndotl * groove + spec * 180 + avgH * 220).round().clamp(0, 255);
-        final gC = (s0.m[1] * ndotl * groove + spec * 195 + avgH * (75 + avgH * 90)).round().clamp(0, 255);
-        final bC = (s0.m[2] * ndotl * groove + spec * 215 + avgH * 25).round().clamp(0, 255);
-
-        list.add(_ThrusterDrawItem(
-          type: 'quad',
-          z: (p00.z + p01.z + p11.z + p10.z) * 0.25,
-          pts: [p00.pt, p01.pt, p11.pt, p10.pt],
-          fill: Color.fromARGB(255, rC, gC, bC),
-          stroke: Color.fromARGB(90, (rC + 25).clamp(0, 255), (gC + 25).clamp(0, 255), (bC + 30).clamp(0, 255)),
-          hasRing: s1.ring,
-          isHotExit: i == profile.length - 2,
-        ));
+    // 1. Solid De Laval Nozzle + Fuel Specimen Holder
+    final nozzlePoints = <List<(double, double, double)>>[];
+    const segs = 14;
+    const rings = 10;
+    for (int i = 0; i <= rings; i++) {
+      final t = i / rings;
+      final x = -1.35 + t * 1.35;
+      // Convergent-divergent De Laval profile
+      double r;
+      if (t < 0.4) {
+        r = 0.24 - 0.12 * (t / 0.4);
+      } else {
+        final dt = (t - 0.4) / 0.6;
+        r = 0.12 + 0.14 * dt * dt + 0.04 * dt;
       }
-    }
-
-    if (burnProb > 0.03 || coolFlame > 0.2) {
-      final liftoff3D = math.min(0.34, (liftoffMm / 25.0) * 0.26);
-      final shockCycles = (4.0 + (flow / 10.0) - (expRatio - 1.0) * 0.7).clamp(2.5, 8.5);
-      final underExp = math.pow(expRatio, 0.32).toDouble().clamp(0.88, 1.42);
-      const int nSlices = 60;
-
-      for (int i = 0; i < nSlices; i++) {
-        final t = i / (nSlices - 1);
-        final wave = (1.0 - sphereBlend * 0.85) *
-            math.sin(time * (13.0 + flow * 0.44) - t * 12.0) *
-            (0.002 + 0.02 * math.pow(t, 1.8));
-        final dist = liftoff3D + t * coneLen;
-        final wx = nozX + dirX * dist + upX * wave;
-        final wy = nozY + dirY * dist + upY * wave;
-        final p = proj(wx, wy, 0.0);
-
-        final sphereProf = math.pow(math.max(0.02, math.sin(t * math.pi * 0.96)), 0.58).toDouble() * 1.32;
-        final nozMatch = 0.78 + 0.22 * _smoothstep(0.0, 0.08, t) * underExp;
-        final tipOpenFloor = isTipOpen ? 0.26 * math.pow(t, 1.4).toDouble() : 0.008;
-        final coneProf = nozMatch * (math.pow(math.max(0.008, 1.0 - t), 0.76).toDouble() + tipOpenFloor);
-        final combinedShape = sphereBlend * sphereProf + (1.0 - sphereBlend) * coneProf;
-
-        final shock = (1.0 - sphereBlend * 0.9) *
-            math.pow(math.max(0.0, math.cos((t * shockCycles - time * 3.6) * math.pi)), 5.0).toDouble() *
-            (1.0 - t * 0.68);
-        final r3D = 0.205 * (0.86 + 0.18 * (o2 / 25.0)) * lewisPulse * combinedShape * (1.0 + 0.15 * shock);
-
-        list.add(_ThrusterDrawItem(
-          type: 'cone',
-          z: p.z - t * 0.002,
-          proj: p.pt,
-          rPx: math.max(2.0, r3D * p.scale),
-          t: t,
-          shock: shock,
-        ));
+      final ring = <(double, double, double)>[];
+      for (int j = 0; j < segs; j++) {
+        final ang = (j / segs) * 2 * math.pi;
+        ring.add(_project(x, r * math.sin(ang), r * math.cos(ang), size));
       }
+      nozzlePoints.add(ring);
     }
 
-    list.sort((a, b) => b.z.compareTo(a.z));
-
-    for (final it in list) {
-      if (it.type == 'quad') {
-        final pts = it.pts!;
+    for (int i = 0; i < rings; i++) {
+      for (int j = 0; j < segs; j++) {
+        final nj = (j + 1) % segs;
+        final a = nozzlePoints[i][j];
+        final b = nozzlePoints[i + 1][j];
+        final c = nozzlePoints[i + 1][nj];
+        final d = nozzlePoints[i][nj];
+        final shade = (0.35 + 0.4 * ((a.$3 + b.$3) * 0.5 + 0.3)).clamp(0.15, 0.9);
         final path = Path()
-          ..moveTo(pts[0].dx, pts[0].dy)
-          ..lineTo(pts[1].dx, pts[1].dy)
-          ..lineTo(pts[2].dx, pts[2].dy)
-          ..lineTo(pts[3].dx, pts[3].dy)
+          ..moveTo(a.$1, a.$2)
+          ..lineTo(b.$1, b.$2)
+          ..lineTo(c.$1, c.$2)
+          ..lineTo(d.$1, d.$2)
           ..close();
-        canvas.drawPath(path, Paint()..color = it.fill!);
         canvas.drawPath(
           path,
           Paint()
-            ..style = PaintingStyle.stroke
-            ..strokeWidth = 0.8
-            ..color = it.stroke!,
+            ..color = Color.lerp(
+              const Color(0xFF334155),
+              const Color(0xFFB45309),
+              (i / rings) * shade,
+            )!
+            ..style = PaintingStyle.fill,
         );
-        if (it.hasRing) {
-          canvas.drawLine(
-            pts[3],
-            pts[2],
-            Paint()
-              ..strokeWidth = it.isHotExit ? 2.4 : 1.6
-              ..color = (it.isHotExit && burnProb > 0.2)
-                  ? const Color(0xFFFB923C)
-                  : const Color(0xA694A3B8),
-          );
-        }
-      } else if (it.type == 'cone') {
-        final c = it.proj!;
-        final rPx = it.rPx!;
-        final t = it.t!;
-        final shock = it.shock!;
-        final life = (burnProb * 1.35 + coolFlame * 0.85).clamp(0.0, 1.0);
-        final sootBlend = (soot * 1.35).clamp(0.0, 1.0);
+        canvas.drawPath(
+          path,
+          Paint()
+            ..color = Colors.white.withValues(alpha: 0.08)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 0.7,
+        );
+      }
+    }
 
-        final outerPaint = Paint()
-          ..blendMode = BlendMode.plus
-          ..shader = ui.Gradient.radial(
-            c,
-            rPx * 1.4,
-            [
-              (sootBlend > 0.25 ? const Color(0xFFFFC65F) : const Color(0xFF7DD3FC))
-                  .withValues(alpha: 0.14 * (1.0 - t * 0.35) * life),
-              Color.lerp(const Color(0xFF0EA5E9), const Color(0xFFE51937), (t * 1.05 * sootBlend).clamp(0.0, 1.0))!
-                  .withValues(alpha: 0.12 * (1.0 - t * 0.45) * life),
-              Colors.transparent,
-            ],
-            const [0.0, 0.58, 1.0],
-          );
-        canvas.drawCircle(c, rPx * 1.4, outerPaint);
+    // 2. Multi-Regime Flame Body
+    if (tel.prob < 0.06 && !tel.isCool) {
+      // Quenched smoke/vapor wisps
+      final smokePaint = Paint()
+        ..color = Colors.white.withValues(alpha: 0.12)
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8);
+      for (int k = 0; k < 4; k++) {
+        final sx = 0.15 + k * 0.28 + 0.05 * math.sin(time * 2 + k);
+        final p = _project(sx, 0.04 * math.sin(time + k), 0.0, size);
+        canvas.drawCircle(Offset(p.$1, p.$2), 10 + k * 4.0, smokePaint);
+      }
+      return;
+    }
 
-        final tipQuench = (isTipOpen && t > 0.72) ? math.max(0.15, 1.0 - (t - 0.72) * 3.0) : 1.0;
-        final coreR = rPx * (0.68 + 0.26 * shock);
-        final coreAlpha = ((0.18 * (1.0 - t * 0.45) + shock * 0.30) * life * tipQuench).clamp(0.0, 0.85);
-        final corePaint = Paint()
-          ..blendMode = BlendMode.plus
+    final pulse = tel.isPulsating
+        ? (0.72 + 0.28 * math.sin(time * 7.5))
+        : (0.94 + 0.06 * math.sin(time * 12.0));
+    final liftoffX = (tel.liftoffMm / 25.0).clamp(0.0, 0.45);
+    final isSphere = tel.effVel < 3.5;
+
+    final flameLen = isSphere
+        ? 0.65 * pulse
+        : (0.9 + (tel.aspectLD * 0.28).clamp(0.2, 1.9)) * pulse;
+    final flameRad = isSphere
+        ? (0.34 + 0.08 * tel.prob) * pulse
+        : (0.24 + 0.07 * (o2Pct / 45.0)) * pulse;
+
+    // Gravity buoyancy curve (+g pushes up, -g pushes down)
+    final buoyCurve = (gravityG / 2.0) * 0.38;
+
+    final Color outerColor;
+    final Color innerColor;
+    if (tel.isCool) {
+      outerColor = const Color(0xFF7C3AED).withValues(alpha: 0.55);
+      innerColor = const Color(0xFF38BDF8).withValues(alpha: 0.75);
+    } else if (o2Pct >= 28.0 && tel.soot < 0.4) {
+      outerColor = const Color(0xFF2563EB).withValues(alpha: 0.75);
+      innerColor = const Color(0xFFE0F2FE).withValues(alpha: 0.95);
+    } else {
+      outerColor = Color.lerp(
+        const Color(0xFF38BDF8),
+        const Color(0xFFEF4444),
+        (tel.soot * 1.1).clamp(0.15, 1.0),
+      )!
+          .withValues(alpha: 0.78);
+      innerColor = Color.lerp(
+        const Color(0xFFBAE6FD),
+        const Color(0xFFFDE047),
+        (tel.soot * 0.9).clamp(0.1, 0.95),
+      )!
+          .withValues(alpha: 0.95);
+    }
+
+    if (isSphere) {
+      final center = _project(0.22 + liftoffX, buoyCurve * 0.3, 0, size);
+      final edge = _project(0.22 + liftoffX + flameRad, buoyCurve * 0.3, 0, size);
+      final rPx = (edge.$1 - center.$1).abs().clamp(16.0, 110.0);
+
+      canvas.drawCircle(
+        Offset(center.$1, center.$2),
+        rPx * 1.35,
+        Paint()
+          ..color = outerColor.withValues(alpha: 0.35)
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 18),
+      );
+      canvas.drawCircle(
+        Offset(center.$1, center.$2),
+        rPx,
+        Paint()
           ..shader = ui.Gradient.radial(
-            c,
-            coreR,
-            [
-              Colors.white.withValues(alpha: (coreAlpha * 1.5).clamp(0.0, 0.85)),
-              (sootBlend > 0.22 ? const Color(0xFFFEF08A) : const Color(0xFF38BDF8)).withValues(alpha: coreAlpha),
-              Colors.transparent,
-            ],
-            const [0.0, 0.55, 1.0],
-          );
-        canvas.drawCircle(c, coreR, corePaint);
+            Offset(center.$1, center.$2),
+            rPx,
+            [innerColor, outerColor, outerColor.withValues(alpha: 0.0)],
+            [0.0, 0.55, 1.0],
+          ),
+      );
+    } else {
+      final base = _project(0.02 + liftoffX, 0, 0, size);
+      final mid = _project(
+        0.02 + liftoffX + flameLen * 0.45,
+        buoyCurve * 0.35,
+        0,
+        size,
+      );
+      final tip = _project(
+        0.02 + liftoffX + flameLen,
+        buoyCurve + 0.04 * math.sin(time * 9.0),
+        0,
+        size,
+      );
+      final rBasePx = flameRad * (size.height * 0.25);
+
+      // Outer glow plume
+      final outerPath = Path()
+        ..moveTo(base.$1, base.$2 - rBasePx)
+        ..quadraticBezierTo(
+          mid.$1,
+          mid.$2 - rBasePx * 0.85,
+          tip.$1,
+          tip.$2 - (tel.isTipOpen ? rBasePx * 0.35 : 0),
+        )
+        ..lineTo(tip.$1, tip.$2 + (tel.isTipOpen ? rBasePx * 0.35 : 0))
+        ..quadraticBezierTo(
+          mid.$1,
+          mid.$2 + rBasePx * 0.85,
+          base.$1,
+          base.$2 + rBasePx,
+        )
+        ..close();
+
+      canvas.drawPath(
+        outerPath,
+        Paint()
+          ..color = outerColor
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10),
+      );
+
+      // Inner core
+      final corePath = Path()
+        ..moveTo(base.$1, base.$2 - rBasePx * 0.52)
+        ..quadraticBezierTo(mid.$1, mid.$2 - rBasePx * 0.42, tip.$1 * 0.72 + base.$1 * 0.28, mid.$2 * 0.6 + tip.$2 * 0.4)
+        ..quadraticBezierTo(mid.$1, mid.$2 + rBasePx * 0.42, base.$1, base.$2 + rBasePx * 0.52)
+        ..close();
+
+      canvas.drawPath(
+        corePath,
+        Paint()
+          ..color = innerColor
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4),
+      );
+
+      // Liftoff ring if H_L > 1.0mm
+      if (tel.liftoffMm > 1.0) {
+        canvas.drawOval(
+          Rect.fromCenter(
+            center: Offset(base.$1, base.$2),
+            width: 8,
+            height: rBasePx * 1.9,
+          ),
+          Paint()
+            ..color = const Color(0xFF38BDF8).withValues(alpha: 0.75)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 2.0,
+        );
+      }
+    }
+
+    // Soot / SiO2 particles
+    if (tel.soot > 0.25 || fuelIdx == 1) {
+      final pColor = fuelIdx == 1
+          ? Colors.white.withValues(alpha: 0.65)
+          : const Color(0xFFF59E0B).withValues(alpha: 0.55);
+      final pPaint = Paint()..color = pColor;
+      for (int i = 0; i < 14; i++) {
+        final phase = ((time * 0.8 + i * 0.17) % 1.0);
+        final px = 0.2 + liftoffX + phase * (flameLen + 0.45);
+        final py = buoyCurve * phase + math.sin(i * 2.1 + time * 3) * 0.14;
+        final pt = _project(px, py, 0, size);
+        canvas.drawCircle(Offset(pt.$1, pt.$2), 1.8, pPaint);
       }
     }
   }
 
   @override
-  bool shouldRepaint(covariant _RealisticThruster3DPainter oldDelegate) => true;
+  bool shouldRepaint(covariant _MultiRegimeFlamePainter oldDelegate) =>
+      oldDelegate.time != time ||
+      oldDelegate.yaw != yaw ||
+      oldDelegate.pitch != pitch ||
+      oldDelegate.o2Pct != o2Pct ||
+      oldDelegate.pressPsi != pressPsi ||
+      oldDelegate.flowCmS != flowCmS ||
+      oldDelegate.gravityG != gravityG ||
+      oldDelegate.fuelIdx != fuelIdx ||
+      oldDelegate.diluentKey != diluentKey ||
+      oldDelegate.tel.isCool != tel.isCool;
 }
