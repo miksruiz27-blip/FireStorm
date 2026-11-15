@@ -69,11 +69,31 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
     final f = at();
     final atHabitat = c == _fromHabitat(h);
 
-    final controls = _Controls(
-      c: c,
-      model: model,
-      onChanged: (v) => setState(() => _c = v),
-      onReset: atHabitat ? null : () => setState(() => _c = _fromHabitat(h)),
+    final quickBar = Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      children: [
+        for (final b in GravityBand.values)
+          ChoiceChip(
+            label: Text(b.short),
+            selected: c.band == b,
+            onSelected: (_) => setState(
+              () => _c = (
+                o2: c.o2,
+                kpa: c.kpa,
+                band: b,
+                flow: b == GravityBand.micro ? 10 : c.flow,
+                material: c.material,
+              ),
+            ),
+          ),
+        if (!atHabitat)
+          TextButton(
+            onPressed: () => setState(() => _c = _fromHabitat(h)),
+            child: Text(tr('RESET TO HABITAT', 'VOLVER AL HÁBITAT')),
+          ),
+      ],
     );
     final flame3D = HabitatFlame3DCard(
       o2Percent: c.o2,
@@ -198,36 +218,22 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
             ),
           ),
         ),
+        quickBar,
+        flame3D,
+        readout,
         LayoutBuilder(
           builder: (context, box) => box.maxWidth >= 1000
               ? Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: AppLayout.gutter,
                   children: [
-                    SizedBox(width: 340, child: controls),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        spacing: AppLayout.gutter,
-                        children: [
-                          readout,
-                          flame3D,
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            spacing: AppLayout.gutter,
-                            children: [
-                              for (final ch in charts) Expanded(child: ch),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                    for (final ch in charts) Expanded(child: ch),
                   ],
                 )
               : Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   spacing: AppLayout.gutter,
-                  children: [readout, flame3D, controls, ...charts],
+                  children: [...charts],
                 ),
         ),
         Wrap(
@@ -289,159 +295,6 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
           style: AppText.mono.copyWith(fontSize: 10),
         ),
       ],
-    );
-  }
-}
-
-class _Controls extends StatelessWidget {
-  const _Controls({
-    required this.c,
-    required this.model,
-    required this.onChanged,
-    this.onReset,
-  });
-  final _Cond c;
-  final FlameModel model;
-  final ValueChanged<_Cond> onChanged;
-  final VoidCallback? onReset;
-
-  @override
-  Widget build(BuildContext context) {
-    Widget slider(
-      String label,
-      String unit,
-      double value,
-      double min,
-      double max,
-      _Cond Function(double) set,
-    ) => Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          spacing: 8,
-          children: [
-            Flexible(child: Text(label, style: AppText.label)),
-            DataValue(
-              fmtO2(double.parse(value.toStringAsFixed(1))),
-              unit,
-              size: 15,
-              unitSize: 11,
-            ),
-          ],
-        ),
-        Slider(
-          value: value.clamp(min, max),
-          min: min,
-          max: max,
-          label: label,
-          onChanged: (v) => onChanged(set(double.parse(v.toStringAsFixed(1)))),
-        ),
-      ],
-    );
-
-    return ChamferCard(
-      padding: const EdgeInsets.all(24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        spacing: 10,
-        children: [
-          Wrap(
-            alignment: WrapAlignment.spaceBetween,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            children: [
-              Text(tr('CONDITIONS', 'CONDICIONES'), style: AppText.label),
-              TextButton(
-                onPressed: onReset,
-                child: Text(tr('RESET TO HABITAT', 'VOLVER AL HÁBITAT')),
-              ),
-            ],
-          ),
-          slider(
-            tr('OXYGEN', 'OXÍGENO'),
-            '% O₂',
-            c.o2,
-            10,
-            100,
-            (v) => (
-              o2: v,
-              kpa: c.kpa,
-              band: c.band,
-              flow: c.flow,
-              material: c.material,
-            ),
-          ),
-          slider(
-            tr('PRESSURE', 'PRESIÓN'),
-            'kPa',
-            c.kpa,
-            20,
-            105,
-            (v) => (
-              o2: c.o2,
-              kpa: v,
-              band: c.band,
-              flow: c.flow,
-              material: c.material,
-            ),
-          ),
-          slider(
-            tr('VENTILATION FLOW', 'FLUJO DE VENTILACIÓN'),
-            'cm/s',
-            c.flow,
-            0,
-            50,
-            (v) => (
-              o2: c.o2,
-              kpa: c.kpa,
-              band: c.band,
-              flow: v,
-              material: c.material,
-            ),
-          ),
-          Text(tr('GRAVITY', 'GRAVEDAD'), style: AppText.label),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              for (final b in GravityBand.values.reversed)
-                ToggleChip(
-                  b.short,
-                  selected: b == c.band,
-                  accent: true,
-                  onTap: () => onChanged((
-                    o2: c.o2,
-                    kpa: c.kpa,
-                    band: b,
-                    flow: c.flow,
-                    material: c.material,
-                  )),
-                ),
-            ],
-          ),
-          const SizedBox(height: 4),
-          Text('MATERIAL', style: AppText.label),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              for (final MapEntry(:key, :value) in model.materials.entries)
-                ToggleChip(
-                  trd(value.name),
-                  selected: key == (c.material ?? model.defaultMaterial),
-                  accent: true,
-                  onTap: () => onChanged((
-                    o2: c.o2,
-                    kpa: c.kpa,
-                    band: c.band,
-                    flow: c.flow,
-                    material: key,
-                  )),
-                ),
-            ],
-          ),
-        ],
-      ),
     );
   }
 }

@@ -283,13 +283,45 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          const Text(
+            'STEP 02 · MULTI-REGIME COMBUSTION PHYSICS & 3D THRUSTER / PLUME CONE',
+            style: TextStyle(
+              color: Color(0xFF94A3B8),
+              fontSize: 10.5,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 1.2,
+            ),
+          ),
+          const SizedBox(height: 8),
           _buildExperimentBar(tel),
           const SizedBox(height: 12),
           _buildKpiGrid(tel),
           const SizedBox(height: 12),
-          _buildDropdownBar(),
-          const SizedBox(height: 12),
-          _buildViewportCard(tel),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final wide = constraints.maxWidth >= 820;
+              final controlsPanel = _buildControlsPanel(tel);
+              final viewportPanel = _buildViewportCard(tel);
+              if (wide) {
+                return Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(width: 345, child: controlsPanel),
+                    const SizedBox(width: 14),
+                    Expanded(child: viewportPanel),
+                  ],
+                );
+              }
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  viewportPanel,
+                  const SizedBox(height: 12),
+                  controlsPanel,
+                ],
+              );
+            },
+          ),
           const SizedBox(height: 14),
           LayoutBuilder(
             builder: (context, constraints) {
@@ -430,27 +462,31 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
 
     final cards = [
       _kpiCard(
-        title: 'P(BURN) · MODEL v2.2',
-        value: '$probPct%',
-        subtitle: '${tel.regime} · ROC 0.9947',
+        title: 'P(BURN) · ONNX + QUENCH',
+        value: tel.prob.toStringAsFixed(2),
+        subtitle:
+            'T_f ${tel.tempK.round()} K | Rad Loss χ_r = ${(tel.radLossFraction * 100).round()}%',
         accent: probColor,
       ),
       _kpiCard(
-        title: 'SPREAD / REGRESSION',
-        value: '${tel.spread.toStringAsFixed(2)} mm/s',
-        subtitle: 'T_f ${tel.tempK.round()} K · B ${tel.bNumber.toStringAsFixed(2)}',
+        title: 'SPREAD / REGRESSION RATE',
+        value: '≈ ${tel.spread.toStringAsFixed(2)} mm/s',
+        subtitle:
+            'Da = ${tel.damkohler.toStringAsFixed(2)} | Liftoff H_L = ${tel.liftoffMm.toStringAsFixed(1)} mm',
         accent: _accentAmber,
       ),
       _kpiCard(
         title: 'FLAMMABILITY LIMIT (MOC)',
-        value: '${tel.mocActual.toStringAsFixed(1)}% O₂',
-        subtitle: 'Margin ${margin >= 0 ? '+' : ''}${margin.toStringAsFixed(1)}% · Le ${tel.lewisNumber.toStringAsFixed(2)}',
+        value: '${tel.mocActual.toStringAsFixed(1)} % O₂',
+        subtitle:
+            'Margin ${margin >= 0 ? '+' : ''}${margin.toStringAsFixed(1)}% | B=${tel.bNumber.toStringAsFixed(2)} | Le=${tel.lewisNumber.toStringAsFixed(2)}',
         accent: margin >= 0 ? _accentRed : _accentGreen,
       ),
       _kpiCard(
-        title: 'MIXED FLOW & SOOT',
-        value: '${tel.effVel.toStringAsFixed(1)} cm/s',
-        subtitle: 'u_b ${tel.uBuoy >= 0 ? '+' : ''}${tel.uBuoy.toStringAsFixed(1)} · Soot ${tel.sootPpm.toStringAsFixed(1)} ppm',
+        title: 'MIXED FLOW & SOOT AEROSOL',
+        value: '≈ ${tel.effVel.toStringAsFixed(1)} cm/s',
+        subtitle:
+            'f_v = ${tel.sootPpm.toStringAsFixed(2)} ppm | SAME CMD = ${tel.smokeCmdUm.toStringAsFixed(2)} μm',
         accent: _accentCyan,
       ),
     ];
@@ -540,115 +576,251 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
     );
   }
 
-  Widget _buildDropdownBar() {
-    final presetCol = Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        _dropdownLabel('1. HABITAT / GRAVITY PRESET'),
-        const SizedBox(height: 5),
-        _buildStyledDropdown<String>(
-          value: _selectedPreset,
-          items: const [
-            DropdownMenuItem(value: 'CUSTOM', child: Text('Custom / Slider Conditions', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            DropdownMenuItem(value: 'ISS', child: Text('ISS Destiny (0.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            DropdownMenuItem(value: 'LUNAR', child: Text('Lunar Artemis SEA (0.166g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            DropdownMenuItem(value: 'MARS', child: Text('Mars Habitat (0.38g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            DropdownMenuItem(value: 'EARTH', child: Text('Earth Sea Level (1.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            DropdownMenuItem(value: 'VAC_HYPOXIC', child: Text('Hypoxic Extinguish (0.0g · 15.2% O2 · 6 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            DropdownMenuItem(value: 'HYPER_O2', child: Text('Hyperbaric Enriched (1.0g · 42% O2 · 30 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            DropdownMenuItem(value: 'INVERTED_G', child: Text('Inverted Gravity (-1.0g · Downward Buoyancy)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            DropdownMenuItem(value: 'CENTRIFUGE_2G', child: Text('Hypergravity Centrifuge (+2.0g · 26% O2)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-          ],
-          onChanged: (v) {
-            if (v != null && v != 'CUSTOM') _applyHabitatPreset(v);
-          },
-        ),
-      ],
-    );
-
-    final diluentCol = Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        _dropdownLabel('2. DILUENT GAS'),
-        const SizedBox(height: 5),
-        _buildStyledDropdown<String>(
-          value: _diluentKey,
-          items: const [
-            DropdownMenuItem(value: 'N2', child: Text('N₂ — Nitrogen (Standard Cabin)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            DropdownMenuItem(value: 'CO2', child: Text('CO₂ — Carbon Dioxide (Radiative Reabsorption)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            DropdownMenuItem(value: 'He', child: Text('He — Helium (High Thermal Diffusivity)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-            DropdownMenuItem(value: 'Ar', child: Text('Ar — Argon (Low Cp · High Temp)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-          ],
-          onChanged: (v) {
-            if (v != null) {
-              setState(() {
-                _diluentKey = v;
-                _selectedExpIndex = null;
-              });
-            }
-          },
-        ),
-      ],
-    );
-
-    final fuelCol = Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        _dropdownLabel('3. FUEL SPECIMEN & BURNER FAMILY'),
-        const SizedBox(height: 5),
-        _buildStyledDropdown<int>(
-          value: _fuelIdx,
-          items: [
-            for (final entry in FirestormPhysicsEngine.fuelProps.entries)
-              DropdownMenuItem(
-                value: entry.key,
-                child: Text(entry.value.name, overflow: TextOverflow.ellipsis, maxLines: 1),
-              ),
-          ],
-          onChanged: (v) {
-            if (v != null) {
-              setState(() {
-                _fuelIdx = v;
-                _selectedExpIndex = null;
-              });
-              _notifyParent();
-            }
-          },
-        ),
-      ],
-    );
+  Widget _buildControlsPanel(Flame3DTelemetry tel) {
+    final gravLabel = _gravG.abs() < 0.01
+        ? '0.00g (0g)'
+        : (_gravG - 0.166).abs() < 0.02
+            ? '${_gravG.toStringAsFixed(2)}g (Lunar)'
+            : (_gravG - 0.38).abs() < 0.02
+                ? '${_gravG.toStringAsFixed(2)}g (Mars)'
+                : '${_gravG >= 0 ? '+' : ''}${_gravG.toStringAsFixed(2)}g';
 
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: _bgPanel,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: _border),
       ),
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          if (constraints.maxWidth >= 660) {
-            return Row(
-              children: [
-                Expanded(child: presetCol),
-                const SizedBox(width: 10),
-                Expanded(child: diluentCol),
-                const SizedBox(width: 10),
-                Expanded(child: fuelCol),
-              ],
-            );
-          }
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              presetCol,
-              const SizedBox(height: 8),
-              diluentCol,
-              const SizedBox(height: 8),
-              fuelCol,
+              const Flexible(
+                child: Text(
+                  'SLIDERS · ATMOSPHERE, FLOW & GRAVITY',
+                  style: TextStyle(
+                    color: Color(0xFFE2E8F0),
+                    fontSize: 10.5,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 0.8,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              const SizedBox(width: 6),
+              Text(
+                'REAL-TIME CFD SURROGATE',
+                style: TextStyle(
+                  color: _accentCyan.withValues(alpha: 0.85),
+                  fontSize: 9,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.6,
+                ),
+              ),
             ],
-          );
-        },
+          ),
+          const SizedBox(height: 10),
+          _buildSliderRow(
+            label: 'OXYGEN CONCENTRATION (Y_O2)',
+            valueText: '${_o2Pct.toStringAsFixed(1)} %',
+            value: _o2Pct,
+            min: 12.5,
+            max: 45.0,
+            activeColor: _accentRed,
+            onChanged: (v) {
+              setState(() {
+                _o2Pct = v;
+                _selectedPreset = 'CUSTOM';
+                _selectedExpIndex = null;
+              });
+              _notifyParent();
+            },
+          ),
+          _buildSliderRow(
+            label: 'AMBIENT PRESSURE (P_amb)',
+            valueText:
+                '${_pressPsi.toStringAsFixed(1)} psi (${(_pressPsi * 6.89476).toStringAsFixed(1)} kPa)',
+            value: _pressPsi,
+            min: 4.3,
+            max: 44.1,
+            activeColor: _accentRed,
+            onChanged: (v) {
+              setState(() {
+                _pressPsi = v;
+                _selectedPreset = 'CUSTOM';
+                _selectedExpIndex = null;
+              });
+              _notifyParent();
+            },
+          ),
+          _buildSliderRow(
+            label: 'FORCED FLOW / JET VELOCITY (U_f)',
+            valueText: '${_flowCmS.toStringAsFixed(1)} cm/s',
+            value: _flowCmS,
+            min: 0.0,
+            max: 45.0,
+            activeColor: _accentRed,
+            onChanged: (v) {
+              setState(() {
+                _flowCmS = v;
+                _selectedPreset = 'CUSTOM';
+                _selectedExpIndex = null;
+              });
+              _notifyParent();
+            },
+          ),
+          _buildSliderRow(
+            label: 'GRAVITY ACCELERATION (g / g_0) [-2g .. +2g]',
+            valueText: gravLabel,
+            value: _gravG,
+            min: -2.0,
+            max: 2.0,
+            activeColor: _gravG < 0 ? _accentPurple : _accentRed,
+            onChanged: (v) {
+              setState(() {
+                _gravG = v;
+                _selectedPreset = 'CUSTOM';
+                _selectedExpIndex = null;
+              });
+              _notifyParent();
+            },
+          ),
+          const Divider(color: _border, height: 18),
+          const Text(
+            'EXPERIMENT CATEGORIES (DROPDOWN SELECTORS)',
+            style: TextStyle(
+              color: Color(0xFF94A3B8),
+              fontSize: 9.5,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.8,
+            ),
+          ),
+          const SizedBox(height: 8),
+          _dropdownLabel('1. HABITAT / GRAVITY PRESET'),
+          const SizedBox(height: 5),
+          _buildStyledDropdown<String>(
+            value: _selectedPreset,
+            items: const [
+              DropdownMenuItem(value: 'CUSTOM', child: Text('Custom (Manual Slider Values)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'ISS', child: Text('ISS Destiny (0.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'LUNAR', child: Text('Lunar Artemis SEA (0.166g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'MARS', child: Text('Mars Habitat (0.38g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'EARTH', child: Text('Earth Sea Level (1.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'VAC_HYPOXIC', child: Text('Hypoxic Extinguish (0.0g · 15.2% O2 · 6 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'HYPER_O2', child: Text('Hyperbaric Enriched (1.0g · 42% O2 · 30 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'INVERTED_G', child: Text('Inverted Gravity (-1.0g · Downward Buoyancy)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'CENTRIFUGE_2G', child: Text('Hypergravity Centrifuge (+2.0g · 26% O2)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            ],
+            onChanged: (v) {
+              if (v != null && v != 'CUSTOM') _applyHabitatPreset(v);
+            },
+          ),
+          const SizedBox(height: 10),
+          _dropdownLabel('2. DILUENT GAS (PSI-68 / PSI-23)'),
+          const SizedBox(height: 5),
+          _buildStyledDropdown<String>(
+            value: _diluentKey,
+            items: const [
+              DropdownMenuItem(value: 'N2', child: Text('N₂ — Standard Nitrogen Air', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'CO2', child: Text('CO₂ — Carbon Dioxide (Radiative Reabsorption)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'He', child: Text('He — Helium (High Thermal Diffusivity)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'Ar', child: Text('Ar — Argon (Low Cp · High Temp)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+            ],
+            onChanged: (v) {
+              if (v != null) {
+                setState(() {
+                  _diluentKey = v;
+                  _selectedExpIndex = null;
+                });
+              }
+            },
+          ),
+          const SizedBox(height: 10),
+          _dropdownLabel('3. FUEL SPECIMEN & BURNER FAMILY (NASA PSI)'),
+          const SizedBox(height: 5),
+          _buildStyledDropdown<int>(
+            value: _fuelIdx,
+            items: [
+              for (final entry in FirestormPhysicsEngine.fuelProps.entries)
+                DropdownMenuItem(
+                  value: entry.key,
+                  child: Text(entry.value.name, overflow: TextOverflow.ellipsis, maxLines: 1),
+                ),
+            ],
+            onChanged: (v) {
+              if (v != null) {
+                setState(() {
+                  _fuelIdx = v;
+                  _selectedExpIndex = null;
+                });
+                _notifyParent();
+              }
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSliderRow({
+    required String label,
+    required String valueText,
+    required double value,
+    required double min,
+    required double max,
+    required Color activeColor,
+    required ValueChanged<double> onChanged,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 4),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                child: Text(
+                  label,
+                  style: const TextStyle(
+                    color: Color(0xFFCBD5E1),
+                    fontSize: 10,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              const SizedBox(width: 6),
+              Text(
+                valueText,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 10.5,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+          SliderTheme(
+            data: SliderTheme.of(context).copyWith(
+              activeTrackColor: activeColor,
+              inactiveTrackColor: const Color(0xFF252B3B),
+              thumbColor: activeColor,
+              overlayColor: activeColor.withValues(alpha: 0.16),
+              trackHeight: 3.5,
+              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6.5),
+            ),
+            child: Slider(
+              value: value.clamp(min, max),
+              min: min,
+              max: max,
+              onChanged: onChanged,
+            ),
+          ),
+        ],
       ),
     );
   }
