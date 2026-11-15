@@ -43,6 +43,10 @@ class FlameModel {
   final List<double> testedG;
   final int n;
 
+  /// The one model figure every screen shows (F6): same n, same definition.
+  String get summary =>
+      'n = $n test points labelled burn/extinct · accuracy ${(accuracy * 100).round()} %';
+
   static double _d(Object? v) => (v as num).toDouble();
   static (double, double) _range(Object? v) => (_d((v as List)[0]), _d(v[1]));
 

@@ -32,7 +32,7 @@ class _GapMapScreenState extends ConsumerState<GapMapScreen> {
     final all = ref.watch(testMarksProvider).value ?? const <TestMark>[];
     final recs =
         ref.watch(recommendationsProvider).value ?? const <Recommendation>[];
-    final model = ref.watch(modelProvider).value;
+    final model = ref.watch(flameModelProvider).value;
     final marks = [
       for (final m in all)
         if (_layers.contains(m.fuel)) m,
@@ -656,7 +656,7 @@ class _Aside extends StatelessWidget {
   final Habitat h;
   final List<TestMark> marks;
   final List<Recommendation> recs;
-  final ModelInfo? model;
+  final FlameModel? model;
 
   @override
   Widget build(BuildContext context) {
@@ -757,7 +757,18 @@ class _Aside extends StatelessWidget {
             ],
           ),
         ),
-        if (model != null) _ModelCard(model!, blind: model!.blindSpots(h)),
+        if (model != null)
+          _ModelCard(
+            model!,
+            blind: model!
+                .predict(
+                  o2: h.o2,
+                  kpa: h.pressure * 6.89476,
+                  g: h.g,
+                  flow: cabinFlow,
+                )
+                .extrapolated,
+          ),
         ChamferCard(
           padding: const EdgeInsets.all(24),
           child: Column(
@@ -875,14 +886,13 @@ class _Aside extends StatelessWidget {
 
 /// What the flammability model can and can't say for this habitat. Its blind spots are
 /// exactly where the suggested experiments point.
-class _ModelCard extends ConsumerWidget {
+class _ModelCard extends StatelessWidget {
   const _ModelCard(this.m, {required this.blind});
-  final ModelInfo m;
+  final FlameModel m;
   final List<String> blind;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final physics = ref.watch(flameModelProvider).value;
+  Widget build(BuildContext context) {
     return ChamferCard(
       padding: const EdgeInsets.all(24),
       child: Column(
@@ -890,20 +900,14 @@ class _ModelCard extends ConsumerWidget {
         spacing: 12,
         children: [
           Text('FLAMMABILITY MODEL', style: AppText.label),
-          if (physics != null)
-            Text(
-              'Physics model · n ${physics.n} · accuracy ${(physics.accuracy * 100).round()} %',
-              style: AppText.mono.copyWith(color: AppColors.text),
-            ),
-          // The team's in-sample fit is ~100 %: label it as such instead of headlining it.
           Text(
-            'Data model (logistic) · n ${m.n} · in-sample fit, not cross-validated',
-            style: AppText.mono.copyWith(fontSize: 11),
+            'Physics model · ${m.summary}',
+            style: AppText.mono.copyWith(color: AppColors.text),
           ),
           Text(
-            'The data model has no gravity input: it only speaks for ISS microgravity. '
-            'Outside that envelope the physics model forecasts, and we recommend testing '
-            'instead of guessing.',
+            'The model behind every forecast. Tested at '
+            '${m.testedG.map((g) => g == 0 ? 'μg' : '${fmtO2(g)} g').join(' and ')}; '
+            'outside that envelope it extrapolates, and we recommend testing instead of guessing.',
             style: AppText.caption.copyWith(
               fontSize: 13,
               height: 19 / 13,

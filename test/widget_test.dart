@@ -36,6 +36,9 @@ Future<void> _answers(WidgetTester tester) async {
   }
 }
 
+/// The physics model's one figure (assets/snapshot/flame.json), shown on Forecast and Gap map.
+const _modelN = 'n = 137 test points labelled burn/extinct · accuracy 77 %';
+
 void main() {
   setUpAll(loadHabitats);
   testWidgets('selecting a habitat updates telemetry and stats', (
@@ -97,6 +100,7 @@ void main() {
     expect(find.text('ΔO₂ +3'), findsOneWidget);
     // Model blind spot → the backend's top suggested test sits right at the habitat.
     expect(find.text('MODEL BLIND HERE'), findsOneWidget);
+    expect(find.textContaining(_modelN), findsOneWidget); // same figure as Forecast (F6)
     expect(find.text('Burn tests at 34 % O₂ · 0.166 g'), findsOneWidget);
 
     await tester.tap(find.text('Habitat')); // nav rail
@@ -232,6 +236,7 @@ void main() {
     await tester.tap(find.text('Forecast')); // nav rail
     await _settle(tester);
     expect(find.text('FLAME FORECAST'), findsOneWidget);
+    expect(find.textContaining(_modelN), findsOneWidget); // same figure as Gap map (F6)
     expect(find.text('VIGOROUS'), findsWidgets);
     expect(find.text('PHYSICS EXTRAPOLATION · UNTESTED'), findsOneWidget);
 

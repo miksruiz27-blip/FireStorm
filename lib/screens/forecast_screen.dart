@@ -137,7 +137,7 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
             text:
                 'How a flame behaves at any condition: a physics model (flammability limit vs '
                 'flow, buoyancy from gravity, pressure, de Ris spread), calibrated on '
-                '${model.n} NASA burns. It flags where it extrapolates. ',
+                '${model.summary}. It flags where it extrapolates. ',
             children: [
               TextSpan(
                 text: atHabitat

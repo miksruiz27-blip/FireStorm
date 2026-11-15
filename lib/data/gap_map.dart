@@ -152,46 +152,6 @@ final recommendationsProvider = FutureProvider<List<Recommendation>>((
   ];
 });
 
-/// The flammability model's training envelope (from /model): ±3σ per feature, ISS (0 g) only.
-class ModelInfo {
-  ModelInfo(Map j)
-    : features = (j['features'] as List).cast<String>(),
-      mean = [for (final v in j['mean'] as List) (v as num).toDouble()],
-      std = [for (final v in j['std'] as List) (v as num).toDouble()],
-      accuracy = ((j['metrics'] as Map?)?['accuracy'] as num?)?.toDouble() ?? 0,
-      n = ((j['metrics'] as Map?)?['n'] as num?)?.toInt() ?? 0;
-  final List<String> features;
-  final List<double> mean, std;
-  final double accuracy;
-  final int n;
-
-  /// O₂ range the model saw, or null if O₂ isn't a feature.
-  (double, double)? get o2Range {
-    final j = features.indexOf('o2_pct');
-    return j < 0 ? null : (mean[j] - 3 * std[j], mean[j] + 3 * std[j]);
-  }
-
-  /// Why the model can't speak for [h] (same rule as the backend); empty = in range.
-  List<String> blindSpots(Habitat h) {
-    final row = {
-      'o2_pct': h.o2,
-      'pressure_kpa': h.pressure * 6.89476,
-      'flow_cm_s': 0.0,
-    };
-    return [
-      for (final (j, f) in features.indexed)
-        if (((row[f] ?? 0) - mean[j]).abs() / std[j] > 3)
-          '${f.split('_').first.replaceAll('o2', 'O₂')} ${fmtO2(row[f]!)} (trained ${fmtO2(mean[j])} ± ${fmtO2(std[j])})',
-      if (h.band != GravityBand.micro) 'gravity ${h.band.short} (trained μg)',
-    ];
-  }
-}
-
-final modelProvider = FutureProvider<ModelInfo>(
-  (ref) async =>
-      ModelInfo(await getJson('/model', snapshot: 'model.json') as Map),
-);
-
 const gapWindow = 4.0; // ± % O₂ that counts as "at your condition"
 
 /// Distinct test series within ±[gapWindow] % O₂ in [band].
