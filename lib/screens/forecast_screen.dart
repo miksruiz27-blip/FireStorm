@@ -11,6 +11,7 @@ import '../copilot/session.dart';
 import '../data/flame.dart';
 import '../data/gap_map.dart' show fmtO2;
 import '../data/habitats.dart';
+import '../widgets/habitat_flame_3d_card.dart';
 
 const _psiToKpa = 6.89476;
 
@@ -72,6 +73,13 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
       model: model,
       onChanged: (v) => setState(() => _c = v),
       onReset: atHabitat ? null : () => setState(() => _c = _fromHabitat(h)),
+    );
+    final flame3D = HabitatFlame3DCard(
+      o2Percent: c.o2,
+      pressurePsi: c.kpa / _psiToKpa,
+      forcedFlowCmS: c.flow,
+      gravityG: c.band.g,
+      materialName: f.name,
     );
     final readout = _Readout(f: f, c: c, quiet: at(flow: 0));
     final charts = [
@@ -175,6 +183,7 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
                         spacing: AppLayout.gutter,
                         children: [
                           readout,
+                          flame3D,
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             spacing: AppLayout.gutter,
@@ -190,7 +199,7 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
               : Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   spacing: AppLayout.gutter,
-                  children: [readout, controls, ...charts],
+                  children: [readout, flame3D, controls, ...charts],
                 ),
         ),
         Wrap(
