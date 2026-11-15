@@ -43,6 +43,7 @@ export const Experiment = z.object({
   modifications: arr(z.string()).default([]),
   research_group: z.string().default(''),
   is_verified: z.boolean().default(true),
+  type: z.enum(['investigation', 'reference']).default('investigation'),
   sources: arr(SourceRef).pipe(z.array(SourceRef).min(1, 'missing source')),
 });
 

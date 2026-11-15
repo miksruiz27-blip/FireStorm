@@ -1,7 +1,7 @@
 import { q } from './db.js';
 
 const EXP_COLS = `id, name, platform, fuel_type, domain, hardware, o2_range, pressure_kpa_range, gravity,
-  flow_cm_s_range, materials, key_findings, sources, modifications, research_group`;
+  flow_cm_s_range, materials, key_findings, sources, modifications, research_group, type`;
 const TP_COLS = `experiment_id, material, o2_pct, pressure_kpa, gravity_g, flow_cm_s, outcome, spread_rate_mm_s, source`;
 
 export const habitats = () => q('SELECT id, name, o2_pct, pressure_psia, gravity_g, source FROM habitats ORDER BY id');

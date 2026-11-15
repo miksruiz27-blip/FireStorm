@@ -80,7 +80,7 @@ test('POST /predict validates physical ranges', async () => {
 test('GET /catalog + POST /classify/*', async () => {
   const { loadClassifiers } = await import('../src/classifiers.js');
   await loadClassifiers();
-  assert.equal((await request(app).get('/catalog').expect(200)).body.length, 72); // 81 catalog entries − 9 whose experiments are all SIN FUENTE (F4)
+  assert.equal((await request(app).get('/catalog').expect(200)).body.length, 73); // 81 catalog entries − 8 whose experiments are all SIN FUENTE (F4); the standard is a reference (F5)
   const e = (await request(app).post('/classify/experiment').send({ text: 'water mist fire suppression' }).expect(200)).body;
   assert.equal(e.group, 'WaterMist_SCWM_Suppression');
   assert.ok(e.modifications.length);
@@ -90,6 +90,17 @@ test('GET /catalog + POST /classify/*', async () => {
   assert.equal(f.class, 'Laminar_Subcritical_Diffusion_Safe');
   assert.ok(f.modification.length);
   await request(app).post('/classify/psi166').send({ ...flow, reynolds_number: -1 }).expect(400);
+});
+
+test('standards are references: not ranked, still listed and citable', async () => {
+  const ranked = (await request(app).get('/experiments?habitat=lunar').expect(200)).body;
+  assert.ok(!ranked.some((e) => e.type === 'reference'));
+  const all = (await request(app).get('/experiments').expect(200)).body;
+  const std = all.find((e) => e.id === 'nasa-std-6001b');
+  assert.equal(std.type, 'reference');
+  assert.equal(std.platform, 'NASA Technical Standard');
+  const { body } = await copilot({ question: 'NASA-STD-6001B flammability test', habitat: 'lunar' }, { llm: async () => null });
+  assert.ok(body.citations.some((c) => /6001B/.test(c.title)), JSON.stringify(body.citations));
 });
 
 test('POST /copilot without LLM → template, valid GenUI, real citations', async () => {

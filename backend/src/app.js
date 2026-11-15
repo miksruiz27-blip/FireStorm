@@ -54,7 +54,13 @@ app.get('/experiments', async (req, res) => {
   if (!req.query.habitat) return res.json(all);
   const h = await habitatFrom(req);
   const max = Math.max(1, ...Object.values(counts));
-  res.json(all.map((e) => ({ ...e, ...scoreExperiment(h, e, counts[e.id] ?? 0, max) })).sort((a, b) => b.score - a.score));
+  // The ranking holds investigations only; reference documents (standards) stay citable by the copilot.
+  res.json(
+    all
+      .filter((e) => e.type !== 'reference')
+      .map((e) => ({ ...e, ...scoreExperiment(h, e, counts[e.id] ?? 0, max) }))
+      .sort((a, b) => b.score - a.score),
+  );
 });
 
 app.get('/experiments/:id', async (req, res) => {

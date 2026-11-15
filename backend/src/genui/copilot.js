@@ -22,6 +22,7 @@ export async function copilot({ question, habitat: habitatId }, { llm = askLLM }
     const [all, counts] = await Promise.all([repo.experiments(), repo.pointCounts()]);
     const max = Math.max(1, ...Object.values(counts));
     experiments = all
+      .filter((e) => e.type !== 'reference')
       .map((e) => ({ e, s: scoreExperiment(h, e, counts[e.id] ?? 0, max).score }))
       .sort((a, b) => b.s - a.s)
       .slice(0, 5)

@@ -4730,8 +4730,7 @@
      "consecuencia_hallazgo": "Aunque un fuego se extinga (como en SAFFIRE IV-VI), la adsorción en paredes de aluminio y la toxicidad aditiva de HF, HCl, CO y polvo respirable de regolito/percloratos exigen depuración activa ('Smoke Eater' + depurador CO2/ácidos)",
      "modificaciones_necesarias": "Exigir verificación T_grp < 1 post-supresión, filtración HEPA <= 0.1 mg/m3 y monitoreo de gases ácidos HF/HCl en hábitats Artemis y Marte.",
      "fuente": "NASA Technical Standards (NASA-STD-6001B, NASA-STD-3001 Vol. 2, JSC 20584)",
-     "referencia": "https://standards.nasa.gov/",
-     "is_verified": false
+     "referencia": "https://standards.nasa.gov/"
     },
     {
      "id": "NESC-LIION-TR",

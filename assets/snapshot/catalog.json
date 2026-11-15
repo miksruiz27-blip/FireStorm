@@ -1294,5 +1294,23 @@
   "modificaciones_necesarias": "Integrar los 5 sub-proyectos de SoFIE como referencia obligatoria de calibración para atmósferas SEA (34-37% O2) y factores de seguridad radiativos.",
   "fuente": "NASA Glenn Research Center - SoFIE (Solid Fuel Ignition and Extinction)",
   "referencia": "https://www.nasa.gov/missions/station/iss-research/sofie/"
+ },
+ {
+  "id": "STD-6001B-SMAC",
+  "tipo": "hallazgo",
+  "codigo_corto": "NASA-STD-6001B & JSC 20584 SMAC / NASA-STD-3001",
+  "experimento_investigacion": "Estándares NASA-STD-6001B Test 1 (15.2 cm), JSC 20584 SMACs y NASA-STD-3001 Polvo/Percloratos",
+  "grupo_investigacion": "Smoke_Dust_Detection_SAME_DAFT",
+  "categoria": "Certificación de materiales, toxicología post-incendio (HCl, HF, CO) y control de polvo lunar/marciano",
+  "instalacion_hardware": "SAFFIRE IV-VI Far-Field Diagnostics (FFD), Smoke Eater, depurador CO2/ácidos y filtración HEPA Artemis/Marte",
+  "investigador_responsable": "NASA Technical Standards & JSC Toxicology and Environmental Chemistry Lab",
+  "fecha_periodo": "Vigente Artemis / Moon-to-Mars",
+  "material_combustible": "Materiales no metálicos de cabina + gases ácidos post-incendio (HCl, HF, CO, HCN) + polvo lunar (~0.1 mg/m3) y percloratos marcianos",
+  "condiciones": "Test 1 vertical (autoextinción < 15.2 cm / 6 in sin goteo ardiente), SMACs de 1h/24h/largo plazo (HF = 0.3 ppm) e índice aditivo T_grp = sum(Ci/SMACi) < 1",
+  "descripcion_objetivo": "Garantizar la certificación de materiales y la supervivencia toxicológica post-incendio de la tripulación en hábitats lunares y marcianos cerrados",
+  "consecuencia_hallazgo": "Aunque un fuego se extinga (como en SAFFIRE IV-VI), la adsorción en paredes de aluminio y la toxicidad aditiva de HF, HCl, CO y polvo respirable de regolito/percloratos exigen depuración activa ('Smoke Eater' + depurador CO2/ácidos)",
+  "modificaciones_necesarias": "Exigir verificación T_grp < 1 post-supresión, filtración HEPA <= 0.1 mg/m3 y monitoreo de gases ácidos HF/HCl en hábitats Artemis y Marte.",
+  "fuente": "NASA Technical Standards (NASA-STD-6001B, NASA-STD-3001 Vol. 2, JSC 20584)",
+  "referencia": "https://standards.nasa.gov/"
  }
 ]

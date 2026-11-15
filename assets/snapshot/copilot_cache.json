@@ -268,44 +268,44 @@
     {
      "type": "experiment_list",
      "ids": [
+      "nasa-std-6001b",
       "apollo-13",
       "bass",
       "bass-psi-archive",
-      "psi-26",
-      "apollo-1"
+      "psi-26"
      ]
     }
    ],
    "citations": [
     {
      "n": 1,
+     "title": "NASA Technical Standards (NASA-STD-6001B, NASA-STD-3001 Vol. 2, JSC 20584) · https://standards.nasa.gov/",
+     "ref": "standards.nasa.gov",
+     "url": "https://standards.nasa.gov/"
+    },
+    {
+     "n": 2,
      "title": "NASA SMA - Apollo 13 Tank 2 (65V DC Overheat)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     },
     {
-     "n": 2,
+     "n": 3,
      "title": "NASA/TM-2015-218735 (NTRS: 20150016543)",
      "ref": "NTRS 20150016543",
      "url": "https://ntrs.nasa.gov/citations/20150016543"
     },
     {
-     "n": 3,
+     "n": 4,
      "title": "NASA-PSI-INV-0023 (BASS Archive)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     },
     {
-     "n": 4,
+     "n": 5,
      "title": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
      "ref": "PSI-26",
      "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26"
-    },
-    {
-     "n": 5,
-     "title": "NASA SMA - Apollo 1 (100% O2, 16.7 psi)",
-     "ref": "psi.nasa.gov",
-     "url": "https://psi.nasa.gov"
     }
    ]
   }
@@ -555,7 +555,7 @@
  {
   "q": "What if the lunar base drops to 21% O2?",
   "response": {
-   "answer": "Con base en 4 fuentes de NASA y el modelo físico: riesgo crítico en Lunar Base a 21 % O₂ — límite 16.78 %, propagación ≈ 0.23 mm/s; extrapolado, sin ensayos en esta condición.",
+   "answer": "Con base en 3 fuentes de NASA y el modelo físico: riesgo crítico en Lunar Base a 21 % O₂ — límite 16.78 %, propagación ≈ 0.23 mm/s; extrapolado, sin ensayos en esta condición.",
    "widgets": [
     {
      "type": "answer_card",
@@ -666,14 +666,6 @@
       [
        21,
        0.58
-      ],
-      [
-       20.8,
-       0.6
-      ],
-      [
-       21,
-       0.85
       ]
      ]
     },
@@ -704,12 +696,6 @@
    ],
    "citations": [
     {
-     "n": 5,
-     "title": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
-     "ref": "PSI-102",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
-    },
-    {
      "n": 6,
      "title": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)",
      "ref": "PSI-100",
@@ -723,9 +709,9 @@
     },
     {
      "n": 8,
-     "title": "NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115) — simulated values (team dataset)",
-     "ref": "PSI-115",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
+     "title": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
+     "ref": "PSI-102",
+     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
     }
    ]
   }

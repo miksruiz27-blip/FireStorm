@@ -76,6 +76,9 @@ const EXPERIMENTS = {
 // Experiments renamed by the F4 audit: the label the UI showed before → it now shows the id below.
 const RENAMED = { 'saffire-iv-vi': 'SAFFIRE-EXPLORATION', 'sofie-iss-cir': 'SOFIE-CIR', 'nasa-std-6001b': 'STD-6001B-SMAC' };
 
+// Reference documents (standards), not investigations: citable, never ranked (F5).
+const REFERENCES = { 'nasa-std-6001b': { platform: 'NASA Technical Standard' } };
+
 // Catalog group → defaults (fuel, safety domain).
 const GROUP = {
   BASS_Solid_Flammability: ['solid', ['prevention']],
@@ -150,12 +153,17 @@ const experiments = Object.entries(ids).map(([id, prefixes]) => {
     key_findings: uniq([c.consecuencia_hallazgo, c.descripcion_objetivo].filter(Boolean)),
     modifications: items(c.modificaciones_necesarias),
     research_group: c.grupo_investigacion,
+    // A reference is cited by its own document only (its test rows are SIN FUENTE).
     sources: [
-      ...uniq(rows.map((t) => sourceTitle(prefix(t.test_id), t.source))).map((s) => ({ title: s, ntrs_id: ntrs(s), url: url(s, 'https://psi.nasa.gov') })),
+      ...(id in REFERENCES ? [] : uniq(rows.map((t) => sourceTitle(prefix(t.test_id), t.source)))
+        .map((s) => ({ title: s, ntrs_id: ntrs(s), url: url(s, 'https://psi.nasa.gov') }))),
       { title: catRef, ntrs_id: '', url: url(c.referencia, '') },
     ],
     catalog_id: catId,
-    is_verified: verified.length > 0,
+    // A standard is verified by its own document (title + standard ID + URL), not by test rows.
+    is_verified: verified.length > 0 || id in REFERENCES,
+    type: id in REFERENCES ? 'reference' : 'investigation',
+    ...(REFERENCES[id] ?? {}),
   };
 });
 
@@ -219,7 +227,11 @@ function writeAudit() {
   const pgExp = [...new Set(pg.map(({ t }) => EXPERIMENTS[prefix(t.test_id)][0]))];
   const expRows = experiments.filter((e) => pgExp.includes(e.id)).map((e) => {
     const c = catalog[e.catalog_id];
-    const status = !e.is_verified ? 'SIN FUENTE' : RENAMED[e.id] ? 'RENOMBRAR' : 'OK';
+    const status = !e.is_verified
+      ? 'SIN FUENTE'
+      : e.type === 'reference'
+        ? 'OK · reference (standard, not ranked; its partial-g rows SIN FUENTE)'
+        : RENAMED[e.id] ? 'RENOMBRAR' : 'OK';
     return `| ${e.id} | ${RENAMED[e.id] ?? e.id.toUpperCase()} | ${esc(c.codigo_corto)} — ${esc(c.experimento_investigacion)} | ` +
       `${esc(c.fuente)} · ${esc(c.referencia)} (catalog ${e.catalog_id}) | ${status} |`;
   });

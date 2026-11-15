@@ -35,8 +35,8 @@ const upserts = {
   experiments: [
     Experiment,
     `INSERT INTO experiments (id, name, platform, fuel_type, domain, hardware, o2_range, pressure_kpa_range, gravity,
-       flow_cm_s_range, materials, key_findings, sources, modifications, research_group, is_verified, search)
-     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$15,$16,$17,
+       flow_cm_s_range, materials, key_findings, sources, modifications, research_group, is_verified, type, search)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$15,$16,$17,$18,
        to_tsvector('english', $2 || ' ' || $14 || ' ' || array_to_string($11::text[], ' ') || ' ' ||
          array_to_string($12::text[], ' ') || ' ' || array_to_string($15::text[], ' ')))
      ON CONFLICT (id) DO UPDATE SET name=EXCLUDED.name, platform=EXCLUDED.platform, fuel_type=EXCLUDED.fuel_type,
@@ -44,10 +44,10 @@ const upserts = {
        pressure_kpa_range=EXCLUDED.pressure_kpa_range, gravity=EXCLUDED.gravity, flow_cm_s_range=EXCLUDED.flow_cm_s_range,
        materials=EXCLUDED.materials, key_findings=EXCLUDED.key_findings, sources=EXCLUDED.sources,
        modifications=EXCLUDED.modifications, research_group=EXCLUDED.research_group,
-       is_verified=EXCLUDED.is_verified, search=EXCLUDED.search`,
+       is_verified=EXCLUDED.is_verified, type=EXCLUDED.type, search=EXCLUDED.search`,
     (e) => [e.id, e.name, e.platform, e.fuel_type, e.domain, e.hardware, e.o2_range, e.pressure_kpa_range, e.gravity,
       e.flow_cm_s_range, e.materials, e.key_findings, JSON.stringify(e.sources), e.hardware, e.modifications, e.research_group,
-      e.is_verified],
+      e.is_verified, e.type],
   ],
   test_points: [
     TestPoint,

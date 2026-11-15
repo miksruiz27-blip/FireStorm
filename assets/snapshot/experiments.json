@@ -51,6 +51,7 @@
     "Prohibir aplicación directa de chorros localizados lentos de N2 sobre la base de la llama sin cortar primero la ventilación HVAC, ya que el arrastre de O2 intensifica el fuego"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.539,
    "score_breakdown": {
     "conditions": 0.278,
@@ -108,6 +109,7 @@
     "Exigir tiempo de espera post-corte de ventilación (> 60 s) por inercia térmica de sólidos gruesos (PMMA >= 3.2 mm)"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.503,
    "score_breakdown": {
     "conditions": 0.278,
@@ -177,6 +179,7 @@
     "Aumentar el margen de dilución con CO2/N2 en al menos +4% para suprimir tanto la rama de llama caliente como la rama de llama fría en hidrocarburos pesados"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.428,
    "score_breakdown": {
     "conditions": 0.336,
@@ -237,6 +240,7 @@
     "Instalar lavadores catalíticos de campo lejano (Far-Field Scrubbers de CO, CO2, HCl y HF probados en SAFFIRE IV-VI) y protocolo de despresurización/represurización rápida post-incendio"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.424,
    "score_breakdown": {
     "conditions": 0.432,
@@ -293,6 +297,7 @@
     "Reformar procesos de pruebas de detanking y control de cambios de manufactura"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.41,
    "score_breakdown": {
     "conditions": 0.611,
@@ -354,6 +359,7 @@
     "Incorporar vigilancia espectral de formaldehído excitado (HCHO*) e infrarrojo medio tras cualquier extinción aparente de hidrocarburos líquidos"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.4,
    "score_breakdown": {
     "conditions": 0.336,
@@ -423,6 +429,7 @@
     "Exigir tiempo de espera post-corte de ventilación (> 60 s) por inercia térmica de sólidos gruesos (PMMA >= 3.2 mm)"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.399,
    "score_breakdown": {
     "conditions": 0.278,
@@ -485,6 +492,7 @@
     "Reemplazar criterio unidimensional de NASA-STD-6001 Test 1"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.371,
    "score_breakdown": {
     "conditions": 0.278,
@@ -563,6 +571,7 @@
     "Incorporar sensores infrarrojos/espectrales para detectar llamas frías (cool flames) invisibles y mantener monitoreo post-extinción para prevenir reignición espontánea"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.359,
    "score_breakdown": {
     "conditions": 0.278,
@@ -623,6 +632,7 @@
     "Ajustar espaciamiento de inyección en arreglos de gotas para mitigar hollín y reignición"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.347,
    "score_breakdown": {
     "conditions": 0.278,
@@ -682,6 +692,7 @@
     "Automatizar el corte inmediato del flujo de ventilación HVAC (llevando flujo a 0 cm/s) al detectar humo o radiación de llama antes de descargar el agente extintor"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.347,
    "score_breakdown": {
     "conditions": 0.278,
@@ -735,6 +746,7 @@
     "Rediseñar boquillas de extinción con difusores de inundación total o niebla envolvente en lugar de chorros estrechos de gas inerte que inducen mezcla de O2"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.343,
    "score_breakdown": {
     "conditions": 0.278,
@@ -817,6 +829,7 @@
     "Integrar los 5 sub-proyectos de SoFIE como referencia obligatoria de calibración para atmósferas SEA (34-37% O2) y factores de seguridad radiativos"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.34,
    "score_breakdown": {
     "conditions": 0.432,
@@ -875,6 +888,7 @@
     "Prohibir aplicación directa de chorros localizados lentos de N2 sobre la base de la llama sin cortar primero la ventilación HVAC, ya que el arrastre de O2 intensifica el fuego"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.323,
    "score_breakdown": {
     "conditions": 0.278,
@@ -987,6 +1001,7 @@
     "Certificar todos los polímeros de cabina (PMMA, Delrin, tejidos) bajo atmósferas de exploración de baja presión y alto O2 (hasta 40% O2 y 0.2-1.5 atm) con flujos de ventilación HVAC reales (0-30 cm/s)"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.314,
    "score_breakdown": {
     "conditions": 0.34,
@@ -1055,6 +1070,7 @@
     "Protocolos obligatorios de pruebas peligrosas con rescate en sitio"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.306,
    "score_breakdown": {
     "conditions": 0.389,
@@ -1116,6 +1132,7 @@
     "Restringir el uso de membranas de silicona de espesor < 1.5 mm en ductos con flujo >= 20 cm/s"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1174,6 +1191,7 @@
     "Calibrar los modelos de emisión de hollín usando perfiles de fracción volumétrica medidos por tomografía óptica de dos colores"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.263,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1231,6 +1249,7 @@
     "Incluir algoritmos de compensación por coagulación durante el transporte lento en cabina"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.259,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1287,6 +1306,7 @@
     "Implementar sensores de humo de doble longitud de onda (azul + infrarrojo cercano) capaces de medir simultáneamente la relación de momentos de tamaño (diámetro medio) para distinguir entre pirólisis de Teflón/cables (partículas pequeñas) y humo de silicona/celulosa o polvo ambiental"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.259,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1342,6 +1362,7 @@
     "Reconfigurar quemadores e incineradores espaciales desplazando el diluyente (N2/CO2) hacia la corriente de combustible para elevar Z_st > 0.35, eliminando el hollín y la radiación térmica excesiva incluso en atmósferas de exploración enriquecidas en O2"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1398,6 +1419,7 @@
     "Dimensionar los sistemas de alivio de presión y depuración de CO/CO2 post-incendio para tasas de liberación de calor escaladas linealmente con la velocidad de ventilación"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1453,6 +1475,7 @@
     "Diseñar estabilizadores de llama (flame holders) en sistemas de combustión espaciales considerando que la altura de liftoff en 0-g es más sensible al déficit de momento del coflujo"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1508,6 +1531,7 @@
     "Aplicar un factor de reducción de seguridad de 3x sobre las tablas terrestres de punto de humo (ASTM D1322) al evaluar propensión al hollín y carga sobre filtros HEPA en incendios espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1563,6 +1587,7 @@
     "Utilizar la matriz paramétrica del BRE (calor de gasificación L_g y número-B) para pre-descartar polímeros candidatos de cabina sin necesidad de quemar cientos de muestras sólidas en órbita"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1618,6 +1643,7 @@
     "Recalibrar los sub-modelos de estabilización de llama de borde (edge/triple flames) y radiación de hollín en códigos CFD de cámaras de combustión de baja emisión y quemadores espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1673,6 +1699,7 @@
     "Incorporar anillos/mallas de electrodos de alta tensión (6-9 kV, consumo < 1 W) en quemadores e incineradores orbitales para sustituir ventiladores mecánicos mediante convección por viento iónico y eliminar la emisión de hollín"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1729,6 +1756,7 @@
     "y reabsorción radiativa de CO2/H2O en los modelos de propagación y extinción de incendios esféricos en cabinas espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1784,6 +1812,7 @@
     "Diferenciar los protocolos de seguridad y supresión en órbita según la estructura molecular del líquido (alcanos lineales con alto riesgo de llama fría invisible vs ésteres/alcoholes sin rama NTC)"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1840,6 +1869,7 @@
     "Aislar temporalmente la pre-alarma en la zona de calentador de alimentos (galley)"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1895,6 +1925,7 @@
     "Acoplar modelos de radiación ópticamente delgada/gruesa con cinética de oxidación de hollín por radicales OH y O2 para predecir la liberación repentina de hollín (wing/tip opening) en incendios espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -1951,6 +1982,7 @@
     "Validar que el corte de ventilación detiene inmediatamente un frente de llama de 0.4 m de ancho"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.255,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2005,6 +2037,7 @@
     "Incorporar condiciones de contorno de esfuerzo cortante termocapilar de Marangoni (d_sigma/dT) en los modelos de propagación de llama sobre líquidos y charcos de polímero fundido en microgravedad"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.251,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2059,6 +2092,7 @@
     "Integrar el módulo de balance poblacional de aerosoles (PBM con dimensión fractal 1.8) en el software de simulación de ventilación de hábitats (Orion/Gateway) para optimizar la ubicación de detectores fotoeléctricos"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.251,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2113,6 +2147,7 @@
     "Evitar pulsos bruscos de ventilación sobre nubes de vapor post-extinción de hidrocarburos, ya que la estela convectiva concentra radicales RO2/H2O2 y desencadena reignición caliente secundaria"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.251,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2167,6 +2202,7 @@
     "Actualizar los criterios de extinción por estiramiento (número de Damköhler crítico) en motores y sistemas de supresión espaciales usando la curva-S de 4 ramas que incluye el régimen de llama fría"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.251,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2221,6 +2257,7 @@
     "Extender los protocolos de detección de llamas frías (sensores de HCHO* y CO) también a fugas de hidrocarburos gaseosos ligeros (propano, butano, pentano) en sistemas térmicos y de propulsión espacial"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.251,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2276,6 +2313,7 @@
     "Preferir formulaciones SAC dopadas con control de intermetálicos para misiones lunares con ciclado criogénico"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.251,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2334,6 +2372,7 @@
     "Calibrar la retroalimentación entre termopares superficiales, sensores de flujo de calor radiante y válvula de flujo másico de gas para emular el número-B de transferencia de masa de polímeros reales en hábitats espaciales"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.247,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2392,6 +2431,7 @@
     "Extender mecanismos químicos detallados de formación de precursores aromáticos policíclicos (PAH) y hollín hacia regímenes de alta dilución con N2"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.247,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2450,6 +2490,7 @@
     "Reconfigurar la estequiometría de quemadores (desplazando el oxidante o diluyente) para operar con atmósferas enriquecidas en O2 produciendo llamas fuertes pero libres de hollín y radiación excesiva"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.247,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2509,6 +2550,7 @@
     "Mantener vigilancia térmica/UV para llamas hemisféricas azules de baja luminosidad que persisten por difusión pura"
    ],
    "research_group": "Premixed_Stability_SOFBALL_Candle",
+   "type": "investigation",
    "score": 0.247,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2567,6 +2609,7 @@
     "Actualizar procedimientos post-incendio en la ISS/Artemis para exigir enfriamiento total y ventilación controlada de vapores parciales oxidados (formaldehído/CO) antes de reabrir compartimentos donde una llama pareció extinguirse"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.247,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2625,6 +2668,7 @@
     "Reemplazar los extintores de CO2 y Halon 1301 por extintores de niebla fina de agua (Water Mist PFE con gotas < 50 micras), eliminando el riesgo de toxicidad por CO2 en cabina cerrada"
    ],
    "research_group": "WaterMist_SCWM_Suppression",
+   "type": "investigation",
    "score": 0.247,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2677,6 +2721,7 @@
     "Implementar mallas de electrodos de alta tensión (hasta 10 kV) para inducir convección forzada por viento iónico, reduciendo formación de hollín y permitiendo emular gravedad lunar/marciana (0.16g - 0.38g)"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.243,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2729,6 +2774,7 @@
     "Incluir pérdidas radiativas de gas (CO2, H2O) y acoplamiento de número de Lewis en los modelos de extinción de grandes llamas esféricas en hábitats espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.243,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2782,6 +2828,7 @@
     "Integrar diagnósticos ópticos de alta resolución implementados posteriormente en ACME CLD Flame"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.243,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2834,6 +2881,7 @@
     "Reducir el límite inferior de inflamabilidad (LFL) de diseño para fugas de hidrógeno y gases ligeros (bajo número de Lewis) en hábitats espaciales, ya que pueden sostener bolas de llama estacionarias de ~1 W por debajo del límite terrestre"
    ],
    "research_group": "Premixed_Stability_SOFBALL_Candle",
+   "type": "investigation",
    "score": 0.243,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2887,6 +2935,7 @@
     "Limitar flujo de combustible por debajo del umbral de liberación de hollín para evitar pérdidas radiativas y obstrucción de filtros en la ISS"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.243,
    "score_breakdown": {
     "conditions": 0.278,
@@ -2947,6 +2996,7 @@
     "Prohibir aplicación directa de chorros localizados lentos de N2 sobre la base de la llama sin cortar primero la ventilación HVAC, ya que el arrastre de O2 intensifica el fuego"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.9,
    "score_breakdown": {
     "conditions": 1,
@@ -3004,6 +3054,7 @@
     "Exigir tiempo de espera post-corte de ventilación (> 60 s) por inercia térmica de sólidos gruesos (PMMA >= 3.2 mm)"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.864,
    "score_breakdown": {
     "conditions": 1,
@@ -3073,6 +3124,7 @@
     "Aumentar el margen de dilución con CO2/N2 en al menos +4% para suprimir tanto la rama de llama caliente como la rama de llama fría en hidrocarburos pesados"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.76,
    "score_breakdown": {
     "conditions": 1,
@@ -3142,6 +3194,7 @@
     "Exigir tiempo de espera post-corte de ventilación (> 60 s) por inercia térmica de sólidos gruesos (PMMA >= 3.2 mm)"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.757,
    "score_breakdown": {
     "conditions": 0.993,
@@ -3203,6 +3256,7 @@
     "Incorporar vigilancia espectral de formaldehído excitado (HCHO*) e infrarrojo medio tras cualquier extinción aparente de hidrocarburos líquidos"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.732,
    "score_breakdown": {
     "conditions": 1,
@@ -3265,6 +3319,7 @@
     "Reemplazar criterio unidimensional de NASA-STD-6001 Test 1"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.73,
    "score_breakdown": {
     "conditions": 0.996,
@@ -3343,6 +3398,7 @@
     "Incorporar sensores infrarrojos/espectrales para detectar llamas frías (cool flames) invisibles y mantener monitoreo post-extinción para prevenir reignición espontánea"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.72,
    "score_breakdown": {
     "conditions": 1,
@@ -3403,6 +3459,7 @@
     "Ajustar espaciamiento de inyección en arreglos de gotas para mitigar hollín y reignición"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.708,
    "score_breakdown": {
     "conditions": 1,
@@ -3462,6 +3519,7 @@
     "Automatizar el corte inmediato del flujo de ventilación HVAC (llevando flujo a 0 cm/s) al detectar humo o radiación de llama antes de descargar el agente extintor"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.699,
    "score_breakdown": {
     "conditions": 0.983,
@@ -3515,6 +3573,7 @@
     "Rediseñar boquillas de extinción con difusores de inundación total o niebla envolvente en lugar de chorros estrechos de gas inerte que inducen mezcla de O2"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.687,
    "score_breakdown": {
     "conditions": 0.966,
@@ -3573,6 +3632,7 @@
     "Prohibir aplicación directa de chorros localizados lentos de N2 sobre la base de la llama sin cortar primero la ventilación HVAC, ya que el arrastre de O2 intensifica el fuego"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.684,
    "score_breakdown": {
     "conditions": 1,
@@ -3685,6 +3745,7 @@
     "Certificar todos los polímeros de cabina (PMMA, Delrin, tejidos) bajo atmósferas de exploración de baja presión y alto O2 (hasta 40% O2 y 0.2-1.5 atm) con flujos de ventilación HVAC reales (0-30 cm/s)"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.644,
    "score_breakdown": {
     "conditions": 1,
@@ -3746,6 +3807,7 @@
     "Restringir el uso de membranas de silicona de espesor < 1.5 mm en ductos con flujo >= 20 cm/s"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.636,
    "score_breakdown": {
     "conditions": 1,
@@ -3804,6 +3866,7 @@
     "Calibrar los modelos de emisión de hollín usando perfiles de fracción volumétrica medidos por tomografía óptica de dos colores"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.624,
    "score_breakdown": {
     "conditions": 1,
@@ -3861,6 +3924,7 @@
     "Incluir algoritmos de compensación por coagulación durante el transporte lento en cabina"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.62,
    "score_breakdown": {
     "conditions": 1,
@@ -3917,6 +3981,7 @@
     "Implementar sensores de humo de doble longitud de onda (azul + infrarrojo cercano) capaces de medir simultáneamente la relación de momentos de tamaño (diámetro medio) para distinguir entre pirólisis de Teflón/cables (partículas pequeñas) y humo de silicona/celulosa o polvo ambiental"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.62,
    "score_breakdown": {
     "conditions": 1,
@@ -3972,6 +4037,7 @@
     "Reconfigurar quemadores e incineradores espaciales desplazando el diluyente (N2/CO2) hacia la corriente de combustible para elevar Z_st > 0.35, eliminando el hollín y la radiación térmica excesiva incluso en atmósferas de exploración enriquecidas en O2"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4028,6 +4094,7 @@
     "Dimensionar los sistemas de alivio de presión y depuración de CO/CO2 post-incendio para tasas de liberación de calor escaladas linealmente con la velocidad de ventilación"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4083,6 +4150,7 @@
     "Diseñar estabilizadores de llama (flame holders) en sistemas de combustión espaciales considerando que la altura de liftoff en 0-g es más sensible al déficit de momento del coflujo"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4138,6 +4206,7 @@
     "Aplicar un factor de reducción de seguridad de 3x sobre las tablas terrestres de punto de humo (ASTM D1322) al evaluar propensión al hollín y carga sobre filtros HEPA en incendios espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4193,6 +4262,7 @@
     "Utilizar la matriz paramétrica del BRE (calor de gasificación L_g y número-B) para pre-descartar polímeros candidatos de cabina sin necesidad de quemar cientos de muestras sólidas en órbita"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4248,6 +4318,7 @@
     "Recalibrar los sub-modelos de estabilización de llama de borde (edge/triple flames) y radiación de hollín en códigos CFD de cámaras de combustión de baja emisión y quemadores espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4303,6 +4374,7 @@
     "Incorporar anillos/mallas de electrodos de alta tensión (6-9 kV, consumo < 1 W) en quemadores e incineradores orbitales para sustituir ventiladores mecánicos mediante convección por viento iónico y eliminar la emisión de hollín"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4359,6 +4431,7 @@
     "y reabsorción radiativa de CO2/H2O en los modelos de propagación y extinción de incendios esféricos en cabinas espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4414,6 +4487,7 @@
     "Diferenciar los protocolos de seguridad y supresión en órbita según la estructura molecular del líquido (alcanos lineales con alto riesgo de llama fría invisible vs ésteres/alcoholes sin rama NTC)"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4470,6 +4544,7 @@
     "Aislar temporalmente la pre-alarma en la zona de calentador de alimentos (galley)"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4525,6 +4600,7 @@
     "Acoplar modelos de radiación ópticamente delgada/gruesa con cinética de oxidación de hollín por radicales OH y O2 para predecir la liberación repentina de hollín (wing/tip opening) en incendios espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4581,6 +4657,7 @@
     "Validar que el corte de ventilación detiene inmediatamente un frente de llama de 0.4 m de ancho"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.616,
    "score_breakdown": {
     "conditions": 1,
@@ -4635,6 +4712,7 @@
     "Integrar el módulo de balance poblacional de aerosoles (PBM con dimensión fractal 1.8) en el software de simulación de ventilación de hábitats (Orion/Gateway) para optimizar la ubicación de detectores fotoeléctricos"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.612,
    "score_breakdown": {
     "conditions": 1,
@@ -4689,6 +4767,7 @@
     "Evitar pulsos bruscos de ventilación sobre nubes de vapor post-extinción de hidrocarburos, ya que la estela convectiva concentra radicales RO2/H2O2 y desencadena reignición caliente secundaria"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.612,
    "score_breakdown": {
     "conditions": 1,
@@ -4743,6 +4822,7 @@
     "Actualizar los criterios de extinción por estiramiento (número de Damköhler crítico) en motores y sistemas de supresión espaciales usando la curva-S de 4 ramas que incluye el régimen de llama fría"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.612,
    "score_breakdown": {
     "conditions": 1,
@@ -4797,6 +4877,7 @@
     "Extender los protocolos de detección de llamas frías (sensores de HCHO* y CO) también a fugas de hidrocarburos gaseosos ligeros (propano, butano, pentano) en sistemas térmicos y de propulsión espacial"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.612,
    "score_breakdown": {
     "conditions": 1,
@@ -4852,6 +4933,7 @@
     "Preferir formulaciones SAC dopadas con control de intermetálicos para misiones lunares con ciclado criogénico"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.612,
    "score_breakdown": {
     "conditions": 1,
@@ -4906,6 +4988,7 @@
     "Incorporar condiciones de contorno de esfuerzo cortante termocapilar de Marangoni (d_sigma/dT) en los modelos de propagación de llama sobre líquidos y charcos de polímero fundido en microgravedad"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.61,
    "score_breakdown": {
     "conditions": 0.996,
@@ -4964,6 +5047,7 @@
     "Calibrar la retroalimentación entre termopares superficiales, sensores de flujo de calor radiante y válvula de flujo másico de gas para emular el número-B de transferencia de masa de polímeros reales en hábitats espaciales"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.608,
    "score_breakdown": {
     "conditions": 1,
@@ -5022,6 +5106,7 @@
     "Reconfigurar la estequiometría de quemadores (desplazando el oxidante o diluyente) para operar con atmósferas enriquecidas en O2 produciendo llamas fuertes pero libres de hollín y radiación excesiva"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.608,
    "score_breakdown": {
     "conditions": 1,
@@ -5080,6 +5165,7 @@
     "Reemplazar los extintores de CO2 y Halon 1301 por extintores de niebla fina de agua (Water Mist PFE con gotas < 50 micras), eliminando el riesgo de toxicidad por CO2 en cabina cerrada"
    ],
    "research_group": "WaterMist_SCWM_Suppression",
+   "type": "investigation",
    "score": 0.608,
    "score_breakdown": {
     "conditions": 1,
@@ -5138,6 +5224,7 @@
     "Extender mecanismos químicos detallados de formación de precursores aromáticos policíclicos (PAH) y hollín hacia regímenes de alta dilución con N2"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.604,
    "score_breakdown": {
     "conditions": 0.993,
@@ -5191,6 +5278,7 @@
     "Limitar flujo de combustible por debajo del umbral de liberación de hollín para evitar pérdidas radiativas y obstrucción de filtros en la ISS"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.604,
    "score_breakdown": {
     "conditions": 1,
@@ -5243,6 +5331,7 @@
     "Implementar mallas de electrodos de alta tensión (hasta 10 kV) para inducir convección forzada por viento iónico, reduciendo formación de hollín y permitiendo emular gravedad lunar/marciana (0.16g - 0.38g)"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.602,
    "score_breakdown": {
     "conditions": 0.996,
@@ -5296,6 +5385,7 @@
     "Integrar diagnósticos ópticos de alta resolución implementados posteriormente en ACME CLD Flame"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.602,
    "score_breakdown": {
     "conditions": 0.996,
@@ -5348,6 +5438,7 @@
     "Incluir pérdidas radiativas de gas (CO2, H2O) y acoplamiento de número de Lewis en los modelos de extinción de grandes llamas esféricas en hábitats espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.595,
    "score_breakdown": {
     "conditions": 0.982,
@@ -5400,6 +5491,7 @@
     "Reducir el límite inferior de inflamabilidad (LFL) de diseño para fugas de hidrógeno y gases ligeros (bajo número de Lewis) en hábitats espaciales, ya que pueden sostener bolas de llama estacionarias de ~1 W por debajo del límite terrestre"
    ],
    "research_group": "Premixed_Stability_SOFBALL_Candle",
+   "type": "investigation",
    "score": 0.595,
    "score_breakdown": {
     "conditions": 0.983,
@@ -5459,6 +5551,7 @@
     "Mantener vigilancia térmica/UV para llamas hemisféricas azules de baja luminosidad que persisten por difusión pura"
    ],
    "research_group": "Premixed_Stability_SOFBALL_Candle",
+   "type": "investigation",
    "score": 0.594,
    "score_breakdown": {
     "conditions": 0.972,
@@ -5517,6 +5610,7 @@
     "Actualizar procedimientos post-incendio en la ISS/Artemis para exigir enfriamiento total y ventilación controlada de vapores parciales oxidados (formaldehído/CO) antes de reabrir compartimentos donde una llama pareció extinguirse"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.582,
    "score_breakdown": {
     "conditions": 0.949,
@@ -5577,6 +5671,7 @@
     "Instalar lavadores catalíticos de campo lejano (Far-Field Scrubbers de CO, CO2, HCl y HF probados en SAFFIRE IV-VI) y protocolo de despresurización/represurización rápida post-incendio"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.558,
    "score_breakdown": {
     "conditions": 0.701,
@@ -5659,6 +5754,7 @@
     "Integrar los 5 sub-proyectos de SoFIE como referencia obligatoria de calibración para atmósferas SEA (34-37% O2) y factores de seguridad radiativos"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.474,
    "score_breakdown": {
     "conditions": 0.701,
@@ -5727,6 +5823,7 @@
     "Protocolos obligatorios de pruebas peligrosas con rescate en sitio"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.445,
    "score_breakdown": {
     "conditions": 0.667,
@@ -5783,6 +5880,7 @@
     "Reformar procesos de pruebas de detanking y control de cambios de manufactura"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.392,
    "score_breakdown": {
     "conditions": 0.576,
@@ -5845,6 +5943,7 @@
     "Instalar lavadores catalíticos de campo lejano (Far-Field Scrubbers de CO, CO2, HCl y HF probados en SAFFIRE IV-VI) y protocolo de despresurización/represurización rápida post-incendio"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.68,
    "score_breakdown": {
     "conditions": 0.944,
@@ -5927,6 +6026,7 @@
     "Integrar los 5 sub-proyectos de SoFIE como referencia obligatoria de calibración para atmósferas SEA (34-37% O2) y factores de seguridad radiativos"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.596,
    "score_breakdown": {
     "conditions": 0.944,
@@ -6039,6 +6139,7 @@
     "Certificar todos los polímeros de cabina (PMMA, Delrin, tejidos) bajo atmósferas de exploración de baja presión y alto O2 (hasta 40% O2 y 0.2-1.5 atm) con flujos de ventilación HVAC reales (0-30 cm/s)"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.57,
    "score_breakdown": {
     "conditions": 0.853,
@@ -6097,6 +6198,7 @@
     "Prohibir aplicación directa de chorros localizados lentos de N2 sobre la base de la llama sin cortar primero la ventilación HVAC, ya que el arrastre de O2 intensifica el fuego"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.56,
    "score_breakdown": {
     "conditions": 0.32,
@@ -6166,6 +6268,7 @@
     "Aumentar el margen de dilución con CO2/N2 en al menos +4% para suprimir tanto la rama de llama caliente como la rama de llama fría en hidrocarburos pesados"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.534,
    "score_breakdown": {
     "conditions": 0.549,
@@ -6223,6 +6326,7 @@
     "Exigir tiempo de espera post-corte de ventilación (> 60 s) por inercia térmica de sólidos gruesos (PMMA >= 3.2 mm)"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.524,
    "score_breakdown": {
     "conditions": 0.32,
@@ -6284,6 +6388,7 @@
     "Incorporar vigilancia espectral de formaldehído excitado (HCHO*) e infrarrojo medio tras cualquier extinción aparente de hidrocarburos líquidos"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.49,
    "score_breakdown": {
     "conditions": 0.516,
@@ -6353,6 +6458,7 @@
     "Exigir tiempo de espera post-corte de ventilación (> 60 s) por inercia térmica de sólidos gruesos (PMMA >= 3.2 mm)"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.419,
    "score_breakdown": {
     "conditions": 0.318,
@@ -6415,6 +6521,7 @@
     "Reemplazar criterio unidimensional de NASA-STD-6001 Test 1"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.391,
    "score_breakdown": {
     "conditions": 0.319,
@@ -6493,6 +6600,7 @@
     "Incorporar sensores infrarrojos/espectrales para detectar llamas frías (cool flames) invisibles y mantener monitoreo post-extinción para prevenir reignición espontánea"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.38,
    "score_breakdown": {
     "conditions": 0.32,
@@ -6553,6 +6661,7 @@
     "Ajustar espaciamiento de inyección en arreglos de gotas para mitigar hollín y reignición"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.367,
    "score_breakdown": {
     "conditions": 0.318,
@@ -6612,6 +6721,7 @@
     "Automatizar el corte inmediato del flujo de ventilación HVAC (llevando flujo a 0 cm/s) al detectar humo o radiación de llama antes de descargar el agente extintor"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.367,
    "score_breakdown": {
     "conditions": 0.319,
@@ -6665,6 +6775,7 @@
     "Rediseñar boquillas de extinción con difusores de inundación total o niebla envolvente en lugar de chorros estrechos de gas inerte que inducen mezcla de O2"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.361,
    "score_breakdown": {
     "conditions": 0.314,
@@ -6723,6 +6834,7 @@
     "Prohibir aplicación directa de chorros localizados lentos de N2 sobre la base de la llama sin cortar primero la ventilación HVAC, ya que el arrastre de O2 intensifica el fuego"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.344,
    "score_breakdown": {
     "conditions": 0.32,
@@ -6778,6 +6890,7 @@
     "Reconfigurar quemadores e incineradores espaciales desplazando el diluyente (N2/CO2) hacia la corriente de combustible para elevar Z_st > 0.35, eliminando el hollín y la radiación térmica excesiva incluso en atmósferas de exploración enriquecidas en O2"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.342,
    "score_breakdown": {
     "conditions": 0.452,
@@ -6846,6 +6959,7 @@
     "Protocolos obligatorios de pruebas peligrosas con rescate en sitio"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.327,
    "score_breakdown": {
     "conditions": 0.43,
@@ -6907,6 +7021,7 @@
     "Restringir el uso de membranas de silicona de espesor < 1.5 mm en ductos con flujo >= 20 cm/s"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.295,
    "score_breakdown": {
     "conditions": 0.318,
@@ -6965,6 +7080,7 @@
     "Calibrar los modelos de emisión de hollín usando perfiles de fracción volumétrica medidos por tomografía óptica de dos colores"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.283,
    "score_breakdown": {
     "conditions": 0.318,
@@ -7021,6 +7137,7 @@
     "Implementar sensores de humo de doble longitud de onda (azul + infrarrojo cercano) capaces de medir simultáneamente la relación de momentos de tamaño (diámetro medio) para distinguir entre pirólisis de Teflón/cables (partículas pequeñas) y humo de silicona/celulosa o polvo ambiental"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.28,
    "score_breakdown": {
     "conditions": 0.32,
@@ -7078,6 +7195,7 @@
     "Incluir algoritmos de compensación por coagulación durante el transporte lento en cabina"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.279,
    "score_breakdown": {
     "conditions": 0.319,
@@ -7133,6 +7251,7 @@
     "Recalibrar los sub-modelos de estabilización de llama de borde (edge/triple flames) y radiación de hollín en códigos CFD de cámaras de combustión de baja emisión y quemadores espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.276,
    "score_breakdown": {
     "conditions": 0.32,
@@ -7189,6 +7308,7 @@
     "Aislar temporalmente la pre-alarma en la zona de calentador de alimentos (galley)"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.276,
    "score_breakdown": {
     "conditions": 0.32,
@@ -7245,6 +7365,7 @@
     "Dimensionar los sistemas de alivio de presión y depuración de CO/CO2 post-incendio para tasas de liberación de calor escaladas linealmente con la velocidad de ventilación"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.318,
@@ -7300,6 +7421,7 @@
     "Diseñar estabilizadores de llama (flame holders) en sistemas de combustión espaciales considerando que la altura de liftoff en 0-g es más sensible al déficit de momento del coflujo"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.318,
@@ -7355,6 +7477,7 @@
     "Utilizar la matriz paramétrica del BRE (calor de gasificación L_g y número-B) para pre-descartar polímeros candidatos de cabina sin necesidad de quemar cientos de muestras sólidas en órbita"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.318,
@@ -7410,6 +7533,7 @@
     "Incorporar anillos/mallas de electrodos de alta tensión (6-9 kV, consumo < 1 W) en quemadores e incineradores orbitales para sustituir ventiladores mecánicos mediante convección por viento iónico y eliminar la emisión de hollín"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.319,
@@ -7466,6 +7590,7 @@
     "y reabsorción radiativa de CO2/H2O en los modelos de propagación y extinción de incendios esféricos en cabinas espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.318,
@@ -7521,6 +7646,7 @@
     "Acoplar modelos de radiación ópticamente delgada/gruesa con cinética de oxidación de hollín por radicales OH y O2 para predecir la liberación repentina de hollín (wing/tip opening) en incendios espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.318,
@@ -7576,6 +7702,7 @@
     "Aplicar un factor de reducción de seguridad de 3x sobre las tablas terrestres de punto de humo (ASTM D1322) al evaluar propensión al hollín y carga sobre filtros HEPA en incendios espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.274,
    "score_breakdown": {
     "conditions": 0.317,
@@ -7632,6 +7759,7 @@
     "Validar que el corte de ventilación detiene inmediatamente un frente de llama de 0.4 m de ancho"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.274,
    "score_breakdown": {
     "conditions": 0.316,
@@ -7687,6 +7815,7 @@
     "Diferenciar los protocolos de seguridad y supresión en órbita según la estructura molecular del líquido (alcanos lineales con alto riesgo de llama fría invisible vs ésteres/alcoholes sin rama NTC)"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.272,
    "score_breakdown": {
     "conditions": 0.313,
@@ -7741,6 +7870,7 @@
     "Incorporar condiciones de contorno de esfuerzo cortante termocapilar de Marangoni (d_sigma/dT) en los modelos de propagación de llama sobre líquidos y charcos de polímero fundido en microgravedad"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.271,
    "score_breakdown": {
     "conditions": 0.318,
@@ -7796,6 +7926,7 @@
     "Preferir formulaciones SAC dopadas con control de intermetálicos para misiones lunares con ciclado criogénico"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.271,
    "score_breakdown": {
     "conditions": 0.318,
@@ -7850,6 +7981,7 @@
     "Integrar el módulo de balance poblacional de aerosoles (PBM con dimensión fractal 1.8) en el software de simulación de ventilación de hábitats (Orion/Gateway) para optimizar la ubicación de detectores fotoeléctricos"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.27,
    "score_breakdown": {
     "conditions": 0.316,
@@ -7908,6 +8040,7 @@
     "Calibrar la retroalimentación entre termopares superficiales, sensores de flujo de calor radiante y válvula de flujo másico de gas para emular el número-B de transferencia de masa de polímeros reales en hábitats espaciales"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.32,
@@ -7966,6 +8099,7 @@
     "Reconfigurar la estequiometría de quemadores (desplazando el oxidante o diluyente) para operar con atmósferas enriquecidas en O2 produciendo llamas fuertes pero libres de hollín y radiación excesiva"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.32,
@@ -8025,6 +8159,7 @@
     "Mantener vigilancia térmica/UV para llamas hemisféricas azules de baja luminosidad que persisten por difusión pura"
    ],
    "research_group": "Premixed_Stability_SOFBALL_Candle",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.32,
@@ -8083,6 +8218,7 @@
     "Actualizar procedimientos post-incendio en la ISS/Artemis para exigir enfriamiento total y ventilación controlada de vapores parciales oxidados (formaldehído/CO) antes de reabrir compartimentos donde una llama pareció extinguirse"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.321,
@@ -8137,6 +8273,7 @@
     "Evitar pulsos bruscos de ventilación sobre nubes de vapor post-extinción de hidrocarburos, ya que la estela convectiva concentra radicales RO2/H2O2 y desencadena reignición caliente secundaria"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.313,
@@ -8191,6 +8328,7 @@
     "Actualizar los criterios de extinción por estiramiento (número de Damköhler crítico) en motores y sistemas de supresión espaciales usando la curva-S de 4 ramas que incluye el régimen de llama fría"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.313,
@@ -8245,6 +8383,7 @@
     "Extender los protocolos de detección de llamas frías (sensores de HCHO* y CO) también a fugas de hidrocarburos gaseosos ligeros (propano, butano, pentano) en sistemas térmicos y de propulsión espacial"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.313,
@@ -8303,6 +8442,7 @@
     "Extender mecanismos químicos detallados de formación de precursores aromáticos policíclicos (PAH) y hollín hacia regímenes de alta dilución con N2"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.267,
    "score_breakdown": {
     "conditions": 0.319,
@@ -8361,6 +8501,7 @@
     "Reemplazar los extintores de CO2 y Halon 1301 por extintores de niebla fina de agua (Water Mist PFE con gotas < 50 micras), eliminando el riesgo de toxicidad por CO2 en cabina cerrada"
    ],
    "research_group": "WaterMist_SCWM_Suppression",
+   "type": "investigation",
    "score": 0.267,
    "score_breakdown": {
     "conditions": 0.319,
@@ -8413,6 +8554,7 @@
     "Incluir pérdidas radiativas de gas (CO2, H2O) y acoplamiento de número de Lewis en los modelos de extinción de grandes llamas esféricas en hábitats espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.261,
    "score_breakdown": {
     "conditions": 0.314,
@@ -8465,6 +8607,7 @@
     "Implementar mallas de electrodos de alta tensión (hasta 10 kV) para inducir convección forzada por viento iónico, reduciendo formación de hollín y permitiendo emular gravedad lunar/marciana (0.16g - 0.38g)"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.26,
    "score_breakdown": {
     "conditions": 0.313,
@@ -8518,6 +8661,7 @@
     "Integrar diagnósticos ópticos de alta resolución implementados posteriormente en ACME CLD Flame"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.26,
    "score_breakdown": {
     "conditions": 0.313,
@@ -8570,6 +8714,7 @@
     "Reducir el límite inferior de inflamabilidad (LFL) de diseño para fugas de hidrógeno y gases ligeros (bajo número de Lewis) en hábitats espaciales, ya que pueden sostener bolas de llama estacionarias de ~1 W por debajo del límite terrestre"
    ],
    "research_group": "Premixed_Stability_SOFBALL_Candle",
+   "type": "investigation",
    "score": 0.26,
    "score_breakdown": {
     "conditions": 0.313,
@@ -8623,6 +8768,7 @@
     "Limitar flujo de combustible por debajo del umbral de liberación de hollín para evitar pérdidas radiativas y obstrucción de filtros en la ISS"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.26,
    "score_breakdown": {
     "conditions": 0.313,
@@ -8679,6 +8825,7 @@
     "Reformar procesos de pruebas de detanking y control de cambios de manufactura"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.243,
    "score_breakdown": {
     "conditions": 0.278,
@@ -8741,6 +8888,7 @@
     "Instalar lavadores catalíticos de campo lejano (Far-Field Scrubbers de CO, CO2, HCl y HF probados en SAFFIRE IV-VI) y protocolo de despresurización/represurización rápida post-incendio"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.68,
    "score_breakdown": {
     "conditions": 0.944,
@@ -8823,6 +8971,7 @@
     "Integrar los 5 sub-proyectos de SoFIE como referencia obligatoria de calibración para atmósferas SEA (34-37% O2) y factores de seguridad radiativos"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.596,
    "score_breakdown": {
     "conditions": 0.944,
@@ -8935,6 +9084,7 @@
     "Certificar todos los polímeros de cabina (PMMA, Delrin, tejidos) bajo atmósferas de exploración de baja presión y alto O2 (hasta 40% O2 y 0.2-1.5 atm) con flujos de ventilación HVAC reales (0-30 cm/s)"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.57,
    "score_breakdown": {
     "conditions": 0.853,
@@ -8993,6 +9143,7 @@
     "Prohibir aplicación directa de chorros localizados lentos de N2 sobre la base de la llama sin cortar primero la ventilación HVAC, ya que el arrastre de O2 intensifica el fuego"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.56,
    "score_breakdown": {
     "conditions": 0.32,
@@ -9062,6 +9213,7 @@
     "Aumentar el margen de dilución con CO2/N2 en al menos +4% para suprimir tanto la rama de llama caliente como la rama de llama fría en hidrocarburos pesados"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.534,
    "score_breakdown": {
     "conditions": 0.549,
@@ -9119,6 +9271,7 @@
     "Exigir tiempo de espera post-corte de ventilación (> 60 s) por inercia térmica de sólidos gruesos (PMMA >= 3.2 mm)"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.524,
    "score_breakdown": {
     "conditions": 0.32,
@@ -9180,6 +9333,7 @@
     "Incorporar vigilancia espectral de formaldehído excitado (HCHO*) e infrarrojo medio tras cualquier extinción aparente de hidrocarburos líquidos"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.49,
    "score_breakdown": {
     "conditions": 0.516,
@@ -9249,6 +9403,7 @@
     "Exigir tiempo de espera post-corte de ventilación (> 60 s) por inercia térmica de sólidos gruesos (PMMA >= 3.2 mm)"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.419,
    "score_breakdown": {
     "conditions": 0.318,
@@ -9311,6 +9466,7 @@
     "Reemplazar criterio unidimensional de NASA-STD-6001 Test 1"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.391,
    "score_breakdown": {
     "conditions": 0.319,
@@ -9389,6 +9545,7 @@
     "Incorporar sensores infrarrojos/espectrales para detectar llamas frías (cool flames) invisibles y mantener monitoreo post-extinción para prevenir reignición espontánea"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.38,
    "score_breakdown": {
     "conditions": 0.32,
@@ -9449,6 +9606,7 @@
     "Ajustar espaciamiento de inyección en arreglos de gotas para mitigar hollín y reignición"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.367,
    "score_breakdown": {
     "conditions": 0.318,
@@ -9508,6 +9666,7 @@
     "Automatizar el corte inmediato del flujo de ventilación HVAC (llevando flujo a 0 cm/s) al detectar humo o radiación de llama antes de descargar el agente extintor"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.367,
    "score_breakdown": {
     "conditions": 0.319,
@@ -9561,6 +9720,7 @@
     "Rediseñar boquillas de extinción con difusores de inundación total o niebla envolvente en lugar de chorros estrechos de gas inerte que inducen mezcla de O2"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.361,
    "score_breakdown": {
     "conditions": 0.314,
@@ -9619,6 +9779,7 @@
     "Prohibir aplicación directa de chorros localizados lentos de N2 sobre la base de la llama sin cortar primero la ventilación HVAC, ya que el arrastre de O2 intensifica el fuego"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.344,
    "score_breakdown": {
     "conditions": 0.32,
@@ -9674,6 +9835,7 @@
     "Reconfigurar quemadores e incineradores espaciales desplazando el diluyente (N2/CO2) hacia la corriente de combustible para elevar Z_st > 0.35, eliminando el hollín y la radiación térmica excesiva incluso en atmósferas de exploración enriquecidas en O2"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.342,
    "score_breakdown": {
     "conditions": 0.452,
@@ -9742,6 +9904,7 @@
     "Protocolos obligatorios de pruebas peligrosas con rescate en sitio"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.327,
    "score_breakdown": {
     "conditions": 0.43,
@@ -9803,6 +9966,7 @@
     "Restringir el uso de membranas de silicona de espesor < 1.5 mm en ductos con flujo >= 20 cm/s"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.295,
    "score_breakdown": {
     "conditions": 0.318,
@@ -9861,6 +10025,7 @@
     "Calibrar los modelos de emisión de hollín usando perfiles de fracción volumétrica medidos por tomografía óptica de dos colores"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.283,
    "score_breakdown": {
     "conditions": 0.318,
@@ -9917,6 +10082,7 @@
     "Implementar sensores de humo de doble longitud de onda (azul + infrarrojo cercano) capaces de medir simultáneamente la relación de momentos de tamaño (diámetro medio) para distinguir entre pirólisis de Teflón/cables (partículas pequeñas) y humo de silicona/celulosa o polvo ambiental"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.28,
    "score_breakdown": {
     "conditions": 0.32,
@@ -9974,6 +10140,7 @@
     "Incluir algoritmos de compensación por coagulación durante el transporte lento en cabina"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.279,
    "score_breakdown": {
     "conditions": 0.319,
@@ -10029,6 +10196,7 @@
     "Recalibrar los sub-modelos de estabilización de llama de borde (edge/triple flames) y radiación de hollín en códigos CFD de cámaras de combustión de baja emisión y quemadores espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.276,
    "score_breakdown": {
     "conditions": 0.32,
@@ -10085,6 +10253,7 @@
     "Aislar temporalmente la pre-alarma en la zona de calentador de alimentos (galley)"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.276,
    "score_breakdown": {
     "conditions": 0.32,
@@ -10141,6 +10310,7 @@
     "Dimensionar los sistemas de alivio de presión y depuración de CO/CO2 post-incendio para tasas de liberación de calor escaladas linealmente con la velocidad de ventilación"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.318,
@@ -10196,6 +10366,7 @@
     "Diseñar estabilizadores de llama (flame holders) en sistemas de combustión espaciales considerando que la altura de liftoff en 0-g es más sensible al déficit de momento del coflujo"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.318,
@@ -10251,6 +10422,7 @@
     "Utilizar la matriz paramétrica del BRE (calor de gasificación L_g y número-B) para pre-descartar polímeros candidatos de cabina sin necesidad de quemar cientos de muestras sólidas en órbita"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.318,
@@ -10306,6 +10478,7 @@
     "Incorporar anillos/mallas de electrodos de alta tensión (6-9 kV, consumo < 1 W) en quemadores e incineradores orbitales para sustituir ventiladores mecánicos mediante convección por viento iónico y eliminar la emisión de hollín"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.319,
@@ -10362,6 +10535,7 @@
     "y reabsorción radiativa de CO2/H2O en los modelos de propagación y extinción de incendios esféricos en cabinas espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.318,
@@ -10417,6 +10591,7 @@
     "Acoplar modelos de radiación ópticamente delgada/gruesa con cinética de oxidación de hollín por radicales OH y O2 para predecir la liberación repentina de hollín (wing/tip opening) en incendios espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.275,
    "score_breakdown": {
     "conditions": 0.318,
@@ -10472,6 +10647,7 @@
     "Aplicar un factor de reducción de seguridad de 3x sobre las tablas terrestres de punto de humo (ASTM D1322) al evaluar propensión al hollín y carga sobre filtros HEPA en incendios espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.274,
    "score_breakdown": {
     "conditions": 0.317,
@@ -10528,6 +10704,7 @@
     "Validar que el corte de ventilación detiene inmediatamente un frente de llama de 0.4 m de ancho"
    ],
    "research_group": "SoFIE_Exploration_Flammability",
+   "type": "investigation",
    "score": 0.274,
    "score_breakdown": {
     "conditions": 0.316,
@@ -10583,6 +10760,7 @@
     "Diferenciar los protocolos de seguridad y supresión en órbita según la estructura molecular del líquido (alcanos lineales con alto riesgo de llama fría invisible vs ésteres/alcoholes sin rama NTC)"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.272,
    "score_breakdown": {
     "conditions": 0.313,
@@ -10637,6 +10815,7 @@
     "Incorporar condiciones de contorno de esfuerzo cortante termocapilar de Marangoni (d_sigma/dT) en los modelos de propagación de llama sobre líquidos y charcos de polímero fundido en microgravedad"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.271,
    "score_breakdown": {
     "conditions": 0.318,
@@ -10692,6 +10871,7 @@
     "Preferir formulaciones SAC dopadas con control de intermetálicos para misiones lunares con ciclado criogénico"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.271,
    "score_breakdown": {
     "conditions": 0.318,
@@ -10746,6 +10926,7 @@
     "Integrar el módulo de balance poblacional de aerosoles (PBM con dimensión fractal 1.8) en el software de simulación de ventilación de hábitats (Orion/Gateway) para optimizar la ubicación de detectores fotoeléctricos"
    ],
    "research_group": "Smoke_Dust_Detection_SAME_DAFT",
+   "type": "investigation",
    "score": 0.27,
    "score_breakdown": {
     "conditions": 0.316,
@@ -10804,6 +10985,7 @@
     "Calibrar la retroalimentación entre termopares superficiales, sensores de flujo de calor radiante y válvula de flujo másico de gas para emular el número-B de transferencia de masa de polímeros reales en hábitats espaciales"
    ],
    "research_group": "BASS_Solid_Flammability",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.32,
@@ -10862,6 +11044,7 @@
     "Reconfigurar la estequiometría de quemadores (desplazando el oxidante o diluyente) para operar con atmósferas enriquecidas en O2 produciendo llamas fuertes pero libres de hollín y radiación excesiva"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.32,
@@ -10921,6 +11104,7 @@
     "Mantener vigilancia térmica/UV para llamas hemisféricas azules de baja luminosidad que persisten por difusión pura"
    ],
    "research_group": "Premixed_Stability_SOFBALL_Candle",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.32,
@@ -10979,6 +11163,7 @@
     "Actualizar procedimientos post-incendio en la ISS/Artemis para exigir enfriamiento total y ventilación controlada de vapores parciales oxidados (formaldehído/CO) antes de reabrir compartimentos donde una llama pareció extinguirse"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.321,
@@ -11033,6 +11218,7 @@
     "Evitar pulsos bruscos de ventilación sobre nubes de vapor post-extinción de hidrocarburos, ya que la estela convectiva concentra radicales RO2/H2O2 y desencadena reignición caliente secundaria"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.313,
@@ -11087,6 +11273,7 @@
     "Actualizar los criterios de extinción por estiramiento (número de Damköhler crítico) en motores y sistemas de supresión espaciales usando la curva-S de 4 ramas que incluye el régimen de llama fría"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.313,
@@ -11141,6 +11328,7 @@
     "Extender los protocolos de detección de llamas frías (sensores de HCHO* y CO) también a fugas de hidrocarburos gaseosos ligeros (propano, butano, pentano) en sistemas térmicos y de propulsión espacial"
    ],
    "research_group": "Droplet_CoolFlames_FLEX",
+   "type": "investigation",
    "score": 0.268,
    "score_breakdown": {
     "conditions": 0.313,
@@ -11199,6 +11387,7 @@
     "Extender mecanismos químicos detallados de formación de precursores aromáticos policíclicos (PAH) y hollín hacia regímenes de alta dilución con N2"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.267,
    "score_breakdown": {
     "conditions": 0.319,
@@ -11257,6 +11446,7 @@
     "Reemplazar los extintores de CO2 y Halon 1301 por extintores de niebla fina de agua (Water Mist PFE con gotas < 50 micras), eliminando el riesgo de toxicidad por CO2 en cabina cerrada"
    ],
    "research_group": "WaterMist_SCWM_Suppression",
+   "type": "investigation",
    "score": 0.267,
    "score_breakdown": {
     "conditions": 0.319,
@@ -11309,6 +11499,7 @@
     "Incluir pérdidas radiativas de gas (CO2, H2O) y acoplamiento de número de Lewis en los modelos de extinción de grandes llamas esféricas en hábitats espaciales"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.261,
    "score_breakdown": {
     "conditions": 0.314,
@@ -11361,6 +11552,7 @@
     "Implementar mallas de electrodos de alta tensión (hasta 10 kV) para inducir convección forzada por viento iónico, reduciendo formación de hollín y permitiendo emular gravedad lunar/marciana (0.16g - 0.38g)"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.26,
    "score_breakdown": {
     "conditions": 0.313,
@@ -11414,6 +11606,7 @@
     "Integrar diagnósticos ópticos de alta resolución implementados posteriormente en ACME CLD Flame"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.26,
    "score_breakdown": {
     "conditions": 0.313,
@@ -11466,6 +11659,7 @@
     "Reducir el límite inferior de inflamabilidad (LFL) de diseño para fugas de hidrógeno y gases ligeros (bajo número de Lewis) en hábitats espaciales, ya que pueden sostener bolas de llama estacionarias de ~1 W por debajo del límite terrestre"
    ],
    "research_group": "Premixed_Stability_SOFBALL_Candle",
+   "type": "investigation",
    "score": 0.26,
    "score_breakdown": {
     "conditions": 0.313,
@@ -11519,6 +11713,7 @@
     "Limitar flujo de combustible por debajo del umbral de liberación de hollín para evitar pérdidas radiativas y obstrucción de filtros en la ISS"
    ],
    "research_group": "ACME_Gas_Diffusion_Flames",
+   "type": "investigation",
    "score": 0.26,
    "score_breakdown": {
     "conditions": 0.313,
@@ -11575,6 +11770,7 @@
     "Reformar procesos de pruebas de detanking y control de cambios de manufactura"
    ],
    "research_group": "Apollo_Incidents_Redesign",
+   "type": "investigation",
    "score": 0.243,
    "score_breakdown": {
     "conditions": 0.278,

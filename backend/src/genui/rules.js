@@ -170,8 +170,9 @@ export function buildWidgets({ question, habitat: h, cond, experiments, mocs, sp
     widgets.push({ type: 'experiment_list', ids });
     for (const id of ids) cite.add(n(`exp:${id}`));
   }
-  // Forecast alone still cites the top retrieved source.
-  if (!cite.size && sources.length) cite.add(sources[0].n);
+  // Unnumbered (uncitable) keys add undefined: drop them first, then make sure the answer cites
+  // at least the top retrieved source.
   cite.delete(undefined);
+  if (!cite.size && sources.length) cite.add(sources[0].n);
   return { widgets, cite: [...cite].sort((a, b) => a - b), forecast: { ...f, conditions: c } };
 }
