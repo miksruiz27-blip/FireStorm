@@ -49,7 +49,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "bass-ii",
@@ -100,7 +101,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "bass-psi-archive",
@@ -152,7 +154,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "apollo-1",
@@ -214,7 +217,8 @@
     "ntrs_id": "",
     "url": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "apollo-13",
@@ -264,7 +268,8 @@
     "ntrs_id": "",
     "url": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-13"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "flex",
@@ -336,7 +341,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "flex-2",
@@ -390,7 +396,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "cool-flames",
@@ -442,7 +449,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "sofie",
@@ -548,7 +556,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "acme-bre",
@@ -600,7 +609,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "acme-cld",
@@ -652,7 +662,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "acme-e-field",
@@ -698,7 +709,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "acme-flame-design",
@@ -750,7 +762,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "acme-s-flame",
@@ -796,7 +809,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "spice",
@@ -843,7 +857,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "slice",
@@ -890,7 +905,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "sofball",
@@ -936,7 +952,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "candle-flames",
@@ -989,7 +1006,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "mist",
@@ -1041,7 +1059,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "hvac-ventilation",
@@ -1094,7 +1113,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "n2-jet-suppression",
@@ -1141,7 +1161,8 @@
     "ntrs_id": "",
     "url": ""
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-25",
@@ -1204,7 +1225,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-26",
@@ -1260,7 +1282,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-68",
@@ -1323,7 +1346,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-68"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-69",
@@ -1378,7 +1402,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-20",
@@ -1427,7 +1452,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-20"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-159",
@@ -1475,7 +1501,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "luci-lunar",
@@ -1576,7 +1603,8 @@
     "ntrs_id": "",
     "url": "https://ntrs.nasa.gov"
    }
-  ]
+  ],
+  "is_verified": false
  },
  {
   "id": "mars-partial-g",
@@ -1665,10 +1693,11 @@
     "ntrs_id": "",
     "url": "https://ntrs.nasa.gov"
    }
-  ]
+  ],
+  "is_verified": false
  },
  {
-  "id": "saffire-exploration",
+  "id": "saffire-iv-vi",
   "name": "SAFFIRE-IV, V, VI & SoFIE (GEL/MIST/SMuRF) en Atmósferas de Exploración Espacial (8.2 psia / 56.5 kPa y 34% O2)",
   "platform": "Cygnus",
   "fuel_type": "solid",
@@ -1678,23 +1707,19 @@
   ],
   "hardware": "Vehículos Northrop Grumman Cygnus (SAFFIRE-IV, V, VI con Far-Field Diagnostics FFD) e ISS MSG (SoFIE)",
   "o2_range": [
-   14.8,
+   16,
    34
   ],
   "pressure_kpa_range": [
-   52,
+   56.5,
    56.5
   ],
-  "gravity": "lunar",
+  "gravity": "micro",
   "flow_cm_s_range": [
-   0,
+   10,
    27
   ],
   "materials": [
-   "SAFFIRE4_Large_SIBAL_SEA_8.2psia_34O2",
-   "SAFFIRE5_PMMA_Ribbed_SEA_8.2psia_34O2",
-   "SAFFIRE6_Silicone_Elec_SEA_8.2psia_34O2",
-   "SAFFIRE5_Depress_Quench_LowP_LowO2",
    "SAFFIRE_HCl_HF_AcidGas_Release",
    "SAFFIRE_CO2_Scrubber_SmokeEater_Safe"
   ],
@@ -1708,26 +1733,6 @@
   ],
   "research_group": "SoFIE_Exploration_Flammability",
   "sources": [
-   {
-    "title": "NASA SAFFIRE-IV / PSI Large-Scale Exploration Atmosphere (56.5 kPa, 34% O2) — simulated values (team dataset)",
-    "ntrs_id": "",
-    "url": "https://psi.nasa.gov"
-   },
-   {
-    "title": "NASA SAFFIRE-V / PSI Multi-Material Exploration Atmosphere (56.5 kPa, 34% O2) — simulated values (team dataset)",
-    "ntrs_id": "",
-    "url": "https://psi.nasa.gov"
-   },
-   {
-    "title": "NASA SAFFIRE-VI / PSI Exploration Fire & Far-Field Scrubbing (56.5 kPa, 34% O2) — simulated values (team dataset)",
-    "ntrs_id": "",
-    "url": "https://psi.nasa.gov"
-   },
-   {
-    "title": "NASA SAFFIRE-V Post-Fire Cabin Depressurization & Vent Cut Quench — simulated values (team dataset)",
-    "ntrs_id": "",
-    "url": "https://psi.nasa.gov"
-   },
    {
     "title": "NASA SAFFIRE IV-VI Far-Field Diagnostics HCl/HF Acid Gas & Smoke Eater — simulated values (team dataset)",
     "ntrs_id": "",
@@ -1743,7 +1748,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "flex-partial-g",
@@ -1807,7 +1813,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
    }
-  ]
+  ],
+  "is_verified": false
  },
  {
   "id": "acme-e-field-partial-g",
@@ -1865,7 +1872,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
    }
-  ]
+  ],
+  "is_verified": false
  },
  {
   "id": "same-daft-dust",
@@ -1930,7 +1938,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
    }
-  ]
+  ],
+  "is_verified": false
  },
  {
   "id": "scwm-partial-g",
@@ -1982,7 +1991,8 @@
     "ntrs_id": "",
     "url": "https://ntrs.nasa.gov"
    }
-  ]
+  ],
+  "is_verified": false
  },
  {
   "id": "issi-partial-g",
@@ -2035,10 +2045,11 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-181"
    }
-  ]
+  ],
+  "is_verified": false
  },
  {
-  "id": "sofie-cir",
+  "id": "sofie-iss-cir",
   "name": "SoFIE — 5 Sub-Proyectos Oficiales en el Combustion Integrated Rack (CIR) hasta 37% O2 (8.2 psia SEA)",
   "platform": "ISS",
   "fuel_type": "solid",
@@ -2052,11 +2063,11 @@
   ],
   "pressure_kpa_range": [
    56.5,
-   101.3
+   56.5
   ],
   "gravity": "micro",
   "flow_cm_s_range": [
-   0.3,
+   0.4,
    26.5
   ],
   "materials": [
@@ -2064,12 +2075,8 @@
    "PMMA_Sphere_CIR_Quench_LowO2",
    "PMMA_Cylinder_RadiantFlux_37O2_SEA",
    "PMMA_Cylinder_NoRadiant_Blowoff",
-   "Spacecraft_Material_37O2_LunarSEA",
-   "Spacecraft_Material_Pass_LowO2_16pct",
    "Thin_PMMA_Sheet_34O2_SEA_Spread",
-   "Thin_PMMA_Sheet_RadiativeQuench",
-   "Thick_PMMA_NarrowChannel_OpposedFlow",
-   "Thick_PMMA_NarrowChannel_Quench"
+   "Thin_PMMA_Sheet_RadiativeQuench"
   ],
   "key_findings": [
    "El flujo radiante externo (MIST) y el confinamiento en canal estrecho (NCA) sostienen llama incluso cerca del límite de extinción, mientras SMuRF valida que el criterio terrestre de 15.2 cm subestima el riesgo a 37% O2",
@@ -2101,16 +2108,6 @@
     "url": "https://psi.nasa.gov"
    },
    {
-    "title": "NASA SoFIE-SMuRF (PI S. Olson) Real Spacecraft Material 1g vs 0.16g/0g — simulated values (team dataset)",
-    "ntrs_id": "",
-    "url": "https://psi.nasa.gov"
-   },
-   {
-    "title": "NASA SoFIE-SMuRF Flame Extinction Below Spacecraft Threshold — simulated values (team dataset)",
-    "ntrs_id": "",
-    "url": "https://psi.nasa.gov"
-   },
-   {
     "title": "NASA SoFIE-RTDFS (PI S. Bhattacharjee) Thin Sheet Flame Growth 34% O2 — simulated values (team dataset)",
     "ntrs_id": "",
     "url": "https://psi.nasa.gov"
@@ -2121,24 +2118,15 @@
     "url": "https://psi.nasa.gov"
    },
    {
-    "title": "NASA SoFIE-NCA (PI F. Miller) Narrow Channel Apparatus 8.2 psia — simulated values (team dataset)",
-    "ntrs_id": "",
-    "url": "https://psi.nasa.gov"
-   },
-   {
-    "title": "NASA SoFIE-NCA Narrow Channel Heat Loss Extinction — simulated values (team dataset)",
-    "ntrs_id": "",
-    "url": "https://psi.nasa.gov"
-   },
-   {
     "title": "NASA Glenn Research Center - SoFIE (Solid Fuel Ignition and Extinction) · https://www.nasa.gov/missions/station/iss-research/sofie/",
     "ntrs_id": "",
     "url": "https://www.nasa.gov/missions/station/iss-research/sofie/"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
-  "id": "std-6001b-smac",
+  "id": "nasa-std-6001b",
   "name": "Estándares NASA-STD-6001B Test 1 (15.2 cm), JSC 20584 SMACs y NASA-STD-3001 Polvo/Percloratos",
   "platform": "ISS",
   "fuel_type": "solid",
@@ -2200,7 +2188,8 @@
     "ntrs_id": "",
     "url": "https://standards.nasa.gov/"
    }
-  ]
+  ],
+  "is_verified": false
  },
  {
   "id": "li-ion-runaway",
@@ -2258,7 +2247,8 @@
     "ntrs_id": "",
     "url": "https://www.nasa.gov/nesc/"
    }
-  ]
+  ],
+  "is_verified": false
  },
  {
   "id": "psi-10",
@@ -2307,7 +2297,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-10"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-21",
@@ -2356,7 +2347,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-22",
@@ -2405,7 +2397,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-23",
@@ -2455,7 +2448,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-23"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-39",
@@ -2504,7 +2498,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-39"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-47",
@@ -2554,7 +2549,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-60",
@@ -2603,7 +2599,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-62",
@@ -2655,7 +2652,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-98",
@@ -2705,7 +2703,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-99",
@@ -2760,7 +2759,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-100",
@@ -2810,7 +2810,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-101",
@@ -2861,7 +2862,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-102",
@@ -2911,7 +2913,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-106",
@@ -2960,7 +2963,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-107",
@@ -3009,7 +3013,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-108",
@@ -3057,7 +3062,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-108"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-115",
@@ -3105,7 +3111,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-117",
@@ -3153,7 +3160,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-142",
@@ -3201,7 +3209,8 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
    }
-  ]
+  ],
+  "is_verified": true
  },
  {
   "id": "psi-181",
@@ -3250,6 +3259,7 @@
     "ntrs_id": "",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-181"
    }
-  ]
+  ],
+  "is_verified": true
  }
 ]

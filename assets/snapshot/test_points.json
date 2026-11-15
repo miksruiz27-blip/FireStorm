@@ -55,39 +55,6 @@
   "source": "NASA Guide 2015 - ACME E-FIELD Flame"
  },
  {
-  "experiment_id": "acme-e-field-partial-g",
-  "material": "Lunar_0.16g_CH4_O2_Lander_Engine_Purge_Safe",
-  "o2_pct": 15,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 0.3,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA ACME / Artemis Methalox Lander Line Inert Purge (0.16g Moon) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "acme-e-field-partial-g",
-  "material": "Lunar_0.16g_EFIELD_IonWind_Emulated_Flame",
-  "o2_pct": 21,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.16,
-  "flow_cm_s": 6.8,
-  "outcome": "burn",
-  "spread_rate_mm_s": null,
-  "source": "NASA PSI-22 ACME E-FIELD 4.2kV Ion Wind Emulating Lunar 0.16g Buoyancy — simulated values (team dataset)"
- },
- {
-  "experiment_id": "acme-e-field-partial-g",
-  "material": "Mars_0.38g_EFIELD_IonWind_Emulated_Flame",
-  "o2_pct": 21,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 10.4,
-  "outcome": "burn",
-  "spread_rate_mm_s": null,
-  "source": "NASA PSI-22 ACME E-FIELD 7.5kV Ion Wind Emulating Martian 0.38g Buoyancy — simulated values (team dataset)"
- },
- {
   "experiment_id": "acme-flame-design",
   "material": "Ethylene_radiative_quench",
   "o2_pct": 15.9,
@@ -1518,50 +1485,6 @@
   "source": "NASA Guide 2015 - FLEX-2 Droplet Array"
  },
  {
-  "experiment_id": "flex-partial-g",
-  "material": "Mars_0.38g_nHeptane_CO2_Atmosphere_Quench",
-  "o2_pct": 15.5,
-  "pressure_kpa": 70.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 0.5,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA FLEX Martian CO2-Diluted Droplet Radiative Extinction (0.38g) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "flex-partial-g",
-  "material": "Lunar_0.16g_Methanol_Droplet_WaterQuench",
-  "o2_pct": 15.8,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 0.4,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA FLEX Lunar Low-Pressure Alcohol Water-Condensation Quench (0.16g) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "flex-partial-g",
-  "material": "Lunar_0.16g_nHeptane_Droplet_BuoyantCoolFlame",
-  "o2_pct": 21,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.16,
-  "flow_cm_s": 4.5,
-  "outcome": "burn",
-  "spread_rate_mm_s": null,
-  "source": "NASA FLEX / CFI Partial-g Droplet Cool-to-Hot Transition (0.16g Moon) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "flex-partial-g",
-  "material": "Mars_0.38g_nDecane_Droplet_Plume_Reignition",
-  "o2_pct": 22,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 8,
-  "outcome": "burn",
-  "spread_rate_mm_s": null,
-  "source": "NASA PSI-117 / FLEX Martian 0.38g Plume RO2 Secondary Reignition — simulated values (team dataset)"
- },
- {
   "experiment_id": "hvac-ventilation",
   "material": "Spacecraft_HVAC_shutoff_0cm_s",
   "o2_pct": 16.2,
@@ -1582,259 +1505,6 @@
   "outcome": "burn",
   "spread_rate_mm_s": null,
   "source": "NASA Guide 2015 - Hallazgo HVAC 10 cm/s Max Spread"
- },
- {
-  "experiment_id": "issi-partial-g",
-  "material": "Mars_0.38g_SAC305_VacuumReflow_SafeJoint",
-  "o2_pct": 16.2,
-  "pressure_kpa": 70.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 0.5,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA PSI-181 ISSI Mars 0.38g Flux-Free Vacuum-Degassed Solder Repair Safe — simulated values (team dataset)"
- },
- {
-  "experiment_id": "issi-partial-g",
-  "material": "Lunar_0.16g_PbSn_Solder_ReducedBuoyancy_Void",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 6,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.84,
-  "source": "NASA PSI-181 ISSI Lunar 0.16g Flux Bubble Trapping & Cryo-Night Hotspot — simulated values (team dataset)"
- },
- {
-  "experiment_id": "li-ion-runaway",
-  "material": "LiIon_Gateway_ContainmentBag_LowSOC",
-  "o2_pct": 15.8,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 0.4,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA Gateway HALO Fire-Containment Bag & Low-SOC Passive Safe — simulated values (team dataset)"
- },
- {
-  "experiment_id": "li-ion-runaway",
-  "material": "LiIon_FTRC_Module_Propagation_Mars",
-  "o2_pct": 28,
-  "pressure_kpa": 70.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 8,
-  "outcome": "burn",
-  "spread_rate_mm_s": null,
-  "source": "NASA FTRC Li-ion Cell-to-Cell Thermal Runaway Propagation — simulated values (team dataset)"
- },
- {
-  "experiment_id": "li-ion-runaway",
-  "material": "LiIon_18650_ISC_600C_Runaway_34O2",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 6.5,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.98,
-  "source": "NASA NESC Li-ion ISC >600C Thermal Runaway + LiPF6 HF/POF3 Venting — simulated values (team dataset)"
- },
- {
-  "experiment_id": "luci-lunar",
-  "material": "Lunar_0.16g_SIBAL_SubLOI_RadiativeQuench",
-  "o2_pct": 13.5,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.16,
-  "flow_cm_s": 0.4,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA GRC Olson-Ferkul Minimum LOI Quench at Lunar 0.16g (13.7% Limit) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "luci-lunar",
-  "material": "Lunar_0.16g_BetaCloth_SEA_LowO2_Safe",
-  "o2_pct": 15.2,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 0.5,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA Artemis Lunar Habitat Safe Inerted Standby (56.5 kPa, 15.2% O2, 0.16g) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "luci-lunar",
-  "material": "Lunar_0.16g_PMMA_HighFlow_Blowoff_34cm_s",
-  "o2_pct": 16.8,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.16,
-  "flow_cm_s": 34,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA GRC Partial-g Aerodynamic Blowoff Branch (0.16g Moon) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "luci-lunar",
-  "material": "Lunar_0.16g_Cellulose_Upward_BuoyantSpread",
-  "o2_pct": 18,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.16,
-  "flow_cm_s": 7.2,
-  "outcome": "burn",
-  "spread_rate_mm_s": 2.45,
-  "source": "NASA GRC Partial-g Flammability Map (0.16g Moon, Vb=7.2 cm/s) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "luci-lunar",
-  "material": "Lunar_0.16g_SIBAL_PeakFlammability_Goldilocks",
-  "o2_pct": 18.2,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.16,
-  "flow_cm_s": 6.8,
-  "outcome": "burn",
-  "spread_rate_mm_s": 2.15,
-  "source": "NASA GRC Olson-Ferkul-Tien Partial-g Centrifuge / LUCI (0.16g Moon) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "luci-lunar",
-  "material": "Lunar_0.16g_PMMA_Thin_DeRis_Scaling_Burn",
-  "o2_pct": 18.8,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.16,
-  "flow_cm_s": 7.5,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.95,
-  "source": "NASA SoFIE / FM2 Lunar Surface Payload (0.16g Moon de Ris Scaling) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "luci-lunar",
-  "material": "Lunar_0.16g_Delrin_Gateway_10.2psia_26.5O2",
-  "o2_pct": 26.5,
-  "pressure_kpa": 70.3,
-  "gravity_g": 0.16,
-  "flow_cm_s": 7,
-  "outcome": "burn",
-  "spread_rate_mm_s": 1.15,
-  "source": "NASA Lunar Gateway Normoxic Equivalent (70.3 kPa, 26.5% O2, 0.16g) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "luci-lunar",
-  "material": "Lunar_0.16g_Nomex_Pass1g_FailLunar_34O2",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 6.8,
-  "outcome": "burn",
-  "spread_rate_mm_s": 1.85,
-  "source": "NASA EAWG Exploration Atmosphere 8.2 psia (56.5 kPa, 34% O2, 0.16g Moon) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "luci-lunar",
-  "material": "Lunar_0.16g_PMMA_Cast_SEA_8.2psia_34O2",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 8.5,
-  "outcome": "burn",
-  "spread_rate_mm_s": 1.32,
-  "source": "NASA Artemis HLS / Gateway SEA 8.2 psia (56.5 kPa, 34% O2, 0.16g Moon) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "luci-lunar",
-  "material": "Lunar_0.16g_Ultem_SEA_8.2psia_34O2_Burn",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 7,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.78,
-  "source": "NASA SoFIE-MIST Lunar Exploration Atmosphere (56.5 kPa, 34% O2, 0.16g) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "mars-partial-g",
-  "material": "Mars_0.38g_PMMA_CO2_BufferGas_Extinct",
-  "o2_pct": 16,
-  "pressure_kpa": 70.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 0.8,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA Mars Habitat CO2-Enriched Fire Suppression (0.38g Mars) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "mars-partial-g",
-  "material": "Mars_0.38g_SIBAL_CO2_Diluent_Quench",
-  "o2_pct": 16.2,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.38,
-  "flow_cm_s": 0.6,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA Mars In-Situ CO2 Diluent Radiative Reabsorption Quench (0.38g Mars) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "mars-partial-g",
-  "material": "Mars_0.38g_Nomex_HighVent_Blowoff_36cm_s",
-  "o2_pct": 17,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.38,
-  "flow_cm_s": 36,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA Mars Partial-g Convective Blowoff Limit (0.38g Mars) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "mars-partial-g",
-  "material": "Mars_0.38g_SIBAL_BuoyantPlume_Spread",
-  "o2_pct": 18.6,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 10.2,
-  "outcome": "burn",
-  "spread_rate_mm_s": 2.6,
-  "source": "NASA GRC Olson-Ferkul Partial-g Martian Buoyancy (0.38g Mars, Vb=10.2 cm/s) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "mars-partial-g",
-  "material": "Mars_0.38g_PMMA_Slab_DeRis_Concurrent",
-  "o2_pct": 19.2,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 10.8,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.74,
-  "source": "NASA SoFIE / Martian Partial-g de Ris Spread (0.38g Mars) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "mars-partial-g",
-  "material": "Mars_0.38g_Cotton_Blend_SEA_70kPa_28O2",
-  "o2_pct": 28,
-  "pressure_kpa": 70.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 9.5,
-  "outcome": "burn",
-  "spread_rate_mm_s": 2.85,
-  "source": "NASA Mars Transit / Surface Cabin (70.3 kPa, 28% O2, 0.38g Mars) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "mars-partial-g",
-  "material": "Mars_0.38g_PMMA_SEA_8.2psia_34O2_Burn",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.38,
-  "flow_cm_s": 10.5,
-  "outcome": "burn",
-  "spread_rate_mm_s": 1.48,
-  "source": "NASA Mars Surface Habitat SEA (56.5 kPa, 34% O2, 0.38g Mars) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "mars-partial-g",
-  "material": "Mars_0.38g_MOXIE_ISRU_O2_Line_Overheat",
-  "o2_pct": 45,
-  "pressure_kpa": 120,
-  "gravity_g": 0.38,
-  "flow_cm_s": 6,
-  "outcome": "burn",
-  "spread_rate_mm_s": 3.4,
-  "source": "NASA Mars ISRU MOXIE Oxygen Compressor Thermal Runaway Hazard (0.38g) — simulated values (team dataset)"
  },
  {
   "experiment_id": "mist",
@@ -3377,18 +3047,7 @@
   "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)"
  },
  {
-  "experiment_id": "saffire-exploration",
-  "material": "SAFFIRE5_Depress_Quench_LowP_LowO2",
-  "o2_pct": 14.8,
-  "pressure_kpa": 52,
-  "gravity_g": 0.16,
-  "flow_cm_s": 0,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA SAFFIRE-V Post-Fire Cabin Depressurization & Vent Cut Quench — simulated values (team dataset)"
- },
- {
-  "experiment_id": "saffire-exploration",
+  "experiment_id": "saffire-iv-vi",
   "material": "SAFFIRE_CO2_Scrubber_SmokeEater_Safe",
   "o2_pct": 16,
   "pressure_kpa": 56.5,
@@ -3399,40 +3058,7 @@
   "source": "NASA SAFFIRE IV-VI Post-Fire Scrubbing & Al-Wall Adsorption Safe — simulated values (team dataset)"
  },
  {
-  "experiment_id": "saffire-exploration",
-  "material": "SAFFIRE4_Large_SIBAL_SEA_8.2psia_34O2",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 15,
-  "outcome": "burn",
-  "spread_rate_mm_s": 3.85,
-  "source": "NASA SAFFIRE-IV / PSI Large-Scale Exploration Atmosphere (56.5 kPa, 34% O2) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "saffire-exploration",
-  "material": "SAFFIRE5_PMMA_Ribbed_SEA_8.2psia_34O2",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 12,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.88,
-  "source": "NASA SAFFIRE-V / PSI Multi-Material Exploration Atmosphere (56.5 kPa, 34% O2) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "saffire-exploration",
-  "material": "SAFFIRE6_Silicone_Elec_SEA_8.2psia_34O2",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.38,
-  "flow_cm_s": 18,
-  "outcome": "burn",
-  "spread_rate_mm_s": 3.1,
-  "source": "NASA SAFFIRE-VI / PSI Exploration Fire & Far-Field Scrubbing (56.5 kPa, 34% O2) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "saffire-exploration",
+  "experiment_id": "saffire-iv-vi",
   "material": "SAFFIRE_HCl_HF_AcidGas_Release",
   "o2_pct": 34,
   "pressure_kpa": 56.5,
@@ -3441,72 +3067,6 @@
   "outcome": "burn",
   "spread_rate_mm_s": null,
   "source": "NASA SAFFIRE IV-VI Far-Field Diagnostics HCl/HF Acid Gas & Smoke Eater — simulated values (team dataset)"
- },
- {
-  "experiment_id": "same-daft-dust",
-  "material": "Mars_0.38g_Perchlorate_Dust_Airlock_Safe",
-  "o2_pct": 15.8,
-  "pressure_kpa": 70.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 0.4,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA DAFT Martian Iron-Oxide/Perchlorate Dust Filtered Without False Alarm — simulated values (team dataset)"
- },
- {
-  "experiment_id": "same-daft-dust",
-  "material": "Lunar_0.16g_Regolith_Dust_FalseAlarm_Rejected",
-  "o2_pct": 16,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 0.5,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA SAME / DAFT Lunar Regolith Dust (1-10 um) Discriminated as Non-Fire — simulated values (team dataset)"
- },
- {
-  "experiment_id": "same-daft-dust",
-  "material": "Mars_0.38g_Silicone_Smolder_TrueFire_Alarm",
-  "o2_pct": 28,
-  "pressure_kpa": 70.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 7.5,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.82,
-  "source": "NASA SAME Martian Habitat True Smoldering Fire Detected Over Dust Background — simulated values (team dataset)"
- },
- {
-  "experiment_id": "same-daft-dust",
-  "material": "Lunar_0.16g_Kapton_Overheat_Under_DustLoad",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 5.5,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.42,
-  "source": "NASA SAME-R / Artemis Dual-Wavelength Smoke Detection in Dusty Lunar Cabin — simulated values (team dataset)"
- },
- {
-  "experiment_id": "scwm-partial-g",
-  "material": "Lunar_0.16g_FineWaterMist_SlowSettling_Quench",
-  "o2_pct": 16.2,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 26,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA Fine Water Mist Suppression at Lunar 0.16g (6x Slower Droplet Settling) — simulated values (team dataset)"
- },
- {
-  "experiment_id": "scwm-partial-g",
-  "material": "Mars_0.38g_FineWaterMist_CO2_Hybrid_Quench",
-  "o2_pct": 16.4,
-  "pressure_kpa": 70.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 28,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA Mars Habitat Hybrid Water Mist + CO2 Fire Extinguisher Suppression — simulated values (team dataset)"
  },
  {
   "experiment_id": "slice",
@@ -3652,7 +3212,7 @@
   "source": "NASA Guide 2015 - SoFIE Max O2"
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "Thin_PMMA_Sheet_RadiativeQuench",
   "o2_pct": 15.4,
   "pressure_kpa": 56.5,
@@ -3663,18 +3223,7 @@
   "source": "NASA SoFIE-RTDFS Radiative Quenching in Quiescent Microgravity — simulated values (team dataset)"
  },
  {
-  "experiment_id": "sofie-cir",
-  "material": "Thick_PMMA_NarrowChannel_Quench",
-  "o2_pct": 15.5,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.16,
-  "flow_cm_s": 0.3,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA SoFIE-NCA Narrow Channel Heat Loss Extinction — simulated values (team dataset)"
- },
- {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "PMMA_Sphere_CIR_Quench_LowO2",
   "o2_pct": 15.6,
   "pressure_kpa": 56.5,
@@ -3685,18 +3234,7 @@
   "source": "NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere Radiative Quench — simulated values (team dataset)"
  },
  {
-  "experiment_id": "sofie-cir",
-  "material": "Spacecraft_Material_Pass_LowO2_16pct",
-  "o2_pct": 15.8,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.16,
-  "flow_cm_s": 0.4,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA SoFIE-SMuRF Flame Extinction Below Spacecraft Threshold — simulated values (team dataset)"
- },
- {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "PMMA_Cylinder_NoRadiant_Blowoff",
   "o2_pct": 16,
   "pressure_kpa": 56.5,
@@ -3707,7 +3245,7 @@
   "source": "NASA SoFIE-MIST Convective Blowoff Limit Without Radiant Flux — simulated values (team dataset)"
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "PMMA_Sphere_CIR_34O2_SEA_SlowFlow",
   "o2_pct": 34,
   "pressure_kpa": 56.5,
@@ -3718,7 +3256,7 @@
   "source": "NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere 8.2 psia / 34% O2 — simulated values (team dataset)"
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "Thin_PMMA_Sheet_34O2_SEA_Spread",
   "o2_pct": 34,
   "pressure_kpa": 56.5,
@@ -3729,18 +3267,7 @@
   "source": "NASA SoFIE-RTDFS (PI S. Bhattacharjee) Thin Sheet Flame Growth 34% O2 — simulated values (team dataset)"
  },
  {
-  "experiment_id": "sofie-cir",
-  "material": "Thick_PMMA_NarrowChannel_OpposedFlow",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 7,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.71,
-  "source": "NASA SoFIE-NCA (PI F. Miller) Narrow Channel Apparatus 8.2 psia — simulated values (team dataset)"
- },
- {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "PMMA_Cylinder_RadiantFlux_37O2_SEA",
   "o2_pct": 37,
   "pressure_kpa": 56.5,
@@ -3749,17 +3276,6 @@
   "outcome": "burn",
   "spread_rate_mm_s": 0.92,
   "source": "NASA SoFIE-MIST (PI C. Fernandez-Pello) External Radiant Heater 37% O2 — simulated values (team dataset)"
- },
- {
-  "experiment_id": "sofie-cir",
-  "material": "Spacecraft_Material_37O2_LunarSEA",
-  "o2_pct": 37,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 6.5,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.78,
-  "source": "NASA SoFIE-SMuRF (PI S. Olson) Real Spacecraft Material 1g vs 0.16g/0g — simulated values (team dataset)"
  },
  {
   "experiment_id": "spice",
@@ -3771,49 +3287,5 @@
   "outcome": "burn",
   "spread_rate_mm_s": null,
   "source": "NASA Guide 2015 - SPICE (MSG)"
- },
- {
-  "experiment_id": "std-6001b-smac",
-  "material": "BetaCloth_Fiberglass_21O2_Test1_Pass",
-  "o2_pct": 15.8,
-  "pressure_kpa": 101.3,
-  "gravity_g": 0.16,
-  "flow_cm_s": 0.5,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA-STD-6001B Test 1 Self-Extinguish <15.2 cm No Flaming Drips — simulated values (team dataset)"
- },
- {
-  "experiment_id": "std-6001b-smac",
-  "material": "JSC20584_ECLSS_Scrubbed_Below_SMAC",
-  "o2_pct": 16,
-  "pressure_kpa": 70.3,
-  "gravity_g": 0.38,
-  "flow_cm_s": 0.4,
-  "outcome": "extinct",
-  "spread_rate_mm_s": null,
-  "source": "NASA JSC 20584 & STD-3001 ECLSS Scrubbed Below 0.1 mg/m3 Dust & SMAC — simulated values (team dataset)"
- },
- {
-  "experiment_id": "std-6001b-smac",
-  "material": "JSC20584_HF_0.3ppm_CO_Perchlorate_Toxic",
-  "o2_pct": 34,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.38,
-  "flow_cm_s": 6,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.75,
-  "source": "NASA JSC 20584 SMAC & NASA-STD-3001 Post-Fire Acid/Dust T_grp >= 1 — simulated values (team dataset)"
- },
- {
-  "experiment_id": "std-6001b-smac",
-  "material": "Nomex_Fabric_37O2_8.2psia_Test1_Fail",
-  "o2_pct": 37,
-  "pressure_kpa": 56.5,
-  "gravity_g": 0.16,
-  "flow_cm_s": 5.5,
-  "outcome": "burn",
-  "spread_rate_mm_s": 0.85,
-  "source": "NASA-STD-6001B Test 1 (>15.2 cm / 6 in Burn Length) at 8.2 psia 37% O2 — simulated values (team dataset)"
  }
 ]

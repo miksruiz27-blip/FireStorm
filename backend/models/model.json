@@ -4561,7 +4561,8 @@
      "consecuencia_hallazgo": "Efecto 'Goldilocks' en la Luna (0.16g): en 1-g la fuerte flotabilidad (~20-30 cm/s) enfría y apaga la llama (blowoff), mientras en 0-g falta oxígeno sin ventilación; en cambio, en 0.16g la flotabilidad natural induce ~6.8-7.5 cm/s (justo en el mínimo de la curva LOI en U), haciendo que los materiales ardan a menor O2 en la Luna (LOI ~ 13.7-14.5% O2) que en la Tierra (LOI ~ 16.5-18.0% O2)",
      "modificaciones_necesarias": "1) Reemplazar la certificación terrestre NASA-STD-6001 Test 1 (1-g) por ensayos o factores de corrección en el mínimo de la curva LOI en U (flujo equivalente de 6.5-8.0 cm/s para 0.16g lunar); 2) Incorporar en el motor de predicción la velocidad boyante intrínseca V_eff = sqrt(V_forced^2 + V_buoyant(g)^2) y la escala de de Ris (V_f ~ (k*rho*c)^(-1) para sólidos delgados).",
      "fuente": "NASA GRC / NTRS & PSI - Olson, Ferkul, T'ien & Liao Partial-Gravity Flammability",
-     "referencia": "https://ntrs.nasa.gov / PSI SoFIE & BASS Partial-g Archive"
+     "referencia": "https://ntrs.nasa.gov / PSI SoFIE & BASS Partial-g Archive",
+     "is_verified": false
     },
     {
      "id": "LUNA-MARS-02",
@@ -4597,7 +4598,8 @@
      "consecuencia_hallazgo": "En gravedad marciana (0.38g), el flujo boyante natural (~10.5 cm/s) cae exactamente en el régimen de máxima tasa de propagación de llama (pico de riesgo HVAC de 10 cm/s); sin embargo, sustituir parte del N2 por CO2 in-situ eleva el LOI en +2.5% a +3.8% O2 gracias a su alta capacidad calorífica molar y reabsorción radiativa en las bandas de 2.7 y 4.3 micras",
      "modificaciones_necesarias": "1) Aprovechar el CO2 atmosférico de Marte purificado e comprimido como sistema primario de inundación e inertización contra incendios en hábitats marcianos; 2) Aislar físicamente las plantas ISRU de electrólisis de óxido sólido (tipo MOXIE a 800 °C y alta pureza de O2) fuera del volumen habitable presurizado.",
      "fuente": "NASA NTRS & PSI - Martian Partial-Gravity Combustion & CO2 Diluent Suppression",
-     "referencia": "https://ntrs.nasa.gov / PSI-68 & PSI-69 CO2 Diluent Archive"
+     "referencia": "https://ntrs.nasa.gov / PSI-68 & PSI-69 CO2 Diluent Archive",
+     "is_verified": false
     },
     {
      "id": "LUNA-MARS-04",
@@ -4615,7 +4617,8 @@
      "consecuencia_hallazgo": "En 0.16g y 0.38g el polvo fino (<5 micras) introducido tras cada caminata espacial permanece suspendido durante horas y dispara falsas alarmas en detectores ópticos simples; la firma de polarización y el cociente de dispersión entre láser azul (405 nm) e infrarrojo (880 nm) junto con sensores de gases (CO/HCN) permiten separar el regolito mineral facetado de las esférulas/agregados de humo",
      "modificaciones_necesarias": "1) Requerir detectores de humo multi-criterio (dispersión láser a dos longitudes de onda + despolarización óptica + celda electroquímica de CO) en todas las esclusas EVA y cabinas lunares/marcianas; 2) Activar modo de supresión de falsas alarmas por polvo sincronizado con la presurización de esclusas sin desactivar el canal de CO/pirólisis.",
      "fuente": "NASA PSI-47 (DAFT), PSI-101/102 (SAME) & NTRS Lunar/Martian Dust-Tolerant Fire Detection",
-     "referencia": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
+     "referencia": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101",
+     "is_verified": false
     },
     {
      "id": "LUNA-MARS-05",
@@ -4633,7 +4636,8 @@
      "consecuencia_hallazgo": "Tal como demostró PSI-117 para flujos convectivos de 3-8 cm/s, la velocidad boyante propia de la gravedad lunar (0.16g) y marciana (0.38g) no es suficiente para soplar la llama fría (que requiere >20 cm/s), sino que estira la zona NTC en una pluma ascendente donde se acumulan hidroperóxidos y se dispara la reignición secundaria a llama caliente",
      "modificaciones_necesarias": "1) En almacenes de solventes, laboratorios e invernaderos lunares/marcianos, mantener extracción forzada >25 cm/s o inertización con CO2/N2 tras cualquier conato líquido para impedir la reignición por pluma boyante de llama fría.",
      "fuente": "NASA PSI-68, PSI-117 & PSI-159 Partial-Gravity Convective Cool Flame Analysis",
-     "referencia": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
+     "referencia": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117",
+     "is_verified": false
     },
     {
      "id": "LUNA-MARS-06",
@@ -4651,7 +4655,8 @@
      "consecuencia_hallazgo": "El viento iónico permite reproducir en la ISS la estructura exacta de llamas lunares (0.16g) y marcianas (0.38g) durante minutos (superando los 2-5 s de las torres de caída), demostrando que en 0.16g y 0.38g la emisión de hollín sigue siendo 2x mayor que en 1-g a menos que se aplique control eléctrico o diseño estequiométrico Z_st",
      "modificaciones_necesarias": "1) Emplear la correlación voltaje-gravedad de PSI-22 (E-FIELD) para calificar quemadores, antorchas de procesamiento de regolito y sensores de fugas de metano (CH4/LOX) para misiones lunares y marcianas.",
      "fuente": "NASA Physical Sciences Informatics Repository - PSI-22 (ACME E-FIELD) & PSI-10",
-     "referencia": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
+     "referencia": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22",
+     "is_verified": false
     },
     {
      "id": "LUNA-MARS-07",
@@ -4669,7 +4674,8 @@
      "consecuencia_hallazgo": "En 0.16g y 0.38g las gotas de niebla fina (15-25 micras) permanecen suspendidas mucho más tiempo que en 1-g, comportándose casi como un gas total-flooding que penetra detrás de los racks y absorbe calor latente; en atmósferas de 34% O2, combinar niebla fina de agua con CO2/N2 evita el fortalecimiento inicial de la llama",
      "modificaciones_necesarias": "1) Estandarizar extintores híbridos de niebla fina de agua (D32 < 25 micras) + gas inerte (N2 en la Luna, CO2 in-situ en Marte) para hábitats de superficie a 56.5-70.3 kPa.",
      "fuente": "NASA GRC & CSM Water Mist Fire Suppression in Reduced Gravity (NTRS / PSI)",
-     "referencia": "https://ntrs.nasa.gov / NASA Spacecraft Fire Safety Water Mist"
+     "referencia": "https://ntrs.nasa.gov / NASA Spacecraft Fire Safety Water Mist",
+     "is_verified": false
     },
     {
      "id": "LUNA-MARS-08",
@@ -4687,7 +4693,8 @@
      "consecuencia_hallazgo": "En 0.16g la fuerza boyante sigue siendo 6 veces menor que en la Tierra, atrapando hasta un 12-15% de porosidad si se usa fundente convencional; al combinarse con el ciclado térmico de la noche lunar (-196 °C) y una atmósfera de cabina de 34% O2, un punto caliente o micro-arco en una unión porosa enciende el aislamiento adyacente en menos de 2 segundos",
      "modificaciones_necesarias": "1) Exigir reflujo asistido por vacío o soldadura ultrasónica sin fundente (fluxless) para todas las reparaciones electrónicas en la Luna y Marte; 2) Deratear en un 25% la corriente máxima de pistas y uniones soldadas que operen en atmósferas de exploración de 34% O2.",
      "fuente": "NASA Physical Sciences Informatics Repository - PSI-181 Lunar/Martian Thermal Cycling",
-     "referencia": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-181"
+     "referencia": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-181",
+     "is_verified": false
     },
     {
      "id": "SOFIE-CIR-5MOD",
@@ -4723,7 +4730,8 @@
      "consecuencia_hallazgo": "Aunque un fuego se extinga (como en SAFFIRE IV-VI), la adsorción en paredes de aluminio y la toxicidad aditiva de HF, HCl, CO y polvo respirable de regolito/percloratos exigen depuración activa ('Smoke Eater' + depurador CO2/ácidos)",
      "modificaciones_necesarias": "Exigir verificación T_grp < 1 post-supresión, filtración HEPA <= 0.1 mg/m3 y monitoreo de gases ácidos HF/HCl en hábitats Artemis y Marte.",
      "fuente": "NASA Technical Standards (NASA-STD-6001B, NASA-STD-3001 Vol. 2, JSC 20584)",
-     "referencia": "https://standards.nasa.gov/"
+     "referencia": "https://standards.nasa.gov/",
+     "is_verified": false
     },
     {
      "id": "NESC-LIION-TR",
@@ -4741,7 +4749,8 @@
      "consecuencia_hallazgo": "Un cortocircuito interno (ISC) supera los 600 °C e inyecta electrolito vaporizado (HF + POF3) capaz de propagar fuego en 34% O2 si no se limita el SOC y no se aísla en bolsas ignífugas de contención",
      "modificaciones_necesarias": "Implementar límites estrictos de SOC en tránsito, aislamiento térmico FTRC entre celdas, bolsas de contención HALO y catalizadores ECLSS dedicados para HF/POF3.",
      "fuente": "NASA NESC & Fractional Thermal Runaway Calorimetry (FTRC)",
-     "referencia": "https://www.nasa.gov/nesc/"
+     "referencia": "https://www.nasa.gov/nesc/",
+     "is_verified": false
     }
    ]
   },

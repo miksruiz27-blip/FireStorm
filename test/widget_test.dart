@@ -45,17 +45,17 @@ void main() {
     await _settle(tester);
     expect(find.text('SELECT HABITAT'), findsOneWidget);
     expect(
-      find.text('13 / 58'),
+      find.text('6 / 49'),
       findsOneWidget,
     ); // Lunar Base: relevance ≥ 50 (snapshot)
     expect(
-      find.text('DENSE'),
+      find.text('EMPTY'),
       findsOneWidget,
-    ); // partial-g drop: 6 series within ±4 % O₂ at lunar g
+    ); // no verified series near 34 % O₂ at lunar g (F4 audit)
 
     await tester.tap(find.text('SPACESUIT'));
     await _settle(tester);
-    expect(find.text('2 / 58'), findsOneWidget);
+    expect(find.text('2 / 49'), findsOneWidget);
     expect(find.text('CRITICAL'), findsNWidgets(2)); // card tag + telemetry bar
   });
 
@@ -68,14 +68,14 @@ void main() {
 
     expect(find.text('INVESTIGATION RANKING'), findsOneWidget);
     expect(
-      find.text('STD-6001B-SMAC'),
+      find.text('SAFFIRE-IV-VI'),
       findsNWidgets(2),
-    ); // top row (8.2 psia / 37 % O₂ materials test) + why panel
+    ); // top row (exploration-atmosphere fire tests) + why panel
     expect(find.text('SCORE FACTORS'), findsOneWidget);
 
     await tester.tap(find.bySemanticsLabel(RegExp('^Liquid fuel')));
     await tester.pump();
-    expect(find.text('STD-6001B-SMAC'), findsNothing);
+    expect(find.text('SAFFIRE-IV-VI'), findsNothing);
     expect(
       find.text('PSI-68'),
       findsNWidgets(2),
@@ -83,7 +83,7 @@ void main() {
     expect(find.text('SCORE FACTORS'), findsOneWidget); // API breakdown
   });
 
-  testWidgets('gap map: lunar base has partial-g evidence; ISS in training range', (
+  testWidgets('gap map: lunar base sits in an unvalidated zone; ISS does not', (
     tester,
   ) async {
     await _pumpApp(tester, const Size(1440, 1400));
@@ -91,13 +91,13 @@ void main() {
     await _settle(tester);
 
     expect(find.text('DATA GAP MAP'), findsOneWidget);
-    expect(find.text('EVIDENCE PRESENT'), findsOneWidget);
-    // nearest evidence for Lunar Base (snapshot): SoFIE at 32 % in μg, LUCI at 26.5 % at 0.166 g.
+    expect(find.text('UNVALIDATED ZONE'), findsOneWidget);
+    // nearest evidence for Lunar Base (snapshot): SAFFIRE at 34 % in μg, SoFIE (ISS CIR) at 37 % in μg.
+    expect(find.text('Δg μg'), findsOneWidget);
     expect(find.text('ΔO₂ +3'), findsOneWidget);
-    expect(find.text('34 % O₂ · 0.166 g'), findsOneWidget);
-    // The data model has no gravity input → still blind here, even with partial-g burns.
+    // Model blind spot → the backend's top suggested test sits right at the habitat.
     expect(find.text('MODEL BLIND HERE'), findsOneWidget);
-    expect(find.text('Burn tests at 17 % O₂ · 1 g'), findsOneWidget);
+    expect(find.text('Burn tests at 34 % O₂ · 0.166 g'), findsOneWidget);
 
     await tester.tap(find.text('Habitat')); // nav rail
     await _settle(tester);
@@ -123,14 +123,17 @@ void main() {
       expect(find.text('COPILOT · ANSWER'), findsWidgets);
       expect(find.textContaining('OFFLINE CACHE'), findsOneWidget);
       expect(
-        find.text('WHAT-IF · 34 % O₂'),
+        find.text('FLAME FORECAST · LUNAR BASE'),
         findsOneWidget,
-      ); // RiskCard: physics forecast at the question's O₂
-      expect(find.text('MATERIALS THAT BURN AT 34 % O₂'), findsOneWidget);
+      ); // RiskCard: physics forecast at the habitat (34 % O₂)
+      expect(find.text('SAFE AT 34 % O₂ · MOC ABOVE 34 %'), findsOneWidget);
+      expect(find.text('BURNS AT 34 % O₂ · MOC AT OR BELOW 34 %'), findsOneWidget);
       expect(find.textContaining('Con base en'), findsOneWidget);
-      // Turn 2 is not cached → offline coverage check from the gap-map snapshot:
-      // lunar 30 % O₂ is covered since the partial-g drop, so no coverage warning.
-      expect(find.textContaining('Outside data coverage'), findsNothing);
+      // Turn 2 is not cached → offline coverage check from the gap-map snapshot.
+      expect(
+        find.textContaining('no PSI test matches 34 % O₂ at 0.166 g'),
+        findsOneWidget,
+      );
       expect(find.text('OFFLINE'), findsOneWidget);
 
       await tester.tap(find.text('Gap map'));
@@ -167,7 +170,7 @@ void main() {
     await _settle(tester);
     expect(find.text('TEAM LAB'), findsOneWidget);
     expect(find.text('Experiments (27)'), findsOneWidget);
-    expect(find.text('Incidents (3)'), findsOneWidget);
+    expect(find.text('Incidents (2)'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
@@ -222,7 +225,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('forecast: lunar burns within tested range, sliders and ranks react', (
+  testWidgets('forecast: lunar burns untested, sliders and ranks react', (
     tester,
   ) async {
     await _pumpApp(tester, const Size(1440, 2000));
@@ -230,7 +233,7 @@ void main() {
     await _settle(tester);
     expect(find.text('FLAME FORECAST'), findsOneWidget);
     expect(find.text('VIGOROUS'), findsWidgets);
-    expect(find.text('WITHIN TESTED RANGE'), findsOneWidget);
+    expect(find.text('PHYSICS EXTRAPOLATION · UNTESTED'), findsOneWidget);
 
     await tester.tap(
       find.text('μg'),
@@ -239,7 +242,7 @@ void main() {
     expect(find.text('RESET TO HABITAT'), findsOneWidget);
     await tester.tap(find.text('RESET TO HABITAT'));
     await tester.pump();
-    expect(find.text('WITHIN TESTED RANGE'), findsOneWidget);
+    expect(find.text('PHYSICS EXTRAPOLATION · UNTESTED'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 

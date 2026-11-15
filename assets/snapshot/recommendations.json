@@ -3,10 +3,10 @@
   {
    "cell": {
     "o2_pct": 100,
-    "gravity_g": 0.165
+    "gravity_g": 0.166
    },
    "priority": 1,
-   "why": "No tests at 100 % O₂ / 0.165 g (gap 1); closeness to habitat 1; physics: vigorous (limit 18.55 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 100 % O₂ / 0.166 g (gap 1); closeness to habitat 1; physics: vigorous (limit 18.55 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -24,7 +24,7 @@
     "gravity_g": 0
    },
    "priority": 0.424,
-   "why": "1 test nearby at 100 % O₂ / 0 g (gap 0.5); closeness to habitat 0.848; physics: vigorous (limit 18.63 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "1 test nearby at 100 % O₂ / 0 g (gap 0.5); closeness to habitat 0.847; physics: vigorous (limit 18.63 %, p 1), extrapolated — a test here would confirm it.",
    "sources": [
     "NASA SMA - Apollo 13 Tank 2 (65V DC Overheat)"
    ]
@@ -42,195 +42,153 @@
   },
   {
    "cell": {
-    "o2_pct": 39,
-    "gravity_g": 0.165
+    "o2_pct": 35,
+    "gravity_g": 0.166
    },
    "priority": 0.002,
-   "why": "No tests at 39 % O₂ / 0.165 g (gap 1); closeness to habitat 0.002; physics: vigorous (limit 18.55 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 35 % O₂ / 0.166 g (gap 1); closeness to habitat 0.002; physics: vigorous (limit 18.55 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   }
  ],
  "iss": [
   {
    "cell": {
-    "o2_pct": 16,
-    "gravity_g": 1
+    "o2_pct": 21,
+    "gravity_g": 0.166
    },
-   "priority": 0.174,
-   "why": "No tests at 16 % O₂ / 1 g (gap 1); closeness to habitat 0.223; physics: marginal (limit 15.56 %, p 0.609), uncertainty 0.782.",
+   "priority": 0.847,
+   "why": "No tests at 21 % O₂ / 0.166 g (gap 1); closeness to habitat 0.847; physics: vigorous (limit 15.19 %, p 0.997), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
    "cell": {
-    "o2_pct": 15,
+    "o2_pct": 21,
     "gravity_g": 0.38
    },
-   "priority": 0.064,
-   "why": "4 tests nearby at 15 % O₂ / 0.38 g (gap 0.2); closeness to habitat 0.375; physics: marginal (limit 15.3 %, p 0.425), uncertainty 0.85.",
-   "sources": [
-    "NASA FLEX Martian CO2-Diluted Droplet Radiative Extinction (0.38g) — simulated values (team dataset)",
-    "NASA Mars Habitat CO2-Enriched Fire Suppression (0.38g Mars) — simulated values (team dataset)",
-    "NASA DAFT Martian Iron-Oxide/Perchlorate Dust Filtered Without False Alarm — simulated values (team dataset)",
-    "NASA JSC 20584 & STD-3001 ECLSS Scrubbed Below 0.1 mg/m3 Dust & SMAC — simulated values (team dataset)"
-   ]
+   "priority": 0.684,
+   "why": "No tests at 21 % O₂ / 0.38 g (gap 1); closeness to habitat 0.684; physics: vigorous (limit 15.3 %, p 0.997), extrapolated — a test here would confirm it.",
+   "sources": []
   },
   {
    "cell": {
-    "o2_pct": 15,
-    "gravity_g": 0.165
+    "o2_pct": 18,
+    "gravity_g": 0.166
    },
-   "priority": 0.042,
-   "why": "9 tests nearby at 15 % O₂ / 0.165 g (gap 0.1); closeness to habitat 0.465; physics: marginal (limit 15.18 %, p 0.454), uncertainty 0.908.",
-   "sources": [
-    "NASA ACME / Artemis Methalox Lander Line Inert Purge (0.16g Moon) — simulated values (team dataset)",
-    "NASA FLEX Lunar Low-Pressure Alcohol Water-Condensation Quench (0.16g) — simulated values (team dataset)",
-    "NASA Gateway HALO Fire-Containment Bag & Low-SOC Passive Safe — simulated values (team dataset)",
-    "NASA Artemis Lunar Habitat Safe Inerted Standby (56.5 kPa, 15.2% O2, 0.16g) — simulated values (team dataset)",
-    "NASA SAFFIRE-V Post-Fire Cabin Depressurization & Vent Cut Quench — simulated values (team dataset)",
-    "NASA SAME / DAFT Lunar Regolith Dust (1-10 um) Discriminated as Non-Fire — simulated values (team dataset)",
-    "NASA SoFIE-NCA Narrow Channel Heat Loss Extinction — simulated values (team dataset)",
-    "NASA SoFIE-SMuRF Flame Extinction Below Spacecraft Threshold — simulated values (team dataset)",
-    "NASA-STD-6001B Test 1 Self-Extinguish <15.2 cm No Flaming Drips — simulated values (team dataset)"
-   ]
+   "priority": 0.628,
+   "why": "No tests at 18 % O₂ / 0.166 g (gap 1); closeness to habitat 0.628; physics: sustained (limit 15.19 %, p 0.943), extrapolated — a test here would confirm it.",
+   "sources": []
+  },
+  {
+   "cell": {
+    "o2_pct": 24,
+    "gravity_g": 0.166
+   },
+   "priority": 0.628,
+   "why": "No tests at 24 % O₂ / 0.166 g (gap 1); closeness to habitat 0.628; physics: vigorous (limit 15.19 %, p 1), extrapolated — a test here would confirm it.",
+   "sources": []
   },
   {
    "cell": {
     "o2_pct": 18,
     "gravity_g": 0.38
    },
-   "priority": 0.021,
-   "why": "2 tests nearby at 18 % O₂ / 0.38 g (gap 0.333); closeness to habitat 0.507; physics: sustained (limit 15.3 %, p 0.937), uncertainty 0.126.",
-   "sources": [
-    "NASA Mars Partial-g Convective Blowoff Limit (0.38g Mars) — simulated values (team dataset)",
-    "NASA GRC Olson-Ferkul Partial-g Martian Buoyancy (0.38g Mars, Vb=10.2 cm/s) — simulated values (team dataset)"
-   ]
-  },
-  {
-   "cell": {
-    "o2_pct": 19,
-    "gravity_g": 1
-   },
-   "priority": 0.019,
-   "why": "No tests at 19 % O₂ / 1 g (gap 1); closeness to habitat 0.301; physics: sustained (limit 15.56 %, p 0.969), uncertainty 0.062.",
+   "priority": 0.507,
+   "why": "No tests at 18 % O₂ / 0.38 g (gap 1); closeness to habitat 0.507; physics: sustained (limit 15.3 %, p 0.937), extrapolated — a test here would confirm it.",
    "sources": []
   }
  ],
  "lunar": [
   {
    "cell": {
-    "o2_pct": 17,
-    "gravity_g": 1
+    "o2_pct": 34,
+    "gravity_g": 0.166
    },
-   "priority": 0.092,
-   "why": "No tests at 17 % O₂ / 1 g (gap 1); closeness to habitat 0.118; physics: marginal (limit 16.56 %, p 0.609), uncertainty 0.782.",
+   "priority": 1,
+   "why": "No tests at 34 % O₂ / 0.166 g (gap 1); closeness to habitat 1; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
    "cell": {
-    "o2_pct": 17,
-    "gravity_g": 0.165
-   },
-   "priority": 0.033,
-   "why": "4 tests nearby at 17 % O₂ / 0.165 g (gap 0.2); closeness to habitat 0.273; physics: marginal (limit 16.19 %, p 0.693), uncertainty 0.614.",
-   "sources": [
-    "NASA GRC Partial-g Aerodynamic Blowoff Branch (0.16g Moon) — simulated values (team dataset)",
-    "NASA GRC Partial-g Flammability Map (0.16g Moon, Vb=7.2 cm/s) — simulated values (team dataset)",
-    "NASA SAME / DAFT Lunar Regolith Dust (1-10 um) Discriminated as Non-Fire — simulated values (team dataset)",
-    "NASA Fine Water Mist Suppression at Lunar 0.16g (6x Slower Droplet Settling) — simulated values (team dataset)"
-   ]
-  },
-  {
-   "cell": {
-    "o2_pct": 18,
+    "o2_pct": 34,
     "gravity_g": 0.38
    },
-   "priority": 0.025,
-   "why": "2 tests nearby at 18 % O₂ / 0.38 g (gap 0.333); closeness to habitat 0.243; physics: sustained (limit 16.3 %, p 0.845), uncertainty 0.31.",
-   "sources": [
-    "NASA Mars Partial-g Convective Blowoff Limit (0.38g Mars) — simulated values (team dataset)",
-    "NASA GRC Olson-Ferkul Partial-g Martian Buoyancy (0.38g Mars, Vb=10.2 cm/s) — simulated values (team dataset)"
-   ]
+   "priority": 0.807,
+   "why": "No tests at 34 % O₂ / 0.38 g (gap 1); closeness to habitat 0.807; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
+   "sources": []
   },
   {
    "cell": {
-    "o2_pct": 15,
+    "o2_pct": 31,
+    "gravity_g": 0.166
+   },
+   "priority": 0.741,
+   "why": "No tests at 31 % O₂ / 0.166 g (gap 1); closeness to habitat 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "sources": []
+  },
+  {
+   "cell": {
+    "o2_pct": 37,
+    "gravity_g": 0.166
+   },
+   "priority": 0.741,
+   "why": "No tests at 37 % O₂ / 0.166 g (gap 1); closeness to habitat 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "sources": []
+  },
+  {
+   "cell": {
+    "o2_pct": 31,
     "gravity_g": 0.38
    },
-   "priority": 0.015,
-   "why": "4 tests nearby at 15 % O₂ / 0.38 g (gap 0.2); closeness to habitat 0.18; physics: self-extinguishes (limit 16.3 %, p 0.214), uncertainty 0.428.",
-   "sources": [
-    "NASA FLEX Martian CO2-Diluted Droplet Radiative Extinction (0.38g) — simulated values (team dataset)",
-    "NASA Mars Habitat CO2-Enriched Fire Suppression (0.38g Mars) — simulated values (team dataset)",
-    "NASA DAFT Martian Iron-Oxide/Perchlorate Dust Filtered Without False Alarm — simulated values (team dataset)",
-    "NASA JSC 20584 & STD-3001 ECLSS Scrubbed Below 0.1 mg/m3 Dust & SMAC — simulated values (team dataset)"
-   ]
-  },
-  {
-   "cell": {
-    "o2_pct": 20,
-    "gravity_g": 1
-   },
-   "priority": 0.01,
-   "why": "No tests at 20 % O₂ / 1 g (gap 1); closeness to habitat 0.16; physics: sustained (limit 16.56 %, p 0.969), uncertainty 0.062.",
+   "priority": 0.598,
+   "why": "No tests at 31 % O₂ / 0.38 g (gap 1); closeness to habitat 0.598; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   }
  ],
  "rover": [
   {
    "cell": {
-    "o2_pct": 17,
-    "gravity_g": 1
+    "o2_pct": 34,
+    "gravity_g": 0.166
    },
-   "priority": 0.073,
-   "why": "No tests at 17 % O₂ / 1 g (gap 1); closeness to habitat 0.079; physics: marginal (limit 17.15 %, p 0.462), uncertainty 0.924.",
+   "priority": 1,
+   "why": "No tests at 34 % O₂ / 0.166 g (gap 1); closeness to habitat 1; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
    "cell": {
-    "o2_pct": 17,
-    "gravity_g": 0.165
-   },
-   "priority": 0.033,
-   "why": "4 tests nearby at 17 % O₂ / 0.165 g (gap 0.2); closeness to habitat 0.183; physics: marginal (limit 16.78 %, p 0.554), uncertainty 0.892.",
-   "sources": [
-    "NASA GRC Partial-g Aerodynamic Blowoff Branch (0.16g Moon) — simulated values (team dataset)",
-    "NASA GRC Partial-g Flammability Map (0.16g Moon, Vb=7.2 cm/s) — simulated values (team dataset)",
-    "NASA SAME / DAFT Lunar Regolith Dust (1-10 um) Discriminated as Non-Fire — simulated values (team dataset)",
-    "NASA Fine Water Mist Suppression at Lunar 0.16g (6x Slower Droplet Settling) — simulated values (team dataset)"
-   ]
-  },
-  {
-   "cell": {
-    "o2_pct": 18,
+    "o2_pct": 34,
     "gravity_g": 0.38
    },
-   "priority": 0.027,
-   "why": "2 tests nearby at 18 % O₂ / 0.38 g (gap 0.333); closeness to habitat 0.163; physics: sustained (limit 16.9 %, p 0.75), uncertainty 0.5.",
-   "sources": [
-    "NASA Mars Partial-g Convective Blowoff Limit (0.38g Mars) — simulated values (team dataset)",
-    "NASA GRC Olson-Ferkul Partial-g Martian Buoyancy (0.38g Mars, Vb=10.2 cm/s) — simulated values (team dataset)"
-   ]
-  },
-  {
-   "cell": {
-    "o2_pct": 20,
-    "gravity_g": 1
-   },
-   "priority": 0.012,
-   "why": "No tests at 20 % O₂ / 1 g (gap 1); closeness to habitat 0.107; physics: sustained (limit 17.15 %, p 0.945), uncertainty 0.11.",
+   "priority": 0.807,
+   "why": "No tests at 34 % O₂ / 0.38 g (gap 1); closeness to habitat 0.807; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
    "cell": {
-    "o2_pct": 20,
-    "gravity_g": 0.165
+    "o2_pct": 31,
+    "gravity_g": 0.166
    },
-   "priority": 0.006,
-   "why": "2 tests nearby at 20 % O₂ / 0.165 g (gap 0.333); closeness to habitat 0.247; physics: sustained (limit 16.78 %, p 0.961), uncertainty 0.078.",
-   "sources": [
-    "NASA PSI-22 ACME E-FIELD 4.2kV Ion Wind Emulating Lunar 0.16g Buoyancy — simulated values (team dataset)",
-    "NASA FLEX / CFI Partial-g Droplet Cool-to-Hot Transition (0.16g Moon) — simulated values (team dataset)"
-   ]
+   "priority": 0.741,
+   "why": "No tests at 31 % O₂ / 0.166 g (gap 1); closeness to habitat 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "sources": []
+  },
+  {
+   "cell": {
+    "o2_pct": 37,
+    "gravity_g": 0.166
+   },
+   "priority": 0.741,
+   "why": "No tests at 37 % O₂ / 0.166 g (gap 1); closeness to habitat 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "sources": []
+  },
+  {
+   "cell": {
+    "o2_pct": 31,
+    "gravity_g": 0.38
+   },
+   "priority": 0.598,
+   "why": "No tests at 31 % O₂ / 0.38 g (gap 1); closeness to habitat 0.598; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
+   "sources": []
   }
  ]
 }

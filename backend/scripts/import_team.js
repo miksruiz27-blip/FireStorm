@@ -45,8 +45,8 @@ const EXPERIMENTS = {
   // Several prefixes may share one experiment id: their rows are merged.
   LUNA: ['luci-lunar', 'LUNA-MARS-01', { domain: ['prevention'] }],
   MARS: ['mars-partial-g', 'LUNA-MARS-03', { domain: ['prevention'] }],
-  'SAFFIRE-LM': ['saffire-exploration', 'LUNA-MARS-02', { domain: ['prevention', 'detection'] }],
-  'SAFFIRE-FFD': ['saffire-exploration', 'LUNA-MARS-02', {}],
+  'SAFFIRE-LM': ['saffire-iv-vi', 'LUNA-MARS-02', { domain: ['prevention', 'detection'] }],
+  'SAFFIRE-FFD': ['saffire-iv-vi', 'LUNA-MARS-02', {}],
   'FLEX-LUNA': ['flex-partial-g', 'LUNA-MARS-05', {}],
   'FLEX-MARS': ['flex-partial-g', 'LUNA-MARS-05', {}],
   'ACME-LUNA': ['acme-e-field-partial-g', 'LUNA-MARS-06', { fuel_type: 'gas' }],
@@ -57,13 +57,13 @@ const EXPERIMENTS = {
   'MIST-MARS': ['scwm-partial-g', 'LUNA-MARS-07', {}],
   'ISSI-LUNA': ['issi-partial-g', 'LUNA-MARS-08', {}],
   'ISSI-MARS': ['issi-partial-g', 'LUNA-MARS-08', {}],
-  'SOFIE-GEL': ['sofie-cir', 'SOFIE-CIR-5MOD', {}],
-  'SOFIE-MIST': ['sofie-cir', 'SOFIE-CIR-5MOD', {}],
-  'SOFIE-SMURF': ['sofie-cir', 'SOFIE-CIR-5MOD', {}],
-  'SOFIE-RTDFS': ['sofie-cir', 'SOFIE-CIR-5MOD', {}],
-  'SOFIE-NCA': ['sofie-cir', 'SOFIE-CIR-5MOD', {}],
-  STD6001: ['std-6001b-smac', 'STD-6001B-SMAC', { domain: ['prevention', 'detection'] }],
-  SMAC: ['std-6001b-smac', 'STD-6001B-SMAC', {}],
+  'SOFIE-GEL': ['sofie-iss-cir', 'SOFIE-CIR-5MOD', {}],
+  'SOFIE-MIST': ['sofie-iss-cir', 'SOFIE-CIR-5MOD', {}],
+  'SOFIE-SMURF': ['sofie-iss-cir', 'SOFIE-CIR-5MOD', {}],
+  'SOFIE-RTDFS': ['sofie-iss-cir', 'SOFIE-CIR-5MOD', {}],
+  'SOFIE-NCA': ['sofie-iss-cir', 'SOFIE-CIR-5MOD', {}],
+  STD6001: ['nasa-std-6001b', 'STD-6001B-SMAC', { domain: ['prevention', 'detection'] }],
+  SMAC: ['nasa-std-6001b', 'STD-6001B-SMAC', {}],
   LIION: ['li-ion-runaway', 'NESC-LIION-TR', {}],
   ...Object.fromEntries(
     [10, 21, 22, 23, 39, 47, 60, 62, 98, 99, 100, 101, 102, 106, 107, 108, 115, 117, 142, 181].map((n) => [
@@ -72,6 +72,9 @@ const EXPERIMENTS = {
     ]),
   ),
 };
+
+// Experiments renamed by the F4 audit: the label the UI showed before → it now shows the id below.
+const RENAMED = { 'saffire-iv-vi': 'SAFFIRE-EXPLORATION', 'sofie-iss-cir': 'SOFIE-CIR', 'nasa-std-6001b': 'STD-6001B-SMAC' };
 
 // Catalog group → defaults (fuel, safety domain).
 const GROUP = {
@@ -108,6 +111,12 @@ const platform = (hw) =>
   /cygnus/i.test(hw) ? 'Cygnus' : /sts|shuttle|spacelab/i.test(hw) ? 'Space Shuttle' : /\bmir\b/i.test(hw) ? 'Mir'
     : /apollo|launch complex/i.test(hw) ? 'Apollo' : 'ISS';
 
+// F4 source audit. A partial-gravity row (0 < g < 1) is verified only if its source in the repo is a
+// measured record; every such row in this drop comes from psi_repositories_simulated.csv, whose repo_url
+// points at a microgravity PSI investigation, so it has no traceable partial-g source.
+const partialG = (t) => Number(t.gravity_g) > 0 && Number(t.gravity_g) < 1;
+const verifiedPoint = (t) => !(partialG(t) && simulated(prefix(t.test_id)));
+
 const byPrefix = Object.groupBy(tests, (t) => prefix(t.test_id));
 const unknown = Object.keys(byPrefix).filter((p) => !EXPERIMENTS[p]);
 if (unknown.length) throw new Error(`unmapped test_id prefixes: ${unknown.join(', ')} — add them to EXPERIMENTS`);
@@ -117,9 +126,12 @@ const ids = Object.groupBy(Object.keys(EXPERIMENTS), (p) => EXPERIMENTS[p][0]);
 const experiments = Object.entries(ids).map(([id, prefixes]) => {
   const [, catId, o] = EXPERIMENTS[prefixes[0]];
   const p = prefixes[0];
-  const rows = prefixes.flatMap((x) => byPrefix[x] ?? []);
+  const all = prefixes.flatMap((x) => byPrefix[x] ?? []);
   const c = catalog[catId];
-  if (!rows.length || !c) throw new Error(`${p}: ${rows.length ? `catalog ${catId} missing` : 'no test rows'}`);
+  if (!all.length || !c) throw new Error(`${p}: ${all.length ? `catalog ${catId} missing` : 'no test rows'}`);
+  // Envelope, materials and sources from the verified rows only (all rows if none is verified).
+  const verified = all.filter(verifiedPoint);
+  const rows = verified.length ? verified : all;
   const [fuel, domain] = GROUP[c.grupo_investigacion] ?? ['solid', ['prevention']];
   const g = rows.map((t) => Number(t.gravity_g));
   const catRef = `${c.fuente}${c.referencia ? ` · ${c.referencia}` : ''}`;
@@ -142,6 +154,8 @@ const experiments = Object.entries(ids).map(([id, prefixes]) => {
       ...uniq(rows.map((t) => sourceTitle(prefix(t.test_id), t.source))).map((s) => ({ title: s, ntrs_id: ntrs(s), url: url(s, 'https://psi.nasa.gov') })),
       { title: catRef, ntrs_id: '', url: url(c.referencia, '') },
     ],
+    catalog_id: catId,
+    is_verified: verified.length > 0,
   };
 });
 
@@ -161,11 +175,12 @@ const test_points = tests.map((t) => {
     outcome: t.outcome,
     spread_rate_mm_s: spread,
     source: sourceTitle(prefix(t.test_id), t.source),
+    is_verified: verifiedPoint(t),
   };
 });
 
 const out = (f, data) => writeFileSync(new URL(`../data/${f}`, import.meta.url), `${JSON.stringify(data, null, 1)}\n`);
-out('experiments.json', experiments);
+out('experiments.json', experiments.map(({ catalog_id, ...e }) => e));
 out('test_points.json', test_points);
 
 // Models: ONNX as shipped; model.json gets the class order model.js needs (ONNX label 1 = burn).
@@ -181,6 +196,12 @@ flow.class_modifications = Object.fromEntries(
     return [k, Object.entries(n).sort((a, b) => b[1].length - a[1].length)[0]?.[0] ?? ''];
   }),
 );
+// Catalog entries whose only experiments are unverified are hidden from /catalog (kept in the file).
+const catalogVerified = {};
+for (const e of experiments) catalogVerified[e.catalog_id] ||= e.is_verified;
+for (const entry of meta.extended_capabilities.catalog_summary.entries)
+  if (catalogVerified[entry.id] === false) entry.is_verified = false;
+writeAudit();
 writeFileSync(
   new URL('../models/model.json', import.meta.url),
   `${JSON.stringify({ ...meta, classes: ['extinct', 'burn'] }, null, 1)}\n`,
@@ -189,3 +210,46 @@ console.log(
   `${experiments.length} experiments, ${test_points.length} test points ` +
     `(${test_points.filter((t) => t.spread_rate_mm_s != null).length} with spread), 3 ONNX models → data/, models/`,
 );
+
+/** AUDIT_SOURCES.md at the repo root: every experiment with partial-g rows and every partial-g test point. */
+function writeAudit() {
+  const simRow = Object.fromEntries(csv('psi_repositories_simulated.csv').map((r, i) => [r.test_id, { ...r, line: i + 2 }]));
+  const esc = (s = '') => String(s).replace(/\|/g, '\\|').replace(/\s+/g, ' ').trim();
+  const pg = tests.map((t, i) => ({ t, line: i + 2 })).filter(({ t }) => partialG(t));
+  const pgExp = [...new Set(pg.map(({ t }) => EXPERIMENTS[prefix(t.test_id)][0]))];
+  const expRows = experiments.filter((e) => pgExp.includes(e.id)).map((e) => {
+    const c = catalog[e.catalog_id];
+    const status = !e.is_verified ? 'SIN FUENTE' : RENAMED[e.id] ? 'RENOMBRAR' : 'OK';
+    return `| ${e.id} | ${RENAMED[e.id] ?? e.id.toUpperCase()} | ${esc(c.codigo_corto)} — ${esc(c.experimento_investigacion)} | ` +
+      `${esc(c.fuente)} · ${esc(c.referencia)} (catalog ${e.catalog_id}) | ${status} |`;
+  });
+  const tpRows = pg.map(({ t, line }) => {
+    const s = simRow[t.test_id];
+    const where = `bass_experiments.csv:${line}` + (s ? ` · psi_repositories_simulated.csv:${s.line}` : '');
+    return `| ${t.test_id} | ${EXPERIMENTS[prefix(t.test_id)][0]} | ${t.gravity_g} | ${esc(t.material)} | ${where} | ` +
+      `${esc(t.source)}${s ? ` · repo_url ${s.repo_url}` : ''} | ${verifiedPoint(t) ? 'OK' : 'SIN FUENTE'} |`;
+  });
+  const md = `# AUDIT_SOURCES — partial-gravity data (F4)
+
+Generated by \`backend/scripts/import_team.js\` from the team drop in \`firestorm_modelos_y_csv_equipo/\`. Re-run \`npm run import\` to refresh.
+
+**Rule.** A row with 0 < g < 1 is OK only if its source in the repo is a measured record at that gravity
+(NTRS or PSI identifier). Every partial-g row in this drop is in \`psi_repositories_simulated.csv\` (team-simulated
+values), and its \`repo_url\` points at a microgravity PSI investigation, not a partial-g measurement → **SIN FUENTE**.
+SIN FUENTE rows are kept in the DB with \`is_verified = false\`, hidden from the UI and excluded from the model fit.
+An experiment with no verified row is SIN FUENTE; one that stays visible under an invented label is RENOMBRAR.
+
+## Experiments with partial-g rows
+
+| id | shown as | real name (catalog) | source (title · reference) | status |
+|---|---|---|---|---|
+${expRows.join('\n')}
+
+## Partial-g test points (${pg.length})
+
+| test_id | experiment | g | material | file:row | source | status |
+|---|---|---|---|---|---|---|
+${tpRows.join('\n')}
+`;
+  writeFileSync(new URL('../../AUDIT_SOURCES.md', import.meta.url), md);
+}

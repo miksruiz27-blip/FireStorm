@@ -28,7 +28,9 @@ app.get('/health', async (_req, res) => {
 });
 
 /** The team's catalog: experiments, PSI repositories, findings, incidents, PSI-166 investigations. */
-app.get('/catalog', (_req, res) => res.json(meta.extended_capabilities?.catalog_summary?.entries ?? []));
+app.get('/catalog', (_req, res) =>
+  res.json((meta.extended_capabilities?.catalog_summary?.entries ?? []).filter((e) => e.is_verified !== false)),
+);
 
 /** Free text → research group + that group's required modifications (experiment_classifier.onnx). */
 app.post('/classify/experiment', async (req, res) => {

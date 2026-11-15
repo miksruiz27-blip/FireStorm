@@ -35,25 +35,28 @@ const upserts = {
   experiments: [
     Experiment,
     `INSERT INTO experiments (id, name, platform, fuel_type, domain, hardware, o2_range, pressure_kpa_range, gravity,
-       flow_cm_s_range, materials, key_findings, sources, modifications, research_group, search)
-     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$15,$16,
+       flow_cm_s_range, materials, key_findings, sources, modifications, research_group, is_verified, search)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$15,$16,$17,
        to_tsvector('english', $2 || ' ' || $14 || ' ' || array_to_string($11::text[], ' ') || ' ' ||
          array_to_string($12::text[], ' ') || ' ' || array_to_string($15::text[], ' ')))
      ON CONFLICT (id) DO UPDATE SET name=EXCLUDED.name, platform=EXCLUDED.platform, fuel_type=EXCLUDED.fuel_type,
        domain=EXCLUDED.domain, hardware=EXCLUDED.hardware, o2_range=EXCLUDED.o2_range,
        pressure_kpa_range=EXCLUDED.pressure_kpa_range, gravity=EXCLUDED.gravity, flow_cm_s_range=EXCLUDED.flow_cm_s_range,
        materials=EXCLUDED.materials, key_findings=EXCLUDED.key_findings, sources=EXCLUDED.sources,
-       modifications=EXCLUDED.modifications, research_group=EXCLUDED.research_group, search=EXCLUDED.search`,
+       modifications=EXCLUDED.modifications, research_group=EXCLUDED.research_group,
+       is_verified=EXCLUDED.is_verified, search=EXCLUDED.search`,
     (e) => [e.id, e.name, e.platform, e.fuel_type, e.domain, e.hardware, e.o2_range, e.pressure_kpa_range, e.gravity,
-      e.flow_cm_s_range, e.materials, e.key_findings, JSON.stringify(e.sources), e.hardware, e.modifications, e.research_group],
+      e.flow_cm_s_range, e.materials, e.key_findings, JSON.stringify(e.sources), e.hardware, e.modifications, e.research_group,
+      e.is_verified],
   ],
   test_points: [
     TestPoint,
-    `INSERT INTO test_points (experiment_id, material, o2_pct, pressure_kpa, gravity_g, flow_cm_s, outcome, spread_rate_mm_s, source)
-     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
+    `INSERT INTO test_points (experiment_id, material, o2_pct, pressure_kpa, gravity_g, flow_cm_s, outcome, spread_rate_mm_s, source, is_verified)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
      ON CONFLICT (experiment_id, material, o2_pct, pressure_kpa, gravity_g, flow_cm_s)
-     DO UPDATE SET outcome=$7, spread_rate_mm_s=$8, source=$9`,
-    (t) => [t.experiment_id, t.material, t.o2_pct, t.pressure_kpa, t.gravity_g, t.flow_cm_s, t.outcome, t.spread_rate_mm_s, t.source],
+     DO UPDATE SET outcome=$7, spread_rate_mm_s=$8, source=$9, is_verified=$10`,
+    (t) => [t.experiment_id, t.material, t.o2_pct, t.pressure_kpa, t.gravity_g, t.flow_cm_s, t.outcome, t.spread_rate_mm_s, t.source,
+      t.is_verified],
   ],
   material_moc: [
     MaterialMoc,

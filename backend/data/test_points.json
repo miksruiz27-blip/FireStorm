@@ -8,7 +8,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -19,7 +20,8 @@
   "flow_cm_s": 10,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -30,7 +32,8 @@
   "flow_cm_s": 1.8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -41,7 +44,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -52,7 +56,8 @@
   "flow_cm_s": 21.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -63,7 +68,8 @@
   "flow_cm_s": 35,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -74,7 +80,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -85,7 +92,8 @@
   "flow_cm_s": 2.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -96,7 +104,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -107,7 +116,8 @@
   "flow_cm_s": 28,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -118,7 +128,8 @@
   "flow_cm_s": 8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -129,7 +140,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -140,7 +152,8 @@
   "flow_cm_s": 0.8,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -151,7 +164,8 @@
   "flow_cm_s": 25,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -162,7 +176,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -173,7 +188,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -184,7 +200,8 @@
   "flow_cm_s": 24.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -195,7 +212,8 @@
   "flow_cm_s": 5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -206,7 +224,8 @@
   "flow_cm_s": 2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -217,7 +236,8 @@
   "flow_cm_s": 5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -228,7 +248,8 @@
   "flow_cm_s": 4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -239,7 +260,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -250,7 +272,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -261,7 +284,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -272,7 +296,8 @@
   "flow_cm_s": 20,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -283,7 +308,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -294,7 +320,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -305,7 +332,8 @@
   "flow_cm_s": 27,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -316,7 +344,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -327,7 +356,8 @@
   "flow_cm_s": 0.7,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -338,7 +368,8 @@
   "flow_cm_s": 25.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -349,7 +380,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -360,7 +392,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -371,7 +404,8 @@
   "flow_cm_s": 4.8,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -382,7 +416,8 @@
   "flow_cm_s": 4.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -393,7 +428,8 @@
   "flow_cm_s": 3,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -404,7 +440,8 @@
   "flow_cm_s": 1.9,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -415,7 +452,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -426,7 +464,8 @@
   "flow_cm_s": 12,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -437,7 +476,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -448,7 +488,8 @@
   "flow_cm_s": 2.2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -459,7 +500,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -470,7 +512,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -481,7 +524,8 @@
   "flow_cm_s": 0.7,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -492,7 +536,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -503,7 +548,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -514,7 +560,8 @@
   "flow_cm_s": 4.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -525,7 +572,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -536,7 +584,8 @@
   "flow_cm_s": 4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass",
@@ -547,7 +596,8 @@
   "flow_cm_s": 3.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)"
+  "source": "NASA/TM-2015-218735 (NTRS: 20150016543)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -558,7 +608,8 @@
   "flow_cm_s": 7.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -569,7 +620,8 @@
   "flow_cm_s": 2.2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -580,7 +632,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -591,7 +644,8 @@
   "flow_cm_s": 21,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -602,7 +656,8 @@
   "flow_cm_s": 32,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -613,7 +668,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -624,7 +680,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -635,7 +692,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -646,7 +704,8 @@
   "flow_cm_s": 27,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -657,7 +716,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -668,7 +728,8 @@
   "flow_cm_s": 2.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -679,7 +740,8 @@
   "flow_cm_s": 0.7,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -690,7 +752,8 @@
   "flow_cm_s": 26,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -701,7 +764,8 @@
   "flow_cm_s": 8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -712,7 +776,8 @@
   "flow_cm_s": 3,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -723,7 +788,8 @@
   "flow_cm_s": 0.7,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -734,7 +800,8 @@
   "flow_cm_s": 25.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -745,7 +812,8 @@
   "flow_cm_s": 6.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -756,7 +824,8 @@
   "flow_cm_s": 1.2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -767,7 +836,8 @@
   "flow_cm_s": 25,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -778,7 +848,8 @@
   "flow_cm_s": 5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -789,7 +860,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -800,7 +872,8 @@
   "flow_cm_s": 4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -811,7 +884,8 @@
   "flow_cm_s": 5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -822,7 +896,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -833,7 +908,8 @@
   "flow_cm_s": 1.9,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -844,7 +920,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -855,7 +932,8 @@
   "flow_cm_s": 15,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -866,7 +944,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -877,7 +956,8 @@
   "flow_cm_s": 2.1,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -888,7 +968,8 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -899,7 +980,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -910,7 +992,8 @@
   "flow_cm_s": 0.7,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -921,7 +1004,8 @@
   "flow_cm_s": 5.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -932,7 +1016,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -943,7 +1028,8 @@
   "flow_cm_s": 4.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -954,7 +1040,8 @@
   "flow_cm_s": 0.8,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -965,7 +1052,8 @@
   "flow_cm_s": 3.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -976,7 +1064,8 @@
   "flow_cm_s": 4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -987,7 +1076,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-ii",
@@ -998,7 +1088,8 @@
   "flow_cm_s": 30,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)"
+  "source": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1009,7 +1100,8 @@
   "flow_cm_s": 8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0023 (BASS Archive)"
+  "source": "NASA-PSI-INV-0023 (BASS Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1020,7 +1112,8 @@
   "flow_cm_s": 3.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0023 (BASS Archive)"
+  "source": "NASA-PSI-INV-0023 (BASS Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1031,7 +1124,8 @@
   "flow_cm_s": 0.2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0023 (BASS Archive)"
+  "source": "NASA-PSI-INV-0023 (BASS Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1042,7 +1136,8 @@
   "flow_cm_s": 21,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0023 (BASS Archive)"
+  "source": "NASA-PSI-INV-0023 (BASS Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1053,7 +1148,8 @@
   "flow_cm_s": 33,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0023 (BASS Archive)"
+  "source": "NASA-PSI-INV-0023 (BASS Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1064,7 +1160,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0023 (BASS Archive)"
+  "source": "NASA-PSI-INV-0023 (BASS Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1075,7 +1172,8 @@
   "flow_cm_s": 2.2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0023 (BASS Archive)"
+  "source": "NASA-PSI-INV-0023 (BASS Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1086,7 +1184,8 @@
   "flow_cm_s": 0.6,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0023 (BASS Archive)"
+  "source": "NASA-PSI-INV-0023 (BASS Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1097,7 +1196,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1108,7 +1208,8 @@
   "flow_cm_s": 2.4,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1119,7 +1220,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1130,7 +1232,8 @@
   "flow_cm_s": 26,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1141,7 +1244,8 @@
   "flow_cm_s": 7,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1152,7 +1256,8 @@
   "flow_cm_s": 2.8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1163,7 +1268,8 @@
   "flow_cm_s": 0.7,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1174,7 +1280,8 @@
   "flow_cm_s": 25,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1185,7 +1292,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1196,7 +1304,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1207,7 +1316,8 @@
   "flow_cm_s": 4.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1218,7 +1328,8 @@
   "flow_cm_s": 4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "bass-psi-archive",
@@ -1229,7 +1340,8 @@
   "flow_cm_s": 3.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-PSI-INV-0044 (BASS-II Archive)"
+  "source": "NASA-PSI-INV-0044 (BASS-II Archive)",
+  "is_verified": true
  },
  {
   "experiment_id": "apollo-1",
@@ -1240,7 +1352,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA SMA - Apollo 1 (100% O2, 16.7 psi)"
+  "source": "NASA SMA - Apollo 1 (100% O2, 16.7 psi)",
+  "is_verified": true
  },
  {
   "experiment_id": "apollo-1",
@@ -1251,7 +1364,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA SMA - Apollo 1 Redesign Test (60% O2)"
+  "source": "NASA SMA - Apollo 1 Redesign Test (60% O2)",
+  "is_verified": true
  },
  {
   "experiment_id": "apollo-1",
@@ -1262,7 +1376,8 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA SMA - Apollo Block II Beta Cloth"
+  "source": "NASA SMA - Apollo Block II Beta Cloth",
+  "is_verified": true
  },
  {
   "experiment_id": "apollo-13",
@@ -1273,7 +1388,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA SMA - Apollo 13 Tank 2 (65V DC Overheat)"
+  "source": "NASA SMA - Apollo 13 Tank 2 (65V DC Overheat)",
+  "is_verified": true
  },
  {
   "experiment_id": "flex",
@@ -1284,7 +1400,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - FLEX (ISS CIR)"
+  "source": "NASA Guide 2015 - FLEX (ISS CIR)",
+  "is_verified": true
  },
  {
   "experiment_id": "flex",
@@ -1295,7 +1412,8 @@
   "flow_cm_s": 2.2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - FLEX Cool Flame Reignition"
+  "source": "NASA Guide 2015 - FLEX Cool Flame Reignition",
+  "is_verified": true
  },
  {
   "experiment_id": "flex",
@@ -1306,7 +1424,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - FLEX Extinction Limit"
+  "source": "NASA Guide 2015 - FLEX Extinction Limit",
+  "is_verified": true
  },
  {
   "experiment_id": "flex",
@@ -1317,7 +1436,8 @@
   "flow_cm_s": 3,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - FLEX Methanol"
+  "source": "NASA Guide 2015 - FLEX Methanol",
+  "is_verified": true
  },
  {
   "experiment_id": "flex",
@@ -1328,7 +1448,8 @@
   "flow_cm_s": 1.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - FLEX CO2 Suppression"
+  "source": "NASA Guide 2015 - FLEX CO2 Suppression",
+  "is_verified": true
  },
  {
   "experiment_id": "flex-2",
@@ -1339,7 +1460,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - FLEX-2 Droplet Array"
+  "source": "NASA Guide 2015 - FLEX-2 Droplet Array",
+  "is_verified": true
  },
  {
   "experiment_id": "flex-2",
@@ -1350,7 +1472,8 @@
   "flow_cm_s": 24,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - FLEX-2 Convective Blowoff"
+  "source": "NASA Guide 2015 - FLEX-2 Convective Blowoff",
+  "is_verified": true
  },
  {
   "experiment_id": "cool-flames",
@@ -1361,7 +1484,8 @@
   "flow_cm_s": 2.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - Cool Flames Initiative"
+  "source": "NASA Guide 2015 - Cool Flames Initiative",
+  "is_verified": true
  },
  {
   "experiment_id": "cool-flames",
@@ -1372,7 +1496,8 @@
   "flow_cm_s": 0.2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - Cool Flames Quench"
+  "source": "NASA Guide 2015 - Cool Flames Quench",
+  "is_verified": true
  },
  {
   "experiment_id": "sofie",
@@ -1383,7 +1508,8 @@
   "flow_cm_s": 10,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SoFIE (10.2 psi, 34% O2)"
+  "source": "NASA Guide 2015 - SoFIE (10.2 psi, 34% O2)",
+  "is_verified": true
  },
  {
   "experiment_id": "sofie",
@@ -1394,7 +1520,8 @@
   "flow_cm_s": 8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SoFIE (10.2 psi, 32% O2)"
+  "source": "NASA Guide 2015 - SoFIE (10.2 psi, 32% O2)",
+  "is_verified": true
  },
  {
   "experiment_id": "sofie",
@@ -1405,7 +1532,8 @@
   "flow_cm_s": 10,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SoFIE Max O2"
+  "source": "NASA Guide 2015 - SoFIE Max O2",
+  "is_verified": true
  },
  {
   "experiment_id": "sofie",
@@ -1416,7 +1544,8 @@
   "flow_cm_s": 5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SoFIE Low O2 Limit"
+  "source": "NASA Guide 2015 - SoFIE Low O2 Limit",
+  "is_verified": true
  },
  {
   "experiment_id": "sofie",
@@ -1427,7 +1556,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SoFIE Flame Growth"
+  "source": "NASA Guide 2015 - SoFIE Flame Growth",
+  "is_verified": true
  },
  {
   "experiment_id": "sofie",
@@ -1438,7 +1568,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SoFIE Radiative Extinction"
+  "source": "NASA Guide 2015 - SoFIE Radiative Extinction",
+  "is_verified": true
  },
  {
   "experiment_id": "sofie",
@@ -1449,7 +1580,8 @@
   "flow_cm_s": 7,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SoFIE Thermal/Species"
+  "source": "NASA Guide 2015 - SoFIE Thermal/Species",
+  "is_verified": true
  },
  {
   "experiment_id": "sofie",
@@ -1460,7 +1592,8 @@
   "flow_cm_s": 2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SoFIE Intrinsic Safe"
+  "source": "NASA Guide 2015 - SoFIE Intrinsic Safe",
+  "is_verified": true
  },
  {
   "experiment_id": "sofie",
@@ -1471,7 +1604,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SoFIE External Heat Flux"
+  "source": "NASA Guide 2015 - SoFIE External Heat Flux",
+  "is_verified": true
  },
  {
   "experiment_id": "sofie",
@@ -1482,7 +1616,8 @@
   "flow_cm_s": 8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SoFIE Narrow Channel"
+  "source": "NASA Guide 2015 - SoFIE Narrow Channel",
+  "is_verified": true
  },
  {
   "experiment_id": "sofie",
@@ -1493,7 +1628,8 @@
   "flow_cm_s": 29,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SoFIE High Ventilation"
+  "source": "NASA Guide 2015 - SoFIE High Ventilation",
+  "is_verified": true
  },
  {
   "experiment_id": "acme-bre",
@@ -1504,7 +1640,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - ACME BRE Sustained"
+  "source": "NASA Guide 2015 - ACME BRE Sustained",
+  "is_verified": true
  },
  {
   "experiment_id": "acme-bre",
@@ -1515,7 +1652,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - ACME BRE Extinction"
+  "source": "NASA Guide 2015 - ACME BRE Extinction",
+  "is_verified": true
  },
  {
   "experiment_id": "acme-cld",
@@ -1526,7 +1664,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - ACME CLD Flame"
+  "source": "NASA Guide 2015 - ACME CLD Flame",
+  "is_verified": true
  },
  {
   "experiment_id": "acme-cld",
@@ -1537,7 +1676,8 @@
   "flow_cm_s": 26,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - ACME CLD Blowoff"
+  "source": "NASA Guide 2015 - ACME CLD Blowoff",
+  "is_verified": true
  },
  {
   "experiment_id": "acme-e-field",
@@ -1548,7 +1688,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - ACME E-FIELD Flame"
+  "source": "NASA Guide 2015 - ACME E-FIELD Flame",
+  "is_verified": true
  },
  {
   "experiment_id": "acme-flame-design",
@@ -1559,7 +1700,8 @@
   "flow_cm_s": 3.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - ACME Flame Design"
+  "source": "NASA Guide 2015 - ACME Flame Design",
+  "is_verified": true
  },
  {
   "experiment_id": "acme-flame-design",
@@ -1570,7 +1712,8 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - ACME Flame Design Quench"
+  "source": "NASA Guide 2015 - ACME Flame Design Quench",
+  "is_verified": true
  },
  {
   "experiment_id": "acme-s-flame",
@@ -1581,7 +1724,8 @@
   "flow_cm_s": 3,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - ACME s-Flame"
+  "source": "NASA Guide 2015 - ACME s-Flame",
+  "is_verified": true
  },
  {
   "experiment_id": "spice",
@@ -1592,7 +1736,8 @@
   "flow_cm_s": 7,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SPICE (MSG)"
+  "source": "NASA Guide 2015 - SPICE (MSG)",
+  "is_verified": true
  },
  {
   "experiment_id": "slice",
@@ -1603,7 +1748,8 @@
   "flow_cm_s": 5.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SLICE (MSG)"
+  "source": "NASA Guide 2015 - SLICE (MSG)",
+  "is_verified": true
  },
  {
   "experiment_id": "sofball",
@@ -1614,7 +1760,8 @@
   "flow_cm_s": 1.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - SOFBALL (40 min burn)"
+  "source": "NASA Guide 2015 - SOFBALL (40 min burn)",
+  "is_verified": true
  },
  {
   "experiment_id": "candle-flames",
@@ -1625,7 +1772,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - Mir/Shuttle Candle (45 min)"
+  "source": "NASA Guide 2015 - Mir/Shuttle Candle (45 min)",
+  "is_verified": true
  },
  {
   "experiment_id": "candle-flames",
@@ -1636,7 +1784,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - Candle Low O2 Extinction"
+  "source": "NASA Guide 2015 - Candle Low O2 Extinction",
+  "is_verified": true
  },
  {
   "experiment_id": "mist",
@@ -1647,7 +1796,8 @@
   "flow_cm_s": 8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - Mist Control Flame"
+  "source": "NASA Guide 2015 - Mist Control Flame",
+  "is_verified": true
  },
  {
   "experiment_id": "mist",
@@ -1658,7 +1808,8 @@
   "flow_cm_s": 25,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - Fine Water Mist Suppression"
+  "source": "NASA Guide 2015 - Fine Water Mist Suppression",
+  "is_verified": true
  },
  {
   "experiment_id": "hvac-ventilation",
@@ -1669,7 +1820,8 @@
   "flow_cm_s": 10,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - Hallazgo HVAC 10 cm/s Max Spread"
+  "source": "NASA Guide 2015 - Hallazgo HVAC 10 cm/s Max Spread",
+  "is_verified": true
  },
  {
   "experiment_id": "hvac-ventilation",
@@ -1680,7 +1832,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - Hallazgo HVAC Cut-off Quench"
+  "source": "NASA Guide 2015 - Hallazgo HVAC Cut-off Quench",
+  "is_verified": true
  },
  {
   "experiment_id": "n2-jet-suppression",
@@ -1691,7 +1844,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA Guide 2015 - Hallazgo Chorro Local N2"
+  "source": "NASA Guide 2015 - Hallazgo Chorro Local N2",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1702,7 +1856,8 @@
   "flow_cm_s": 3.5,
   "outcome": "burn",
   "spread_rate_mm_s": 1.85,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1713,7 +1868,8 @@
   "flow_cm_s": 2.2,
   "outcome": "burn",
   "spread_rate_mm_s": 0.62,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1724,7 +1880,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1735,7 +1892,8 @@
   "flow_cm_s": 38,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1746,7 +1904,8 @@
   "flow_cm_s": 8.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.48,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1757,7 +1916,8 @@
   "flow_cm_s": 2.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.19,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1768,7 +1928,8 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1779,7 +1940,8 @@
   "flow_cm_s": 12,
   "outcome": "burn",
   "spread_rate_mm_s": 0.34,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1790,7 +1952,8 @@
   "flow_cm_s": 45,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1801,7 +1964,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.41,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1812,7 +1976,8 @@
   "flow_cm_s": 2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1823,7 +1988,8 @@
   "flow_cm_s": 6.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.28,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1834,7 +2000,8 @@
   "flow_cm_s": 0.2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1845,7 +2012,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-25",
@@ -1856,7 +2024,8 @@
   "flow_cm_s": 10,
   "outcome": "burn",
   "spread_rate_mm_s": 2.35,
-  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)"
+  "source": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1867,7 +2036,8 @@
   "flow_cm_s": 2.2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1878,7 +2048,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1889,7 +2060,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1900,7 +2072,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1911,7 +2084,8 @@
   "flow_cm_s": 1.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1922,7 +2096,8 @@
   "flow_cm_s": 2.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1933,7 +2108,8 @@
   "flow_cm_s": 2.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1944,7 +2120,8 @@
   "flow_cm_s": 3,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1955,7 +2132,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1966,7 +2144,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1977,7 +2156,8 @@
   "flow_cm_s": 4.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1988,7 +2168,8 @@
   "flow_cm_s": 22,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -1999,7 +2180,8 @@
   "flow_cm_s": 3,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -2010,7 +2192,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-68",
@@ -2021,7 +2204,8 @@
   "flow_cm_s": 0.2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)"
+  "source": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-26",
@@ -2032,7 +2216,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.31,
-  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)"
+  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-26",
@@ -2043,7 +2228,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": 0.44,
-  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)"
+  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-26",
@@ -2054,7 +2240,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)"
+  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-26",
@@ -2065,7 +2252,8 @@
   "flow_cm_s": 2.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.15,
-  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)"
+  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-26",
@@ -2076,7 +2264,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)"
+  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-26",
@@ -2087,7 +2276,8 @@
   "flow_cm_s": 3,
   "outcome": "burn",
   "spread_rate_mm_s": 1.12,
-  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)"
+  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-26",
@@ -2098,7 +2288,8 @@
   "flow_cm_s": 34,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)"
+  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-26",
@@ -2109,7 +2300,8 @@
   "flow_cm_s": 3,
   "outcome": "burn",
   "spread_rate_mm_s": 0.52,
-  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)"
+  "source": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-62",
@@ -2120,7 +2312,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.45,
-  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)"
+  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-62",
@@ -2131,7 +2324,8 @@
   "flow_cm_s": 10,
   "outcome": "burn",
   "spread_rate_mm_s": 0.68,
-  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)"
+  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-62",
@@ -2142,7 +2336,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": 1.4,
-  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)"
+  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-62",
@@ -2153,7 +2348,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)"
+  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-62",
@@ -2164,7 +2360,8 @@
   "flow_cm_s": 35,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)"
+  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-62",
@@ -2175,7 +2372,8 @@
   "flow_cm_s": 0.8,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)"
+  "source": "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-69",
@@ -2186,7 +2384,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)"
+  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-69",
@@ -2197,7 +2396,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)"
+  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-69",
@@ -2208,7 +2408,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)"
+  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-69",
@@ -2219,7 +2420,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)"
+  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-69",
@@ -2230,7 +2432,8 @@
   "flow_cm_s": 2.2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)"
+  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-69",
@@ -2241,7 +2444,8 @@
   "flow_cm_s": 2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)"
+  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-69",
@@ -2252,7 +2456,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)"
+  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-69",
@@ -2263,7 +2468,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)"
+  "source": "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-98",
@@ -2274,7 +2480,8 @@
   "flow_cm_s": 20,
   "outcome": "burn",
   "spread_rate_mm_s": 1.62,
-  "source": "NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98) — simulated values (team dataset)"
+  "source": "NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-98",
@@ -2285,7 +2492,8 @@
   "flow_cm_s": 20,
   "outcome": "burn",
   "spread_rate_mm_s": 1.58,
-  "source": "NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98) — simulated values (team dataset)"
+  "source": "NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-98",
@@ -2296,7 +2504,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98) — simulated values (team dataset)"
+  "source": "NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-98",
@@ -2307,7 +2516,8 @@
   "flow_cm_s": 20,
   "outcome": "burn",
   "spread_rate_mm_s": 1.6,
-  "source": "NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98) — simulated values (team dataset)"
+  "source": "NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-99",
@@ -2318,7 +2528,8 @@
   "flow_cm_s": 20,
   "outcome": "burn",
   "spread_rate_mm_s": 1.65,
-  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)"
+  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-99",
@@ -2329,7 +2540,8 @@
   "flow_cm_s": 30,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)"
+  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-99",
@@ -2340,7 +2552,8 @@
   "flow_cm_s": 28,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)"
+  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-99",
@@ -2351,7 +2564,8 @@
   "flow_cm_s": 20,
   "outcome": "burn",
   "spread_rate_mm_s": 2.1,
-  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)"
+  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-99",
@@ -2362,7 +2576,8 @@
   "flow_cm_s": 20,
   "outcome": "burn",
   "spread_rate_mm_s": 1.15,
-  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)"
+  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-99",
@@ -2373,7 +2588,8 @@
   "flow_cm_s": 26,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)"
+  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-99",
@@ -2384,7 +2600,8 @@
   "flow_cm_s": 20,
   "outcome": "burn",
   "spread_rate_mm_s": 0.22,
-  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)"
+  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-99",
@@ -2395,7 +2612,8 @@
   "flow_cm_s": 25,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)"
+  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-99",
@@ -2406,7 +2624,8 @@
   "flow_cm_s": 16,
   "outcome": "burn",
   "spread_rate_mm_s": 1.42,
-  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)"
+  "source": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-100",
@@ -2417,7 +2636,8 @@
   "flow_cm_s": 20,
   "outcome": "burn",
   "spread_rate_mm_s": 2.25,
-  "source": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)"
+  "source": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-100",
@@ -2428,7 +2648,8 @@
   "flow_cm_s": 18,
   "outcome": "burn",
   "spread_rate_mm_s": 1.61,
-  "source": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)"
+  "source": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-100",
@@ -2439,7 +2660,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)"
+  "source": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-100",
@@ -2450,7 +2672,8 @@
   "flow_cm_s": 42,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)"
+  "source": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-101",
@@ -2461,7 +2684,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)"
+  "source": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-101",
@@ -2472,7 +2696,8 @@
   "flow_cm_s": 0.6,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)"
+  "source": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-101",
@@ -2483,7 +2708,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.88,
-  "source": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)"
+  "source": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-101",
@@ -2494,7 +2720,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": 0.62,
-  "source": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)"
+  "source": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-101",
@@ -2505,7 +2732,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": 0.54,
-  "source": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)"
+  "source": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-102",
@@ -2516,7 +2744,8 @@
   "flow_cm_s": 4.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.38,
-  "source": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)"
+  "source": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-102",
@@ -2527,7 +2756,8 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)"
+  "source": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-102",
@@ -2538,7 +2768,8 @@
   "flow_cm_s": 0.3,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)"
+  "source": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-102",
@@ -2549,7 +2780,8 @@
   "flow_cm_s": 5.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.79,
-  "source": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)"
+  "source": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-102",
@@ -2560,7 +2792,8 @@
   "flow_cm_s": 7,
   "outcome": "burn",
   "spread_rate_mm_s": 0.58,
-  "source": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)"
+  "source": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-10",
@@ -2571,7 +2804,8 @@
   "flow_cm_s": 3,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10) — simulated values (team dataset)"
+  "source": "NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-10",
@@ -2582,7 +2816,8 @@
   "flow_cm_s": 4.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10) — simulated values (team dataset)"
+  "source": "NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-10",
@@ -2593,7 +2828,8 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10) — simulated values (team dataset)"
+  "source": "NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-10",
@@ -2604,7 +2840,8 @@
   "flow_cm_s": 0.8,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10) — simulated values (team dataset)"
+  "source": "NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-20",
@@ -2615,7 +2852,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20) — simulated values (team dataset)"
+  "source": "NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-20",
@@ -2626,7 +2864,8 @@
   "flow_cm_s": 5.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20) — simulated values (team dataset)"
+  "source": "NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-20",
@@ -2637,7 +2876,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20) — simulated values (team dataset)"
+  "source": "NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-20",
@@ -2648,7 +2888,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20) — simulated values (team dataset)"
+  "source": "NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-21",
@@ -2659,7 +2900,8 @@
   "flow_cm_s": 8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21) — simulated values (team dataset)"
+  "source": "NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-21",
@@ -2670,7 +2912,8 @@
   "flow_cm_s": 12,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21) — simulated values (team dataset)"
+  "source": "NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-21",
@@ -2681,7 +2924,8 @@
   "flow_cm_s": 28,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21) — simulated values (team dataset)"
+  "source": "NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-21",
@@ -2692,7 +2936,8 @@
   "flow_cm_s": 2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21) — simulated values (team dataset)"
+  "source": "NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-22",
@@ -2703,7 +2948,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)"
+  "source": "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-22",
@@ -2714,7 +2960,8 @@
   "flow_cm_s": 8.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)"
+  "source": "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-22",
@@ -2725,7 +2972,8 @@
   "flow_cm_s": 26,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)"
+  "source": "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-22",
@@ -2736,7 +2984,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)"
+  "source": "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-23",
@@ -2747,7 +2996,8 @@
   "flow_cm_s": 2.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23) — simulated values (team dataset)"
+  "source": "NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-23",
@@ -2758,7 +3008,8 @@
   "flow_cm_s": 3.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23) — simulated values (team dataset)"
+  "source": "NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-23",
@@ -2769,7 +3020,8 @@
   "flow_cm_s": 0.3,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23) — simulated values (team dataset)"
+  "source": "NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-23",
@@ -2780,7 +3032,8 @@
   "flow_cm_s": 0.6,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23) — simulated values (team dataset)"
+  "source": "NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-39",
@@ -2791,7 +3044,8 @@
   "flow_cm_s": 1.8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39) — simulated values (team dataset)"
+  "source": "NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-39",
@@ -2802,7 +3056,8 @@
   "flow_cm_s": 2.2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39) — simulated values (team dataset)"
+  "source": "NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-39",
@@ -2813,7 +3068,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39) — simulated values (team dataset)"
+  "source": "NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-39",
@@ -2824,7 +3080,8 @@
   "flow_cm_s": 0.2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39) — simulated values (team dataset)"
+  "source": "NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-47",
@@ -2835,7 +3092,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47) — simulated values (team dataset)"
+  "source": "NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-47",
@@ -2846,7 +3104,8 @@
   "flow_cm_s": 10,
   "outcome": "burn",
   "spread_rate_mm_s": 0.08,
-  "source": "NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47) — simulated values (team dataset)"
+  "source": "NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-47",
@@ -2857,7 +3116,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.12,
-  "source": "NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47) — simulated values (team dataset)"
+  "source": "NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-47",
@@ -2868,7 +3128,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47) — simulated values (team dataset)"
+  "source": "NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-60",
@@ -2879,7 +3140,8 @@
   "flow_cm_s": 10,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60) — simulated values (team dataset)"
+  "source": "NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-60",
@@ -2890,7 +3152,8 @@
   "flow_cm_s": 8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60) — simulated values (team dataset)"
+  "source": "NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-60",
@@ -2901,7 +3164,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60) — simulated values (team dataset)"
+  "source": "NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-60",
@@ -2912,7 +3176,8 @@
   "flow_cm_s": 32,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60) — simulated values (team dataset)"
+  "source": "NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-106",
@@ -2923,7 +3188,8 @@
   "flow_cm_s": 9,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106) — simulated values (team dataset)"
+  "source": "NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-106",
@@ -2934,7 +3200,8 @@
   "flow_cm_s": 11,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106) — simulated values (team dataset)"
+  "source": "NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-106",
@@ -2945,7 +3212,8 @@
   "flow_cm_s": 29,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106) — simulated values (team dataset)"
+  "source": "NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-106",
@@ -2956,7 +3224,8 @@
   "flow_cm_s": 1.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106) — simulated values (team dataset)"
+  "source": "NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-107",
@@ -2967,7 +3236,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107) — simulated values (team dataset)"
+  "source": "NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-107",
@@ -2978,7 +3248,8 @@
   "flow_cm_s": 8.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107) — simulated values (team dataset)"
+  "source": "NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-107",
@@ -2989,7 +3260,8 @@
   "flow_cm_s": 0.8,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107) — simulated values (team dataset)"
+  "source": "NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-107",
@@ -3000,7 +3272,8 @@
   "flow_cm_s": 31,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107) — simulated values (team dataset)"
+  "source": "NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-108",
@@ -3011,7 +3284,8 @@
   "flow_cm_s": 4.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108) — simulated values (team dataset)"
+  "source": "NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-108",
@@ -3022,7 +3296,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108) — simulated values (team dataset)"
+  "source": "NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-108",
@@ -3033,7 +3308,8 @@
   "flow_cm_s": 0.2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108) — simulated values (team dataset)"
+  "source": "NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-115",
@@ -3044,7 +3320,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": 0.85,
-  "source": "NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115) — simulated values (team dataset)"
+  "source": "NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-115",
@@ -3055,7 +3332,8 @@
   "flow_cm_s": 5.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.6,
-  "source": "NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115) — simulated values (team dataset)"
+  "source": "NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-115",
@@ -3066,7 +3344,8 @@
   "flow_cm_s": 1,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115) — simulated values (team dataset)"
+  "source": "NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-117",
@@ -3077,7 +3356,8 @@
   "flow_cm_s": 3.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117) — simulated values (team dataset)"
+  "source": "NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-117",
@@ -3088,7 +3368,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117) — simulated values (team dataset)"
+  "source": "NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-117",
@@ -3099,7 +3380,8 @@
   "flow_cm_s": 24,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117) — simulated values (team dataset)"
+  "source": "NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-142",
@@ -3110,7 +3392,8 @@
   "flow_cm_s": 7,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142) — simulated values (team dataset)"
+  "source": "NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-142",
@@ -3121,7 +3404,8 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142) — simulated values (team dataset)"
+  "source": "NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-142",
@@ -3132,7 +3416,8 @@
   "flow_cm_s": 27,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142) — simulated values (team dataset)"
+  "source": "NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-159",
@@ -3143,7 +3428,8 @@
   "flow_cm_s": 2,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159) — simulated values (team dataset)"
+  "source": "NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-159",
@@ -3154,7 +3440,8 @@
   "flow_cm_s": 3,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159) — simulated values (team dataset)"
+  "source": "NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-159",
@@ -3165,7 +3452,8 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159) — simulated values (team dataset)"
+  "source": "NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-181",
@@ -3176,7 +3464,8 @@
   "flow_cm_s": 4,
   "outcome": "burn",
   "spread_rate_mm_s": 0.65,
-  "source": "NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181) — simulated values (team dataset)"
+  "source": "NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-181",
@@ -3187,7 +3476,8 @@
   "flow_cm_s": 2,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181) — simulated values (team dataset)"
+  "source": "NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "psi-181",
@@ -3198,7 +3488,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": 0.92,
-  "source": "NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181) — simulated values (team dataset)"
+  "source": "NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181) — simulated values (team dataset)",
+  "is_verified": true
  },
  {
   "experiment_id": "luci-lunar",
@@ -3209,7 +3500,8 @@
   "flow_cm_s": 6.8,
   "outcome": "burn",
   "spread_rate_mm_s": 2.15,
-  "source": "NASA GRC Olson-Ferkul-Tien Partial-g Centrifuge / LUCI (0.16g Moon) — simulated values (team dataset)"
+  "source": "NASA GRC Olson-Ferkul-Tien Partial-g Centrifuge / LUCI (0.16g Moon) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "luci-lunar",
@@ -3220,7 +3512,8 @@
   "flow_cm_s": 7.2,
   "outcome": "burn",
   "spread_rate_mm_s": 2.45,
-  "source": "NASA GRC Partial-g Flammability Map (0.16g Moon, Vb=7.2 cm/s) — simulated values (team dataset)"
+  "source": "NASA GRC Partial-g Flammability Map (0.16g Moon, Vb=7.2 cm/s) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "luci-lunar",
@@ -3231,7 +3524,8 @@
   "flow_cm_s": 7.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.95,
-  "source": "NASA SoFIE / FM2 Lunar Surface Payload (0.16g Moon de Ris Scaling) — simulated values (team dataset)"
+  "source": "NASA SoFIE / FM2 Lunar Surface Payload (0.16g Moon de Ris Scaling) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "luci-lunar",
@@ -3242,7 +3536,8 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA GRC Olson-Ferkul Minimum LOI Quench at Lunar 0.16g (13.7% Limit) — simulated values (team dataset)"
+  "source": "NASA GRC Olson-Ferkul Minimum LOI Quench at Lunar 0.16g (13.7% Limit) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "luci-lunar",
@@ -3253,7 +3548,8 @@
   "flow_cm_s": 34,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA GRC Partial-g Aerodynamic Blowoff Branch (0.16g Moon) — simulated values (team dataset)"
+  "source": "NASA GRC Partial-g Aerodynamic Blowoff Branch (0.16g Moon) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "luci-lunar",
@@ -3264,7 +3560,8 @@
   "flow_cm_s": 6.8,
   "outcome": "burn",
   "spread_rate_mm_s": 1.85,
-  "source": "NASA EAWG Exploration Atmosphere 8.2 psia (56.5 kPa, 34% O2, 0.16g Moon) — simulated values (team dataset)"
+  "source": "NASA EAWG Exploration Atmosphere 8.2 psia (56.5 kPa, 34% O2, 0.16g Moon) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "luci-lunar",
@@ -3275,7 +3572,8 @@
   "flow_cm_s": 8.5,
   "outcome": "burn",
   "spread_rate_mm_s": 1.32,
-  "source": "NASA Artemis HLS / Gateway SEA 8.2 psia (56.5 kPa, 34% O2, 0.16g Moon) — simulated values (team dataset)"
+  "source": "NASA Artemis HLS / Gateway SEA 8.2 psia (56.5 kPa, 34% O2, 0.16g Moon) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "luci-lunar",
@@ -3286,7 +3584,8 @@
   "flow_cm_s": 7,
   "outcome": "burn",
   "spread_rate_mm_s": 0.78,
-  "source": "NASA SoFIE-MIST Lunar Exploration Atmosphere (56.5 kPa, 34% O2, 0.16g) — simulated values (team dataset)"
+  "source": "NASA SoFIE-MIST Lunar Exploration Atmosphere (56.5 kPa, 34% O2, 0.16g) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "luci-lunar",
@@ -3297,7 +3596,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Artemis Lunar Habitat Safe Inerted Standby (56.5 kPa, 15.2% O2, 0.16g) — simulated values (team dataset)"
+  "source": "NASA Artemis Lunar Habitat Safe Inerted Standby (56.5 kPa, 15.2% O2, 0.16g) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "luci-lunar",
@@ -3308,7 +3608,8 @@
   "flow_cm_s": 7,
   "outcome": "burn",
   "spread_rate_mm_s": 1.15,
-  "source": "NASA Lunar Gateway Normoxic Equivalent (70.3 kPa, 26.5% O2, 0.16g) — simulated values (team dataset)"
+  "source": "NASA Lunar Gateway Normoxic Equivalent (70.3 kPa, 26.5% O2, 0.16g) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "mars-partial-g",
@@ -3319,7 +3620,8 @@
   "flow_cm_s": 10.2,
   "outcome": "burn",
   "spread_rate_mm_s": 2.6,
-  "source": "NASA GRC Olson-Ferkul Partial-g Martian Buoyancy (0.38g Mars, Vb=10.2 cm/s) — simulated values (team dataset)"
+  "source": "NASA GRC Olson-Ferkul Partial-g Martian Buoyancy (0.38g Mars, Vb=10.2 cm/s) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "mars-partial-g",
@@ -3330,7 +3632,8 @@
   "flow_cm_s": 10.8,
   "outcome": "burn",
   "spread_rate_mm_s": 0.74,
-  "source": "NASA SoFIE / Martian Partial-g de Ris Spread (0.38g Mars) — simulated values (team dataset)"
+  "source": "NASA SoFIE / Martian Partial-g de Ris Spread (0.38g Mars) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "mars-partial-g",
@@ -3341,7 +3644,8 @@
   "flow_cm_s": 10.5,
   "outcome": "burn",
   "spread_rate_mm_s": 1.48,
-  "source": "NASA Mars Surface Habitat SEA (56.5 kPa, 34% O2, 0.38g Mars) — simulated values (team dataset)"
+  "source": "NASA Mars Surface Habitat SEA (56.5 kPa, 34% O2, 0.38g Mars) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "mars-partial-g",
@@ -3352,7 +3656,8 @@
   "flow_cm_s": 9.5,
   "outcome": "burn",
   "spread_rate_mm_s": 2.85,
-  "source": "NASA Mars Transit / Surface Cabin (70.3 kPa, 28% O2, 0.38g Mars) — simulated values (team dataset)"
+  "source": "NASA Mars Transit / Surface Cabin (70.3 kPa, 28% O2, 0.38g Mars) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "mars-partial-g",
@@ -3363,7 +3668,8 @@
   "flow_cm_s": 0.6,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Mars In-Situ CO2 Diluent Radiative Reabsorption Quench (0.38g Mars) — simulated values (team dataset)"
+  "source": "NASA Mars In-Situ CO2 Diluent Radiative Reabsorption Quench (0.38g Mars) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "mars-partial-g",
@@ -3374,7 +3680,8 @@
   "flow_cm_s": 0.8,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Mars Habitat CO2-Enriched Fire Suppression (0.38g Mars) — simulated values (team dataset)"
+  "source": "NASA Mars Habitat CO2-Enriched Fire Suppression (0.38g Mars) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "mars-partial-g",
@@ -3385,7 +3692,8 @@
   "flow_cm_s": 36,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Mars Partial-g Convective Blowoff Limit (0.38g Mars) — simulated values (team dataset)"
+  "source": "NASA Mars Partial-g Convective Blowoff Limit (0.38g Mars) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "mars-partial-g",
@@ -3396,10 +3704,11 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": 3.4,
-  "source": "NASA Mars ISRU MOXIE Oxygen Compressor Thermal Runaway Hazard (0.38g) — simulated values (team dataset)"
+  "source": "NASA Mars ISRU MOXIE Oxygen Compressor Thermal Runaway Hazard (0.38g) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "saffire-exploration",
+  "experiment_id": "saffire-iv-vi",
   "material": "SAFFIRE4_Large_SIBAL_SEA_8.2psia_34O2",
   "o2_pct": 34,
   "pressure_kpa": 56.5,
@@ -3407,10 +3716,11 @@
   "flow_cm_s": 15,
   "outcome": "burn",
   "spread_rate_mm_s": 3.85,
-  "source": "NASA SAFFIRE-IV / PSI Large-Scale Exploration Atmosphere (56.5 kPa, 34% O2) — simulated values (team dataset)"
+  "source": "NASA SAFFIRE-IV / PSI Large-Scale Exploration Atmosphere (56.5 kPa, 34% O2) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "saffire-exploration",
+  "experiment_id": "saffire-iv-vi",
   "material": "SAFFIRE5_PMMA_Ribbed_SEA_8.2psia_34O2",
   "o2_pct": 34,
   "pressure_kpa": 56.5,
@@ -3418,10 +3728,11 @@
   "flow_cm_s": 12,
   "outcome": "burn",
   "spread_rate_mm_s": 0.88,
-  "source": "NASA SAFFIRE-V / PSI Multi-Material Exploration Atmosphere (56.5 kPa, 34% O2) — simulated values (team dataset)"
+  "source": "NASA SAFFIRE-V / PSI Multi-Material Exploration Atmosphere (56.5 kPa, 34% O2) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "saffire-exploration",
+  "experiment_id": "saffire-iv-vi",
   "material": "SAFFIRE6_Silicone_Elec_SEA_8.2psia_34O2",
   "o2_pct": 34,
   "pressure_kpa": 56.5,
@@ -3429,10 +3740,11 @@
   "flow_cm_s": 18,
   "outcome": "burn",
   "spread_rate_mm_s": 3.1,
-  "source": "NASA SAFFIRE-VI / PSI Exploration Fire & Far-Field Scrubbing (56.5 kPa, 34% O2) — simulated values (team dataset)"
+  "source": "NASA SAFFIRE-VI / PSI Exploration Fire & Far-Field Scrubbing (56.5 kPa, 34% O2) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "saffire-exploration",
+  "experiment_id": "saffire-iv-vi",
   "material": "SAFFIRE5_Depress_Quench_LowP_LowO2",
   "o2_pct": 14.8,
   "pressure_kpa": 52,
@@ -3440,7 +3752,8 @@
   "flow_cm_s": 0,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA SAFFIRE-V Post-Fire Cabin Depressurization & Vent Cut Quench — simulated values (team dataset)"
+  "source": "NASA SAFFIRE-V Post-Fire Cabin Depressurization & Vent Cut Quench — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "flex-partial-g",
@@ -3451,7 +3764,8 @@
   "flow_cm_s": 4.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA FLEX / CFI Partial-g Droplet Cool-to-Hot Transition (0.16g Moon) — simulated values (team dataset)"
+  "source": "NASA FLEX / CFI Partial-g Droplet Cool-to-Hot Transition (0.16g Moon) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "flex-partial-g",
@@ -3462,7 +3776,8 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA FLEX Lunar Low-Pressure Alcohol Water-Condensation Quench (0.16g) — simulated values (team dataset)"
+  "source": "NASA FLEX Lunar Low-Pressure Alcohol Water-Condensation Quench (0.16g) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "flex-partial-g",
@@ -3473,7 +3788,8 @@
   "flow_cm_s": 8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-117 / FLEX Martian 0.38g Plume RO2 Secondary Reignition — simulated values (team dataset)"
+  "source": "NASA PSI-117 / FLEX Martian 0.38g Plume RO2 Secondary Reignition — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "flex-partial-g",
@@ -3484,7 +3800,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA FLEX Martian CO2-Diluted Droplet Radiative Extinction (0.38g) — simulated values (team dataset)"
+  "source": "NASA FLEX Martian CO2-Diluted Droplet Radiative Extinction (0.38g) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "acme-e-field-partial-g",
@@ -3495,7 +3812,8 @@
   "flow_cm_s": 6.8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-22 ACME E-FIELD 4.2kV Ion Wind Emulating Lunar 0.16g Buoyancy — simulated values (team dataset)"
+  "source": "NASA PSI-22 ACME E-FIELD 4.2kV Ion Wind Emulating Lunar 0.16g Buoyancy — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "acme-e-field-partial-g",
@@ -3506,7 +3824,8 @@
   "flow_cm_s": 10.4,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-22 ACME E-FIELD 7.5kV Ion Wind Emulating Martian 0.38g Buoyancy — simulated values (team dataset)"
+  "source": "NASA PSI-22 ACME E-FIELD 7.5kV Ion Wind Emulating Martian 0.38g Buoyancy — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "acme-e-field-partial-g",
@@ -3517,7 +3836,8 @@
   "flow_cm_s": 0.3,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA ACME / Artemis Methalox Lander Line Inert Purge (0.16g Moon) — simulated values (team dataset)"
+  "source": "NASA ACME / Artemis Methalox Lander Line Inert Purge (0.16g Moon) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "same-daft-dust",
@@ -3528,7 +3848,8 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA SAME / DAFT Lunar Regolith Dust (1-10 um) Discriminated as Non-Fire — simulated values (team dataset)"
+  "source": "NASA SAME / DAFT Lunar Regolith Dust (1-10 um) Discriminated as Non-Fire — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "same-daft-dust",
@@ -3539,7 +3860,8 @@
   "flow_cm_s": 5.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.42,
-  "source": "NASA SAME-R / Artemis Dual-Wavelength Smoke Detection in Dusty Lunar Cabin — simulated values (team dataset)"
+  "source": "NASA SAME-R / Artemis Dual-Wavelength Smoke Detection in Dusty Lunar Cabin — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "same-daft-dust",
@@ -3550,7 +3872,8 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA DAFT Martian Iron-Oxide/Perchlorate Dust Filtered Without False Alarm — simulated values (team dataset)"
+  "source": "NASA DAFT Martian Iron-Oxide/Perchlorate Dust Filtered Without False Alarm — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "same-daft-dust",
@@ -3561,7 +3884,8 @@
   "flow_cm_s": 7.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.82,
-  "source": "NASA SAME Martian Habitat True Smoldering Fire Detected Over Dust Background — simulated values (team dataset)"
+  "source": "NASA SAME Martian Habitat True Smoldering Fire Detected Over Dust Background — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "scwm-partial-g",
@@ -3572,7 +3896,8 @@
   "flow_cm_s": 26,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Fine Water Mist Suppression at Lunar 0.16g (6x Slower Droplet Settling) — simulated values (team dataset)"
+  "source": "NASA Fine Water Mist Suppression at Lunar 0.16g (6x Slower Droplet Settling) — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "scwm-partial-g",
@@ -3583,7 +3908,8 @@
   "flow_cm_s": 28,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Mars Habitat Hybrid Water Mist + CO2 Fire Extinguisher Suppression — simulated values (team dataset)"
+  "source": "NASA Mars Habitat Hybrid Water Mist + CO2 Fire Extinguisher Suppression — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "issi-partial-g",
@@ -3594,7 +3920,8 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": 0.84,
-  "source": "NASA PSI-181 ISSI Lunar 0.16g Flux Bubble Trapping & Cryo-Night Hotspot — simulated values (team dataset)"
+  "source": "NASA PSI-181 ISSI Lunar 0.16g Flux Bubble Trapping & Cryo-Night Hotspot — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "issi-partial-g",
@@ -3605,10 +3932,11 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA PSI-181 ISSI Mars 0.38g Flux-Free Vacuum-Degassed Solder Repair Safe — simulated values (team dataset)"
+  "source": "NASA PSI-181 ISSI Mars 0.38g Flux-Free Vacuum-Degassed Solder Repair Safe — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "PMMA_Sphere_CIR_34O2_SEA_SlowFlow",
   "o2_pct": 34,
   "pressure_kpa": 56.5,
@@ -3616,10 +3944,11 @@
   "flow_cm_s": 5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.65,
-  "source": "NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere 8.2 psia / 34% O2 — simulated values (team dataset)"
+  "source": "NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere 8.2 psia / 34% O2 — simulated values (team dataset)",
+  "is_verified": true
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "PMMA_Sphere_CIR_Quench_LowO2",
   "o2_pct": 15.6,
   "pressure_kpa": 56.5,
@@ -3627,10 +3956,11 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere Radiative Quench — simulated values (team dataset)"
+  "source": "NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere Radiative Quench — simulated values (team dataset)",
+  "is_verified": true
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "PMMA_Cylinder_RadiantFlux_37O2_SEA",
   "o2_pct": 37,
   "pressure_kpa": 56.5,
@@ -3638,10 +3968,11 @@
   "flow_cm_s": 8,
   "outcome": "burn",
   "spread_rate_mm_s": 0.92,
-  "source": "NASA SoFIE-MIST (PI C. Fernandez-Pello) External Radiant Heater 37% O2 — simulated values (team dataset)"
+  "source": "NASA SoFIE-MIST (PI C. Fernandez-Pello) External Radiant Heater 37% O2 — simulated values (team dataset)",
+  "is_verified": true
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "PMMA_Cylinder_NoRadiant_Blowoff",
   "o2_pct": 16,
   "pressure_kpa": 56.5,
@@ -3649,10 +3980,11 @@
   "flow_cm_s": 26.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA SoFIE-MIST Convective Blowoff Limit Without Radiant Flux — simulated values (team dataset)"
+  "source": "NASA SoFIE-MIST Convective Blowoff Limit Without Radiant Flux — simulated values (team dataset)",
+  "is_verified": true
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "Spacecraft_Material_37O2_LunarSEA",
   "o2_pct": 37,
   "pressure_kpa": 56.5,
@@ -3660,10 +3992,11 @@
   "flow_cm_s": 6.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.78,
-  "source": "NASA SoFIE-SMuRF (PI S. Olson) Real Spacecraft Material 1g vs 0.16g/0g — simulated values (team dataset)"
+  "source": "NASA SoFIE-SMuRF (PI S. Olson) Real Spacecraft Material 1g vs 0.16g/0g — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "Spacecraft_Material_Pass_LowO2_16pct",
   "o2_pct": 15.8,
   "pressure_kpa": 101.3,
@@ -3671,10 +4004,11 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA SoFIE-SMuRF Flame Extinction Below Spacecraft Threshold — simulated values (team dataset)"
+  "source": "NASA SoFIE-SMuRF Flame Extinction Below Spacecraft Threshold — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "Thin_PMMA_Sheet_34O2_SEA_Spread",
   "o2_pct": 34,
   "pressure_kpa": 56.5,
@@ -3682,10 +4016,11 @@
   "flow_cm_s": 4.5,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA SoFIE-RTDFS (PI S. Bhattacharjee) Thin Sheet Flame Growth 34% O2 — simulated values (team dataset)"
+  "source": "NASA SoFIE-RTDFS (PI S. Bhattacharjee) Thin Sheet Flame Growth 34% O2 — simulated values (team dataset)",
+  "is_verified": true
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "Thin_PMMA_Sheet_RadiativeQuench",
   "o2_pct": 15.4,
   "pressure_kpa": 56.5,
@@ -3693,10 +4028,11 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA SoFIE-RTDFS Radiative Quenching in Quiescent Microgravity — simulated values (team dataset)"
+  "source": "NASA SoFIE-RTDFS Radiative Quenching in Quiescent Microgravity — simulated values (team dataset)",
+  "is_verified": true
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "Thick_PMMA_NarrowChannel_OpposedFlow",
   "o2_pct": 34,
   "pressure_kpa": 56.5,
@@ -3704,10 +4040,11 @@
   "flow_cm_s": 7,
   "outcome": "burn",
   "spread_rate_mm_s": 0.71,
-  "source": "NASA SoFIE-NCA (PI F. Miller) Narrow Channel Apparatus 8.2 psia — simulated values (team dataset)"
+  "source": "NASA SoFIE-NCA (PI F. Miller) Narrow Channel Apparatus 8.2 psia — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "sofie-cir",
+  "experiment_id": "sofie-iss-cir",
   "material": "Thick_PMMA_NarrowChannel_Quench",
   "o2_pct": 15.5,
   "pressure_kpa": 101.3,
@@ -3715,10 +4052,11 @@
   "flow_cm_s": 0.3,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA SoFIE-NCA Narrow Channel Heat Loss Extinction — simulated values (team dataset)"
+  "source": "NASA SoFIE-NCA Narrow Channel Heat Loss Extinction — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "std-6001b-smac",
+  "experiment_id": "nasa-std-6001b",
   "material": "Nomex_Fabric_37O2_8.2psia_Test1_Fail",
   "o2_pct": 37,
   "pressure_kpa": 56.5,
@@ -3726,10 +4064,11 @@
   "flow_cm_s": 5.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.85,
-  "source": "NASA-STD-6001B Test 1 (>15.2 cm / 6 in Burn Length) at 8.2 psia 37% O2 — simulated values (team dataset)"
+  "source": "NASA-STD-6001B Test 1 (>15.2 cm / 6 in Burn Length) at 8.2 psia 37% O2 — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "std-6001b-smac",
+  "experiment_id": "nasa-std-6001b",
   "material": "BetaCloth_Fiberglass_21O2_Test1_Pass",
   "o2_pct": 15.8,
   "pressure_kpa": 101.3,
@@ -3737,10 +4076,11 @@
   "flow_cm_s": 0.5,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA-STD-6001B Test 1 Self-Extinguish <15.2 cm No Flaming Drips — simulated values (team dataset)"
+  "source": "NASA-STD-6001B Test 1 Self-Extinguish <15.2 cm No Flaming Drips — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "saffire-exploration",
+  "experiment_id": "saffire-iv-vi",
   "material": "SAFFIRE_HCl_HF_AcidGas_Release",
   "o2_pct": 34,
   "pressure_kpa": 56.5,
@@ -3748,10 +4088,11 @@
   "flow_cm_s": 10,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA SAFFIRE IV-VI Far-Field Diagnostics HCl/HF Acid Gas & Smoke Eater — simulated values (team dataset)"
+  "source": "NASA SAFFIRE IV-VI Far-Field Diagnostics HCl/HF Acid Gas & Smoke Eater — simulated values (team dataset)",
+  "is_verified": true
  },
  {
-  "experiment_id": "saffire-exploration",
+  "experiment_id": "saffire-iv-vi",
   "material": "SAFFIRE_CO2_Scrubber_SmokeEater_Safe",
   "o2_pct": 16,
   "pressure_kpa": 56.5,
@@ -3759,10 +4100,11 @@
   "flow_cm_s": 27,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA SAFFIRE IV-VI Post-Fire Scrubbing & Al-Wall Adsorption Safe — simulated values (team dataset)"
+  "source": "NASA SAFFIRE IV-VI Post-Fire Scrubbing & Al-Wall Adsorption Safe — simulated values (team dataset)",
+  "is_verified": true
  },
  {
-  "experiment_id": "std-6001b-smac",
+  "experiment_id": "nasa-std-6001b",
   "material": "JSC20584_HF_0.3ppm_CO_Perchlorate_Toxic",
   "o2_pct": 34,
   "pressure_kpa": 56.5,
@@ -3770,10 +4112,11 @@
   "flow_cm_s": 6,
   "outcome": "burn",
   "spread_rate_mm_s": 0.75,
-  "source": "NASA JSC 20584 SMAC & NASA-STD-3001 Post-Fire Acid/Dust T_grp >= 1 — simulated values (team dataset)"
+  "source": "NASA JSC 20584 SMAC & NASA-STD-3001 Post-Fire Acid/Dust T_grp >= 1 — simulated values (team dataset)",
+  "is_verified": false
  },
  {
-  "experiment_id": "std-6001b-smac",
+  "experiment_id": "nasa-std-6001b",
   "material": "JSC20584_ECLSS_Scrubbed_Below_SMAC",
   "o2_pct": 16,
   "pressure_kpa": 70.3,
@@ -3781,7 +4124,8 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA JSC 20584 & STD-3001 ECLSS Scrubbed Below 0.1 mg/m3 Dust & SMAC — simulated values (team dataset)"
+  "source": "NASA JSC 20584 & STD-3001 ECLSS Scrubbed Below 0.1 mg/m3 Dust & SMAC — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "li-ion-runaway",
@@ -3792,7 +4136,8 @@
   "flow_cm_s": 6.5,
   "outcome": "burn",
   "spread_rate_mm_s": 0.98,
-  "source": "NASA NESC Li-ion ISC >600C Thermal Runaway + LiPF6 HF/POF3 Venting — simulated values (team dataset)"
+  "source": "NASA NESC Li-ion ISC >600C Thermal Runaway + LiPF6 HF/POF3 Venting — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "li-ion-runaway",
@@ -3803,7 +4148,8 @@
   "flow_cm_s": 8,
   "outcome": "burn",
   "spread_rate_mm_s": null,
-  "source": "NASA FTRC Li-ion Cell-to-Cell Thermal Runaway Propagation — simulated values (team dataset)"
+  "source": "NASA FTRC Li-ion Cell-to-Cell Thermal Runaway Propagation — simulated values (team dataset)",
+  "is_verified": false
  },
  {
   "experiment_id": "li-ion-runaway",
@@ -3814,6 +4160,7 @@
   "flow_cm_s": 0.4,
   "outcome": "extinct",
   "spread_rate_mm_s": null,
-  "source": "NASA Gateway HALO Fire-Containment Bag & Low-SOC Passive Safe — simulated values (team dataset)"
+  "source": "NASA Gateway HALO Fire-Containment Bag & Low-SOC Passive Safe — simulated values (team dataset)",
+  "is_verified": false
  }
 ]

@@ -42,6 +42,7 @@ export const Experiment = z.object({
   key_findings: arr(z.string()).default([]),
   modifications: arr(z.string()).default([]),
   research_group: z.string().default(''),
+  is_verified: z.boolean().default(true),
   sources: arr(SourceRef).pipe(z.array(SourceRef).min(1, 'missing source')),
 });
 
@@ -55,6 +56,7 @@ export const TestPoint = z.object({
   outcome: z.enum(['burn', 'extinct']),
   spread_rate_mm_s: optNum,
   source,
+  is_verified: z.boolean().default(true),
 });
 
 export const MaterialMoc = z.object({

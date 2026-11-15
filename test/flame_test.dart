@@ -19,10 +19,10 @@ void main() {
       material: 'pmma',
     );
     expect(lunar.loi, closeTo(16.19, .01));
-    expect(lunar.spread, closeTo(.86, .01));
+    expect(lunar.spread, closeTo(.76, .01));
     expect(lunar.uEff, closeTo(19.3, .05));
     expect(lunar.regime, FlameRegime.vigorous);
-    expect(lunar.extrapolated, isEmpty); // tested at 0.16 g since the partial-g drop
+    expect(lunar.extrapolated, hasLength(1)); // no verified partial-g data (F4 audit)
     expect(m.predict(o2: 30, kpa: 70.33, g: .6, flow: 10, material: 'pmma').extrapolated, hasLength(1));
 
     final quietIss = m.predict(o2: 21, kpa: 101.35, g: 0, material: 'silicone');
@@ -39,6 +39,6 @@ void main() {
       material: 'cotton-fiberglass fabric',
     );
     expect(mars.loi, closeTo(20.21, .01));
-    expect(mars.spread, closeTo(4.7, .01));
+    expect(mars.spread, closeTo(8.58, .01));
   });
 }

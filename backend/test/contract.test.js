@@ -80,7 +80,7 @@ test('POST /predict validates physical ranges', async () => {
 test('GET /catalog + POST /classify/*', async () => {
   const { loadClassifiers } = await import('../src/classifiers.js');
   await loadClassifiers();
-  assert.equal((await request(app).get('/catalog').expect(200)).body.length, 81);
+  assert.equal((await request(app).get('/catalog').expect(200)).body.length, 72); // 81 catalog entries − 9 whose experiments are all SIN FUENTE (F4)
   const e = (await request(app).post('/classify/experiment').send({ text: 'water mist fire suppression' }).expect(200)).body;
   assert.equal(e.group, 'WaterMist_SCWM_Suppression');
   assert.ok(e.modifications.length);
