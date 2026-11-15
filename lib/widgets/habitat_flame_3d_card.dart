@@ -1699,9 +1699,9 @@ class _MultiRegimeFlamePainter extends CustomPainter {
 
     // Regenerative cooling bypass pipes (top & bottom silver manifolds)
     final pipePaint = Paint()
-      ..color = const Color(0xFFCBD5E1).withValues(alpha: 0.8)
+      ..color = const Color(0xFFE2E8F0).withValues(alpha: 0.9)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.2
+      ..strokeWidth = 2.5
       ..strokeCap = StrokeCap.round;
     for (final sign in [-1.0, 1.0]) {
       final p0 = _project(-1.12, sign * 0.30, 0, size);
@@ -1714,6 +1714,25 @@ class _MultiRegimeFlamePainter extends CustomPainter {
         ..lineTo(p2.$1, p2.$2)
         ..lineTo(p3.$1, p3.$2);
       canvas.drawPath(pipePath, pipePaint);
+    }
+
+    // Nozzle exit inner combustion glow
+    if (tel.prob >= 0.06 || tel.isCool) {
+      final exitCenter = _project(-0.02, 0, 0, size);
+      final exitTop = _project(-0.02, 0.28, 0, size);
+      final exitR = (exitCenter.$2 - exitTop.$2).abs().clamp(14.0, 70.0);
+      canvas.drawOval(
+        Rect.fromCenter(
+          center: Offset(exitCenter.$1, exitCenter.$2),
+          width: exitR * 0.55,
+          height: exitR * 1.85,
+        ),
+        Paint()
+          ..color = (tel.isCool ? const Color(0xFF8B5CF6) : const Color(0xFFBAE6FD))
+              .withValues(alpha: 0.72)
+          ..blendMode = BlendMode.plus
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8),
+      );
     }
 
     // 3. Multi-Regime Volumetric Flame Body
@@ -1737,33 +1756,33 @@ class _MultiRegimeFlamePainter extends CustomPainter {
     final isSphere = tel.effVel < 3.5;
 
     final flameLen = isSphere
-        ? 0.72 * pulse
-        : (1.45 + (tel.aspectLD * 0.32).clamp(0.3, 1.85)) * pulse;
+        ? 0.78 * pulse
+        : (1.95 + (tel.aspectLD * 0.38).clamp(0.4, 2.15)) * pulse;
     final flameRad = isSphere
-        ? (0.38 + 0.08 * tel.prob) * pulse
-        : (0.28 + 0.07 * (o2Pct / 45.0)) * pulse;
+        ? (0.40 + 0.08 * tel.prob) * pulse
+        : (0.31 + 0.08 * (o2Pct / 45.0)) * pulse;
     final buoyCurve = (gravityG / 2.0) * 0.42;
 
     final Color sheathColor;
     final Color coreColor;
     final Color tailColor;
     if (tel.isCool) {
-      sheathColor = const Color(0xFF6D28D9).withValues(alpha: 0.65);
-      coreColor = const Color(0xFF38BDF8).withValues(alpha: 0.88);
-      tailColor = const Color(0xFFA855F7).withValues(alpha: 0.55);
+      sheathColor = const Color(0xFF7C3AED).withValues(alpha: 0.72);
+      coreColor = const Color(0xFF38BDF8).withValues(alpha: 0.92);
+      tailColor = const Color(0xFFA855F7).withValues(alpha: 0.65);
     } else if (o2Pct >= 28.0 && tel.soot < 0.35) {
-      sheathColor = const Color(0xFF0EA5E9).withValues(alpha: 0.68);
-      coreColor = const Color(0xFFFFFFFF).withValues(alpha: 0.96);
-      tailColor = const Color(0xFF38BDF8).withValues(alpha: 0.75);
+      sheathColor = const Color(0xFF0EA5E9).withValues(alpha: 0.75);
+      coreColor = const Color(0xFFFFFFFF);
+      tailColor = const Color(0xFF38BDF8).withValues(alpha: 0.85);
     } else {
-      sheathColor = const Color(0xFF0EA5E9).withValues(alpha: 0.58);
-      coreColor = const Color(0xFFFFFFFF).withValues(alpha: 0.96);
+      sheathColor = const Color(0xFF0EA5E9).withValues(alpha: 0.70);
+      coreColor = const Color(0xFFFFFFFF);
       tailColor = Color.lerp(
         const Color(0xFFFDE047),
         const Color(0xFFEA580C),
-        (tel.soot * 0.85).clamp(0.25, 0.95),
+        (tel.soot * 0.82).clamp(0.25, 0.92),
       )!
-          .withValues(alpha: 0.88);
+          .withValues(alpha: 0.94);
     }
 
     if (isSphere) {
@@ -1773,110 +1792,153 @@ class _MultiRegimeFlamePainter extends CustomPainter {
 
       canvas.drawCircle(
         Offset(center.$1, center.$2),
-        rPx * 1.45,
+        rPx * 1.5,
         Paint()
-          ..color = sheathColor.withValues(alpha: 0.42)
-          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 24),
+          ..color = sheathColor.withValues(alpha: 0.48)
+          ..blendMode = BlendMode.plus
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 26),
       );
       canvas.drawCircle(
         Offset(center.$1, center.$2),
         rPx,
         Paint()
+          ..blendMode = BlendMode.plus
           ..shader = ui.Gradient.radial(
             Offset(center.$1, center.$2),
             rPx,
             [coreColor, sheathColor, sheathColor.withValues(alpha: 0.0)],
-            [0.0, 0.52, 1.0],
+            [0.0, 0.48, 1.0],
           ),
       );
     } else {
-      final x0 = 0.04 + liftoffX;
+      final x0 = 0.05 + liftoffX;
       final base = _project(x0, 0, 0, size);
-      final mid = _project(x0 + flameLen * 0.45, buoyCurve * 0.32, 0, size);
       final tip = _project(
         x0 + flameLen,
-        buoyCurve + 0.04 * math.sin(time * 9.0),
+        buoyCurve + 0.03 * math.sin(time * 9.0),
         0,
         size,
       );
-      final rBasePx = flameRad * (size.height * 0.30);
+      final rBasePx = flameRad * (size.height * 0.34);
 
-      // Layer 1: Wide Cyan CH* Sheath
-      final sheathPath = Path()
-        ..moveTo(base.$1 - 8, base.$2 - rBasePx * 1.15)
-        ..quadraticBezierTo(
-          mid.$1,
-          mid.$2 - rBasePx * 1.05,
-          tip.$1,
-          tip.$2 - (tel.isTipOpen ? rBasePx * 0.45 : rBasePx * 0.16),
-        )
-        ..lineTo(tip.$1, tip.$2 + (tel.isTipOpen ? rBasePx * 0.45 : rBasePx * 0.16))
-        ..quadraticBezierTo(
-          mid.$1,
-          mid.$2 + rBasePx * 1.05,
-          base.$1 - 8,
-          base.$2 + rBasePx * 1.15,
-        )
-        ..close();
+      // Ambient cyan flow streamlines around plume
+      final streamPaint = Paint()
+        ..color = const Color(0xFF38BDF8).withValues(alpha: 0.22)
+        ..strokeWidth = 1.0;
+      for (int s = 0; s < 4; s++) {
+        final sy = (s - 1.5) * 0.36;
+        final sx = x0 + 0.2 + ((time * 0.9 + s * 0.31) % 1.0) * (flameLen * 0.7);
+        final sp1 = _project(sx, sy, 0, size);
+        final sp2 = _project(sx + 0.32, sy, 0, size);
+        canvas.drawLine(Offset(sp1.$1, sp1.$2), Offset(sp2.$1, sp2.$2), streamPaint);
+      }
+
+      // Layer 1: Undulating Kelvin-Helmholtz Cyan CH* Outer Sheath
+      const segCount = 24;
+      final upperPts = <Offset>[];
+      final lowerPts = <Offset>[];
+      for (int i = 0; i <= segCount; i++) {
+        final frac = i / segCount;
+        final px = x0 + flameLen * frac;
+        final py = buoyCurve * (frac * frac) +
+            0.02 * math.sin(time * 8.0 - frac * 6.0);
+        final pt = _project(px, py, 0, size);
+        // Swell at Mach nodes & taper toward tip
+        final wave = 1.0 + 0.20 * math.sin(frac * math.pi * 4.5);
+        final taper = (1.0 - frac * 0.65) * wave;
+        final rad = rBasePx * 1.25 * taper;
+        upperPts.add(Offset(pt.$1, pt.$2 - rad));
+        lowerPts.add(Offset(pt.$1, pt.$2 + rad));
+      }
+      final sheathPath = Path()..moveTo(upperPts.first.dx, upperPts.first.dy);
+      for (int i = 1; i < upperPts.length; i++) {
+        sheathPath.lineTo(upperPts[i].dx, upperPts[i].dy);
+      }
+      for (int i = lowerPts.length - 1; i >= 0; i--) {
+        sheathPath.lineTo(lowerPts[i].dx, lowerPts[i].dy);
+      }
+      sheathPath.close();
 
       canvas.drawPath(
         sheathPath,
         Paint()
-          ..color = sheathColor
+          ..blendMode = BlendMode.plus
+          ..shader = ui.Gradient.linear(
+            Offset(base.$1, base.$2),
+            Offset(tip.$1, tip.$2),
+            [
+              sheathColor,
+              const Color(0xFF0284C7).withValues(alpha: 0.55),
+              sheathColor.withValues(alpha: 0.0),
+            ],
+            [0.0, 0.55, 1.0],
+          )
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 18),
       );
 
-      // Layer 2: Luminous Plume Body (white-cyan -> gold-orange tail)
-      final plumePath = Path()
-        ..moveTo(base.$1, base.$2 - rBasePx * 0.65)
-        ..quadraticBezierTo(
-          mid.$1,
-          mid.$2 - rBasePx * 0.48,
-          tip.$1,
-          tip.$2 - (tel.isTipOpen ? rBasePx * 0.25 : 2),
-        )
-        ..lineTo(tip.$1, tip.$2 + (tel.isTipOpen ? rBasePx * 0.25 : 2))
-        ..quadraticBezierTo(
-          mid.$1,
-          mid.$2 + rBasePx * 0.48,
-          base.$1,
-          base.$2 + rBasePx * 0.65,
-        )
-        ..close();
+      // Layer 2: Luminous Plume Body (white-hot -> golden amber -> orange tail)
+      final coreUpper = <Offset>[];
+      final coreLower = <Offset>[];
+      for (int i = 0; i <= segCount; i++) {
+        final frac = i / segCount;
+        final px = x0 + flameLen * frac;
+        final py = buoyCurve * (frac * frac) +
+            0.02 * math.sin(time * 9.0 - frac * 7.0);
+        final pt = _project(px, py, 0, size);
+        final pinch = 1.0 + 0.28 * math.sin(frac * math.pi * 5.0);
+        final rad = rBasePx * 0.62 * (1.0 - frac * 0.72) * pinch;
+        coreUpper.add(Offset(pt.$1, pt.$2 - rad));
+        coreLower.add(Offset(pt.$1, pt.$2 + rad));
+      }
+      final plumePath = Path()..moveTo(coreUpper.first.dx, coreUpper.first.dy);
+      for (int i = 1; i < coreUpper.length; i++) {
+        plumePath.lineTo(coreUpper[i].dx, coreUpper[i].dy);
+      }
+      for (int i = coreLower.length - 1; i >= 0; i--) {
+        plumePath.lineTo(coreLower[i].dx, coreLower[i].dy);
+      }
+      plumePath.close();
 
       canvas.drawPath(
         plumePath,
         Paint()
+          ..blendMode = BlendMode.plus
           ..shader = ui.Gradient.linear(
             Offset(base.$1, base.$2),
             Offset(tip.$1, tip.$2),
-            [coreColor, const Color(0xFFBAE6FD), tailColor, tailColor.withValues(alpha: 0.0)],
-            [0.0, 0.28, 0.72, 1.0],
+            [
+              coreColor,
+              const Color(0xFFFEF08A),
+              tailColor,
+              tailColor.withValues(alpha: 0.15),
+            ],
+            [0.0, 0.35, 0.78, 1.0],
           )
-          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6),
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8),
       );
 
-      // Layer 3: Mach Shock Diamonds / Standing Nodes along centerline
-      const nodes = 5;
+      // Layer 3: Intense White-Hot Mach Shock Diamonds (Additive Bloom)
+      const nodes = 4;
       for (int k = 0; k < nodes; k++) {
-        final frac = 0.08 + k * 0.19;
+        final frac = 0.11 + k * 0.24;
         final nx = x0 + flameLen * frac;
         final ny = buoyCurve * (frac * frac) +
-            0.025 * math.sin(time * 10.0 - k * 1.4);
+            0.02 * math.sin(time * 10.0 - k * 1.4);
         final np = _project(nx, ny, 0, size);
-        final nodeRx = rBasePx * (0.62 - frac * 0.34);
-        final nodeRy = rBasePx * (0.46 - frac * 0.26);
+        final nodeRx = rBasePx * (0.76 - frac * 0.36);
+        final nodeRy = rBasePx * (0.56 - frac * 0.28);
         final nodeColor = k < 2
             ? Colors.white
-            : Color.lerp(const Color(0xFFFEF08A), tailColor, (k - 1) / 3.0)!;
+            : Color.lerp(const Color(0xFFFEF08A), tailColor, (k - 1) / 2.5)!;
         canvas.drawOval(
           Rect.fromCenter(
             center: Offset(np.$1, np.$2),
-            width: nodeRx * 2.2,
-            height: nodeRy * 1.7,
+            width: nodeRx * 2.4,
+            height: nodeRy * 1.75,
           ),
           Paint()
-            ..color = nodeColor.withValues(alpha: 0.88 - frac * 0.35)
+            ..blendMode = BlendMode.plus
+            ..color = nodeColor.withValues(alpha: 0.92 - frac * 0.22)
             ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 7),
         );
       }
@@ -1886,13 +1948,14 @@ class _MultiRegimeFlamePainter extends CustomPainter {
         canvas.drawOval(
           Rect.fromCenter(
             center: Offset(base.$1, base.$2),
-            width: 10,
-            height: rBasePx * 1.65,
+            width: 11,
+            height: rBasePx * 1.85,
           ),
           Paint()
-            ..color = const Color(0xFF7DD3FC).withValues(alpha: 0.9)
+            ..blendMode = BlendMode.plus
+            ..color = const Color(0xFF7DD3FC).withValues(alpha: 0.95)
             ..style = PaintingStyle.stroke
-            ..strokeWidth = 2.6
+            ..strokeWidth = 3.0
             ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2),
         );
       }
