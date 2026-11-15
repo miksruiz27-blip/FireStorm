@@ -5,11 +5,11 @@ import { classifyFlow, loadClassifiers } from '../src/classifiers.js';
 import { parseCsv } from '../src/csv.js';
 import { domainCheck, loadModel, predict } from '../src/model.js';
 
-// The team's model.onnx (MLP 64×32) outputs, recorded with onnxruntime-node at import time.
+// The team's model.onnx (equipo3 drop, n = 1158) outputs, recorded independently with Python onnxruntime.
 const ONNX = [
-  [{ o2_pct: 20.9, pressure_kpa: 101.3, flow_cm_s: 5 }, 0.9989],
-  [{ o2_pct: 16, pressure_kpa: 100.5, flow_cm_s: 0.5 }, 0.0028],
-  [{ o2_pct: 17.5, pressure_kpa: 101, flow_cm_s: 30 }, 0.0007],
+  [{ o2_pct: 20.9, pressure_kpa: 101.3, flow_cm_s: 5 }, 0.9916],
+  [{ o2_pct: 16, pressure_kpa: 100.5, flow_cm_s: 0.5 }, 0.0125],
+  [{ o2_pct: 17.5, pressure_kpa: 101, flow_cm_s: 30 }, 0.0004],
 ];
 
 test('Node p_burn = team model.onnx (±0.001)', async () => {
@@ -28,7 +28,7 @@ test('domain guard: ISS conditions in, partial gravity out', () => {
 });
 
 test('PSI-166 flow classifier reproduces the team labels, ONNX and linear fallback', async () => {
-  const rows = parseCsv(readFileSync(new URL('../../firestorm_modelos_y_csv_equipo/psi166_part01_dataset.csv', import.meta.url), 'utf8'))
+  const rows = parseCsv(readFileSync(new URL('../../firestorm_modelos_y_csv_equipo3/psi166_part01_dataset.csv', import.meta.url), 'utf8'))
     .map((r) => ({ ...Object.fromEntries(Object.entries(r).map(([k, v]) => [k, Number(v)])), want: r.modification_class }));
   const acc = ({ results }) => results.filter((r, i) => r.class === rows[i].want).length / rows.length;
   const fallback = await classifyFlow(rows); // before loading: linear fallback

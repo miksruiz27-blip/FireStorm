@@ -10,10 +10,10 @@ void main() {
   test('Dart regression = backend model.js fallbackP', () {
     // Reference values from node (backend/src/model.js fallbackP) on the same model.json.
     for (final (x, p) in [
-      ((21.0, 101.3, 10.0), 0.877968),
-      ((16.0, 101.3, 10.0), 0.086787),
-      ((30.0, 56.5, 0.0), 0.999559),
-      ((18.0, 101.3, 20.0), 0.230128),
+      ((21.0, 101.3, 10.0), 0.846657),
+      ((16.0, 101.3, 10.0), 0.089739),
+      ((30.0, 56.5, 0.0), 0.999902),
+      ((18.0, 101.3, 20.0), 0.241753),
     ]) {
       final r = m.predict(o2: x.$1, kpa: x.$2, flow: x.$3, g: 0);
       expect(r.p, closeTo(p, 1e-6));

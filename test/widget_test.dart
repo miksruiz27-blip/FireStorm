@@ -38,7 +38,7 @@ Future<void> _answers(WidgetTester tester) async {
 }
 
 /// The physics model's one figure (assets/snapshot/flame.json), shown on Forecast and Gap map.
-const _modelN = 'n = 137 test points labelled burn/extinct · accuracy 77 %';
+const _modelN = 'n = 355 test points labelled burn/extinct · accuracy 86 %';
 
 void main() {
   setUpAll(() => (loadHabitats(), loadDataTranslations()).wait);
@@ -50,17 +50,15 @@ void main() {
     await _settle(tester);
     expect(find.text('SELECT AMBIENT'), findsOneWidget);
     expect(
-      find.text('6 / 49'),
+      find.text('36 / 85'),
       findsOneWidget,
-    ); // Lunar Base: relevance ≥ 50 (snapshot)
-    expect(
-      find.text('EMPTY'),
-      findsOneWidget,
-    ); // no verified series near 34 % O₂ at lunar g (F4 audit)
+    ); // Lunar Base: relevance ≥ 50 (snapshot, equipo3 drop)
+    // equipo3 partial-g campaign (team dataset, simulated) now covers 34 % O₂ at lunar g.
+    expect(find.textContaining('16 series within'), findsOneWidget);
 
     await tester.tap(find.text('SPACESUIT'));
     await _settle(tester);
-    expect(find.text('2 / 49'), findsOneWidget);
+    expect(find.text('7 / 85'), findsOneWidget);
     expect(find.text('CRITICAL'), findsNWidgets(2)); // card tag + telemetry bar
   });
 
@@ -73,22 +71,22 @@ void main() {
 
     expect(find.text('INVESTIGATION RANKING'), findsOneWidget);
     expect(
-      find.text('SAFFIRE-IV-VI'),
+      find.text('MARS-038G-CAMPAIGN'),
       findsNWidgets(2),
-    ); // top row (exploration-atmosphere fire tests) + why panel
+    ); // top row (densest partial-g campaign, data term) + why panel
     expect(find.text('SCORE FACTORS'), findsOneWidget);
 
     await tester.tap(find.bySemanticsLabel(RegExp('^Liquid fuel')));
     await tester.pump();
-    expect(find.text('SAFFIRE-IV-VI'), findsNothing);
+    expect(find.text('MARS-038G-CAMPAIGN'), findsNothing);
     expect(
-      find.text('PSI-68'),
+      find.text('FLEX-DUAL-REGIME-CAMPAIGN'),
       findsNWidgets(2),
-    ); // first liquid row (FLEX-2 droplets) is auto-selected
+    ); // first liquid row (FLEX / FLEX-2 droplets) is auto-selected
     expect(find.text('SCORE FACTORS'), findsOneWidget); // API breakdown
   });
 
-  testWidgets('gap map: lunar base sits in an unvalidated zone; ISS does not', (
+  testWidgets('gap map: lunar base is covered only by simulated data; ISS by tests', (
     tester,
   ) async {
     await _pumpApp(tester, const Size(1440, 1400));
@@ -96,14 +94,14 @@ void main() {
     await _settle(tester);
 
     expect(find.text('DATA GAP MAP'), findsOneWidget);
-    expect(find.text('UNVALIDATED ZONE'), findsOneWidget);
-    // nearest evidence for Lunar Base (snapshot): SAFFIRE at 34 % in μg, SoFIE (ISS CIR) at 37 % in μg.
-    expect(find.text('Δg μg'), findsOneWidget);
-    expect(find.text('ΔO₂ +3'), findsOneWidget);
-    // Model blind spot → the backend's top suggested test sits right at the habitat.
-    expect(find.text('MODEL BLIND HERE'), findsOneWidget);
+    // Lunar points come from the team's simulated campaign: covered, never shown as validated.
+    expect(find.text('SIMULATED DATA ONLY · NOT VALIDATED'), findsOneWidget);
+    expect(find.text('UNVALIDATED ZONE'), findsNothing);
+    expect(find.text('ΔO₂ +2'), findsOneWidget); // nearest evidence (snapshot)
+    // 0.16 g is now inside the physics fit range.
+    expect(find.text('IN TRAINING RANGE'), findsOneWidget);
     expect(find.textContaining(_modelN), findsOneWidget); // same figure as Forecast (F6)
-    expect(find.text('Burn tests at 34 % O₂ · 0.166 g'), findsOneWidget);
+    expect(find.text('Burn tests at 17 % O₂ · 0.166 g'), findsOneWidget);
 
     await tester.tap(find.text('Ambient')); // nav rail
     await _settle(tester);
@@ -129,7 +127,7 @@ void main() {
       // Chat view: answer text + only the interface for the question (materials → MOC chart);
       // the SAFE/BURNS cards and the forecast card stay out, sources fold behind one line.
       expect(find.textContaining('Offline cache'), findsOneWidget);
-      expect(find.textContaining('Based on'), findsNWidgets(2));
+      expect(find.textContaining('Based on'), findsWidgets); // cached turn may be Gemini-written
       expect(find.text('SAFE AT 34 % O₂ · MOC ABOVE 34 %'), findsNothing);
       expect(find.text('FLAME FORECAST · LUNAR BASE'), findsNothing);
       expect(find.textContaining('NASA source'), findsWidgets);
@@ -140,7 +138,7 @@ void main() {
       // Turn 2 is not cached → offline copilot, retrieval routed by the ONNX classifier (FFI).
       expect(find.textContaining('On-device AI · ONNX'), findsOneWidget);
       // Lunar gravity is untested → coverage note above the answer.
-      expect(find.textContaining('Outside data coverage'), findsWidgets);
+      expect(find.textContaining('simulated points from the team dataset'), findsWidgets);
 
       await tester.tap(find.text('Gap map'));
       await _settle(tester);
@@ -175,8 +173,8 @@ void main() {
     await tester.tap(find.text('Lab')); // bottom bar
     await _settle(tester);
     expect(find.text('TEAM LAB'), findsOneWidget);
-    expect(find.text('Experiments (27)'), findsOneWidget);
-    expect(find.text('Incidents (2)'), findsOneWidget);
+    expect(find.text('Experiments (39)'), findsOneWidget);
+    expect(find.text('Incidents (7)'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
@@ -193,8 +191,12 @@ void main() {
       await _pumpApp(tester, const Size(1440, 1800));
       await tester.tap(find.text('VIEW RANKING'));
       await _settle(tester);
+      // 85 ranked investigations: BASS-II sits below the fold.
+      await tester.ensureVisible(find.text('BASS-II'));
+      await tester.pump();
       await tester.tap(find.text('BASS-II'));
       await tester.pump();
+      await tester.ensureVisible(find.text('OPEN REPORT'));
       await tester.tap(find.text('OPEN REPORT'));
       await _settle(tester);
 
@@ -231,7 +233,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('forecast: lunar burns untested, sliders and ranks react', (
+  testWidgets('forecast: lunar burns on simulated-fit data, sliders and ranks react', (
     tester,
   ) async {
     await _pumpApp(tester, const Size(1440, 2000));
@@ -240,16 +242,17 @@ void main() {
     expect(find.text('FLAME FORECAST'), findsOneWidget);
     expect(find.textContaining(_modelN), findsOneWidget); // same figure as Gap map (F6)
     expect(find.text('VIGOROUS'), findsWidgets);
-    expect(find.text('PHYSICS EXTRAPOLATION · UNTESTED'), findsOneWidget);
+    expect(find.text('WITHIN FIT RANGE · SIMULATED DATA'), findsOneWidget);
 
     await tester.tap(
       find.text('μg'),
     ); // gravity → microgravity, cabin flow 10 cm/s
     await tester.pump();
     expect(find.text('RESET TO AMBIENT'), findsOneWidget);
+    expect(find.text('WITHIN TESTED RANGE'), findsOneWidget); // μg: measured ISS data
     await tester.tap(find.text('RESET TO AMBIENT'));
     await tester.pump();
-    expect(find.text('PHYSICS EXTRAPOLATION · UNTESTED'), findsOneWidget);
+    expect(find.text('WITHIN FIT RANGE · SIMULATED DATA'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 

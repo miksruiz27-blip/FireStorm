@@ -7,22 +7,22 @@
   "pmma": {
    "name": "PMMA",
    "moc_1g": 15.5,
-   "c": 0.055
+   "c": 0.057
   },
   "cotton-fiberglass fabric": {
    "name": "cotton-fiberglass fabric",
    "moc_1g": 18.5,
-   "c": 0.622
+   "c": 0.168
   },
   "silicone": {
    "name": "silicone",
    "moc_1g": 27,
-   "c": 0.622
+   "c": 0.573
   },
   "aramid fabric": {
    "name": "aramid fabric",
    "moc_1g": 32,
-   "c": 0.622
+   "c": 0.274
   }
  },
  "aliases": {
@@ -38,11 +38,13 @@
    40
   ],
   "pressure_kpa": [
-   56.5,
+   34.5,
    101.5
   ],
   "gravity_g": [
    0,
+   0.16,
+   0.38,
    1
   ]
  },
@@ -50,11 +52,11 @@
  "u_star": 15,
  "s": 1,
  "metrics": {
-  "n": 137,
-  "accuracy": 0.77,
-  "log_loss": 0.829,
-  "n_spread": 29,
-  "spread_rmse_mm_s": 0.74
+  "n": 355,
+  "accuracy": 0.86,
+  "log_loss": 0.468,
+  "n_spread": 129,
+  "spread_rmse_mm_s": 0.62
  },
- "source": "fitted on 137 solid-fuel test points + 6 MOC rows (2026-11-15)"
+ "source": "fitted on 355 solid-fuel test points + 6 MOC rows (2026-11-15, equipo3 drop)"
 }

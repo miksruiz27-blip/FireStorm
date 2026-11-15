@@ -14,7 +14,8 @@ test('fit: kP from MOC pressure pairs, classifies the sample', () => {
   // Verified solid burns of MOC-known materials (137, μg + 1 g) against the 6 MOC rows: 0.77 after the F4 audit.
   assert.ok(P.metrics.accuracy >= 0.7, `accuracy ${P.metrics.accuracy}`);
   assert.ok(P.metrics.n >= 130, `n ${P.metrics.n}`);
-  assert.deepEqual(P.fit_range.gravity_g, [0, 1]);
+  // equipo3: partial-g rows are fitted (labelled simulated), so the tested gravities include Moon and Mars.
+  assert.deepEqual(P.fit_range.gravity_g, [0, 0.16, 0.38, 1]);
 });
 
 test('physics: U-shaped limit, lower pressure raises it, partial g is the most flammable', () => {
@@ -25,9 +26,9 @@ test('physics: U-shaped limit, lower pressure raises it, partial g is the most f
   assert.ok(lim({ gravity_g: 0.166 }) < lim({ gravity_g: 1 }));
   assert.ok(at({ o2_pct: 30, gravity_g: 1 }).spread_mm_s > at({ o2_pct: 21, gravity_g: 1 }).spread_mm_s);
   assert.deepEqual(at({ o2_pct: 30, gravity_g: 1 }).extrapolated, []);
-  // No verified partial-g data (F4): Moon and Mars are physics extrapolation.
-  assert.equal(at({ o2_pct: 34, gravity_g: 0.166 }).extrapolated.length, 1);
-  assert.equal(at({ o2_pct: 30, gravity_g: 0.38 }).extrapolated.length, 1);
+  // equipo3 partial-g data (team dataset, simulated) covers Moon and Mars: no longer extrapolated.
+  assert.deepEqual(at({ o2_pct: 34, gravity_g: 0.166 }).extrapolated, []);
+  assert.deepEqual(at({ o2_pct: 30, gravity_g: 0.38 }).extrapolated, []);
 });
 
 test('materials: fuzzy names, what-if parsing', () => {
@@ -47,7 +48,7 @@ test('POST /forecast: physics everywhere, data model only in its domain', async 
   const { app } = await import('../src/app.js');
   const { pool } = await import('../src/db.js');
   const lunar = (await request(app).post('/forecast').send({ o2_pct: 34, pressure_kpa: 56.5, flow_cm_s: 10, gravity_g: 0.166 }).expect(200)).body;
-  assert.ok(lunar.p_burn > 0.5 && lunar.extrapolated.length && lunar.data_model === null); // data model has no gravity input
+  assert.ok(lunar.p_burn > 0.5 && !lunar.extrapolated.length && lunar.data_model === null); // data model has no gravity input
   const iss = (await request(app).post('/forecast').send({ o2_pct: 21, pressure_kpa: 101.3, flow_cm_s: 5, gravity_g: 0 }).expect(200)).body;
   assert.ok(iss.data_model.p_burn > 0);
   await pool.end();

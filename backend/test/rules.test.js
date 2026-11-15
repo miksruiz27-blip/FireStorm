@@ -25,10 +25,10 @@ test('risk level thresholds', () => {
   assert.deepEqual([level(0.5), level(0.3), level(0.29), level(null)], ['critical', 'warning', 'info', 'warning']);
 });
 
-test('lunar forecast: burns, extrapolated (no verified partial-g data) → critical; buoyancy noted', () => {
+test('lunar forecast: burns inside the (simulated) partial-g fit range → critical; buoyancy noted', () => {
   const { widgets, forecast } = buildWidgets(ctx('hello'));
   assert.equal(widgets[0].level, 'critical');
-  assert.match(widgets[0].body, /untested/);
+  assert.doesNotMatch(widgets[0].body, /untested/); // equipo3 partial-g data covers 0.16 g
   assert.match(widgets[0].body, /Buoyancy/);
   assert.ok(forecast.p_burn > 0.5);
 });

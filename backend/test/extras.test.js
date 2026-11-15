@@ -22,6 +22,13 @@ test('lunar: no partial-g tests → coverage first; metrics always; follow-ups s
   assert.equal(run('hola', iss).coverage, undefined); // ISS 21 % at 0 g is tested
 });
 
+test('coverage by simulated points only is called out, never as measured', () => {
+  const sim = [{ o2_pct: 34, gravity_g: 0.166, source: 'NASA Lunar 0.16g — simulated values (team dataset)' }];
+  const cond = conditionsFrom('hola', lunar);
+  const x = extraWidgets({ question: 'hola', habitat: lunar, cond, forecast: flame(cond), points: sim, habitats: [lunar], lang: 'en' });
+  assert.match(x.coverage.text, /simulated points from the team dataset/);
+});
+
 test('compare → habitat table (current highlighted); validate → next tests from recommend()', () => {
   const t = run('Compara el riesgo entre hábitats').table;
   assert.equal(t.rows.length, 2);

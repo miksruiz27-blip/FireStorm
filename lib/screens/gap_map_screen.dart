@@ -749,9 +749,18 @@ class _Aside extends StatelessWidget {
                   ),
                 ],
               ),
-              if (count == 0)
+              // Partial-g evidence in this dataset is the team's simulated campaign (labelled so in
+              // every source): it covers the condition but does not validate it.
+              if (count == 0 ||
+                  h.band == GravityBand.lunar ||
+                  h.band == GravityBand.mars)
                 AppTag(
-                  tr('UNVALIDATED ZONE', 'ZONA SIN VALIDAR'),
+                  count == 0
+                      ? tr('UNVALIDATED ZONE', 'ZONA SIN VALIDAR')
+                      : tr(
+                          'SIMULATED DATA ONLY · NOT VALIDATED',
+                          'SOLO DATOS SIMULADOS · SIN VALIDAR',
+                        ),
                   mono: true,
                   level: TagLevel.high,
                   leading: Container(

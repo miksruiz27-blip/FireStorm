@@ -233,9 +233,7 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
               ? Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: AppLayout.gutter,
-                  children: [
-                    for (final ch in charts) Expanded(child: ch),
-                  ],
+                  children: [for (final ch in charts) Expanded(child: ch)],
                 )
               : Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -376,7 +374,18 @@ class _Readout extends StatelessWidget {
                 style: AppText.label,
               ),
               AppTag(f.regime.label, mono: true, level: level),
-              if (f.extrapolated.isEmpty)
+              // Partial-g fit data is the team's simulated campaign: in range, but not measured.
+              if (f.extrapolated.isEmpty &&
+                  (c.band == GravityBand.lunar || c.band == GravityBand.mars))
+                AppTag(
+                  tr(
+                    'WITHIN FIT RANGE · SIMULATED DATA',
+                    'EN RANGO DE AJUSTE · DATOS SIMULADOS',
+                  ),
+                  mono: true,
+                  level: TagLevel.high,
+                )
+              else if (f.extrapolated.isEmpty)
                 AppTag(
                   tr('WITHIN TESTED RANGE', 'DENTRO DEL RANGO ENSAYADO'),
                   mono: true,
@@ -725,7 +734,9 @@ class _RegressionRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final r = m.predict(o2: c.o2, kpa: c.kpa, flow: c.flow, g: c.band.g);
     final burns = r.p >= .5;
-    final acc = m.accuracy == null ? '' : ' · ${tr('accuracy', 'precisión')} ${(m.accuracy! * 100).round()} %';
+    final acc = m.accuracy == null
+        ? ''
+        : ' · ${tr('accuracy', 'precisión')} ${(m.accuracy! * 100).round()} %';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 8,
@@ -736,7 +747,10 @@ class _RegressionRow extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             Text(
-              tr('DATA MODEL · LOGISTIC REGRESSION (ISS) · ON-DEVICE', 'MODELO DE DATOS · REGRESIÓN LOGÍSTICA (ISS) · EN EL DISPOSITIVO'),
+              tr(
+                'DATA MODEL · LOGISTIC REGRESSION (ISS) · ON-DEVICE',
+                'MODELO DE DATOS · REGRESIÓN LOGÍSTICA (ISS) · EN EL DISPOSITIVO',
+              ),
               style: AppText.label,
             ),
             if (r.outside.isEmpty)
@@ -747,7 +761,10 @@ class _RegressionRow extends StatelessWidget {
               )
             else
               AppTag(
-                tr('OUTSIDE TRAINING DATA · NO ANSWER', 'FUERA DE LOS DATOS DE ENTRENAMIENTO · SIN RESPUESTA'),
+                tr(
+                  'OUTSIDE TRAINING DATA · NO ANSWER',
+                  'FUERA DE LOS DATOS DE ENTRENAMIENTO · SIN RESPUESTA',
+                ),
                 mono: true,
                 level: TagLevel.high,
               ),
@@ -759,7 +776,11 @@ class _RegressionRow extends StatelessWidget {
                   'Trained in Python on ISS burn/extinct tests (O₂, pressure, flow); coefficients run here, no network$acc.',
                   'Entrenada en Python con ensayos arde/se apaga de la ISS (O₂, presión, flujo); los coeficientes corren aquí, sin red$acc.',
                 )
-              : tr('Outside its training range (value vs trained): ', 'Fuera de su rango de entrenamiento (valor vs entrenado): ') + r.outside.join(' · '),
+              : tr(
+                      'Outside its training range (value vs trained): ',
+                      'Fuera de su rango de entrenamiento (valor vs entrenado): ',
+                    ) +
+                    r.outside.join(' · '),
           style: AppText.mono.copyWith(fontSize: 11),
         ),
       ],

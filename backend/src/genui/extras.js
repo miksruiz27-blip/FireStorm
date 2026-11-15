@@ -54,6 +54,17 @@ export function extraWidgets({ question, habitat: h, cond: c, forecast: f, point
           'El pronóstico de abajo es extrapolación física, no una medición.',
       ),
     };
+  } else if (near.every((p) => /simulated/i.test(p.source ?? ''))) {
+    // Covered, but only by the team's simulated partial-g campaign: say so, never call it measured.
+    out.coverage = {
+      type: 'coverage',
+      text: t(
+        `Covered only by ${near.length} simulated points from the team dataset at ${fmt(c.o2_pct)} % O₂ / ${c.gravity_g} g; ` +
+          'no measured NASA test at this condition yet.',
+        `Cubierto solo por ${near.length} puntos simulados del dataset del equipo a ${fmt(c.o2_pct)} % O₂ / ${c.gravity_g} g; ` +
+          'aún no hay un ensayo NASA medido en esta condición.',
+      ),
+    };
   }
 
   const lvl = (p) => (p >= 0.5 ? 'critical' : p >= 0.3 ? 'warning' : 'info');

@@ -44,7 +44,7 @@ measurements. The app labels each of them "simulated values (team dataset)" in i
 ## Architecture
 
 ```
-NASA PSI + NTRS → team CSVs + ONNX (firestorm_modelos_y_csv_equipo/)
+NASA PSI + NTRS → team CSVs + ONNX (firestorm_modelos_y_csv_equipo3/)
   → backend/scripts/import_team.js → PostgreSQL (Railway)
   → Express API (Railway): ranking, gap map, forecast, copilot, classifiers
   → Flutter app (web + Android). Offline: bundled snapshot + the physics model running on-device.

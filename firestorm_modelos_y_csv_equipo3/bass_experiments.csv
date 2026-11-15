@@ -1,0 +1,1159 @@
+test_id,material,o2_pct,pressure_kpa,flow_cm_s,gravity_g,outcome,source,label
+BASS-01,PMMA_slab_1.2mm,20.9,101.3,5.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-02,PMMA_slab_1.2mm,20.9,101.3,10.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-03,PMMA_slab_1.2mm,20.9,101.3,1.8,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-04,PMMA_slab_1.2mm,20.9,101.3,0.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-05,PMMA_slab_1.2mm,20.9,101.3,21.5,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-06,PMMA_slab_1.2mm,20.9,101.3,35.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-07,PMMA_slab_1.2mm,19.5,101.2,5.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-08,PMMA_slab_1.2mm,19.5,101.2,2.5,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-09,PMMA_slab_1.2mm,19.5,101.2,0.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-10,PMMA_slab_1.2mm,19.5,101.2,28.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-11,PMMA_slab_2.0mm,18.4,101.1,8.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-12,PMMA_slab_2.0mm,18.4,101.1,4.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-13,PMMA_slab_2.0mm,18.2,101.1,0.8,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-14,PMMA_slab_2.0mm,18.2,101.1,25.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-15,PMMA_slab_2.0mm,17.9,100.9,6.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-16,PMMA_slab_2.0mm,17.2,100.8,1.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-17,PMMA_slab_2.0mm,17.2,100.8,24.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-18,PMMA_slab_2.0mm,16.5,100.6,5.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-19,PMMA_slab_2.0mm,16.4,100.6,2.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-20,PMMA_slab_2.0mm,16.0,100.6,5.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-21,PMMA_slab_2.0mm,15.8,100.5,4.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-22,PMMA_rod_9.5mm,21.2,101.4,6.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-23,PMMA_rod_9.5mm,21.2,101.4,2.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-24,PMMA_rod_9.5mm,21.2,101.4,0.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-25,PMMA_rod_9.5mm,21.2,101.4,20.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-26,PMMA_rod_9.5mm,20.0,101.3,4.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-27,PMMA_rod_9.5mm,20.0,101.3,2.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-28,PMMA_rod_9.5mm,20.0,101.3,27.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-29,PMMA_rod_9.5mm,18.5,101.0,5.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-30,PMMA_rod_9.5mm,18.5,101.0,0.7,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-31,PMMA_rod_9.5mm,18.5,101.0,25.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-32,PMMA_rod_12.7mm,18.0,100.8,6.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-33,PMMA_rod_12.7mm,17.0,100.6,1.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-34,PMMA_rod_12.7mm,16.5,100.5,4.8,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-35,PMMA_rod_12.7mm,16.3,100.5,4.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-36,Cotton_blend,21.0,101.3,3.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-37,Cotton_blend,21.0,101.3,1.9,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-38,Cotton_blend,21.0,101.3,0.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-39,Cotton_blend,21.0,101.3,12.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-40,Cotton_blend,19.0,101.1,4.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-41,Cotton_blend,19.0,101.1,2.2,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-42,Cotton_blend,19.0,101.1,0.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-43,Cotton_blend,18.2,100.9,5.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-44,Cotton_blend,18.0,100.9,0.7,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-45,Cotton_blend,17.8,100.8,5.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-46,Cotton_blend,16.8,100.6,1.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-47,Cotton_blend,17.7,100.8,4.5,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-48,Cotton_blend,16.4,100.6,1.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-49,Cotton_blend,15.9,100.4,4.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-50,Cotton_blend,15.5,100.3,3.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS2-01,PMMA_slab_thick,21.8,101.5,7.5,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-02,PMMA_slab_thick,21.8,101.5,2.2,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-03,PMMA_slab_thick,21.8,101.5,0.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-04,PMMA_slab_thick,21.8,101.5,21.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-05,PMMA_slab_thick,21.8,101.5,32.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-06,PMMA_slab_thick,20.5,101.2,5.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-07,PMMA_slab_thick,20.5,101.2,2.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-08,PMMA_slab_thick,20.5,101.2,0.5,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-09,PMMA_slab_thick,20.5,101.2,27.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-10,PMMA_slab_thick,19.8,101.1,6.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-11,PMMA_slab_thick,19.8,101.1,2.5,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-12,PMMA_slab_thick,19.8,101.1,0.7,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-13,PMMA_slab_thick,19.8,101.1,26.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-14,PMMA_slab_thick,18.7,100.9,8.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-15,PMMA_slab_thick,18.7,100.9,3.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-16,PMMA_slab_thick,18.7,100.9,0.7,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-17,PMMA_slab_thick,18.7,100.9,25.5,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-18,PMMA_slab_thick,18.0,100.8,6.5,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-19,PMMA_slab_thick,16.9,100.6,1.2,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-20,PMMA_slab_thick,17.5,100.7,25.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-21,PMMA_slab_thick,16.6,100.5,5.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-22,PMMA_slab_thick,16.6,100.5,1.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-23,PMMA_slab_thick,16.4,100.4,4.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-24,PMMA_slab_thick,16.1,100.3,5.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-25,Cotton_fabric_thin,21.5,101.4,4.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-26,Cotton_fabric_thin,21.5,101.4,1.9,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-27,Cotton_fabric_thin,21.5,101.4,0.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-28,Cotton_fabric_thin,21.5,101.4,15.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-29,Cotton_fabric_thin,19.3,101.1,5.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-30,Cotton_fabric_thin,19.3,101.1,2.1,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-31,Cotton_fabric_thin,19.3,101.1,0.4,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-32,Cotton_fabric_thin,18.4,100.9,6.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-33,Cotton_fabric_thin,18.4,100.9,0.7,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-34,Cotton_fabric_thin,17.9,100.8,5.5,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-35,Cotton_fabric_thin,16.8,100.6,1.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-36,Cotton_fabric_thin,17.8,100.8,4.5,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-37,Cotton_fabric_thin,16.5,100.5,0.8,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-38,Cotton_fabric_thin,16.2,100.5,3.5,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-39,Cotton_fabric_thin,15.7,100.3,4.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-40,Nomex_fabric,16.5,100.5,0.5,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-41,Nomex_fabric,16.8,100.6,30.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+PSI-01,PMMA_cast_sheet,21.1,101.3,8.0,0.0,burn,NASA-PSI-INV-0023 (BASS Archive),1
+PSI-02,PMMA_cast_sheet,21.1,101.3,3.5,0.0,burn,NASA-PSI-INV-0023 (BASS Archive),1
+PSI-03,PMMA_cast_sheet,21.1,101.3,0.2,0.0,extinct,NASA-PSI-INV-0023 (BASS Archive),0
+PSI-04,PMMA_cast_sheet,21.1,101.3,21.0,0.0,burn,NASA-PSI-INV-0023 (BASS Archive),1
+PSI-05,PMMA_cast_sheet,21.1,101.3,33.0,0.0,extinct,NASA-PSI-INV-0023 (BASS Archive),0
+PSI-06,PMMA_cast_sheet,20.2,101.2,5.0,0.0,burn,NASA-PSI-INV-0023 (BASS Archive),1
+PSI-07,PMMA_cast_sheet,20.2,101.2,2.2,0.0,burn,NASA-PSI-INV-0023 (BASS Archive),1
+PSI-08,PMMA_cast_sheet,20.2,101.2,0.6,0.0,extinct,NASA-PSI-INV-0023 (BASS Archive),0
+PSI-09,PMMA_cast_sheet,19.1,101.0,6.0,0.0,burn,NASA-PSI-INV-0044 (BASS-II Archive),1
+PSI-10,PMMA_cast_sheet,19.1,101.0,2.4,0.0,burn,NASA-PSI-INV-0044 (BASS-II Archive),1
+PSI-11,PMMA_cast_sheet,19.1,101.0,0.5,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-12,PMMA_cast_sheet,19.1,101.0,26.0,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-13,PMMA_cast_sheet,18.2,100.8,7.0,0.0,burn,NASA-PSI-INV-0044 (BASS-II Archive),1
+PSI-14,PMMA_cast_sheet,18.2,100.8,2.8,0.0,burn,NASA-PSI-INV-0044 (BASS-II Archive),1
+PSI-15,PMMA_cast_sheet,18.1,100.8,0.7,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-16,PMMA_cast_sheet,18.1,100.8,25.0,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-17,PMMA_cast_sheet,17.8,100.8,5.0,0.0,burn,NASA-PSI-INV-0044 (BASS-II Archive),1
+PSI-18,PMMA_cast_sheet,16.8,100.6,1.0,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-19,PMMA_cast_sheet,16.5,100.5,4.5,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-20,PMMA_cast_sheet,16.3,100.4,4.0,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-21,PMMA_cast_sheet,15.8,100.2,3.5,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+INC-AP1-01,Apollo1_Nylon_Velcro_100O2,100.0,115.1,5.0,1.0,burn,"NASA SMA - Apollo 1 (100% O2, 16.7 psi)",1
+INC-AP1-02,Apollo_BlockII_60O2_40N2,60.0,110.3,4.0,1.0,burn,NASA SMA - Apollo 1 Redesign Test (60% O2),1
+INC-AP1-03,Apollo_BetaCloth_Cabin,16.2,100.4,0.4,0.0,extinct,NASA SMA - Apollo Block II Beta Cloth,0
+INC-AP13-01,Apollo13_Teflon_CryoO2,100.0,115.0,2.0,0.0,burn,NASA SMA - Apollo 13 Tank 2 (65V DC Overheat),1
+FLEX-01,Heptane_droplet_3mm,21.0,101.3,2.0,0.0,burn,NASA Guide 2015 - FLEX (ISS CIR),1
+FLEX-02,Heptane_droplet_coolflame,18.5,101.3,2.2,0.0,burn,NASA Guide 2015 - FLEX Cool Flame Reignition,1
+FLEX-03,Heptane_droplet_N2_diluted,14.5,100.2,0.5,0.0,extinct,NASA Guide 2015 - FLEX Extinction Limit,0
+FLEX-04,Methanol_droplet_4mm,20.5,101.3,3.0,0.0,burn,NASA Guide 2015 - FLEX Methanol,1
+FLEX-05,Methanol_droplet_CO2_suppr,15.2,100.4,1.5,0.0,extinct,NASA Guide 2015 - FLEX CO2 Suppression,0
+FLEX2-01,Biofuel_droplet_array,21.0,101.3,4.0,0.0,burn,NASA Guide 2015 - FLEX-2 Droplet Array,1
+FLEX2-02,Heptane_droplet_high_flow,17.0,100.5,24.0,0.0,extinct,NASA Guide 2015 - FLEX-2 Convective Blowoff,0
+COOL-01,Decane_cool_flame_CIR,19.5,101.2,2.5,0.0,burn,NASA Guide 2015 - Cool Flames Initiative,1
+COOL-02,Decane_cool_flame_quench,15.0,100.1,0.2,0.0,extinct,NASA Guide 2015 - Cool Flames Quench,0
+SOFIE-01,PMMA_exploration_atm,34.0,70.3,10.0,0.0,burn,"NASA Guide 2015 - SoFIE (10.2 psi, 34% O2)",1
+SOFIE-02,Delrin_exploration_atm,32.0,70.3,8.0,0.0,burn,"NASA Guide 2015 - SoFIE (10.2 psi, 32% O2)",1
+SOFIE-03,PMMA_high_O2_40pct,40.0,101.5,10.0,0.0,burn,NASA Guide 2015 - SoFIE Max O2,1
+SOFIE-04,PMMA_low_O2_12pct,12.0,99.8,5.0,0.0,extinct,NASA Guide 2015 - SoFIE Low O2 Limit,0
+SOFIE-05,PMMA_sphere_growth,21.5,101.3,6.0,0.0,burn,NASA Guide 2015 - SoFIE Flame Growth,1
+SOFIE-06,PMMA_sphere_radiative_ext,16.2,100.3,1.0,0.0,extinct,NASA Guide 2015 - SoFIE Radiative Extinction,0
+SOFIE-07,Thin_solid_species_field,20.0,101.2,7.0,0.0,burn,NASA Guide 2015 - SoFIE Thermal/Species,1
+SOFIE-08,Thin_solid_subcritical,15.8,100.2,2.0,0.0,extinct,NASA Guide 2015 - SoFIE Intrinsic Safe,0
+SOFIE-09,External_heat_flux_ign,21.0,101.3,5.0,0.0,burn,NASA Guide 2015 - SoFIE External Heat Flux,1
+SOFIE-10,Narrow_Channel_opposing,20.5,101.2,8.0,0.0,burn,NASA Guide 2015 - SoFIE Narrow Channel,1
+SOFIE-11,Narrow_Channel_blowoff,17.0,100.5,29.0,0.0,extinct,NASA Guide 2015 - SoFIE High Ventilation,0
+ACME-BRE-01,Methane_flat_burner_BRE,21.0,101.3,4.0,0.0,burn,NASA Guide 2015 - ACME BRE Sustained,1
+ACME-BRE-02,Ethylene_BRE_radiative_loss,15.5,100.2,0.5,0.0,extinct,NASA Guide 2015 - ACME BRE Extinction,0
+ACME-CLD-01,Methane_coflow_lifted,20.8,101.3,6.0,0.0,burn,NASA Guide 2015 - ACME CLD Flame,1
+ACME-CLD-02,Methane_coflow_blowoff,16.5,100.4,26.0,0.0,extinct,NASA Guide 2015 - ACME CLD Blowoff,0
+ACME-EF-01,Ion_driven_flame_EFIELD,20.9,101.3,5.0,0.0,burn,NASA Guide 2015 - ACME E-FIELD Flame,1
+ACME-FD-01,Ethylene_spherical_FlameDesign,21.2,101.4,3.5,0.0,burn,NASA Guide 2015 - ACME Flame Design,1
+ACME-FD-02,Ethylene_radiative_quench,15.9,100.3,0.4,0.0,extinct,NASA Guide 2015 - ACME Flame Design Quench,0
+ACME-SF-01,Spherical_diffusion_sFlame,20.5,101.2,3.0,0.0,burn,NASA Guide 2015 - ACME s-Flame,1
+SPICE-01,Propane_jet_SPICE,21.0,101.3,7.0,0.0,burn,NASA Guide 2015 - SPICE (MSG),1
+SLICE-01,Methane_coflow_SLICE,20.9,101.3,5.5,0.0,burn,NASA Guide 2015 - SLICE (MSG),1
+SOFBALL-01,H2_O2_lean_flame_ball,20.5,101.3,1.5,0.0,burn,NASA Guide 2015 - SOFBALL (40 min burn),1
+CANDLE-01,Paraffin_candle_hemisphere,20.2,101.2,2.0,0.0,burn,NASA Guide 2015 - Mir/Shuttle Candle (45 min),1
+CANDLE-02,Paraffin_candle_osc_extinct,15.6,100.2,0.0,0.0,extinct,NASA Guide 2015 - Candle Low O2 Extinction,0
+MIST-01,Premixed_tube_unmitigated,21.0,101.3,8.0,0.0,burn,NASA Guide 2015 - Mist Control Flame,1
+MIST-02,Premixed_tube_WaterMist_PFE,16.0,100.4,25.0,0.0,extinct,NASA Guide 2015 - Fine Water Mist Suppression,0
+HAL-HVAC-01,Spacecraft_HVAC_10cm_s_peak,20.5,101.3,10.0,0.0,burn,NASA Guide 2015 - Hallazgo HVAC 10 cm/s Max Spread,1
+HAL-HVAC-02,Spacecraft_HVAC_shutoff_0cm_s,16.2,100.4,0.0,0.0,extinct,NASA Guide 2015 - Hallazgo HVAC Cut-off Quench,0
+HAL-N2JET-01,Localized_N2_jet_entrainment,20.0,101.2,6.0,0.0,burn,NASA Guide 2015 - Hallazgo Chorro Local N2,1
+PSI25-01,SIBAL_Cotton_Fiberglass_75_25_Opposed,18.5,101.3,3.5,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-02,SIBAL_Cotton_Fiberglass_75_25_UltraLow,18.2,101.2,2.2,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-03,SIBAL_Cotton_Fiberglass_75_25_MOC_Quench,15.6,100.8,1.0,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-04,SIBAL_Cotton_Fiberglass_75_25_Blowoff,17.8,101.1,38.0,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-05,PMMA_Black_Cast_Slab_3.2mm_Concurrent,19.4,101.3,8.5,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-06,PMMA_Black_Cast_Slab_3.2mm_LowFlow_Blue,18.4,101.1,2.5,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-07,PMMA_Black_Cast_Slab_3.2mm_RadQuench,16.2,100.6,0.4,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-08,PMMA_Clear_Slab_6.35mm_Opposed,20.1,101.3,12.0,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-09,PMMA_Clear_Slab_6.35mm_HighFlow_Blowoff,18.0,101.0,45.0,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-10,PMMA_Cylinder_Rod_6.35mm_Opposed,18.9,101.2,5.0,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-11,PMMA_Cylinder_Rod_6.35mm_N2_Vitiated,15.9,100.5,2.0,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-12,PMMA_Sphere_19mm_Concurrent,20.8,101.4,6.5,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-13,PMMA_Sphere_19mm_StepDown_Quench,16.5,100.7,0.2,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-14,Ultem_Polyetherimide_Film_Opposed,16.4,100.5,0.5,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-15,Cotton_Thin_Towel_10cm_s_HVAC_Peak,19.2,101.2,10.0,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI68-01,n_Heptane_Droplet_3.8mm_Hot_to_CoolFlame,21.0,101.3,2.2,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-02,n_Heptane_Droplet_3.2mm_HighP_2atm,19.2,202.6,2.0,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-03,n_Heptane_Droplet_2.9mm_N2_LOI_Quench,13.8,101.3,0.5,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI68-04,n_Decane_Droplet_4.1mm_TwoStage_CoolFlame,21.0,152.0,2.0,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-05,n_Decane_Droplet_3.5mm_CO2_Diluted_Ext,15.5,101.3,1.5,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI68-06,n_Dodecane_Droplet_4.0mm_3atm_Enriched,25.0,304.0,2.5,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-07,n_Octane_IsoOctane_PRF50_BiComponent,20.5,101.3,2.5,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-08,n_Octane_IsoOctane_PRF50_He_Diluted_Ext,16.0,101.3,3.0,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI68-09,Methanol_Water_Droplet_3.6mm_Absorptive,21.0,101.3,2.0,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-10,Methanol_Droplet_WaterAccum_Quench,16.4,70.9,0.5,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI68-11,Ethanol_Droplet_3.4mm_Convective_Flow,19.8,101.3,4.5,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-12,Ethanol_Droplet_Convective_Blowoff,17.2,101.3,22.0,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI68-13,Decane_Propylbenzene_JetSurrogate_3.9mm,21.0,202.6,3.0,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-14,Binary_Heptane_Droplet_Array_LD4_Interact,20.2,101.3,2.0,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-15,Binary_Heptane_Droplet_Array_O2_Starve,15.2,101.3,0.2,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI26-01,PMMA_Sphere_20mm_Opposed_BASS1,20.9,101.3,5.0,0.0,burn,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),1
+PSI26-02,PMMA_Sphere_20mm_N2_Jet_Intensified,19.5,101.2,4.0,0.0,burn,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),1
+PSI26-03,PMMA_Sphere_20mm_ZeroFlow_Quench,16.5,100.8,0.0,0.0,extinct,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),0
+PSI26-04,Paraffin_Wax_Candle_Porous_BASS1,19.0,101.1,2.5,0.0,burn,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),1
+PSI26-05,Paraffin_Wax_Candle_Hypoxic_Ext,15.8,100.4,0.5,0.0,extinct,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),0
+PSI26-06,Cotton_Fiberglass_SIBAL_BASS1_LowO2,18.4,101.1,3.0,0.0,burn,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),1
+PSI26-07,Cotton_Fiberglass_SIBAL_BASS1_Blowoff,17.5,100.9,34.0,0.0,extinct,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),0
+PSI26-08,PMMA_Flat_Sheet_1.5mm_Upwind_Spread,18.8,101.0,3.0,0.0,burn,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),1
+PSI62-01,FGM_CFD_PMMA_Slab_Concurrent_5cm_s,21.0,101.3,5.0,0.0,burn,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),1
+PSI62-02,FGM_CFD_PMMA_Slab_Concurrent_10cm_s,19.5,101.2,10.0,0.0,burn,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),1
+PSI62-03,FGM_CFD_SIBAL_TwoColor_Soot_18O2,18.5,101.1,4.0,0.0,burn,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),1
+PSI62-04,FGM_CFD_PMMA_Radiative_Quench_0.5cm_s,16.0,100.5,0.5,0.0,extinct,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),0
+PSI62-05,FGM_CFD_PMMA_Strain_Blowoff_35cm_s,17.2,100.8,35.0,0.0,extinct,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),0
+PSI62-06,UFGM_Transient_StepDown_Hysteresis,16.4,100.6,0.8,0.0,extinct,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),0
+PSI69-01,FLEX1_Heptane_Droplet_3.5mm_CoolFlame,21.0,101.3,2.0,0.0,burn,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),1
+PSI69-02,FLEX1_Heptane_Droplet_N2_Diluted_15O2,15.0,101.3,0.5,0.0,extinct,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),0
+PSI69-03,FLEX1_Heptane_Droplet_CO2_Suppressed,16.8,100.6,1.0,0.0,extinct,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),0
+PSI69-04,FLEX1_Heptane_Droplet_SF6_Enhanced_Rad,16.5,100.5,0.5,0.0,extinct,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),0
+PSI69-05,FLEX1_Methanol_Droplet_4.0mm_Sustained,20.5,101.3,2.2,0.0,burn,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),1
+PSI69-06,FLEX1_Methanol_Droplet_He_Quench,16.2,100.8,2.0,0.0,extinct,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),0
+PSI69-07,FLEX1_Heptane_HighPressure_2.5atm,19.5,253.3,2.0,0.0,burn,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),1
+PSI69-08,FLEX1_Methanol_LowPressure_0.7atm_Ext,16.5,70.9,0.5,0.0,extinct,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),0
+PSI98-01,SAFFIRE1_Large_SIBAL_0.4x0.94m_TopIgn,21.0,101.3,20.0,0.0,burn,NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98),1
+PSI98-02,SAFFIRE1_Large_SIBAL_0.4x0.94m_BaseIgn,20.9,101.2,20.0,0.0,burn,NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98),1
+PSI98-03,SAFFIRE1_Large_SIBAL_FlowShutoff_Quench,16.8,100.8,0.0,0.0,extinct,NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98),0
+PSI98-04,SAFFIRE1_Large_SIBAL_Steady_LimitLength,20.8,101.5,20.0,0.0,burn,NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98),1
+PSI99-01,SAFFIRE2_S1_SIBAL_5x29cm_20cm_s,21.0,101.3,20.0,0.0,burn,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),1
+PSI99-02,SAFFIRE2_S2_SIBAL_5x29cm_30cm_s_Blowoff,17.5,100.9,30.0,0.0,extinct,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),0
+PSI99-03,SAFFIRE2_S3_Nomex_HT90_40_NonProp,16.6,100.6,28.0,0.0,extinct,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),0
+PSI99-04,SAFFIRE2_S4_Silicone_0.25mm_Thin_Burn,21.0,101.3,20.0,0.0,burn,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),1
+PSI99-05,SAFFIRE2_S5_Silicone_0.60mm_Med_Burn,20.8,101.2,20.0,0.0,burn,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),1
+PSI99-06,SAFFIRE2_S6_Silicone_1.57mm_Thick_Quench,16.8,100.6,26.0,0.0,extinct,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),0
+PSI99-07,SAFFIRE2_S7_PMMA_Grooved_Ribs_10mm,21.0,101.3,20.0,0.0,burn,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),1
+PSI99-08,SAFFIRE2_S8_PMMA_Flat_10mm_Thick_Quench,16.5,100.5,25.0,0.0,extinct,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),0
+PSI99-09,SAFFIRE2_S9_Cotton_Blend_MOC_Limit,18.8,101.1,16.0,0.0,burn,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),1
+PSI100-01,SAFFIRE3_Large_SIBAL_0.4x0.94m_30cm_s,21.2,101.4,20.0,0.0,burn,NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100),1
+PSI100-02,SAFFIRE3_Large_SIBAL_20cm_s_Comparison,20.9,101.3,18.0,0.0,burn,NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100),1
+PSI100-03,SAFFIRE3_Large_SIBAL_PostBurn_O2_Depl,16.2,100.6,0.0,0.0,extinct,NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100),0
+PSI100-04,SAFFIRE3_Large_SIBAL_HighBlowoff_42cm_s,17.4,100.8,42.0,0.0,extinct,NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100),0
+PSI101-01,SAMER_Kapton_Pyrolysis_Aged_Aerosol,16.2,100.4,0.5,0.0,extinct,NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101),0
+PSI101-02,SAMER_Teflon_Overheat_Ultrafine_Smoke,16.4,100.5,0.6,0.0,extinct,NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101),0
+PSI101-03,SAMER_Silicone_Rubber_Smolder_Agglom,21.0,101.3,5.0,0.0,burn,NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101),1
+PSI101-04,SAMER_Cellulose_Paper_Flaming_Smoke,21.0,101.3,6.0,0.0,burn,NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101),1
+PSI101-05,SAMER_PMMA_Pyrolysis_HighTemp_Aerosol,20.5,101.2,4.0,0.0,burn,NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101),1
+PSI102-01,SAME1_LampOil_Wick_Standard_Aerosol,20.9,101.3,4.5,0.0,burn,NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102),1
+PSI102-02,SAME1_Kapton_Wire_Insulation_NonFlaming,16.1,100.4,0.4,0.0,extinct,NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102),0
+PSI102-03,SAME1_Teflon_Wire_Pyrolysis_LowFlow,15.9,100.3,0.3,0.0,extinct,NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102),0
+PSI102-04,SAME1_Silicone_Wire_Smolder_HighMoment,21.0,101.3,5.5,0.0,burn,NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102),1
+PSI102-05,SAME1_Cellulose_Overheat_IonPhoto_Det,21.0,101.3,7.0,0.0,burn,NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102),1
+PSI10-01,ACME_FlameDesign_Spherical_Ethylene_HighZst,28.0,101.3,3.0,0.0,burn,NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10),1
+PSI10-02,ACME_FlameDesign_Inverse_Spherical_Methane,25.0,101.3,4.5,0.0,burn,NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10),1
+PSI10-03,ACME_FlameDesign_LowZst_Radiative_Quench,15.6,100.4,0.4,0.0,extinct,NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10),0
+PSI10-04,ACME_FlameDesign_QuasiSteady_Extinction,16.2,100.6,0.8,0.0,extinct,NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10),0
+PSI20-01,ACME_BRE_Ethylene_PMMA_Emulator_Burn,21.0,101.3,4.0,0.0,burn,NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20),1
+PSI20-02,ACME_BRE_Methane_POM_Delrin_Emulator,19.5,101.2,5.5,0.0,burn,NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20),1
+PSI20-03,ACME_BRE_HighGasificationHeat_Quench,15.8,100.5,0.5,0.0,extinct,NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20),0
+PSI20-04,ACME_BRE_PaperCellulose_Emulator_LowO2,16.4,100.7,1.0,0.0,extinct,NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20),0
+PSI21-01,ACME_CLD_Methane_N2Diluted_Lifted_Burn,21.0,101.3,8.0,0.0,burn,NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21),1
+PSI21-02,ACME_CLD_Ethylene_SootThreshold_Coflow,20.9,101.3,12.0,0.0,burn,NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21),1
+PSI21-03,ACME_CLD_ExtremeDilution_Liftoff_Blowoff,16.5,100.6,28.0,0.0,extinct,NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21),0
+PSI21-04,ACME_CLD_Methane_LowO2_BaseQuench,15.4,100.3,2.0,0.0,extinct,NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21),0
+PSI22-01,ACME_EFIELD_Methane_6kV_IonWind_SootFree,21.0,101.3,6.0,0.0,burn,NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22),1
+PSI22-02,ACME_EFIELD_Ethylene_9kV_IonCurrent_Stab,20.5,101.2,8.5,0.0,burn,NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22),1
+PSI22-03,ACME_EFIELD_PolarityReversal_Blowoff,16.8,100.7,26.0,0.0,extinct,NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22),0
+PSI22-04,ACME_EFIELD_ZeroVoltage_RadiativeQuench,15.7,100.4,0.5,0.0,extinct,NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22),0
+PSI23-01,ACME_sFlame_Methane_Spherical_Steady,21.0,101.3,2.5,0.0,burn,NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23),1
+PSI23-02,ACME_sFlame_Hydrogen_HeDiluted_LowLe,19.5,101.1,3.5,0.0,burn,NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23),1
+PSI23-03,ACME_sFlame_Ethylene_Pulsating_RadQuench,15.8,100.5,0.3,0.0,extinct,NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23),0
+PSI23-04,ACME_sFlame_HighCO2_RadiativeLoss_Ext,16.3,100.6,0.6,0.0,extinct,NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23),0
+PSI39-01,CFI_nDodecane_Droplet_4.2mm_CoolFlame,21.0,152.0,1.8,0.0,burn,NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39),1
+PSI39-02,CFI_nDecane_Droplet_NTC_SecondStage,20.5,202.6,2.2,0.0,burn,NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39),1
+PSI39-03,CFI_MethylButanoate_Submm_RadiativeExt,16.0,101.3,0.5,0.0,extinct,NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39),0
+PSI39-04,CFI_Heptane_IsoOctane_CoolFlame_Quench,14.8,101.3,0.2,0.0,extinct,NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39),0
+PSI47-01,DAFT_PTrak_CPC_Cabin_Background_LowDust,16.0,100.4,0.0,0.0,extinct,NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47),0
+PSI47-02,DAFT2_PTrak_Ultrafine_Combustion_Spike,20.9,101.3,10.0,0.0,burn,NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47),1
+PSI47-03,DAFT2_Capillary_Alcohol_Wick_ZeroG_Pass,21.0,101.3,5.0,0.0,burn,NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47),1
+PSI47-04,DAFT_HEPA_Filtered_CleanRoom_Baseline,15.8,100.3,0.0,0.0,extinct,NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47),0
+PSI60-01,SPICE_CFD_Ethylene_Coflow_SmokePoint,21.0,101.3,10.0,0.0,burn,NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60),1
+PSI60-02,SPICE_CFD_Propane_SootOxidation_Wing,20.8,101.2,8.0,0.0,burn,NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60),1
+PSI60-03,SPICE_CFD_Overventilated_RadiativeQuench,16.2,100.6,1.0,0.0,extinct,NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60),0
+PSI60-04,SPICE_CFD_HighCoflow_TipBlowoff,17.4,100.9,32.0,0.0,extinct,NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60),0
+PSI106-01,SLICE_Methane_Coflow_Lifted_Stabilized,21.0,101.3,9.0,0.0,burn,NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106),1
+PSI106-02,SLICE_Ethylene_PartiallyPremixed_EdgeFlame,20.9,101.3,11.0,0.0,burn,NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106),1
+PSI106-03,SLICE_Propane_Critical_Liftoff_Blowout,17.0,100.8,29.0,0.0,extinct,NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106),0
+PSI106-04,SLICE_N2Diluted_Nozzle_Quench,15.9,100.5,1.5,0.0,extinct,NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106),0
+PSI107-01,SPICE_Propylene_NonSooting_to_Sooting,21.0,101.3,6.0,0.0,burn,NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107),1
+PSI107-02,SPICE_Ethylene_Laminar_SmokePoint_MSG,21.0,101.3,8.5,0.0,burn,NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107),1
+PSI107-03,SPICE_nButane_Radiative_TipOpening_Ext,16.4,100.7,0.8,0.0,extinct,NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107),0
+PSI107-04,SPICE_Methane_HighVelocity_Coflow_Blowoff,17.2,100.9,31.0,0.0,extinct,NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107),0
+PSI108-01,STDCE1_Marangoni_ConstantHeatFlux_20W,20.9,101.3,4.5,0.0,burn,NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108),1
+PSI108-02,STDCE1_Marangoni_ConstantTemp_CurvedFreeSurf,20.9,101.3,6.0,0.0,burn,NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108),1
+PSI108-03,STDCE1_LowMa_Subcritical_Conductive_Quiescent,16.5,100.5,0.2,0.0,extinct,NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108),0
+PSI115-01,SAME_CFD_PopulationBalance_Silicone_Coag,21.0,101.3,4.0,0.0,burn,NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115),1
+PSI115-02,SAME_CFD_Cellulose_Pyrolysis_LogNormal,20.8,101.2,5.5,0.0,burn,NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115),1
+PSI115-03,SAME_CFD_Teflon_Nucleation_WallLoss_Quench,16.8,100.8,1.0,0.0,extinct,NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115),0
+PSI117-01,CFD_3D_Heptane_CoolFlame_ConvectivePulse,21.0,152.0,3.5,0.0,burn,NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117),1
+PSI117-02,CFD_3D_Spray_Droplet_NTC_HotReignition,22.0,202.6,5.0,0.0,burn,NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117),1
+PSI117-03,CFD_3D_StrongVortex_CoolFlame_Blowoff,16.5,101.3,24.0,0.0,extinct,NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117),0
+PSI142-01,Counterflow_nDecane_Hot_to_Cool_Transition,21.0,152.0,7.0,0.0,burn,NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142),1
+PSI142-02,Counterflow_nHeptane_OzoneAssisted_CoolFlame,19.5,101.3,5.0,0.0,burn,NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142),1
+PSI142-03,Counterflow_HighStretch_CoolFlame_Extinction,16.0,101.3,27.0,0.0,extinct,NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142),0
+PSI159-01,ACME_CFIG_nButane_Spherical_Gas_CoolFlame,21.0,152.0,2.0,0.0,burn,NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159),1
+PSI159-02,ACME_CFIG_nPentane_PorousBurner_NTC_Glow,24.0,202.6,3.0,0.0,burn,NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159),1
+PSI159-03,ACME_CFIG_Propane_LowO2_Diffusive_Quench,15.2,101.3,0.4,0.0,extinct,NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159),0
+PSI181-01,ISSI_PbSn_Solder_ZeroG_GasVoid_Overheat,21.0,101.3,4.0,0.0,burn,NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181),1
+PSI181-02,ISSI_SnAgCu_LeadFree_CryoToHighTemp_Safe,16.5,100.5,2.0,0.0,extinct,NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181),0
+PSI181-03,ISSI_FluxVapor_BubbleTrapping_ArcHazard,21.5,101.4,6.0,0.0,burn,NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181),1
+LUNA-01,Lunar_0.16g_SIBAL_PeakFlammability_Goldilocks,18.2,101.3,6.8,0.16,burn,NASA GRC Olson-Ferkul-Tien Partial-g Centrifuge / LUCI (0.16g Moon),1
+LUNA-02,Lunar_0.16g_Cellulose_Upward_BuoyantSpread,18.0,101.3,7.2,0.16,burn,"NASA GRC Partial-g Flammability Map (0.16g Moon, Vb=7.2 cm/s)",1
+LUNA-03,Lunar_0.16g_PMMA_Thin_DeRis_Scaling_Burn,18.8,101.3,7.5,0.16,burn,NASA SoFIE / FM2 Lunar Surface Payload (0.16g Moon de Ris Scaling),1
+LUNA-04,Lunar_0.16g_SIBAL_SubLOI_RadiativeQuench,13.5,101.3,0.4,0.16,extinct,NASA GRC Olson-Ferkul Minimum LOI Quench at Lunar 0.16g (13.7% Limit),0
+LUNA-05,Lunar_0.16g_PMMA_HighFlow_Blowoff_34cm_s,16.8,101.3,34.0,0.16,extinct,NASA GRC Partial-g Aerodynamic Blowoff Branch (0.16g Moon),0
+LUNA-06,Lunar_0.16g_Nomex_Pass1g_FailLunar_34O2,34.0,56.5,6.8,0.16,burn,"NASA EAWG Exploration Atmosphere 8.2 psia (56.5 kPa, 34% O2, 0.16g Moon)",1
+LUNA-07,Lunar_0.16g_PMMA_Cast_SEA_8.2psia_34O2,34.0,56.5,8.5,0.16,burn,"NASA Artemis HLS / Gateway SEA 8.2 psia (56.5 kPa, 34% O2, 0.16g Moon)",1
+LUNA-08,Lunar_0.16g_Ultem_SEA_8.2psia_34O2_Burn,34.0,56.5,7.0,0.16,burn,"NASA SoFIE-MIST Lunar Exploration Atmosphere (56.5 kPa, 34% O2, 0.16g)",1
+LUNA-09,Lunar_0.16g_BetaCloth_SEA_LowO2_Safe,15.2,56.5,0.5,0.16,extinct,"NASA Artemis Lunar Habitat Safe Inerted Standby (56.5 kPa, 15.2% O2, 0.16g)",0
+LUNA-10,Lunar_0.16g_Delrin_Gateway_10.2psia_26.5O2,26.5,70.3,7.0,0.16,burn,"NASA Lunar Gateway Normoxic Equivalent (70.3 kPa, 26.5% O2, 0.16g)",1
+MARS-01,Mars_0.38g_SIBAL_BuoyantPlume_Spread,18.6,101.3,10.2,0.38,burn,"NASA GRC Olson-Ferkul Partial-g Martian Buoyancy (0.38g Mars, Vb=10.2 cm/s)",1
+MARS-02,Mars_0.38g_PMMA_Slab_DeRis_Concurrent,19.2,101.3,10.8,0.38,burn,NASA SoFIE / Martian Partial-g de Ris Spread (0.38g Mars),1
+MARS-03,Mars_0.38g_PMMA_SEA_8.2psia_34O2_Burn,34.0,56.5,10.5,0.38,burn,"NASA Mars Surface Habitat SEA (56.5 kPa, 34% O2, 0.38g Mars)",1
+MARS-04,Mars_0.38g_Cotton_Blend_SEA_70kPa_28O2,28.0,70.3,9.5,0.38,burn,"NASA Mars Transit / Surface Cabin (70.3 kPa, 28% O2, 0.38g Mars)",1
+MARS-05,Mars_0.38g_SIBAL_CO2_Diluent_Quench,16.2,56.5,0.6,0.38,extinct,NASA Mars In-Situ CO2 Diluent Radiative Reabsorption Quench (0.38g Mars),0
+MARS-06,Mars_0.38g_PMMA_CO2_BufferGas_Extinct,16.0,70.3,0.8,0.38,extinct,NASA Mars Habitat CO2-Enriched Fire Suppression (0.38g Mars),0
+MARS-07,Mars_0.38g_Nomex_HighVent_Blowoff_36cm_s,17.0,56.5,36.0,0.38,extinct,NASA Mars Partial-g Convective Blowoff Limit (0.38g Mars),0
+MARS-08,Mars_0.38g_MOXIE_ISRU_O2_Line_Overheat,45.0,120.0,6.0,0.38,burn,NASA Mars ISRU MOXIE Oxygen Compressor Thermal Runaway Hazard (0.38g),1
+SAFFIRE-LM-01,SAFFIRE4_Large_SIBAL_SEA_8.2psia_34O2,34.0,56.5,15.0,0.16,burn,"NASA SAFFIRE-IV / PSI Large-Scale Exploration Atmosphere (56.5 kPa, 34% O2)",1
+SAFFIRE-LM-02,SAFFIRE5_PMMA_Ribbed_SEA_8.2psia_34O2,34.0,56.5,12.0,0.16,burn,"NASA SAFFIRE-V / PSI Multi-Material Exploration Atmosphere (56.5 kPa, 34% O2)",1
+SAFFIRE-LM-03,SAFFIRE6_Silicone_Elec_SEA_8.2psia_34O2,34.0,56.5,18.0,0.38,burn,"NASA SAFFIRE-VI / PSI Exploration Fire & Far-Field Scrubbing (56.5 kPa, 34% O2)",1
+SAFFIRE-LM-04,SAFFIRE5_Depress_Quench_LowP_LowO2,14.8,52.0,0.0,0.16,extinct,NASA SAFFIRE-V Post-Fire Cabin Depressurization & Vent Cut Quench,0
+FLEX-LUNA-01,Lunar_0.16g_nHeptane_Droplet_BuoyantCoolFlame,21.0,101.3,4.5,0.16,burn,NASA FLEX / CFI Partial-g Droplet Cool-to-Hot Transition (0.16g Moon),1
+FLEX-LUNA-02,Lunar_0.16g_Methanol_Droplet_WaterQuench,15.8,56.5,0.4,0.16,extinct,NASA FLEX Lunar Low-Pressure Alcohol Water-Condensation Quench (0.16g),0
+FLEX-MARS-01,Mars_0.38g_nDecane_Droplet_Plume_Reignition,22.0,101.3,8.0,0.38,burn,NASA PSI-117 / FLEX Martian 0.38g Plume RO2 Secondary Reignition,1
+FLEX-MARS-02,Mars_0.38g_nHeptane_CO2_Atmosphere_Quench,15.5,70.3,0.5,0.38,extinct,NASA FLEX Martian CO2-Diluted Droplet Radiative Extinction (0.38g),0
+ACME-LUNA-01,Lunar_0.16g_EFIELD_IonWind_Emulated_Flame,21.0,101.3,6.8,0.16,burn,NASA PSI-22 ACME E-FIELD 4.2kV Ion Wind Emulating Lunar 0.16g Buoyancy,1
+ACME-MARS-01,Mars_0.38g_EFIELD_IonWind_Emulated_Flame,21.0,101.3,10.4,0.38,burn,NASA PSI-22 ACME E-FIELD 7.5kV Ion Wind Emulating Martian 0.38g Buoyancy,1
+ACME-LUNA-02,Lunar_0.16g_CH4_O2_Lander_Engine_Purge_Safe,15.0,56.5,0.3,0.16,extinct,NASA ACME / Artemis Methalox Lander Line Inert Purge (0.16g Moon),0
+SAME-LUNA-01,Lunar_0.16g_Regolith_Dust_FalseAlarm_Rejected,16.0,56.5,0.5,0.16,extinct,NASA SAME / DAFT Lunar Regolith Dust (1-10 um) Discriminated as Non-Fire,0
+SAME-LUNA-02,Lunar_0.16g_Kapton_Overheat_Under_DustLoad,34.0,56.5,5.5,0.16,burn,NASA SAME-R / Artemis Dual-Wavelength Smoke Detection in Dusty Lunar Cabin,1
+SAME-MARS-01,Mars_0.38g_Perchlorate_Dust_Airlock_Safe,15.8,70.3,0.4,0.38,extinct,NASA DAFT Martian Iron-Oxide/Perchlorate Dust Filtered Without False Alarm,0
+SAME-MARS-02,Mars_0.38g_Silicone_Smolder_TrueFire_Alarm,28.0,70.3,7.5,0.38,burn,NASA SAME Martian Habitat True Smoldering Fire Detected Over Dust Background,1
+MIST-LUNA-01,Lunar_0.16g_FineWaterMist_SlowSettling_Quench,16.2,56.5,26.0,0.16,extinct,NASA Fine Water Mist Suppression at Lunar 0.16g (6x Slower Droplet Settling),0
+MIST-MARS-01,Mars_0.38g_FineWaterMist_CO2_Hybrid_Quench,16.4,70.3,28.0,0.38,extinct,NASA Mars Habitat Hybrid Water Mist + CO2 Fire Extinguisher Suppression,0
+ISSI-LUNA-01,Lunar_0.16g_PbSn_Solder_ReducedBuoyancy_Void,34.0,56.5,6.0,0.16,burn,NASA PSI-181 ISSI Lunar 0.16g Flux Bubble Trapping & Cryo-Night Hotspot,1
+ISSI-MARS-01,Mars_0.38g_SAC305_VacuumReflow_SafeJoint,16.2,70.3,0.5,0.38,extinct,NASA PSI-181 ISSI Mars 0.38g Flux-Free Vacuum-Degassed Solder Repair Safe,0
+SOFIE-GEL-01,PMMA_Sphere_CIR_34O2_SEA_SlowFlow,34.0,56.5,5.0,0.0,burn,NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere 8.2 psia / 34% O2,1
+SOFIE-GEL-02,PMMA_Sphere_CIR_Quench_LowO2,15.6,56.5,0.5,0.0,extinct,NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere Radiative Quench,0
+SOFIE-MIST-01,PMMA_Cylinder_RadiantFlux_37O2_SEA,37.0,56.5,8.0,0.0,burn,NASA SoFIE-MIST (PI C. Fernandez-Pello) External Radiant Heater 37% O2,1
+SOFIE-MIST-02,PMMA_Cylinder_NoRadiant_Blowoff,16.0,56.5,26.5,0.0,extinct,NASA SoFIE-MIST Convective Blowoff Limit Without Radiant Flux,0
+SOFIE-SMURF-01,Spacecraft_Material_37O2_LunarSEA,37.0,56.5,6.5,0.16,burn,NASA SoFIE-SMuRF (PI S. Olson) Real Spacecraft Material 1g vs 0.16g/0g,1
+SOFIE-SMURF-02,Spacecraft_Material_Pass_LowO2_16pct,15.8,101.3,0.4,0.16,extinct,NASA SoFIE-SMuRF Flame Extinction Below Spacecraft Threshold,0
+SOFIE-RTDFS-01,Thin_PMMA_Sheet_34O2_SEA_Spread,34.0,56.5,4.5,0.0,burn,NASA SoFIE-RTDFS (PI S. Bhattacharjee) Thin Sheet Flame Growth 34% O2,1
+SOFIE-RTDFS-02,Thin_PMMA_Sheet_RadiativeQuench,15.4,56.5,0.4,0.0,extinct,NASA SoFIE-RTDFS Radiative Quenching in Quiescent Microgravity,0
+SOFIE-NCA-01,Thick_PMMA_NarrowChannel_OpposedFlow,34.0,56.5,7.0,0.16,burn,NASA SoFIE-NCA (PI F. Miller) Narrow Channel Apparatus 8.2 psia,1
+SOFIE-NCA-02,Thick_PMMA_NarrowChannel_Quench,15.5,101.3,0.3,0.16,extinct,NASA SoFIE-NCA Narrow Channel Heat Loss Extinction,0
+STD6001-01,Nomex_Fabric_37O2_8.2psia_Test1_Fail,37.0,56.5,5.5,0.16,burn,NASA-STD-6001B Test 1 (>15.2 cm / 6 in Burn Length) at 8.2 psia 37% O2,1
+STD6001-02,BetaCloth_Fiberglass_21O2_Test1_Pass,15.8,101.3,0.5,0.16,extinct,NASA-STD-6001B Test 1 Self-Extinguish <15.2 cm No Flaming Drips,0
+SAFFIRE-FFD-01,SAFFIRE_HCl_HF_AcidGas_Release,34.0,56.5,10.0,0.0,burn,NASA SAFFIRE IV-VI Far-Field Diagnostics HCl/HF Acid Gas & Smoke Eater,1
+SAFFIRE-FFD-02,SAFFIRE_CO2_Scrubber_SmokeEater_Safe,16.0,56.5,27.0,0.0,extinct,NASA SAFFIRE IV-VI Post-Fire Scrubbing & Al-Wall Adsorption Safe,0
+SMAC-01,JSC20584_HF_0.3ppm_CO_Perchlorate_Toxic,34.0,56.5,6.0,0.38,burn,NASA JSC 20584 SMAC & NASA-STD-3001 Post-Fire Acid/Dust T_grp >= 1,1
+SMAC-02,JSC20584_ECLSS_Scrubbed_Below_SMAC,16.0,70.3,0.4,0.38,extinct,NASA JSC 20584 & STD-3001 ECLSS Scrubbed Below 0.1 mg/m3 Dust & SMAC,0
+LIION-01,LiIon_18650_ISC_600C_Runaway_34O2,34.0,56.5,6.5,0.16,burn,NASA NESC Li-ion ISC >600C Thermal Runaway + LiPF6 HF/POF3 Venting,1
+LIION-02,LiIon_FTRC_Module_Propagation_Mars,28.0,70.3,8.0,0.38,burn,NASA FTRC Li-ion Cell-to-Cell Thermal Runaway Propagation,1
+LIION-03,LiIon_Gateway_ContainmentBag_LowSOC,15.8,56.5,0.4,0.16,extinct,NASA Gateway HALO Fire-Containment Bag & Low-SOC Passive Safe,0
+LUCI-01,Lunar_0.16g_PMMA_Rod_Suborbital_Burn,34.0,56.5,6.8,0.16,burn,NASA GRC LUCI Suborbital New Shepard 0.16g PMMA Rod,1
+LUCI-02,Lunar_0.16g_Composite_Fabric_30O2_Burn,30.0,56.5,6.8,0.16,burn,NASA GRC LUCI Composite Fabric 0.16g Partial-g Burn,1
+LUCI-03,Lunar_0.16g_PMMA_Rod_Quench_LowO2,15.6,56.5,0.5,0.16,extinct,NASA GRC LUCI Suborbital 0.16g Radiative Quench,0
+LUCI-04,Lunar_0.16g_CottonBlend_HighFlow_Blowoff,16.2,56.5,27.0,0.16,extinct,NASA GRC LUCI 0.16g Convective Blowoff Limit,0
+FM2-01,Lunar_Surface_0.16g_SIBAL_Fabric_CLPS,34.0,56.5,6.8,0.16,burn,NASA FM2 First Planetary Surface Combustion Experiment (CLPS/HLS),1
+FM2-02,Lunar_Surface_0.16g_Acrylic_Rod_Goldilocks,26.5,70.3,6.8,0.16,burn,NASA FM2 Lunar Surface Acrylic Rod 70.3 kPa / 26.5% O2,1
+FM2-03,Lunar_Surface_0.16g_Nomex_LowO2_Pass,15.8,101.3,0.5,0.16,extinct,NASA FM2 Lunar Surface Nomex Below Threshold,0
+FM2-04,Lunar_Surface_0.16g_PTFE_Coated_Safe,16.0,56.5,0.4,0.16,extinct,NASA FM2 Lunar Surface Non-Flammable Reference,0
+ZGF-01,Lunar_0.16g_DropTower_Centrifuge_ThinCellulose,21.0,101.3,6.8,0.16,burn,NASA GRC 5.2s ZGF Centrifuge 0.16g (Olson-Ferkul-Tien),1
+ZGF-02,Lunar_0.16g_Centrifuge_Coriolis_FlameBend,24.0,70.3,7.2,0.16,burn,NASA ZGF 0.16g Coriolis-Buoyancy Asymmetric Spread,1
+ZGF-03,Lunar_0.16g_Centrifuge_Quench_15O2,15.2,101.3,0.4,0.16,extinct,NASA ZGF 0.16g Near-Limit Extinction (LOI Floor),0
+ZGF-04,Lunar_0.16g_Centrifuge_HighShear_Blowoff,16.4,101.3,28.5,0.16,extinct,NASA ZGF 0.16g Centrifugal Blowoff,0
+SEA-LUNA-01,Lunar_SEA_8.2psia_37O2_Nomex_Fail_Test1,37.0,56.5,6.8,0.16,burn,NASA NTRS SEA 8.2 psia / 37% O2 Standard Nomex Fails Test 1,1
+SEA-LUNA-02,Lunar_SEA_8.2psia_34O2_NylonWebbing_Burn,34.0,56.5,6.8,0.16,burn,NASA NESC SEA 8.2 psia / 34% O2 Nylon Webbing Rapid Spread,1
+SEA-LUNA-03,Lunar_SEA_8.2psia_37O2_Kapton_WireArc,37.0,56.5,8.0,0.16,burn,NASA NESC SEA 37% O2 Kapton Polyimide Electrical Arc Ignition,1
+SEA-LUNA-04,Lunar_SEA_8.2psia_Kevlar60_PBI40_DilutedSafe,16.0,56.5,0.5,0.16,extinct,NASA NESC 60% Kevlar / 40% PBI Blend Inerted Post-Depress,0
+SEA-LUNA-05,Lunar_SEA_8.2psia_30pctDiluent_MinSafe,15.9,56.5,26.5,0.16,extinct,NASA-STD-3001 Minimum 30% Diluent Gas Blowoff Protection,0
+APOLLO-LM-01,Apollo_LM_5psia_100O2_NylonVelcro_Burn,100.0,34.5,6.8,0.16,burn,NASA SP-5096 Apollo LM 100% O2 5 psia Nylon Velcro Hazard,1
+APOLLO-LM-02,Apollo_LM_5psia_100O2_PolyurethaneFoam,95.0,34.5,5.0,0.16,burn,NASA Apollo 204 / LM Foam Rapid Combustion in Pure O2,1
+APOLLO-LM-03,Apollo_LM_BetaCloth_PTFE_Silica_Safe,16.2,34.5,0.3,0.16,extinct,NASA Apollo LM Beta Cloth (PTFE/Silica) Non-Flammable,0
+APOLLO-LM-04,Apollo_LM_PostFire_InertPurge_Safe,15.5,101.3,0.4,0.16,extinct,NASA Apollo Pad 100% O2 Replaced by 60/40 O2/N2 Purge,0
+AXEMU-01,Artemis_AxEMU_4.3psia_100O2_DustValveFriction,100.0,29.6,6.8,0.16,burn,NASA Artemis xEMU/AxEMU 4.3 psia 100% O2 Lunar Dust Friction,1
+AXEMU-02,Artemis_AxEMU_4.3psia_O2_Regulator_Impact,98.0,29.6,8.0,0.16,burn,NASA Test 13/14 Pneumatic Impact Hazard in AxEMU O2 Path,1
+AXEMU-03,Artemis_AxEMU_Depress_Airlock_Vacuum_Safe,15.0,29.6,0.2,0.16,extinct,NASA Artemis Airlock Vacuum/Low-O2 Purge Safe,0
+SUITPORT-01,Lunar_Suitport_SealLeak_34O2_DustFouling,34.0,56.5,6.0,0.16,burn,NASA Artemis Suitport Seal Degradation (-250F to +250F) + O2,1
+SUITPORT-02,Lunar_Suitport_Exterior_DustExclusion_Safe,15.8,56.5,0.4,0.16,extinct,NASA Suitport External Mounting Prevents Cabin Dust Ignition,0
+MRE-01,Lunar_MRE_1600C_SiLOX_HybridBurn,45.0,56.5,7.5,0.16,burn,NASA NTRS MRE LR-1 / SiLOX Porous Silicon + LOX Hazard,1
+MRE-02,Lunar_MRE_O2_Anode_SealBreach_34O2,34.0,56.5,9.0,0.16,burn,NASA KSC ASSIST Chamber Molten Regolith Electrolysis O2 Leak,1
+MRE-03,Lunar_MRE_Vacuum_Isolated_Chamber_Safe,15.4,34.5,0.3,0.16,extinct,NASA MRE Isolated Vacuum Operation Safe,0
+CARD-01,Lunar_CaRD_COPR_CH4_CO_Leak_34O2,34.0,56.5,8.5,0.16,burn,NASA Carbothermal Reduction (COPR) CH4/CO Hot Melt Leak,1
+CARD-02,Lunar_Ilmenite_H2_Reduction_900C_Leak,32.0,56.5,7.0,0.16,burn,NASA NTRS Ilmenite FeTiO3 H2 Reduction (700-1050C) H2 Leak,1
+CARD-03,Lunar_Microwave_Sintering_npFe0_DustCloud,28.0,56.5,6.8,0.16,burn,NASA LSII Microwave Sintering Nanophase Iron Dust Coupling,1
+CARD-04,Lunar_CaRD_ClosedLoop_Purged_Safe,15.7,56.5,0.4,0.16,extinct,NASA CaRD Closed-Loop Nitrogen-Purged Safe Operation,0
+HALO-01,Gateway_HALO_Quiescent_RackOverheat_26.5O2,26.5,70.3,6.8,0.16,burn,NASA Gateway HALO Uncrewed Quiescent Mode Power Rack Overheat,1
+HALO-02,Gateway_HALO_IMV_Duct_SmokeSpread_30O2,30.0,70.3,9.5,0.16,burn,NASA GIEM Gateway Integrated ECLSS Model Inter-Module Smoke,1
+HALO-03,Gateway_HALO_IMV_Shutoff_TCCS_Scrub_Safe,15.9,70.3,0.3,0.16,extinct,NASA Gateway HALO Automated IMV Shutoff + TCCS Charcoal Safe,0
+HALO-04,Orion_OLIF_FDS_Portable_Quench_Safe,16.1,70.3,27.5,0.16,extinct,NASA Orion OLIF Portable Suppression + ARS Scrubbing Safe,0
+LTV-01,Lunar_Rover_LTV_Electrostatic_Dust_ESD_34O2,34.0,56.5,6.8,0.16,burn,NASA Lunar Triboelectric/UV Charged Dust ESD in 34% O2 Cabin,1
+LTV-02,Lunar_PressurizedRover_CryoNight_Harness,34.0,56.5,5.5,0.16,burn,NASA Pressurized Rover -196C Cryo Fatigue Wire Insulation Fault,1
+LTV-03,Lunar_LTV_EDS_ElectrodynamicShield_Safe,15.6,56.5,0.4,0.16,extinct,NASA Electrodynamic Dust Shield (EDS) Prevents ESD Spark,0
+LUNA-41,Lunar_0.16g_Polyethylene_Wire_34O2_Test4,34.0,56.5,6.8,0.16,burn,NASA-STD-6001B Test 4 Wire Insulation Fail at 0.16g 34% O2,1
+LUNA-42,Lunar_0.16g_Fluoropolymer_Wire_AFCI_Safe,15.8,56.5,0.5,0.16,extinct,NASA-STD-6001B Test 4 Fluoropolymer + AFCI Protected Safe,0
+LUNA-43,Lunar_0.16g_LiquidO2_AdiabaticCompression,85.0,56.5,8.0,0.16,burn,NASA Lunar ISRU LOX Valve Adiabatic Compression Ignition,1
+LUNA-44,Lunar_0.16g_HEPA_0.1mgm3_DustControl_Safe,16.0,56.5,26.0,0.16,extinct,NASA-STD-3001 Lunar Dust <= 0.1 mg/m3 HEPA Filtered Safe,0
+MARS-038G-01,Mars_0.38g_PMMA_PeakSpread_10.4cms,28.0,70.3,10.4,0.38,burn,NASA NTRS 0.38g Peak Buoyant Flame Spread (10.4 cm/s),1
+MARS-038G-02,Mars_0.38g_SIBAL_Cotton_UpwardSpread_34O2,34.0,56.5,10.4,0.38,burn,NASA Partial Gravity 0.38g Enhanced Flammability Limit,1
+MARS-038G-03,Mars_0.38g_ThinPaper_Centrifuge_21O2,21.0,101.3,10.4,0.38,burn,NASA Drop Tower Centrifuge 0.38g Thin Solid Flame Spread,1
+MARS-038G-04,Mars_0.38g_PMMA_LowO2_RadiativeQuench,15.5,70.3,0.5,0.38,extinct,NASA 0.38g Low-O2 Radiative Quenching Limit,0
+MARS-038G-05,Mars_0.38g_Solid_HighFlow_Blowoff,16.2,70.3,28.0,0.38,extinct,NASA 0.38g Convective Blowoff Beyond Peak,0
+MARS-ATMOS-01,Mars_Habitat_8.2psia_34O2_N2Ar_Mix_Burn,34.0,56.5,10.4,0.38,burn,NASA NTRS Mars 34% O2 / 41.3% N2 / 24.6% Ar Binary Inert Mix,1
+MARS-ATMOS-02,Mars_Habitat_8.2psia_37O2_UpperBand_Burn,37.0,56.5,10.0,0.38,burn,NASA EAWG Mars 8.2 psia Upper Control Band 37% O2 Hazard,1
+MARS-ATMOS-03,Mars_Habitat_ArgonRich_LowerHeatCap_Burn,29.0,56.5,9.5,0.38,burn,NASA Argon Diluent Lower Thermal Capacity Increases Flame Temp,1
+MARS-ATMOS-04,Mars_Habitat_InSitu_CO2_Diluent_Quench,16.0,70.3,0.4,0.38,extinct,NASA Mars In-Situ CO2 Diluent (+3.2% LOI Bonus) Quench,0
+MARS-ATMOS-05,Mars_Habitat_30pctDiluent_STD3001_Safe,15.8,56.5,26.5,0.38,extinct,NASA-STD-3001 Minimum 30% Diluent Non-Combustible Purge,0
+MOXIE-01,Mars_MOXIE_SOXE_O2_800C_SealLeak,65.0,70.3,8.0,0.38,burn,NASA Perseverance MOXIE Solid Oxide Electrolysis 800C O2,1
+MOXIE-02,Mars_ISRU_24t_LOX_Methane_Sabatier_Leak,42.0,70.3,10.4,0.38,burn,NASA Mars ISRU 200x MOXIE + Sabatier CH4/LOX Depot Hazard,1
+MOXIE-03,Mars_Sabatier_CO2_4H2_Catalytic_Overtemp,35.0,70.3,9.0,0.38,burn,NASA Sabatier Reactor (CO2 + 4H2 -> CH4 + 2H2O) H2 Leak,1
+MOXIE-04,Mars_MOXIE_Remote_Outpost_Isolated_Safe,15.5,56.5,0.3,0.38,extinct,NASA Remote Automated ISRU Plant Isolated from Crew Habitat,0
+MOXIE-05,Mars_LOX_Valve_Cleanliness_Purged_Safe,15.9,70.3,0.4,0.38,extinct,NASA LOX Particle-Impact Prevention & Helium Purge Safe,0
+MARS-METAL-01,Mars_Mg_Powder_CO2_95pct_Combustion,38.0,56.5,10.4,0.38,burn,NASA NTRS Magnesium/Metal Powder Combustion in 95% Mars CO2,1
+MARS-METAL-02,Mars_Al_Powder_CO2_ISRU_Propellant,36.0,56.5,9.0,0.38,burn,NASA Mars Metal-CO2 In-Situ Ascent Engine Propellant Study,1
+MARS-METAL-03,Mars_Curiosity_SAM_Pyrolysis_O2_Chamber,34.0,70.3,6.0,0.38,burn,NASA Curiosity SAM Regolith O2 Combustion Mass-Spec Analysis,1
+MARS-METAL-04,Mars_Metal_CO2_Inert_DustBed_Quench,15.6,56.5,0.4,0.38,extinct,NASA Metal-CO2 Reactor Thermal Quench Below Ignition Temp,0
+MARS-DUST-01,Mars_DustDevil_Triboelectric_Paschen_Spark,34.0,56.5,10.4,0.38,burn,NASA Perseverance SuperCam Confirmed Triboelectric Dust Spark,1
+MARS-DUST-02,Mars_Clay_Silicate_Dipole_ESD_Ignition,30.0,56.5,9.5,0.38,burn,NASA NTRS Martian Dust Charge Separation + O2 Vent Ignition,1
+MARS-DUST-03,Mars_Dust_Radical_CO2_H2O_Split_Hazard,28.0,70.3,8.0,0.38,burn,NASA Mars Electrical Discharge Radical Chemistry in ISRU Intake,1
+MARS-DUST-04,Mars_ESP_ElectrostaticPrecipitator_Safe,15.7,56.5,0.4,0.38,extinct,NASA Electrostatic Precipitator (ESP) Clears Dust Before ISRU,0
+MARS-DUST-05,Mars_Grounded_SuitLock_DustFilter_Safe,16.0,70.3,27.0,0.38,extinct,NASA Grounded Mars Airlock + HEPA Dust Control Prevents ESD,0
+MARS-PERCHLORATE-01,Mars_Regolith_Perchlorate_ClO4_Oxidizer,36.0,56.5,10.4,0.38,burn,NASA Mars Perchlorate (ClO4-) Strong Oxidizer Reactivity,1
+MARS-PERCHLORATE-02,Mars_SubsurfaceIce_Perchlorate_Corrosion,31.0,70.3,8.5,0.38,burn,NASA Mars Subsurface Ice Oxychlorine Corrosion in ISRU Loop,1
+MARS-PERCHLORATE-03,Mars_GASP_Smolder_Polymer_vs_Dust_Plume,29.0,70.3,7.5,0.38,burn,NASA GRC GASP Lab Smoldering Aerosol vs Martian Dust CFD,1
+MARS-PERCHLORATE-04,Mars_Perchlorate_ElectroScrub_TCCS_Safe,15.8,70.3,0.5,0.38,extinct,NASA Biological/Chemical Perchlorate Scrubbing Safe,0
+MARS-FDS-01,Mars_0.38g_CO2_Extinguisher_AsphyxiaRisk,34.0,56.5,10.4,0.38,burn,NASA NTRS Mars Enclosed Habitat CO2 Discharge Asphyxiation Risk,1
+MARS-FDS-02,Mars_0.38g_WaterMist_10to50um_Quench,16.0,70.3,27.5,0.38,extinct,NASA/CSM Fine Water Mist (10-50 um) 0.38g Latent Cooling Quench,0
+MARS-FDS-03,Mars_0.38g_WaterMist_N2_Driven_NoResidue,15.7,56.5,26.5,0.38,extinct,NASA Fine Water Mist Driven by N2 Preserves Breathing Air,0
+MARS-FDS-04,Mars_0.38g_TCCS_Charcoal_Catalytic_Clean,15.9,70.3,0.4,0.38,extinct,NASA ECLSS TCCS Activated Charcoal + Catalytic Oxidizer Cleanup,0
+MARS-MAV-01,Mars_MAV_NTO_MMH_CheckValve_Leak_Fire,55.0,70.3,10.4,0.38,burn,NASA NTRS Mars Ascent Vehicle NTO/MMH Hypergolic Vapor Leak,1
+MARS-MAV-02,Mars_MAV_MON25_HeliumManifold_Breach,48.0,70.3,9.0,0.38,burn,NASA Mars Observer / MAV Helium Pressurization Cross-Leak,1
+MARS-MAV-03,Mars_MAV_Suit_NTO_MMH_Offgassing_Toxic,34.0,56.5,7.0,0.38,burn,NASA Hypergolic NTO/MMH Nitric Acid Offgassing During Egress,1
+MARS-MAV-04,Mars_MAV_Purged_DoubleIsolation_Safe,15.6,70.3,0.3,0.38,extinct,NASA MAV Double-Isolation Valve & Helium Purge Safe,0
+MARS-ROVER-01,Mars_InflatableHabitat_34O2_Softgoods,34.0,56.5,10.4,0.38,burn,NASA Mars Lightweight Inflatable Habitat 8.2 psia 34% O2,1
+MARS-ROVER-02,Mars_Rover_LiIon_FTRC_0.38g_Propagation,30.0,70.3,9.5,0.38,burn,NASA FTRC Li-ion Thermal Runaway Propagation in 0.38g Rover,1
+MARS-ROVER-03,Mars_Habitat_Kevlar60_PBI40_Shield_Safe,15.9,56.5,0.4,0.38,extinct,NASA Mars Habitat Kevlar/PBI + AFCI Protected Safe,0
+MARS-40,Mars_0.38g_OpposedFlow_Cellulose_Peak,25.0,70.3,10.4,0.38,burn,NASA 0.38g Opposed-Flow Flame Spread Correlation,1
+MARS-41,Mars_0.38g_Concurrent_PMMA_Spread_34O2,34.0,56.5,11.0,0.38,burn,NASA 0.38g Concurrent-Flow PMMA Flame Spread Scaling,1
+MARS-42,Mars_0.38g_ZeroFlow_Quiescent_Quench,15.4,56.5,0.2,0.38,extinct,NASA 0.38g Quiescent Radiative Extinction Floor,0
+MARS-43,Mars_0.38g_WaterMist_DualNozzle_RackSafe,16.1,70.3,28.0,0.38,extinct,NASA 0.38g Multi-Nozzle FWM Rack Penetration Safe,0
+MARS-44,Mars_0.38g_ISRU_Sabatier_Vent_Flare_Safe,15.8,56.5,0.4,0.38,extinct,NASA Mars Sabatier Safe Venting & Sensor Array Shutoff,0
+NASA-BASS-0001,BASS_PMMA_SIBAL_Extinct_70.3kPa_14.5O2,14.5,70.3,0.2,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0002,BASS_PMMA_SIBAL_Extinct_70.3kPa_14.5O2,14.5,70.3,0.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0003,BASS_PMMA_SIBAL_Extinct_70.3kPa_14.5O2,14.5,70.3,3.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0004,BASS_PMMA_SIBAL_Extinct_70.3kPa_14.5O2,14.5,70.3,6.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0005,BASS_PMMA_SIBAL_Extinct_70.3kPa_14.5O2,14.5,70.3,10.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0006,BASS_PMMA_SIBAL_Extinct_70.3kPa_14.5O2,14.5,70.3,15.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0007,BASS_PMMA_SIBAL_Extinct_70.3kPa_14.5O2,14.5,70.3,20.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0008,BASS_PMMA_SIBAL_Extinct_70.3kPa_14.5O2,14.5,70.3,28.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0009,BASS_PMMA_SIBAL_Extinct_70.3kPa_14.5O2,14.5,70.3,33.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0010,BASS_PMMA_SIBAL_Extinct_70.3kPa_15.8O2,15.8,70.3,0.2,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0011,BASS_PMMA_SIBAL_Extinct_70.3kPa_15.8O2,15.8,70.3,0.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0012,BASS_PMMA_SIBAL_Extinct_70.3kPa_15.8O2,15.8,70.3,3.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0013,BASS_PMMA_SIBAL_Extinct_70.3kPa_15.8O2,15.8,70.3,6.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0014,BASS_PMMA_SIBAL_Extinct_70.3kPa_15.8O2,15.8,70.3,10.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0015,BASS_PMMA_SIBAL_Extinct_70.3kPa_15.8O2,15.8,70.3,15.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0016,BASS_PMMA_SIBAL_Extinct_70.3kPa_15.8O2,15.8,70.3,20.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0017,BASS_PMMA_SIBAL_Extinct_70.3kPa_15.8O2,15.8,70.3,28.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0018,BASS_PMMA_SIBAL_Extinct_70.3kPa_15.8O2,15.8,70.3,33.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0019,BASS_PMMA_SIBAL_Extinct_70.3kPa_18.5O2,18.5,70.3,0.2,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0020,BASS_PMMA_SIBAL_Extinct_70.3kPa_18.5O2,18.5,70.3,0.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0021,BASS_PMMA_SIBAL_Burn_70.3kPa_18.5O2,18.5,70.3,3.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0022,BASS_PMMA_SIBAL_Burn_70.3kPa_18.5O2,18.5,70.3,6.5,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0023,BASS_PMMA_SIBAL_Burn_70.3kPa_18.5O2,18.5,70.3,10.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0024,BASS_PMMA_SIBAL_Burn_70.3kPa_18.5O2,18.5,70.3,15.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0025,BASS_PMMA_SIBAL_Burn_70.3kPa_18.5O2,18.5,70.3,20.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0026,BASS_PMMA_SIBAL_Extinct_70.3kPa_18.5O2,18.5,70.3,28.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0027,BASS_PMMA_SIBAL_Extinct_70.3kPa_18.5O2,18.5,70.3,33.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0028,BASS_PMMA_SIBAL_Extinct_70.3kPa_20.9O2,20.9,70.3,0.2,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0029,BASS_PMMA_SIBAL_Extinct_70.3kPa_20.9O2,20.9,70.3,0.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0030,BASS_PMMA_SIBAL_Burn_70.3kPa_20.9O2,20.9,70.3,3.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0031,BASS_PMMA_SIBAL_Burn_70.3kPa_20.9O2,20.9,70.3,6.5,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0032,BASS_PMMA_SIBAL_Burn_70.3kPa_20.9O2,20.9,70.3,10.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0033,BASS_PMMA_SIBAL_Burn_70.3kPa_20.9O2,20.9,70.3,15.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0034,BASS_PMMA_SIBAL_Burn_70.3kPa_20.9O2,20.9,70.3,20.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0035,BASS_PMMA_SIBAL_Extinct_70.3kPa_20.9O2,20.9,70.3,28.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0036,BASS_PMMA_SIBAL_Extinct_70.3kPa_20.9O2,20.9,70.3,33.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0037,BASS_PMMA_SIBAL_Extinct_70.3kPa_24.0O2,24.0,70.3,0.2,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0038,BASS_PMMA_SIBAL_Extinct_70.3kPa_24.0O2,24.0,70.3,0.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0039,BASS_PMMA_SIBAL_Burn_70.3kPa_24.0O2,24.0,70.3,3.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0040,BASS_PMMA_SIBAL_Burn_70.3kPa_24.0O2,24.0,70.3,6.5,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0041,BASS_PMMA_SIBAL_Burn_70.3kPa_24.0O2,24.0,70.3,10.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0042,BASS_PMMA_SIBAL_Burn_70.3kPa_24.0O2,24.0,70.3,15.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0043,BASS_PMMA_SIBAL_Burn_70.3kPa_24.0O2,24.0,70.3,20.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0044,BASS_PMMA_SIBAL_Burn_70.3kPa_30.0O2,30.0,70.3,3.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0045,BASS_PMMA_SIBAL_Burn_70.3kPa_30.0O2,30.0,70.3,6.5,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0046,BASS_PMMA_SIBAL_Burn_70.3kPa_30.0O2,30.0,70.3,10.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0047,BASS_PMMA_SIBAL_Burn_70.3kPa_30.0O2,30.0,70.3,15.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0048,BASS_PMMA_SIBAL_Burn_70.3kPa_30.0O2,30.0,70.3,20.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0049,BASS_PMMA_SIBAL_Burn_70.3kPa_30.0O2,30.0,70.3,28.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0050,BASS_PMMA_SIBAL_Burn_70.3kPa_30.0O2,30.0,70.3,33.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0051,BASS_PMMA_SIBAL_Extinct_101.3kPa_14.5O2,14.5,101.3,0.2,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0052,BASS_PMMA_SIBAL_Extinct_101.3kPa_14.5O2,14.5,101.3,0.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0053,BASS_PMMA_SIBAL_Extinct_101.3kPa_14.5O2,14.5,101.3,3.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0054,BASS_PMMA_SIBAL_Extinct_101.3kPa_14.5O2,14.5,101.3,6.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0055,BASS_PMMA_SIBAL_Extinct_101.3kPa_14.5O2,14.5,101.3,10.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0056,BASS_PMMA_SIBAL_Extinct_101.3kPa_14.5O2,14.5,101.3,15.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0057,BASS_PMMA_SIBAL_Extinct_101.3kPa_14.5O2,14.5,101.3,20.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0058,BASS_PMMA_SIBAL_Extinct_101.3kPa_14.5O2,14.5,101.3,28.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0059,BASS_PMMA_SIBAL_Extinct_101.3kPa_14.5O2,14.5,101.3,33.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0060,BASS_PMMA_SIBAL_Extinct_101.3kPa_15.8O2,15.8,101.3,0.2,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0061,BASS_PMMA_SIBAL_Extinct_101.3kPa_15.8O2,15.8,101.3,0.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0062,BASS_PMMA_SIBAL_Extinct_101.3kPa_15.8O2,15.8,101.3,3.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0063,BASS_PMMA_SIBAL_Extinct_101.3kPa_15.8O2,15.8,101.3,6.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0064,BASS_PMMA_SIBAL_Extinct_101.3kPa_15.8O2,15.8,101.3,10.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0065,BASS_PMMA_SIBAL_Extinct_101.3kPa_15.8O2,15.8,101.3,15.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0066,BASS_PMMA_SIBAL_Extinct_101.3kPa_15.8O2,15.8,101.3,20.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0067,BASS_PMMA_SIBAL_Extinct_101.3kPa_15.8O2,15.8,101.3,28.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0068,BASS_PMMA_SIBAL_Extinct_101.3kPa_15.8O2,15.8,101.3,33.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0069,BASS_PMMA_SIBAL_Extinct_101.3kPa_18.5O2,18.5,101.3,0.2,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0070,BASS_PMMA_SIBAL_Extinct_101.3kPa_18.5O2,18.5,101.3,0.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0071,BASS_PMMA_SIBAL_Burn_101.3kPa_18.5O2,18.5,101.3,3.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0072,BASS_PMMA_SIBAL_Burn_101.3kPa_18.5O2,18.5,101.3,6.5,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0073,BASS_PMMA_SIBAL_Burn_101.3kPa_18.5O2,18.5,101.3,10.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0074,BASS_PMMA_SIBAL_Burn_101.3kPa_18.5O2,18.5,101.3,15.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0075,BASS_PMMA_SIBAL_Burn_101.3kPa_18.5O2,18.5,101.3,20.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0076,BASS_PMMA_SIBAL_Extinct_101.3kPa_18.5O2,18.5,101.3,28.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0077,BASS_PMMA_SIBAL_Extinct_101.3kPa_18.5O2,18.5,101.3,33.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0078,BASS_PMMA_SIBAL_Extinct_101.3kPa_20.9O2,20.9,101.3,0.2,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0079,BASS_PMMA_SIBAL_Extinct_101.3kPa_20.9O2,20.9,101.3,0.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0080,BASS_PMMA_SIBAL_Burn_101.3kPa_20.9O2,20.9,101.3,3.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0081,BASS_PMMA_SIBAL_Burn_101.3kPa_20.9O2,20.9,101.3,6.5,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0082,BASS_PMMA_SIBAL_Burn_101.3kPa_20.9O2,20.9,101.3,10.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0083,BASS_PMMA_SIBAL_Burn_101.3kPa_20.9O2,20.9,101.3,15.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0084,BASS_PMMA_SIBAL_Burn_101.3kPa_20.9O2,20.9,101.3,20.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0085,BASS_PMMA_SIBAL_Extinct_101.3kPa_20.9O2,20.9,101.3,28.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0086,BASS_PMMA_SIBAL_Extinct_101.3kPa_20.9O2,20.9,101.3,33.0,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0087,BASS_PMMA_SIBAL_Extinct_101.3kPa_24.0O2,24.0,101.3,0.2,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0088,BASS_PMMA_SIBAL_Extinct_101.3kPa_24.0O2,24.0,101.3,0.5,0.0,extinct,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,0
+NASA-BASS-0089,BASS_PMMA_SIBAL_Burn_101.3kPa_24.0O2,24.0,101.3,3.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0090,BASS_PMMA_SIBAL_Burn_101.3kPa_24.0O2,24.0,101.3,6.5,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0091,BASS_PMMA_SIBAL_Burn_101.3kPa_24.0O2,24.0,101.3,10.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0092,BASS_PMMA_SIBAL_Burn_101.3kPa_24.0O2,24.0,101.3,15.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0093,BASS_PMMA_SIBAL_Burn_101.3kPa_24.0O2,24.0,101.3,20.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0094,BASS_PMMA_SIBAL_Burn_101.3kPa_30.0O2,30.0,101.3,3.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0095,BASS_PMMA_SIBAL_Burn_101.3kPa_30.0O2,30.0,101.3,6.5,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0096,BASS_PMMA_SIBAL_Burn_101.3kPa_30.0O2,30.0,101.3,10.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0097,BASS_PMMA_SIBAL_Burn_101.3kPa_30.0O2,30.0,101.3,15.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0098,BASS_PMMA_SIBAL_Burn_101.3kPa_30.0O2,30.0,101.3,20.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0099,BASS_PMMA_SIBAL_Burn_101.3kPa_30.0O2,30.0,101.3,28.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-BASS-0100,BASS_PMMA_SIBAL_Burn_101.3kPa_30.0O2,30.0,101.3,33.0,0.0,burn,NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve,1
+NASA-SOFIE-0101,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_14.8O2,14.8,56.5,0.3,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0102,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_14.8O2,14.8,56.5,4.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0103,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_14.8O2,14.8,56.5,7.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0104,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_14.8O2,14.8,56.5,12.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0105,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_14.8O2,14.8,56.5,18.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0106,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_14.8O2,14.8,56.5,27.5,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0107,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_16.0O2,16.0,56.5,0.3,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0108,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_16.0O2,16.0,56.5,4.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0109,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_16.0O2,16.0,56.5,7.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0110,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_16.0O2,16.0,56.5,12.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0111,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_16.0O2,16.0,56.5,18.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0112,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_16.0O2,16.0,56.5,27.5,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0113,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_19.0O2,19.0,56.5,0.3,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0114,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_19.0O2,19.0,56.5,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0115,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_19.0O2,19.0,56.5,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0116,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_19.0O2,19.0,56.5,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0117,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_19.0O2,19.0,56.5,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0118,SoFIE_CIR_RTDFS_Quench_Extinct_56.5kPa_19.0O2,19.0,56.5,27.5,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0119,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_26.5O2,26.5,56.5,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0120,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_26.5O2,26.5,56.5,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0121,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_26.5O2,26.5,56.5,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0122,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_26.5O2,26.5,56.5,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0123,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_26.5O2,26.5,56.5,27.5,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0124,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_34.0O2,34.0,56.5,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0125,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_34.0O2,34.0,56.5,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0126,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_34.0O2,34.0,56.5,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0127,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_34.0O2,34.0,56.5,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0128,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_34.0O2,34.0,56.5,27.5,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0129,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_37.0O2,37.0,56.5,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0130,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_37.0O2,37.0,56.5,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0131,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_37.0O2,37.0,56.5,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0132,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_37.0O2,37.0,56.5,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0133,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_56.5kPa_37.0O2,37.0,56.5,27.5,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0134,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_14.8O2,14.8,70.3,0.3,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0135,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_14.8O2,14.8,70.3,4.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0136,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_14.8O2,14.8,70.3,7.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0137,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_14.8O2,14.8,70.3,12.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0138,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_14.8O2,14.8,70.3,18.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0139,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_14.8O2,14.8,70.3,27.5,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0140,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_16.0O2,16.0,70.3,0.3,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0141,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_16.0O2,16.0,70.3,4.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0142,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_16.0O2,16.0,70.3,7.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0143,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_16.0O2,16.0,70.3,12.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0144,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_16.0O2,16.0,70.3,18.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0145,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_16.0O2,16.0,70.3,27.5,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0146,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_19.0O2,19.0,70.3,0.3,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0147,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_19.0O2,19.0,70.3,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0148,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_19.0O2,19.0,70.3,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0149,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_19.0O2,19.0,70.3,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0150,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_19.0O2,19.0,70.3,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0151,SoFIE_CIR_RTDFS_Quench_Extinct_70.3kPa_19.0O2,19.0,70.3,27.5,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0152,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_26.5O2,26.5,70.3,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0153,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_26.5O2,26.5,70.3,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0154,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_26.5O2,26.5,70.3,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0155,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_26.5O2,26.5,70.3,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0156,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_26.5O2,26.5,70.3,27.5,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0157,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_34.0O2,34.0,70.3,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0158,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_34.0O2,34.0,70.3,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0159,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_34.0O2,34.0,70.3,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0160,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_34.0O2,34.0,70.3,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0161,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_34.0O2,34.0,70.3,27.5,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0162,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_37.0O2,37.0,70.3,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0163,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_37.0O2,37.0,70.3,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0164,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_37.0O2,37.0,70.3,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0165,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_37.0O2,37.0,70.3,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0166,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_70.3kPa_37.0O2,37.0,70.3,27.5,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0167,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_14.8O2,14.8,101.3,0.3,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0168,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_14.8O2,14.8,101.3,4.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0169,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_14.8O2,14.8,101.3,7.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0170,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_14.8O2,14.8,101.3,12.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0171,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_14.8O2,14.8,101.3,18.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0172,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_14.8O2,14.8,101.3,27.5,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0173,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_16.0O2,16.0,101.3,0.3,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0174,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_16.0O2,16.0,101.3,4.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0175,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_16.0O2,16.0,101.3,7.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0176,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_16.0O2,16.0,101.3,12.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0177,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_16.0O2,16.0,101.3,18.0,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0178,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_16.0O2,16.0,101.3,27.5,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0179,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_19.0O2,19.0,101.3,0.3,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0180,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_19.0O2,19.0,101.3,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0181,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_19.0O2,19.0,101.3,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0182,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_19.0O2,19.0,101.3,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0183,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_19.0O2,19.0,101.3,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0184,SoFIE_CIR_RTDFS_Quench_Extinct_101.3kPa_19.0O2,19.0,101.3,27.5,0.0,extinct,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",0
+NASA-SOFIE-0185,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_26.5O2,26.5,101.3,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0186,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_26.5O2,26.5,101.3,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0187,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_26.5O2,26.5,101.3,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0188,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_26.5O2,26.5,101.3,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0189,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_26.5O2,26.5,101.3,27.5,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0190,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_34.0O2,34.0,101.3,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0191,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_34.0O2,34.0,101.3,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0192,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_34.0O2,34.0,101.3,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0193,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_34.0O2,34.0,101.3,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0194,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_34.0O2,34.0,101.3,27.5,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0195,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_37.0O2,37.0,101.3,4.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0196,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_37.0O2,37.0,101.3,7.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0197,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_37.0O2,37.0,101.3,12.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0198,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_37.0O2,37.0,101.3,18.0,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SOFIE-0199,SoFIE_CIR_GEL_MIST_SMuRF_NCA_Burn_101.3kPa_37.0O2,37.0,101.3,27.5,0.0,burn,"NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia",1
+NASA-SAFFIRE-0200,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_15.0O2,15.0,56.5,0.4,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0201,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_15.0O2,15.0,56.5,5.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0202,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_15.0O2,15.0,56.5,10.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0203,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_15.0O2,15.0,56.5,15.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0204,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_15.0O2,15.0,56.5,20.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0205,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_15.0O2,15.0,56.5,28.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0206,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_16.2O2,16.2,56.5,0.4,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0207,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_16.2O2,16.2,56.5,5.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0208,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_16.2O2,16.2,56.5,10.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0209,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_16.2O2,16.2,56.5,15.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0210,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_16.2O2,16.2,56.5,20.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0211,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_16.2O2,16.2,56.5,28.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0212,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_18.5O2,18.5,56.5,0.4,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0213,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_18.5O2,18.5,56.5,5.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0214,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_18.5O2,18.5,56.5,10.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0215,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_18.5O2,18.5,56.5,15.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0216,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_18.5O2,18.5,56.5,20.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0217,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_18.5O2,18.5,56.5,28.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0218,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_21.0O2,21.0,56.5,0.4,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0219,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_21.0O2,21.0,56.5,5.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0220,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_21.0O2,21.0,56.5,10.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0221,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_21.0O2,21.0,56.5,15.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0222,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_21.0O2,21.0,56.5,20.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0223,SAFFIRE_PostFire_SmokeEater_Safe_56.5kPa_21.0O2,21.0,56.5,28.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0224,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_26.5O2,26.5,56.5,5.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0225,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_26.5O2,26.5,56.5,10.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0226,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_26.5O2,26.5,56.5,15.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0227,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_26.5O2,26.5,56.5,20.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0228,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_26.5O2,26.5,56.5,28.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0229,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_34.0O2,34.0,56.5,5.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0230,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_34.0O2,34.0,56.5,10.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0231,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_34.0O2,34.0,56.5,15.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0232,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_34.0O2,34.0,56.5,20.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0233,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_56.5kPa_34.0O2,34.0,56.5,28.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0234,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_15.0O2,15.0,101.3,0.4,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0235,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_15.0O2,15.0,101.3,5.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0236,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_15.0O2,15.0,101.3,10.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0237,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_15.0O2,15.0,101.3,15.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0238,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_15.0O2,15.0,101.3,20.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0239,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_15.0O2,15.0,101.3,28.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0240,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_16.2O2,16.2,101.3,0.4,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0241,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_16.2O2,16.2,101.3,5.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0242,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_16.2O2,16.2,101.3,10.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0243,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_16.2O2,16.2,101.3,15.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0244,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_16.2O2,16.2,101.3,20.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0245,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_16.2O2,16.2,101.3,28.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0246,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_18.5O2,18.5,101.3,0.4,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0247,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_18.5O2,18.5,101.3,5.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0248,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_18.5O2,18.5,101.3,10.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0249,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_18.5O2,18.5,101.3,15.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0250,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_18.5O2,18.5,101.3,20.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0251,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_18.5O2,18.5,101.3,28.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0252,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_21.0O2,21.0,101.3,0.4,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0253,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_21.0O2,21.0,101.3,5.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0254,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_21.0O2,21.0,101.3,10.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0255,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_21.0O2,21.0,101.3,15.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0256,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_21.0O2,21.0,101.3,20.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0257,SAFFIRE_PostFire_SmokeEater_Safe_101.3kPa_21.0O2,21.0,101.3,28.0,0.0,extinct,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,0
+NASA-SAFFIRE-0258,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_26.5O2,26.5,101.3,5.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0259,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_26.5O2,26.5,101.3,10.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0260,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_26.5O2,26.5,101.3,15.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0261,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_26.5O2,26.5,101.3,20.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0262,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_26.5O2,26.5,101.3,28.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0263,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_34.0O2,34.0,101.3,5.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0264,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_34.0O2,34.0,101.3,10.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0265,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_34.0O2,34.0,101.3,15.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0266,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_34.0O2,34.0,101.3,20.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-SAFFIRE-0267,SAFFIRE_40cm_SIBAL_Nomex_PMMA_Burn_101.3kPa_34.0O2,34.0,101.3,28.0,0.0,burn,NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD,1
+NASA-FLEX-0268,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_14.2O2,14.2,101.3,0.1,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0269,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_14.2O2,14.2,101.3,0.4,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0270,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_14.2O2,14.2,101.3,2.5,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0271,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_14.2O2,14.2,101.3,5.5,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0272,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_14.2O2,14.2,101.3,9.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0273,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_14.2O2,14.2,101.3,14.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0274,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_14.2O2,14.2,101.3,29.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0275,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_15.5O2,15.5,101.3,0.1,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0276,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_15.5O2,15.5,101.3,0.4,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0277,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_15.5O2,15.5,101.3,2.5,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0278,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_15.5O2,15.5,101.3,5.5,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0279,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_15.5O2,15.5,101.3,9.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0280,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_15.5O2,15.5,101.3,14.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0281,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_15.5O2,15.5,101.3,29.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0282,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_18.0O2,18.0,101.3,0.1,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0283,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_18.0O2,18.0,101.3,0.4,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0284,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_18.0O2,18.0,101.3,2.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0285,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_18.0O2,18.0,101.3,5.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0286,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_18.0O2,18.0,101.3,9.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0287,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_18.0O2,18.0,101.3,14.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0288,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_18.0O2,18.0,101.3,29.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0289,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_21.0O2,21.0,101.3,0.1,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0290,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_21.0O2,21.0,101.3,0.4,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0291,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_21.0O2,21.0,101.3,2.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0292,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_21.0O2,21.0,101.3,5.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0293,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_21.0O2,21.0,101.3,9.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0294,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_21.0O2,21.0,101.3,14.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0295,FLEX_Droplet_Radiative_Quench_Extinct_101.3kPa_21.0O2,21.0,101.3,29.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0296,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_28.0O2,28.0,101.3,2.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0297,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_28.0O2,28.0,101.3,5.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0298,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_28.0O2,28.0,101.3,9.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0299,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_28.0O2,28.0,101.3,14.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0300,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_28.0O2,28.0,101.3,29.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0301,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_35.0O2,35.0,101.3,2.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0302,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_35.0O2,35.0,101.3,5.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0303,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_35.0O2,35.0,101.3,9.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0304,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_35.0O2,35.0,101.3,14.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0305,FLEX_Droplet_CoolFlame_Reignition_Burn_101.3kPa_35.0O2,35.0,101.3,29.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0306,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_14.2O2,14.2,150.0,0.1,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0307,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_14.2O2,14.2,150.0,0.4,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0308,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_14.2O2,14.2,150.0,2.5,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0309,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_14.2O2,14.2,150.0,5.5,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0310,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_14.2O2,14.2,150.0,9.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0311,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_14.2O2,14.2,150.0,14.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0312,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_14.2O2,14.2,150.0,29.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0313,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_15.5O2,15.5,150.0,0.1,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0314,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_15.5O2,15.5,150.0,0.4,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0315,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_15.5O2,15.5,150.0,2.5,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0316,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_15.5O2,15.5,150.0,5.5,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0317,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_15.5O2,15.5,150.0,9.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0318,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_15.5O2,15.5,150.0,14.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0319,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_15.5O2,15.5,150.0,29.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0320,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_18.0O2,18.0,150.0,0.1,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0321,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_18.0O2,18.0,150.0,0.4,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0322,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_18.0O2,18.0,150.0,2.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0323,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_18.0O2,18.0,150.0,5.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0324,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_18.0O2,18.0,150.0,9.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0325,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_18.0O2,18.0,150.0,14.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0326,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_18.0O2,18.0,150.0,29.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0327,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_21.0O2,21.0,150.0,0.1,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0328,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_21.0O2,21.0,150.0,0.4,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0329,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_21.0O2,21.0,150.0,2.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0330,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_21.0O2,21.0,150.0,5.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0331,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_21.0O2,21.0,150.0,9.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0332,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_21.0O2,21.0,150.0,14.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0333,FLEX_Droplet_Radiative_Quench_Extinct_150.0kPa_21.0O2,21.0,150.0,29.0,0.0,extinct,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,0
+NASA-FLEX-0334,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_28.0O2,28.0,150.0,2.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0335,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_28.0O2,28.0,150.0,5.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0336,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_28.0O2,28.0,150.0,9.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0337,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_28.0O2,28.0,150.0,14.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0338,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_28.0O2,28.0,150.0,29.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0339,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_35.0O2,35.0,150.0,2.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0340,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_35.0O2,35.0,150.0,5.5,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0341,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_35.0O2,35.0,150.0,9.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0342,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_35.0O2,35.0,150.0,14.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-FLEX-0343,FLEX_Droplet_CoolFlame_Reignition_Burn_150.0kPa_35.0O2,35.0,150.0,29.0,0.0,burn,NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction,1
+NASA-ACME-0344,ACME_SOFBALL_Radiative_Extinction_56.5kPa_14.6O2,14.6,56.5,0.2,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0345,ACME_SOFBALL_Radiative_Extinction_56.5kPa_14.6O2,14.6,56.5,3.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0346,ACME_SOFBALL_Radiative_Extinction_56.5kPa_14.6O2,14.6,56.5,7.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0347,ACME_SOFBALL_Radiative_Extinction_56.5kPa_14.6O2,14.6,56.5,11.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0348,ACME_SOFBALL_Radiative_Extinction_56.5kPa_14.6O2,14.6,56.5,17.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0349,ACME_SOFBALL_Radiative_Extinction_56.5kPa_14.6O2,14.6,56.5,27.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0350,ACME_SOFBALL_Radiative_Extinction_56.5kPa_14.6O2,14.6,56.5,32.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0351,ACME_SOFBALL_Radiative_Extinction_56.5kPa_16.0O2,16.0,56.5,0.2,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0352,ACME_SOFBALL_Radiative_Extinction_56.5kPa_16.0O2,16.0,56.5,3.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0353,ACME_SOFBALL_Radiative_Extinction_56.5kPa_16.0O2,16.0,56.5,7.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0354,ACME_SOFBALL_Radiative_Extinction_56.5kPa_16.0O2,16.0,56.5,11.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0355,ACME_SOFBALL_Radiative_Extinction_56.5kPa_16.0O2,16.0,56.5,17.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0356,ACME_SOFBALL_Radiative_Extinction_56.5kPa_16.0O2,16.0,56.5,27.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0357,ACME_SOFBALL_Radiative_Extinction_56.5kPa_16.0O2,16.0,56.5,32.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0358,ACME_SOFBALL_Radiative_Extinction_56.5kPa_18.2O2,18.2,56.5,0.2,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0359,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_18.2O2,18.2,56.5,3.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0360,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_18.2O2,18.2,56.5,7.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0361,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_18.2O2,18.2,56.5,11.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0362,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_18.2O2,18.2,56.5,17.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0363,ACME_SOFBALL_Radiative_Extinction_56.5kPa_18.2O2,18.2,56.5,27.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0364,ACME_SOFBALL_Radiative_Extinction_56.5kPa_18.2O2,18.2,56.5,32.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0365,ACME_SOFBALL_Radiative_Extinction_56.5kPa_21.0O2,21.0,56.5,0.2,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0366,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_21.0O2,21.0,56.5,3.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0367,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_21.0O2,21.0,56.5,7.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0368,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_21.0O2,21.0,56.5,11.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0369,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_21.0O2,21.0,56.5,17.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0370,ACME_SOFBALL_Radiative_Extinction_56.5kPa_21.0O2,21.0,56.5,27.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0371,ACME_SOFBALL_Radiative_Extinction_56.5kPa_21.0O2,21.0,56.5,32.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0372,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_27.0O2,27.0,56.5,3.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0373,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_27.0O2,27.0,56.5,7.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0374,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_27.0O2,27.0,56.5,11.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0375,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_27.0O2,27.0,56.5,17.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0376,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_27.0O2,27.0,56.5,27.0,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0377,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_27.0O2,27.0,56.5,32.0,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0378,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_34.0O2,34.0,56.5,3.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0379,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_34.0O2,34.0,56.5,7.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0380,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_34.0O2,34.0,56.5,11.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0381,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_34.0O2,34.0,56.5,17.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0382,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_34.0O2,34.0,56.5,27.0,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0383,ACME_Gas_Diffusion_BRE_sFlame_Burn_56.5kPa_34.0O2,34.0,56.5,32.0,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0384,ACME_SOFBALL_Radiative_Extinction_101.3kPa_14.6O2,14.6,101.3,0.2,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0385,ACME_SOFBALL_Radiative_Extinction_101.3kPa_14.6O2,14.6,101.3,3.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0386,ACME_SOFBALL_Radiative_Extinction_101.3kPa_14.6O2,14.6,101.3,7.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0387,ACME_SOFBALL_Radiative_Extinction_101.3kPa_14.6O2,14.6,101.3,11.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0388,ACME_SOFBALL_Radiative_Extinction_101.3kPa_14.6O2,14.6,101.3,17.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0389,ACME_SOFBALL_Radiative_Extinction_101.3kPa_14.6O2,14.6,101.3,27.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0390,ACME_SOFBALL_Radiative_Extinction_101.3kPa_14.6O2,14.6,101.3,32.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0391,ACME_SOFBALL_Radiative_Extinction_101.3kPa_16.0O2,16.0,101.3,0.2,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0392,ACME_SOFBALL_Radiative_Extinction_101.3kPa_16.0O2,16.0,101.3,3.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0393,ACME_SOFBALL_Radiative_Extinction_101.3kPa_16.0O2,16.0,101.3,7.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0394,ACME_SOFBALL_Radiative_Extinction_101.3kPa_16.0O2,16.0,101.3,11.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0395,ACME_SOFBALL_Radiative_Extinction_101.3kPa_16.0O2,16.0,101.3,17.5,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0396,ACME_SOFBALL_Radiative_Extinction_101.3kPa_16.0O2,16.0,101.3,27.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0397,ACME_SOFBALL_Radiative_Extinction_101.3kPa_16.0O2,16.0,101.3,32.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0398,ACME_SOFBALL_Radiative_Extinction_101.3kPa_18.2O2,18.2,101.3,0.2,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0399,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_18.2O2,18.2,101.3,3.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0400,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_18.2O2,18.2,101.3,7.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0401,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_18.2O2,18.2,101.3,11.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0402,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_18.2O2,18.2,101.3,17.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0403,ACME_SOFBALL_Radiative_Extinction_101.3kPa_18.2O2,18.2,101.3,27.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0404,ACME_SOFBALL_Radiative_Extinction_101.3kPa_18.2O2,18.2,101.3,32.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0405,ACME_SOFBALL_Radiative_Extinction_101.3kPa_21.0O2,21.0,101.3,0.2,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0406,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_21.0O2,21.0,101.3,3.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0407,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_21.0O2,21.0,101.3,7.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0408,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_21.0O2,21.0,101.3,11.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0409,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_21.0O2,21.0,101.3,17.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0410,ACME_SOFBALL_Radiative_Extinction_101.3kPa_21.0O2,21.0,101.3,27.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0411,ACME_SOFBALL_Radiative_Extinction_101.3kPa_21.0O2,21.0,101.3,32.0,0.0,extinct,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",0
+NASA-ACME-0412,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_27.0O2,27.0,101.3,3.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0413,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_27.0O2,27.0,101.3,7.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0414,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_27.0O2,27.0,101.3,11.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0415,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_27.0O2,27.0,101.3,17.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0416,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_27.0O2,27.0,101.3,27.0,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0417,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_27.0O2,27.0,101.3,32.0,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0418,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_34.0O2,34.0,101.3,3.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0419,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_34.0O2,34.0,101.3,7.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0420,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_34.0O2,34.0,101.3,11.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0421,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_34.0O2,34.0,101.3,17.5,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0422,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_34.0O2,34.0,101.3,27.0,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-ACME-0423,ACME_Gas_Diffusion_BRE_sFlame_Burn_101.3kPa_34.0O2,34.0,101.3,32.0,0.0,burn,"NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion",1
+NASA-LUNA-0424,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_14.0O2,14.0,34.5,0.3,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0425,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_14.0O2,14.0,34.5,4.5,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0426,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_14.0O2,14.0,34.5,6.8,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0427,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_14.0O2,14.0,34.5,10.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0428,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_14.0O2,14.0,34.5,16.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0429,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_14.0O2,14.0,34.5,27.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0430,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_14.0O2,14.0,34.5,31.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0431,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_15.6O2,15.6,34.5,0.3,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0432,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_15.6O2,15.6,34.5,4.5,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0433,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_15.6O2,15.6,34.5,6.8,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0434,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_15.6O2,15.6,34.5,10.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0435,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_15.6O2,15.6,34.5,16.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0436,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_15.6O2,15.6,34.5,27.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0437,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_15.6O2,15.6,34.5,31.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0438,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_18.0O2,18.0,34.5,0.3,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0439,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_18.0O2,18.0,34.5,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0440,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_18.0O2,18.0,34.5,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0441,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_18.0O2,18.0,34.5,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0442,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_18.0O2,18.0,34.5,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0443,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_18.0O2,18.0,34.5,27.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0444,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_34.5kPa_18.0O2,18.0,34.5,31.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0445,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_26.5O2,26.5,34.5,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0446,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_26.5O2,26.5,34.5,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0447,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_26.5O2,26.5,34.5,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0448,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_26.5O2,26.5,34.5,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0449,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_26.5O2,26.5,34.5,27.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0450,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_26.5O2,26.5,34.5,31.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0451,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_34.0O2,34.0,34.5,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0452,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_34.0O2,34.0,34.5,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0453,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_34.0O2,34.0,34.5,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0454,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_34.0O2,34.0,34.5,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0455,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_34.0O2,34.0,34.5,27.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0456,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_34.0O2,34.0,34.5,31.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0457,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_37.0O2,37.0,34.5,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0458,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_37.0O2,37.0,34.5,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0459,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_37.0O2,37.0,34.5,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0460,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_37.0O2,37.0,34.5,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0461,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_37.0O2,37.0,34.5,27.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0462,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_34.5kPa_37.0O2,37.0,34.5,31.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0463,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_14.0O2,14.0,56.5,0.3,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0464,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_14.0O2,14.0,56.5,4.5,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0465,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_14.0O2,14.0,56.5,6.8,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0466,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_14.0O2,14.0,56.5,10.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0467,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_14.0O2,14.0,56.5,16.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0468,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_14.0O2,14.0,56.5,27.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0469,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_14.0O2,14.0,56.5,31.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0470,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_15.6O2,15.6,56.5,0.3,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0471,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_15.6O2,15.6,56.5,4.5,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0472,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_15.6O2,15.6,56.5,6.8,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0473,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_15.6O2,15.6,56.5,10.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0474,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_15.6O2,15.6,56.5,16.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0475,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_15.6O2,15.6,56.5,27.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0476,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_15.6O2,15.6,56.5,31.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0477,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_18.0O2,18.0,56.5,0.3,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0478,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_18.0O2,18.0,56.5,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0479,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_18.0O2,18.0,56.5,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0480,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_18.0O2,18.0,56.5,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0481,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_18.0O2,18.0,56.5,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0482,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_18.0O2,18.0,56.5,27.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0483,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_56.5kPa_18.0O2,18.0,56.5,31.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0484,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_26.5O2,26.5,56.5,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0485,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_26.5O2,26.5,56.5,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0486,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_26.5O2,26.5,56.5,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0487,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_26.5O2,26.5,56.5,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0488,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_26.5O2,26.5,56.5,27.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0489,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_26.5O2,26.5,56.5,31.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0490,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_34.0O2,34.0,56.5,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0491,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_34.0O2,34.0,56.5,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0492,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_34.0O2,34.0,56.5,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0493,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_34.0O2,34.0,56.5,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0494,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_34.0O2,34.0,56.5,27.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0495,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_34.0O2,34.0,56.5,31.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0496,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_37.0O2,37.0,56.5,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0497,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_37.0O2,37.0,56.5,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0498,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_37.0O2,37.0,56.5,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0499,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_37.0O2,37.0,56.5,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0500,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_37.0O2,37.0,56.5,27.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0501,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_56.5kPa_37.0O2,37.0,56.5,31.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0502,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_14.0O2,14.0,70.3,0.3,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0503,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_14.0O2,14.0,70.3,4.5,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0504,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_14.0O2,14.0,70.3,6.8,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0505,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_14.0O2,14.0,70.3,10.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0506,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_14.0O2,14.0,70.3,16.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0507,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_14.0O2,14.0,70.3,27.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0508,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_14.0O2,14.0,70.3,31.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0509,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_15.6O2,15.6,70.3,0.3,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0510,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_15.6O2,15.6,70.3,4.5,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0511,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_15.6O2,15.6,70.3,6.8,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0512,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_15.6O2,15.6,70.3,10.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0513,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_15.6O2,15.6,70.3,16.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0514,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_15.6O2,15.6,70.3,27.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0515,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_15.6O2,15.6,70.3,31.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0516,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_18.0O2,18.0,70.3,0.3,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0517,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_18.0O2,18.0,70.3,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0518,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_18.0O2,18.0,70.3,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0519,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_18.0O2,18.0,70.3,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0520,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_18.0O2,18.0,70.3,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0521,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_18.0O2,18.0,70.3,27.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0522,Lunar_0.16g_KevlarPBI_Suitport_HALO_Safe_70.3kPa_18.0O2,18.0,70.3,31.0,0.16,extinct,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",0
+NASA-LUNA-0523,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_26.5O2,26.5,70.3,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0524,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_26.5O2,26.5,70.3,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0525,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_26.5O2,26.5,70.3,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0526,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_26.5O2,26.5,70.3,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0527,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_26.5O2,26.5,70.3,27.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0528,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_26.5O2,26.5,70.3,31.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0529,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_34.0O2,34.0,70.3,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0530,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_34.0O2,34.0,70.3,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0531,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_34.0O2,34.0,70.3,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0532,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_34.0O2,34.0,70.3,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0533,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_34.0O2,34.0,70.3,27.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0534,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_34.0O2,34.0,70.3,31.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0535,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_37.0O2,37.0,70.3,4.5,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0536,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_37.0O2,37.0,70.3,6.8,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0537,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_37.0O2,37.0,70.3,10.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0538,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_37.0O2,37.0,70.3,16.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0539,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_37.0O2,37.0,70.3,27.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-LUNA-0540,Lunar_0.16g_Goldilocks_LUCI_FM2_SEA_Burn_70.3kPa_37.0O2,37.0,70.3,31.0,0.16,burn,"NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO)",1
+NASA-MARS-0541,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_14.5O2,14.5,56.5,0.3,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0542,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_14.5O2,14.5,56.5,5.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0543,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_14.5O2,14.5,56.5,10.4,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0544,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_14.5O2,14.5,56.5,14.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0545,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_14.5O2,14.5,56.5,19.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0546,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_14.5O2,14.5,56.5,27.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0547,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_14.5O2,14.5,56.5,32.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0548,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_16.0O2,16.0,56.5,0.3,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0549,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_16.0O2,16.0,56.5,5.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0550,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_16.0O2,16.0,56.5,10.4,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0551,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_16.0O2,16.0,56.5,14.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0552,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_16.0O2,16.0,56.5,19.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0553,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_16.0O2,16.0,56.5,27.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0554,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_16.0O2,16.0,56.5,32.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0555,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_18.8O2,18.8,56.5,0.3,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0556,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_18.8O2,18.8,56.5,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0557,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_18.8O2,18.8,56.5,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0558,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_18.8O2,18.8,56.5,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0559,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_18.8O2,18.8,56.5,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0560,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_18.8O2,18.8,56.5,27.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0561,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_56.5kPa_18.8O2,18.8,56.5,32.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0562,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_26.5O2,26.5,56.5,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0563,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_26.5O2,26.5,56.5,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0564,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_26.5O2,26.5,56.5,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0565,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_26.5O2,26.5,56.5,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0566,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_26.5O2,26.5,56.5,27.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0567,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_26.5O2,26.5,56.5,32.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0568,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_34.0O2,34.0,56.5,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0569,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_34.0O2,34.0,56.5,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0570,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_34.0O2,34.0,56.5,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0571,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_34.0O2,34.0,56.5,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0572,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_34.0O2,34.0,56.5,27.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0573,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_34.0O2,34.0,56.5,32.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0574,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_37.0O2,37.0,56.5,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0575,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_37.0O2,37.0,56.5,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0576,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_37.0O2,37.0,56.5,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0577,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_37.0O2,37.0,56.5,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0578,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_37.0O2,37.0,56.5,27.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0579,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_56.5kPa_37.0O2,37.0,56.5,32.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0580,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_14.5O2,14.5,70.3,0.3,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0581,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_14.5O2,14.5,70.3,5.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0582,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_14.5O2,14.5,70.3,10.4,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0583,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_14.5O2,14.5,70.3,14.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0584,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_14.5O2,14.5,70.3,19.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0585,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_14.5O2,14.5,70.3,27.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0586,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_14.5O2,14.5,70.3,32.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0587,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_16.0O2,16.0,70.3,0.3,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0588,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_16.0O2,16.0,70.3,5.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0589,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_16.0O2,16.0,70.3,10.4,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0590,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_16.0O2,16.0,70.3,14.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0591,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_16.0O2,16.0,70.3,19.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0592,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_16.0O2,16.0,70.3,27.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0593,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_16.0O2,16.0,70.3,32.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0594,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_18.8O2,18.8,70.3,0.3,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0595,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_18.8O2,18.8,70.3,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0596,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_18.8O2,18.8,70.3,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0597,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_18.8O2,18.8,70.3,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0598,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_18.8O2,18.8,70.3,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0599,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_18.8O2,18.8,70.3,27.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0600,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_70.3kPa_18.8O2,18.8,70.3,32.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0601,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_26.5O2,26.5,70.3,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0602,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_26.5O2,26.5,70.3,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0603,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_26.5O2,26.5,70.3,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0604,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_26.5O2,26.5,70.3,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0605,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_26.5O2,26.5,70.3,27.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0606,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_26.5O2,26.5,70.3,32.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0607,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_34.0O2,34.0,70.3,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0608,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_34.0O2,34.0,70.3,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0609,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_34.0O2,34.0,70.3,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0610,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_34.0O2,34.0,70.3,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0611,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_34.0O2,34.0,70.3,27.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0612,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_34.0O2,34.0,70.3,32.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0613,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_37.0O2,37.0,70.3,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0614,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_37.0O2,37.0,70.3,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0615,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_37.0O2,37.0,70.3,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0616,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_37.0O2,37.0,70.3,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0617,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_37.0O2,37.0,70.3,27.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0618,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_70.3kPa_37.0O2,37.0,70.3,32.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0619,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_14.5O2,14.5,101.3,0.3,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0620,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_14.5O2,14.5,101.3,5.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0621,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_14.5O2,14.5,101.3,10.4,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0622,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_14.5O2,14.5,101.3,14.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0623,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_14.5O2,14.5,101.3,19.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0624,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_14.5O2,14.5,101.3,27.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0625,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_14.5O2,14.5,101.3,32.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0626,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_16.0O2,16.0,101.3,0.3,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0627,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_16.0O2,16.0,101.3,5.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0628,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_16.0O2,16.0,101.3,10.4,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0629,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_16.0O2,16.0,101.3,14.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0630,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_16.0O2,16.0,101.3,19.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0631,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_16.0O2,16.0,101.3,27.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0632,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_16.0O2,16.0,101.3,32.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0633,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_18.8O2,18.8,101.3,0.3,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0634,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_18.8O2,18.8,101.3,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0635,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_18.8O2,18.8,101.3,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0636,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_18.8O2,18.8,101.3,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0637,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_18.8O2,18.8,101.3,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0638,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_18.8O2,18.8,101.3,27.5,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0639,Mars_0.38g_FWM_10_50um_CO2Diluent_Safe_101.3kPa_18.8O2,18.8,101.3,32.0,0.38,extinct,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",0
+NASA-MARS-0640,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_26.5O2,26.5,101.3,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0641,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_26.5O2,26.5,101.3,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0642,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_26.5O2,26.5,101.3,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0643,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_26.5O2,26.5,101.3,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0644,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_26.5O2,26.5,101.3,27.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0645,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_26.5O2,26.5,101.3,32.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0646,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_34.0O2,34.0,101.3,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0647,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_34.0O2,34.0,101.3,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0648,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_34.0O2,34.0,101.3,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0649,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_34.0O2,34.0,101.3,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0650,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_34.0O2,34.0,101.3,27.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0651,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_34.0O2,34.0,101.3,32.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0652,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_37.0O2,37.0,101.3,5.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0653,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_37.0O2,37.0,101.3,10.4,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0654,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_37.0O2,37.0,101.3,14.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0655,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_37.0O2,37.0,101.3,19.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0656,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_37.0O2,37.0,101.3,27.5,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-MARS-0657,Mars_0.38g_PeakBuoyancy_N2Ar_MOXIE_Burn_101.3kPa_37.0O2,37.0,101.3,32.0,0.38,burn,"NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um)",1
+NASA-SAFETY-0658,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_15.2O2,15.2,56.5,0.4,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0659,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_15.2O2,15.2,56.5,5.5,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0660,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_15.2O2,15.2,56.5,8.5,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0661,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_15.2O2,15.2,56.5,13.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0662,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_15.2O2,15.2,56.5,18.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0663,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_15.2O2,15.2,56.5,28.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0664,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_16.2O2,16.2,56.5,0.4,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0665,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_16.2O2,16.2,56.5,5.5,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0666,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_16.2O2,16.2,56.5,8.5,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0667,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_16.2O2,16.2,56.5,13.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0668,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_16.2O2,16.2,56.5,18.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0669,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_16.2O2,16.2,56.5,28.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0670,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_19.5O2,19.5,56.5,0.4,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0671,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_19.5O2,19.5,56.5,5.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0672,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_19.5O2,19.5,56.5,8.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0673,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_19.5O2,19.5,56.5,13.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0674,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_19.5O2,19.5,56.5,18.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0675,NASA_Safety_SAME_GASP_HALOBag_Safe_56.5kPa_19.5O2,19.5,56.5,28.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0676,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_26.5O2,26.5,56.5,5.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0677,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_26.5O2,26.5,56.5,8.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0678,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_26.5O2,26.5,56.5,13.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0679,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_26.5O2,26.5,56.5,18.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0680,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_26.5O2,26.5,56.5,28.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0681,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_34.0O2,34.0,56.5,5.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0682,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_34.0O2,34.0,56.5,8.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0683,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_34.0O2,34.0,56.5,13.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0684,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_34.0O2,34.0,56.5,18.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0685,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_34.0O2,34.0,56.5,28.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0686,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_37.0O2,37.0,56.5,5.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0687,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_37.0O2,37.0,56.5,8.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0688,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_37.0O2,37.0,56.5,13.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0689,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_37.0O2,37.0,56.5,18.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0690,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_56.5kPa_37.0O2,37.0,56.5,28.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0691,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_15.2O2,15.2,70.3,0.4,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0692,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_15.2O2,15.2,70.3,5.5,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0693,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_15.2O2,15.2,70.3,8.5,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0694,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_15.2O2,15.2,70.3,13.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0695,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_15.2O2,15.2,70.3,18.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0696,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_15.2O2,15.2,70.3,28.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0697,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_16.2O2,16.2,70.3,0.4,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0698,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_16.2O2,16.2,70.3,5.5,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0699,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_16.2O2,16.2,70.3,8.5,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0700,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_16.2O2,16.2,70.3,13.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0701,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_16.2O2,16.2,70.3,18.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0702,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_16.2O2,16.2,70.3,28.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0703,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_19.5O2,19.5,70.3,0.4,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0704,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_19.5O2,19.5,70.3,5.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0705,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_19.5O2,19.5,70.3,8.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0706,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_19.5O2,19.5,70.3,13.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0707,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_19.5O2,19.5,70.3,18.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0708,NASA_Safety_SAME_GASP_HALOBag_Safe_70.3kPa_19.5O2,19.5,70.3,28.0,0.16,extinct,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",0
+NASA-SAFETY-0709,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_26.5O2,26.5,70.3,5.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0710,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_26.5O2,26.5,70.3,8.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0711,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_26.5O2,26.5,70.3,13.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0712,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_26.5O2,26.5,70.3,18.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0713,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_26.5O2,26.5,70.3,28.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0714,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_34.0O2,34.0,70.3,5.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0715,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_34.0O2,34.0,70.3,8.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0716,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_34.0O2,34.0,70.3,13.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0717,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_34.0O2,34.0,70.3,18.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0718,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_34.0O2,34.0,70.3,28.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0719,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_37.0O2,37.0,70.3,5.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0720,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_37.0O2,37.0,70.3,8.5,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0721,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_37.0O2,37.0,70.3,13.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0722,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_37.0O2,37.0,70.3,18.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1
+NASA-SAFETY-0723,NASA_Safety_LiIon_FTRC_SMAC_Test1_Fail_70.3kPa_37.0O2,37.0,70.3,28.0,0.16,burn,"NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B",1

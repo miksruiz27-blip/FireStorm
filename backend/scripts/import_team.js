@@ -1,4 +1,4 @@
-// Team drop (../firestorm_modelos_y_csv_equipo) → data/experiments.json + data/test_points.json, and the
+// Team drop (../firestorm_modelos_y_csv_equipo3) → data/experiments.json + data/test_points.json, and the
 // ONNX models + model.json → models/. Re-run whenever the team ships a new drop, then `npm run seed -- --replace`.
 //  bass_experiments.csv                     every test point (347 in the 2026-11-14 drop), id prefix = experiment
 //  psi_repositories_simulated.csv           spread rates for the PSI rows (solid fuels only)
@@ -6,7 +6,7 @@
 import { copyFileSync, readFileSync, writeFileSync } from 'node:fs';
 import { parseCsv } from '../src/csv.js';
 
-const team = new URL('../../firestorm_modelos_y_csv_equipo/', import.meta.url);
+const team = new URL('../../firestorm_modelos_y_csv_equipo3/', import.meta.url);
 const csv = (f) => parseCsv(readFileSync(new URL(f, team), 'utf8'));
 const tests = csv('bass_experiments.csv');
 const psi = Object.fromEntries(csv('psi_repositories_simulated.csv').map((r) => [r.test_id, r]));
@@ -70,6 +70,45 @@ const EXPERIMENTS = {
   STD6001: ['nasa-std-6001b', 'STD-6001B-SMAC', { domain: ['prevention', 'detection'] }],
   SMAC: ['nasa-std-6001b', 'STD-6001B-SMAC', {}],
   LIION: ['li-ion-runaway', 'NESC-LIION-TR', {}],
+  // 2026-11-15 drop (equipo3): the team's large campaign series (all from psi_repositories_simulated.csv).
+  // Each gets its own experiment so simulated rows never merge into a measured investigation.
+  'NASA-BASS': ['bass-u-curve-campaign', 'PSI-REPO-25', {
+    name: 'BASS / BASS-II / BASS-M solid flammability U-curve (team campaign)', domain: ['prevention', 'suppression'] }],
+  'NASA-SOFIE': ['sofie-sea-campaign', 'SOFIE-CIR-5MOD', {
+    name: 'SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) at SEA 8.2 psia (team campaign)' }],
+  'NASA-SAFFIRE': ['saffire-cygnus-campaign', 'PSI-REPO-99', {
+    name: 'SAFFIRE I-VI large-scale spacecraft fire (team campaign)', domain: ['prevention', 'detection'] }],
+  'NASA-FLEX': ['flex-dual-regime-campaign', 'PSI-REPO-68', {
+    name: 'FLEX / FLEX-2 hot & cool flame extinction (team campaign)', domain: ['prevention', 'suppression'] }],
+  'NASA-ACME': ['acme-sofball-campaign', 'PSI-REPO-10', {
+    name: 'ACME (BRE, s-Flame, E-FIELD) & SOFBALL gaseous combustion (team campaign)', fuel_type: 'gas' }],
+  'NASA-LUNA': ['lunar-016g-campaign', 'LUNA-MARS-01', {
+    name: 'Lunar 0.16 g partial gravity: LUCI, FM2, ZGF, SEA 8.2 psia, HALO (team campaign)', domain: ['prevention'] }],
+  'NASA-MARS': ['mars-038g-campaign', 'LUNA-MARS-03', {
+    name: 'Mars 0.38 g partial gravity: N2/Ar, MOXIE, ESD, fine water mist (team campaign)', domain: ['prevention', 'suppression'] }],
+  'NASA-SAFETY': ['nasa-safety-campaign', 'NESC-LIION-TR', {
+    name: 'NASA safety: Li-ion FTRC, JSC 20584 SMAC, SAME/DAFT, STD-6001B (team campaign)', domain: ['prevention', 'detection'] }],
+  // 2026-11-15 drop: lunar 0.16 g and Mars 0.38 g mission series, one catalog entry each.
+  LUCI: ['luci-suborbital', 'LUNA-NASA-01', {}],
+  FM2: ['fm2-lunar-surface', 'LUNA-NASA-02', {}],
+  ZGF: ['zgf-drop-tower', 'LUNA-NASA-03', {}],
+  'SEA-LUNA': ['sea-lunar-fabrics', 'LUNA-NASA-04', {}],
+  'APOLLO-LM': ['apollo-lm-materials', 'LUNA-NASA-05', {}],
+  AXEMU: ['axemu-suits', 'LUNA-NASA-06', {}],
+  SUITPORT: ['suitports-airlocks', 'LUNA-NASA-07', { domain: ['prevention', 'detection'] }],
+  MRE: ['mre-regolith-electrolysis', 'LUNA-NASA-08', {}],
+  CARD: ['card-carbothermal', 'LUNA-NASA-09', {}],
+  HALO: ['gateway-halo', 'LUNA-NASA-10', { domain: ['prevention', 'detection'] }],
+  LTV: ['ltv-lunar-dust-esd', 'LUNA-NASA-11', {}],
+  'MARS-038G': ['mars-038g-spread', 'MARS-NASA-01', {}],
+  'MARS-ATMOS': ['mars-habitat-atmosphere', 'MARS-NASA-02', {}],
+  MOXIE: ['moxie-isru', 'MARS-NASA-03', {}],
+  'MARS-METAL': ['mars-metal-co2', 'MARS-NASA-04', { fuel_type: 'solid' }], // Mg powder in CO₂
+  'MARS-DUST': ['mars-dust-triboelectric', 'MARS-NASA-05', {}],
+  'MARS-PERCHLORATE': ['mars-perchlorates', 'MARS-NASA-06', {}],
+  'MARS-FDS': ['mars-fire-suppression', 'MARS-NASA-07', { domain: ['suppression'] }],
+  'MARS-MAV': ['mars-ascent-vehicle', 'MARS-NASA-08', {}],
+  'MARS-ROVER': ['mars-inflatable-habitat', 'MARS-NASA-09', {}],
   ...Object.fromEntries(
     [10, 21, 22, 23, 39, 47, 60, 62, 98, 99, 100, 101, 102, 106, 107, 108, 115, 117, 142, 181].map((n) => [
       `PSI${n}`,
@@ -119,11 +158,13 @@ const platform = (hw) =>
   /cygnus/i.test(hw) ? 'Cygnus' : /sts|shuttle|spacelab/i.test(hw) ? 'Space Shuttle' : /\bmir\b/i.test(hw) ? 'Mir'
     : /apollo|launch complex/i.test(hw) ? 'Apollo' : 'ISS';
 
-// F4 source audit. A partial-gravity row (0 < g < 1) is verified only if its source in the repo is a
-// measured record; every such row in this drop comes from psi_repositories_simulated.csv, whose repo_url
-// points at a microgravity PSI investigation, so it has no traceable partial-g source.
+// F4 source audit, revised for the equipo3 drop (team decision 2026-11-15): partial-gravity rows (0 < g < 1)
+// all come from psi_repositories_simulated.csv with no traceable NTRS ID. They are now shown and used, but
+// every one keeps its "simulated values (team dataset)" source label, so the UI and copilot cite them as
+// simulated, never as measured. Set STRICT_F4=1 to restore the old rule (hide them from UI and fit).
 const partialG = (t) => Number(t.gravity_g) > 0 && Number(t.gravity_g) < 1;
-const verifiedPoint = (t) => !(partialG(t) && simulated(prefix(t.test_id)));
+const verifiedPoint = (t) =>
+  !(process.env.STRICT_F4 && partialG(t) && simulated(prefix(t.test_id)));
 
 const byPrefix = Object.groupBy(tests, (t) => prefix(t.test_id));
 const unknown = Object.keys(byPrefix).filter((p) => !EXPERIMENTS[p]);
@@ -231,7 +272,7 @@ const shown = [
   ...Object.values(groups).flatMap((g) => Object.values(g).flat()),
   ...Object.values(flow.class_modifications),
 ].filter((s) => typeof s === 'string' && SPANISH.test(s.replace(/de Ris/g, ''))); // de Ris: a surname
-if (shown.length) console.warn(`⚠ ${shown.length} untranslated strings in the UI:\n  ${[...new Set(shown)].slice(0, 10).join('\n  ')}`);
+if (shown.length) console.warn(`⚠ ${shown.length} untranslated strings in the UI:\n  ${[...new Set(shown)].slice(0, process.env.ALL_UNTRANSLATED ? Infinity : 10).join('\n  ')}`);
 writeFileSync(
   new URL('../models/model.json', import.meta.url),
   `${JSON.stringify({ ...meta, classes: ['extinct', 'burn'] }, null, 1)}\n`,
@@ -265,7 +306,7 @@ function writeAudit() {
   });
   const md = `# AUDIT_SOURCES — partial-gravity data (F4)
 
-Generated by \`backend/scripts/import_team.js\` from the team drop in \`firestorm_modelos_y_csv_equipo/\`. Re-run \`npm run import\` to refresh.
+Generated by \`backend/scripts/import_team.js\` from the team drop in \`firestorm_modelos_y_csv_equipo3/\`. Re-run \`npm run import\` to refresh.
 
 **Rule.** A row with 0 < g < 1 is OK only if its source in the repo is a measured record at that gravity
 (NTRS or PSI identifier). Every partial-g row in this drop is in \`psi_repositories_simulated.csv\` (team-simulated

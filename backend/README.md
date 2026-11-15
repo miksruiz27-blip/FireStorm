@@ -29,7 +29,7 @@ The project `firestorm` has two services: `Postgres` and `api`.
 - CSV arrays are written as JSON (`[21,35]`) or as `a|b`.
 - Every row is validated with zod. Invalid rows, and rows without a `source`, are listed and skipped.
 - The seed upserts in one transaction, so it can be re-run safely. `--replace` empties experiments + test_points first.
-- **Team drop**: `npm run import` reads `../firestorm_modelos_y_csv_equipo/` and writes `data/experiments.json` (58, one per test-id prefix or prefix group, e.g. LUNA/MARS partial-g series; names, findings and modifications from the catalog) and `data/test_points.json` (347, incl. 29 at 0.16 g and 19 at 0.38 g; spread rates for the solid PSI rows). It also copies the 3 ONNX models + `model.json` into `models/`. Then `npm run migrate && npm run seed -- --replace && npm run fit`, deploy, snapshot.
+- **Team drop**: `npm run import` reads `../firestorm_modelos_y_csv_equipo3/` and writes `data/experiments.json` (86, one per test-id prefix or prefix group, incl. the equipo3 team campaigns; names, findings and modifications from the catalog) and `data/test_points.json` (1158, incl. 256 at 0.16 g and 180 at 0.38 g, all labelled "simulated values (team dataset)"; spread rates for the solid PSI rows). It also copies the 3 ONNX models + `model.json` into `models/`. Then `npm run migrate && npm run seed -- --replace && npm run fit`, deploy, snapshot.
 - Rows whose test-id prefix appears in `psi_repositories_simulated.csv` (PSI*, LUNA, MARS, SOFIE-*, …) carry "simulated values (team dataset)" in their source.
 - `material_moc` and `habitats` are still the SAMPLE values from the mockups. The old sample experiments are in `data/sample_backup/`.
 

@@ -2,13 +2,49 @@
  {
   "q": "Which materials stay safe at 34% oxygen?",
   "response": {
-   "answer": "Based on 3 NASA sources and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.78 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
+   "answer": "It rests on simulated team data, not a measured NASA test. None of the four materials in the MOC table stays safe at 34 % O2. The burns card lists PMMA, cotton-fiberglass fabric, silicone, and aramid fabric. p(burn) 100 %, margin +17.2 % O2, spread 0.98 mm/s.",
    "widgets": [
+    {
+     "type": "coverage",
+     "text": "Covered only by 47 simulated points from the team dataset at 34 % O₂ / 0.166 g; no measured NASA test at this condition yet."
+    },
     {
      "type": "answer_card",
      "title": "Flame forecast · Lunar Base",
-     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.95 mm/s. Flammability limit 16.78 % O₂ → margin +17.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous). Physics extrapolation, untested: gravity 0.166 g (tested 0, 1 g).",
+     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.98 mm/s. Flammability limit 16.78 % O₂ → margin +17.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous).",
      "level": "critical"
+    },
+    {
+     "type": "metrics",
+     "items": [
+      {
+       "label": "p(burn)",
+       "value": "100",
+       "unit": "%",
+       "level": "critical"
+      },
+      {
+       "label": "Flammability limit",
+       "value": "16.8",
+       "unit": "% O₂"
+      },
+      {
+       "label": "Margin",
+       "value": "+17.2",
+       "unit": "% O₂",
+       "level": "critical"
+      },
+      {
+       "label": "Spread",
+       "value": "0.98",
+       "unit": "mm/s"
+      },
+      {
+       "label": "Flow at flame",
+       "value": "19.3",
+       "unit": "cm/s"
+      }
+     ]
     },
     {
      "type": "chart",
@@ -44,7 +80,7 @@
     {
      "type": "answer_card",
      "title": "BURNS at 34 % O₂ · MOC at or below 34 %",
-     "body": "PMMA (MOC 16.5 % at 70.3 kPa, 17.5 points over; predicted spread ≈ 0.95 mm/s); cotton-fiberglass fabric (MOC 19.5 % at 70.3 kPa, 14.5 points over; predicted spread ≈ 8.84 mm/s); silicone (MOC 27 % at 101.3 kPa, 7 points over; predicted spread ≈ 3.56 mm/s); aramid fabric (MOC 32 % at 101.3 kPa, 2 points over; predicted spread ≈ 0.45 mm/s).",
+     "body": "PMMA (MOC 16.5 % at 70.3 kPa, 17.5 points over; predicted spread ≈ 0.98 mm/s); cotton-fiberglass fabric (MOC 19.5 % at 70.3 kPa, 14.5 points over; predicted spread ≈ 2.39 mm/s); silicone (MOC 27 % at 101.3 kPa, 7 points over; predicted spread ≈ 3.28 mm/s); aramid fabric (MOC 32 % at 101.3 kPa, 2 points over; predicted spread ≈ 0.2 mm/s).",
      "level": "critical"
     },
     {
@@ -79,99 +115,599 @@
       ],
       [
        22,
-       0.29
+       0.3
       ],
       [
        24,
-       0.4
+       0.41
       ],
       [
        26,
-       0.51
+       0.53
       ],
       [
        28,
-       0.62
+       0.64
       ],
       [
        30,
-       0.73
+       0.75
       ],
       [
        32,
-       0.84
+       0.87
       ],
       [
        34,
-       0.95
+       0.98
       ],
       [
        36,
-       1.06
+       1.1
       ],
       [
        38,
-       1.17
+       1.21
       ],
       [
        40,
-       1.28
+       1.32
       ]
      ],
      "measured": [
       [
-       20.9,
-       1.61
+       95,
+       2.33
       ],
       [
-       21.2,
-       2.25
+       100,
+       2.45
       ],
       [
-       20.5,
-       0.54
+       98,
+       2.4
       ],
       [
-       21,
-       0.88
+       100,
+       2.45
       ],
       [
-       21,
-       0.62
-      ],
-      [
-       20.9,
+       18.5,
        0.38
       ],
       [
-       21,
-       0.79
+       18.5,
+       0.38
       ],
       [
-       21,
-       0.58
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       26.5,
+       0.61
+      ],
+      [
+       34,
+       0.8
+      ],
+      [
+       18,
+       2.45
+      ],
+      [
+       18.2,
+       2.15
+      ],
+      [
+       18.8,
+       0.95
+      ],
+      [
+       26.5,
+       1.15
+      ],
+      [
+       34,
+       1.85
+      ],
+      [
+       34,
+       1.32
+      ],
+      [
+       34,
+       0.78
+      ],
+      [
+       34,
+       0.8
+      ],
+      [
+       85,
+       2.08
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       29,
+       0.8
+      ],
+      [
+       31,
+       0.86
+      ],
+      [
+       36,
+       1
+      ],
+      [
+       34,
+       3.85
+      ],
+      [
+       34,
+       0.88
+      ],
+      [
+       34,
+       3.1
       ]
+     ]
+    },
+    {
+     "type": "follow_ups",
+     "questions": [
+      "What if we turn the fans off?",
+      "Does it change at Mars gravity?",
+      "Which experiment is missing to validate this?"
      ]
     }
    ],
    "citations": [
     {
-     "n": 6,
-     "title": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)",
-     "ref": "PSI-100",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
+     "n": 1,
+     "title": "NASA GRC Olson-Ferkul-Tien Partial-g Centrifuge / LUCI (0.16g Moon) — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
     },
     {
-     "n": 7,
-     "title": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)",
-     "ref": "PSI-101",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
+     "n": 2,
+     "title": "NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO) — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
     },
     {
-     "n": 8,
-     "title": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
-     "ref": "PSI-102",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
+     "n": 3,
+     "title": "NASA SAFFIRE-IV / PSI Large-Scale Exploration Atmosphere (56.5 kPa, 34% O2) — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
     }
    ]
   }
@@ -179,13 +715,49 @@
  {
   "q": "What has been tested at lunar gravity?",
   "response": {
-   "answer": "Based on 5 NASA sources and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.78 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
+   "answer": "It rests on simulated team data, not a measured NASA test. p(burn) 100 %, flammability limit 16.8 % O2, spread 0.98 mm/s.",
    "widgets": [
+    {
+     "type": "coverage",
+     "text": "Covered only by 47 simulated points from the team dataset at 34 % O₂ / 0.166 g; no measured NASA test at this condition yet."
+    },
     {
      "type": "answer_card",
      "title": "Flame forecast · Lunar Base",
-     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.95 mm/s. Flammability limit 16.78 % O₂ → margin +17.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous). Physics extrapolation, untested: gravity 0.166 g (tested 0, 1 g).",
+     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.98 mm/s. Flammability limit 16.78 % O₂ → margin +17.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous).",
      "level": "critical"
+    },
+    {
+     "type": "metrics",
+     "items": [
+      {
+       "label": "p(burn)",
+       "value": "100",
+       "unit": "%",
+       "level": "critical"
+      },
+      {
+       "label": "Flammability limit",
+       "value": "16.8",
+       "unit": "% O₂"
+      },
+      {
+       "label": "Margin",
+       "value": "+17.2",
+       "unit": "% O₂",
+       "level": "critical"
+      },
+      {
+       "label": "Spread",
+       "value": "0.98",
+       "unit": "mm/s"
+      },
+      {
+       "label": "Flow at flame",
+       "value": "19.3",
+       "unit": "cm/s"
+      }
+     ]
     },
     {
      "type": "chart",
@@ -214,42 +786,44 @@
     {
      "type": "experiment_list",
      "ids": [
-      "apollo-13",
-      "acme-bre",
-      "nasa-std-6001b",
-      "saffire-iv-vi",
-      "apollo-1"
+      "lunar-016g-campaign",
+      "luci-lunar",
+      "sea-lunar-fabrics",
+      "zgf-drop-tower",
+      "flex-partial-g"
+     ]
+    },
+    {
+     "type": "follow_ups",
+     "questions": [
+      "Which materials stay safe here?",
+      "What if we turn the fans off?",
+      "Which experiment is missing to validate this?"
      ]
     }
    ],
    "citations": [
     {
      "n": 1,
-     "title": "NASA SMA - Apollo 13 Tank 2 (65V DC Overheat)",
+     "title": "NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO) — simulated values (team dataset)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     },
     {
      "n": 2,
-     "title": "NASA Guide 2015 - ACME BRE Sustained",
+     "title": "NASA GRC Olson-Ferkul-Tien Partial-g Centrifuge / LUCI (0.16g Moon) — simulated values (team dataset)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     },
     {
-     "n": 3,
-     "title": "NASA Technical Standards (NASA-STD-6001B, NASA-STD-3001 Vol. 2, JSC 20584) · https://standards.nasa.gov/",
-     "ref": "standards.nasa.gov",
-     "url": "https://standards.nasa.gov/"
-    },
-    {
      "n": 4,
-     "title": "NASA SAFFIRE IV-VI Far-Field Diagnostics HCl/HF Acid Gas & Smoke Eater — simulated values (team dataset)",
+     "title": "NASA GRC 5.2s ZGF Centrifuge 0.16g (Olson-Ferkul-Tien) — simulated values (team dataset)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     },
     {
      "n": 5,
-     "title": "NASA SMA - Apollo 1 (100% O2, 16.7 psi)",
+     "title": "NASA FLEX / CFI Partial-g Droplet Cool-to-Hot Transition (0.16g Moon) — simulated values (team dataset)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     }
@@ -259,13 +833,49 @@
  {
   "q": "How does oxygen affect flame spread?",
   "response": {
-   "answer": "Based on 5 NASA sources and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.78 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
+   "answer": "Oxygen concentration directly controls flame spread and flammability limits, with partial gravity ambients shifting the minimum of the U-shaped limit curve where materials burn at lower oxygen levels. It rests on simulated team data, not a measured NASA test. Spread 0.98 mm/s, p(burn) 100 %, Margin +17.2 % O2.",
    "widgets": [
+    {
+     "type": "coverage",
+     "text": "Covered only by 47 simulated points from the team dataset at 34 % O₂ / 0.166 g; no measured NASA test at this condition yet."
+    },
     {
      "type": "answer_card",
      "title": "Flame forecast · Lunar Base",
-     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.95 mm/s. Flammability limit 16.78 % O₂ → margin +17.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous). Physics extrapolation, untested: gravity 0.166 g (tested 0, 1 g).",
+     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.98 mm/s. Flammability limit 16.78 % O₂ → margin +17.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous).",
      "level": "critical"
+    },
+    {
+     "type": "metrics",
+     "items": [
+      {
+       "label": "p(burn)",
+       "value": "100",
+       "unit": "%",
+       "level": "critical"
+      },
+      {
+       "label": "Flammability limit",
+       "value": "16.8",
+       "unit": "% O₂"
+      },
+      {
+       "label": "Margin",
+       "value": "+17.2",
+       "unit": "% O₂",
+       "level": "critical"
+      },
+      {
+       "label": "Spread",
+       "value": "0.98",
+       "unit": "mm/s"
+      },
+      {
+       "label": "Flow at flame",
+       "value": "19.3",
+       "unit": "cm/s"
+      }
+     ]
     },
     {
      "type": "chart",
@@ -299,151 +909,603 @@
       ],
       [
        22,
-       0.29
+       0.3
       ],
       [
        24,
-       0.4
+       0.41
       ],
       [
        26,
-       0.51
+       0.53
       ],
       [
        28,
-       0.62
+       0.64
       ],
       [
        30,
-       0.73
+       0.75
       ],
       [
        32,
-       0.84
+       0.87
       ],
       [
        34,
-       0.95
+       0.98
       ],
       [
        36,
-       1.06
+       1.1
       ],
       [
        38,
-       1.17
+       1.21
       ],
       [
        40,
-       1.28
+       1.32
       ]
      ],
      "measured": [
       [
-       20.9,
-       1.61
+       95,
+       2.33
       ],
       [
-       21.2,
-       2.25
+       100,
+       2.45
       ],
       [
-       20.5,
-       0.54
+       98,
+       2.4
       ],
       [
-       21,
-       0.88
-      ],
-      [
-       21,
-       0.62
-      ],
-      [
-       20.9,
-       0.38
-      ],
-      [
-       21,
-       0.79
-      ],
-      [
-       21,
-       0.58
-      ],
-      [
-       20.8,
-       0.6
-      ],
-      [
-       21,
-       0.85
-      ],
-      [
-       18.2,
-       0.62
-      ],
-      [
-       18.4,
-       0.19
+       100,
+       2.45
       ],
       [
        18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       26.5,
+       0.61
+      ],
+      [
+       34,
+       0.8
+      ],
+      [
+       18,
+       2.45
+      ],
+      [
+       18.2,
+       2.15
+      ],
+      [
+       18.8,
+       0.95
+      ],
+      [
+       26.5,
+       1.15
+      ],
+      [
+       34,
        1.85
       ],
       [
-       18.9,
-       0.41
+       34,
+       1.32
+      ],
+      [
+       34,
+       0.78
+      ],
+      [
+       34,
+       0.8
+      ],
+      [
+       85,
+       2.08
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       18.6,
+       2.6
       ],
       [
        19.2,
-       2.35
+       0.74
       ],
       [
-       19.4,
-       0.48
+       25,
+       0.69
       ],
       [
-       20.1,
-       0.34
+       28,
+       2.85
       ],
       [
-       20.8,
-       0.28
+       34,
+       1.48
+      ],
+      [
+       34,
+       0.94
+      ],
+      [
+       45,
+       3.4
       ]
+     ]
+    },
+    {
+     "type": "follow_ups",
+     "questions": [
+      "Which materials stay safe here?",
+      "What if we turn the fans off?",
+      "Does it change at Mars gravity?"
      ]
     }
    ],
    "citations": [
     {
+     "n": 1,
+     "title": "NASA GRC Olson-Ferkul-Tien Partial-g Centrifuge / LUCI (0.16g Moon) — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
+    },
+    {
      "n": 2,
-     "title": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
-     "ref": "PSI-25",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
+     "title": "NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO) — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
     },
     {
-     "n": 3,
-     "title": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)",
-     "ref": "PSI-100",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
-    },
-    {
-     "n": 6,
-     "title": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)",
-     "ref": "PSI-101",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
-    },
-    {
-     "n": 7,
-     "title": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
-     "ref": "PSI-102",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
-    },
-    {
-     "n": 8,
-     "title": "NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115) — simulated values (team dataset)",
-     "ref": "PSI-115",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
+     "n": 5,
+     "title": "NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
     }
    ]
   }
@@ -451,13 +1513,49 @@
  {
   "q": "Is the lunar base atmosphere risky?",
   "response": {
-   "answer": "Based on 1 NASA source and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.78 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
+   "answer": "Yes, this ambient is risky. It rests on simulated team data, not a measured NASA test. p(burn) 100 %, margin +17.2 % O2, spread 0.98 mm/s.",
    "widgets": [
+    {
+     "type": "coverage",
+     "text": "Covered only by 47 simulated points from the team dataset at 34 % O₂ / 0.166 g; no measured NASA test at this condition yet."
+    },
     {
      "type": "answer_card",
      "title": "Flame forecast · Lunar Base",
-     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.95 mm/s. Flammability limit 16.78 % O₂ → margin +17.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous). Physics extrapolation, untested: gravity 0.166 g (tested 0, 1 g).",
+     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.98 mm/s. Flammability limit 16.78 % O₂ → margin +17.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous).",
      "level": "critical"
+    },
+    {
+     "type": "metrics",
+     "items": [
+      {
+       "label": "p(burn)",
+       "value": "100",
+       "unit": "%",
+       "level": "critical"
+      },
+      {
+       "label": "Flammability limit",
+       "value": "16.8",
+       "unit": "% O₂"
+      },
+      {
+       "label": "Margin",
+       "value": "+17.2",
+       "unit": "% O₂",
+       "level": "critical"
+      },
+      {
+       "label": "Spread",
+       "value": "0.98",
+       "unit": "mm/s"
+      },
+      {
+       "label": "Flow at flame",
+       "value": "19.3",
+       "unit": "cm/s"
+      }
+     ]
     },
     {
      "type": "chart",
@@ -482,12 +1580,84 @@
        17.1
       ]
      ]
+    },
+    {
+     "type": "table",
+     "title": "Fire risk by ambient · PMMA, ventilated",
+     "columns": [
+      "Ambient",
+      "O₂ %",
+      "kPa",
+      "g",
+      "Limit %",
+      "p(burn)",
+      "Regime"
+     ],
+     "rows": [
+      [
+       "Spacesuit",
+       "100",
+       "29.6",
+       "0.166",
+       "18.6",
+       "1.00",
+       "vigorous"
+      ],
+      [
+       "Lunar Base",
+       "34",
+       "56.5",
+       "0.166",
+       "16.8",
+       "1.00",
+       "vigorous"
+      ],
+      [
+       "Pressurized Rover",
+       "34",
+       "56.5",
+       "0.166",
+       "16.8",
+       "1.00",
+       "vigorous"
+      ],
+      [
+       "ISS",
+       "21",
+       "101.4",
+       "0",
+       "15.3",
+       "1.00",
+       "vigorous"
+      ]
+     ],
+     "highlight": 1
+    },
+    {
+     "type": "follow_ups",
+     "questions": [
+      "Which materials stay safe here?",
+      "What if we turn the fans off?",
+      "Does it change at Mars gravity?"
+     ]
     }
    ],
    "citations": [
     {
      "n": 1,
-     "title": "NASA SMA - Apollo 13 Tank 2 (65V DC Overheat)",
+     "title": "NASA PSI-181 ISSI Lunar 0.16g Flux Bubble Trapping & Cryo-Night Hotspot — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
+    },
+    {
+     "n": 5,
+     "title": "NASA FLEX / CFI Partial-g Droplet Cool-to-Hot Transition (0.16g Moon) — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
+    },
+    {
+     "n": 7,
+     "title": "NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve — simulated values (team dataset)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     }
@@ -497,13 +1667,49 @@
  {
   "q": "Which experiments cover suppression?",
   "response": {
-   "answer": "Based on 5 NASA sources and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.78 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
+   "answer": "Suppression is covered by experiments examining inert suppressants like CO2 and He, water-mist portable extinguishers, electric field ion acceleration, and alcohol water absorption. It rests on simulated team data, not a measured NASA test. Flammability limit 16.8 %, Margin +17.2 % O2, Spread 0.98 mm/s.",
    "widgets": [
+    {
+     "type": "coverage",
+     "text": "Covered only by 47 simulated points from the team dataset at 34 % O₂ / 0.166 g; no measured NASA test at this condition yet."
+    },
     {
      "type": "answer_card",
      "title": "Flame forecast · Lunar Base",
-     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.95 mm/s. Flammability limit 16.78 % O₂ → margin +17.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous). Physics extrapolation, untested: gravity 0.166 g (tested 0, 1 g).",
+     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.98 mm/s. Flammability limit 16.78 % O₂ → margin +17.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous).",
      "level": "critical"
+    },
+    {
+     "type": "metrics",
+     "items": [
+      {
+       "label": "p(burn)",
+       "value": "100",
+       "unit": "%",
+       "level": "critical"
+      },
+      {
+       "label": "Flammability limit",
+       "value": "16.8",
+       "unit": "% O₂"
+      },
+      {
+       "label": "Margin",
+       "value": "+17.2",
+       "unit": "% O₂",
+       "level": "critical"
+      },
+      {
+       "label": "Spread",
+       "value": "0.98",
+       "unit": "mm/s"
+      },
+      {
+       "label": "Flow at flame",
+       "value": "19.3",
+       "unit": "cm/s"
+      }
+     ]
     },
     {
      "type": "experiment_list",
@@ -513,6 +1719,14 @@
       "mist",
       "psi-22",
       "psi-68"
+     ]
+    },
+    {
+     "type": "follow_ups",
+     "questions": [
+      "Which materials stay safe here?",
+      "What if we turn the fans off?",
+      "Does it change at Mars gravity?"
      ]
     }
    ],
@@ -553,13 +1767,49 @@
  {
   "q": "What if the lunar base drops to 21% O2?",
   "response": {
-   "answer": "Based on 3 NASA sources and the physics model: critical risk at Lunar Base at 21 % O₂ — limit 16.78 %, spread ≈ 0.23 mm/s; extrapolated, untested at this condition.",
+   "answer": "Sustained burn. It rests on simulated team data, not a measured NASA test. p(burn) 99 %, Flammability limit 16.8 % O₂, Margin +4.2 % O₂, Spread 0.24 mm/s, Flow at flame 19.3 cm/s",
    "widgets": [
+    {
+     "type": "coverage",
+     "text": "Covered only by 15 simulated points from the team dataset at 21 % O₂ / 0.166 g; no measured NASA test at this condition yet."
+    },
     {
      "type": "answer_card",
      "title": "What-if · 21 % O₂",
-     "body": "Sustained for PMMA-class solids: p(burn) 0.98, spread ≈ 0.23 mm/s. Flammability limit 16.78 % O₂ → margin +4.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (sustained). Physics extrapolation, untested: gravity 0.166 g (tested 0, 1 g).",
+     "body": "Sustained for PMMA-class solids: p(burn) 0.98, spread ≈ 0.24 mm/s. Flammability limit 16.78 % O₂ → margin +4.22. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (sustained).",
      "level": "critical"
+    },
+    {
+     "type": "metrics",
+     "items": [
+      {
+       "label": "p(burn)",
+       "value": "99",
+       "unit": "%",
+       "level": "critical"
+      },
+      {
+       "label": "Flammability limit",
+       "value": "16.8",
+       "unit": "% O₂"
+      },
+      {
+       "label": "Margin",
+       "value": "+4.2",
+       "unit": "% O₂",
+       "level": "critical"
+      },
+      {
+       "label": "Spread",
+       "value": "0.24",
+       "unit": "mm/s"
+      },
+      {
+       "label": "Flow at flame",
+       "value": "19.3",
+       "unit": "cm/s"
+      }
+     ]
     },
     {
      "type": "chart",
@@ -593,77 +1843,553 @@
       ],
       [
        22,
-       0.29
+       0.3
       ],
       [
        24,
-       0.4
+       0.41
       ],
       [
        26,
-       0.51
+       0.53
       ],
       [
        28,
-       0.62
+       0.64
       ],
       [
        30,
-       0.73
+       0.75
       ],
       [
        32,
-       0.84
+       0.87
       ],
       [
        34,
-       0.95
+       0.98
       ],
       [
        36,
-       1.06
+       1.1
       ],
       [
        38,
-       1.17
+       1.21
       ],
       [
        40,
-       1.28
+       1.32
       ]
      ],
      "measured": [
       [
-       20.9,
-       1.61
+       95,
+       2.33
       ],
       [
-       21.2,
-       2.25
+       100,
+       2.45
       ],
       [
-       20.5,
-       0.54
+       98,
+       2.4
       ],
       [
-       21,
-       0.88
+       100,
+       2.45
       ],
       [
-       21,
-       0.62
-      ],
-      [
-       20.9,
+       18.5,
        0.38
       ],
       [
-       21,
-       0.79
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       18.5,
+       0.38
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       20.9,
+       0.45
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       24,
+       0.54
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       30,
+       0.72
+      ],
+      [
+       18,
+       2.45
+      ],
+      [
+       18.2,
+       2.15
+      ],
+      [
+       18.8,
+       0.95
+      ],
+      [
+       26.5,
+       1.15
+      ],
+      [
+       34,
+       1.85
+      ],
+      [
+       34,
+       1.32
+      ],
+      [
+       34,
+       0.78
+      ],
+      [
+       34,
+       0.8
+      ],
+      [
+       85,
+       2.08
+      ],
+      [
+       30,
+       0.7
+      ],
+      [
+       34,
+       0.8
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       18,
+       0.36
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       26.5,
+       0.62
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       34,
+       0.84
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
+      ],
+      [
+       37,
+       0.93
       ],
       [
        21,
-       0.58
+       0.48
+      ],
+      [
+       24,
+       0.55
       ]
      ]
     },
@@ -690,26 +2416,46 @@
        17.1
       ]
      ]
+    },
+    {
+     "type": "follow_ups",
+     "questions": [
+      "Which materials stay safe here?",
+      "What if we turn the fans off?",
+      "Does it change at Mars gravity?"
+     ]
     }
    ],
    "citations": [
     {
-     "n": 6,
-     "title": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)",
-     "ref": "PSI-100",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
+     "n": 1,
+     "title": "NASA GRC 5.2s ZGF Centrifuge 0.16g (Olson-Ferkul-Tien) — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
     },
     {
-     "n": 7,
-     "title": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)",
-     "ref": "PSI-101",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
+     "n": 2,
+     "title": "NASA PSI-22 ACME E-FIELD 4.2kV Ion Wind Emulating Lunar 0.16g Buoyancy — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
     },
     {
-     "n": 8,
-     "title": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
-     "ref": "PSI-102",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
+     "n": 3,
+     "title": "NASA GRC LUCI Suborbital New Shepard 0.16g PMMA Rod — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
+    },
+    {
+     "n": 4,
+     "title": "NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO) — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
+    },
+    {
+     "n": 5,
+     "title": "NASA GRC Olson-Ferkul-Tien Partial-g Centrifuge / LUCI (0.16g Moon) — simulated values (team dataset)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
     }
    ]
   }
@@ -717,55 +2463,75 @@
  {
   "q": "What if we turn the fans off?",
   "response": {
-   "answer": "Based on 5 NASA sources and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.74 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
+   "answer": "Ventilation off does not starve the flame because buoyancy at this gravity feeds it. It rests on simulated team data, not a measured NASA test. p(burn) 100 %, spread 0.98 mm/s, flow at flame 16.5 cm/s.",
    "widgets": [
+    {
+     "type": "coverage",
+     "text": "Covered only by 47 simulated points from the team dataset at 34 % O₂ / 0.166 g; no measured NASA test at this condition yet."
+    },
     {
      "type": "answer_card",
      "title": "What-if · ventilation off",
-     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.95 mm/s. Flammability limit 16.74 % O₂ → margin +17.26. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous). Physics extrapolation, untested: gravity 0.166 g (tested 0, 1 g).",
+     "body": "Vigorous for PMMA-class solids: p(burn) 1.00, spread ≈ 0.98 mm/s. Flammability limit 16.74 % O₂ → margin +17.26. Buoyancy at 0.166 g feeds the flame ≈ 16.5 cm/s, so ventilation off does not starve it (vigorous).",
      "level": "critical"
+    },
+    {
+     "type": "metrics",
+     "items": [
+      {
+       "label": "p(burn)",
+       "value": "100",
+       "unit": "%",
+       "level": "critical"
+      },
+      {
+       "label": "Flammability limit",
+       "value": "16.7",
+       "unit": "% O₂"
+      },
+      {
+       "label": "Margin",
+       "value": "+17.3",
+       "unit": "% O₂",
+       "level": "critical"
+      },
+      {
+       "label": "Spread",
+       "value": "0.98",
+       "unit": "mm/s"
+      },
+      {
+       "label": "Flow at flame",
+       "value": "16.5",
+       "unit": "cm/s"
+      }
+     ]
     },
     {
      "type": "experiment_list",
      "ids": [
       "apollo-13",
       "bass-ii",
+      "bass-u-curve-campaign",
       "candle-flames",
-      "n2-jet-suppression",
-      "psi-22"
+      "n2-jet-suppression"
+     ]
+    },
+    {
+     "type": "follow_ups",
+     "questions": [
+      "Which materials stay safe here?",
+      "Does it change at Mars gravity?",
+      "Which experiment is missing to validate this?"
      ]
     }
    ],
    "citations": [
     {
-     "n": 1,
-     "title": "NASA SMA - Apollo 13 Tank 2 (65V DC Overheat)",
-     "ref": "psi.nasa.gov",
-     "url": "https://psi.nasa.gov"
-    },
-    {
-     "n": 2,
-     "title": "NASA/TM-2018-219890 (NTRS: 20180005432)",
-     "ref": "NTRS 20180005432",
-     "url": "https://ntrs.nasa.gov/citations/20180005432"
-    },
-    {
      "n": 3,
-     "title": "NASA Guide 2015 - Mir/Shuttle Candle (45 min)",
+     "title": "NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve — simulated values (team dataset)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
-    },
-    {
-     "n": 4,
-     "title": "NASA Guide 2015 - Hallazgo Chorro Local N2",
-     "ref": "psi.nasa.gov",
-     "url": "https://psi.nasa.gov"
-    },
-    {
-     "n": 5,
-     "title": "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)",
-     "ref": "PSI-22",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
     }
    ]
   }

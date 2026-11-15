@@ -607,6 +607,20 @@ _Extras _extras(String question, Habitat h, Cond c, FlameForecast f, _Data d) {
             'El pronóstico de abajo es extrapolación física, no una medición.',
       ),
     };
+  } else if (near.every(
+    (t) => '${t['source']}'.toLowerCase().contains('simulated'),
+  )) {
+    // Covered, but only by the team's simulated partial-g campaign: never present it as measured.
+    final k = near.length, g = _f(c.g, 3);
+    coverage = {
+      'type': 'coverage',
+      'text': tr(
+        'Covered only by $k simulated points from the team dataset at ${_f(c.o2)} % O₂ / $g g; '
+            'no measured NASA test at this condition yet.',
+        'Cubierto solo por $k puntos simulados del dataset del equipo a ${_f(c.o2)} % O₂ / $g g; '
+            'aún no hay un ensayo NASA medido en esta condición.',
+      ),
+    };
   }
 
   final metrics = {

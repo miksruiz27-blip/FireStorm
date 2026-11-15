@@ -3,15 +3,6 @@
   {
    "cell": {
     "o2_pct": 100,
-    "gravity_g": 0.166
-   },
-   "priority": 1,
-   "why": "No tests at 100 % O₂ / 0.166 g (gap 1); closeness to ambient 1; physics: vigorous (limit 18.55 %, p 1), extrapolated — a test here would confirm it.",
-   "sources": []
-  },
-  {
-   "cell": {
-    "o2_pct": 100,
     "gravity_g": 0.38
    },
    "priority": 0.807,
@@ -32,6 +23,18 @@
   {
    "cell": {
     "o2_pct": 100,
+    "gravity_g": 0.166
+   },
+   "priority": 0.333,
+   "why": "2 tests nearby at 100 % O₂ / 0.166 g (gap 0.333); closeness to ambient 1; physics: vigorous (limit 18.55 %, p 1), extrapolated — a test here would confirm it.",
+   "sources": [
+    "NASA SP-5096 Apollo LM 100% O2 5 psia Nylon Velcro Hazard — simulated values (team dataset)",
+    "NASA Artemis xEMU/AxEMU 4.3 psia 100% O2 Lunar Dust Friction — simulated values (team dataset)"
+   ]
+  },
+  {
+   "cell": {
+    "o2_pct": 100,
     "gravity_g": 1
    },
    "priority": 0.217,
@@ -42,153 +45,344 @@
   },
   {
    "cell": {
-    "o2_pct": 35,
-    "gravity_g": 0.166
+    "o2_pct": 15,
+    "gravity_g": 0
    },
-   "priority": 0.002,
-   "why": "No tests at 35 % O₂ / 0.166 g (gap 1); closeness to ambient 0.002; physics: vigorous (limit 18.55 %, p 1), extrapolated — a test here would confirm it.",
-   "sources": []
+   "priority": 0,
+   "why": "179 tests nearby at 15 % O₂ / 0 g (gap 0.006); closeness to ambient 0; physics: self-extinguishes (limit 18.63 %, p 0.026), uncertainty 0.052.",
+   "sources": [
+    "NASA Guide 2015 - ACME BRE Extinction",
+    "NASA Guide 2015 - ACME Flame Design Quench",
+    "NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion — simulated values (team dataset)",
+    "NASA/TM-2015-218735 (NTRS: 20150016543)",
+    "NASA/TM-2018-219890 (NTRS: 20180005432)",
+    "NASA-PSI-INV-0044 (BASS-II Archive)",
+    "NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve — simulated values (team dataset)",
+    "NASA Guide 2015 - Candle Low O2 Extinction",
+    "NASA Guide 2015 - Cool Flames Quench",
+    "NASA Guide 2015 - FLEX Extinction Limit",
+    "NASA Guide 2015 - FLEX CO2 Suppression",
+    "NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction — simulated values (team dataset)",
+    "NASA Guide 2015 - Fine Water Mist Suppression",
+    "NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10) — simulated values (team dataset)",
+    "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
+    "NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106) — simulated values (team dataset)",
+    "NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142) — simulated values (team dataset)",
+    "NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159) — simulated values (team dataset)",
+    "NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20) — simulated values (team dataset)",
+    "NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21) — simulated values (team dataset)",
+    "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)",
+    "NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23) — simulated values (team dataset)",
+    "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+    "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
+    "NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39) — simulated values (team dataset)",
+    "NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47) — simulated values (team dataset)",
+    "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)",
+    "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+    "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)",
+    "NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD — simulated values (team dataset)",
+    "NASA SAFFIRE IV-VI Post-Fire Scrubbing & Al-Wall Adsorption Safe — simulated values (team dataset)",
+    "NASA Guide 2015 - SoFIE Intrinsic Safe",
+    "NASA SoFIE-RTDFS Radiative Quenching in Quiescent Microgravity — simulated values (team dataset)",
+    "NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere Radiative Quench — simulated values (team dataset)",
+    "NASA SoFIE-MIST Convective Blowoff Limit Without Radiant Flux — simulated values (team dataset)",
+    "NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia — simulated values (team dataset)"
+   ]
   }
  ],
  "iss": [
   {
    "cell": {
-    "o2_pct": 21,
-    "gravity_g": 0.166
+    "o2_pct": 16,
+    "gravity_g": 1
    },
-   "priority": 0.847,
-   "why": "No tests at 21 % O₂ / 0.166 g (gap 1); closeness to ambient 0.847; physics: vigorous (limit 15.19 %, p 0.997), extrapolated — a test here would confirm it.",
+   "priority": 0.174,
+   "why": "No tests at 16 % O₂ / 1 g (gap 1); closeness to ambient 0.223; physics: marginal (limit 15.56 %, p 0.609), uncertainty 0.782.",
    "sources": []
   },
   {
    "cell": {
-    "o2_pct": 21,
+    "o2_pct": 19,
+    "gravity_g": 1
+   },
+   "priority": 0.019,
+   "why": "No tests at 19 % O₂ / 1 g (gap 1); closeness to ambient 0.301; physics: sustained (limit 15.56 %, p 0.969), uncertainty 0.062.",
+   "sources": []
+  },
+  {
+   "cell": {
+    "o2_pct": 16,
     "gravity_g": 0.38
    },
-   "priority": 0.684,
-   "why": "No tests at 21 % O₂ / 0.38 g (gap 1); closeness to ambient 0.684; physics: vigorous (limit 15.3 %, p 0.997), extrapolated — a test here would confirm it.",
-   "sources": []
+   "priority": 0.006,
+   "why": "47 tests nearby at 16 % O₂ / 0.38 g (gap 0.021); closeness to ambient 0.415; physics: marginal (limit 15.3 %, p 0.668), uncertainty 0.664.",
+   "sources": [
+    "NASA FLEX Martian CO2-Diluted Droplet Radiative Extinction (0.38g) — simulated values (team dataset)",
+    "NASA PSI-181 ISSI Mars 0.38g Flux-Free Vacuum-Degassed Solder Repair Safe — simulated values (team dataset)",
+    "NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um) — simulated values (team dataset)",
+    "NASA 0.38g Low-O2 Radiative Quenching Limit — simulated values (team dataset)",
+    "NASA 0.38g Convective Blowoff Beyond Peak — simulated values (team dataset)",
+    "NASA MAV Double-Isolation Valve & Helium Purge Safe — simulated values (team dataset)",
+    "NASA Electrostatic Precipitator (ESP) Clears Dust Before ISRU — simulated values (team dataset)",
+    "NASA Grounded Mars Airlock + HEPA Dust Control Prevents ESD — simulated values (team dataset)",
+    "NASA Fine Water Mist Driven by N2 Preserves Breathing Air — simulated values (team dataset)",
+    "NASA ECLSS TCCS Activated Charcoal + Catalytic Oxidizer Cleanup — simulated values (team dataset)",
+    "NASA/CSM Fine Water Mist (10-50 um) 0.38g Latent Cooling Quench — simulated values (team dataset)",
+    "NASA-STD-3001 Minimum 30% Diluent Non-Combustible Purge — simulated values (team dataset)",
+    "NASA Mars In-Situ CO2 Diluent (+3.2% LOI Bonus) Quench — simulated values (team dataset)",
+    "NASA Mars Habitat Kevlar/PBI + AFCI Protected Safe — simulated values (team dataset)",
+    "NASA Metal-CO2 Reactor Thermal Quench Below Ignition Temp — simulated values (team dataset)",
+    "NASA 0.38g Quiescent Radiative Extinction Floor — simulated values (team dataset)",
+    "NASA Mars Sabatier Safe Venting & Sensor Array Shutoff — simulated values (team dataset)",
+    "NASA Mars Habitat CO2-Enriched Fire Suppression (0.38g Mars) — simulated values (team dataset)",
+    "NASA 0.38g Multi-Nozzle FWM Rack Penetration Safe — simulated values (team dataset)",
+    "NASA Mars In-Situ CO2 Diluent Radiative Reabsorption Quench (0.38g Mars) — simulated values (team dataset)",
+    "NASA Mars Partial-g Convective Blowoff Limit (0.38g Mars) — simulated values (team dataset)",
+    "NASA Biological/Chemical Perchlorate Scrubbing Safe — simulated values (team dataset)",
+    "NASA Remote Automated ISRU Plant Isolated from Crew Habitat — simulated values (team dataset)",
+    "NASA LOX Particle-Impact Prevention & Helium Purge Safe — simulated values (team dataset)",
+    "NASA JSC 20584 & STD-3001 ECLSS Scrubbed Below 0.1 mg/m3 Dust & SMAC — simulated values (team dataset)",
+    "NASA DAFT Martian Iron-Oxide/Perchlorate Dust Filtered Without False Alarm — simulated values (team dataset)",
+    "NASA Mars Habitat Hybrid Water Mist + CO2 Fire Extinguisher Suppression — simulated values (team dataset)"
+   ]
   },
   {
    "cell": {
-    "o2_pct": 18,
+    "o2_pct": 15,
     "gravity_g": 0.166
    },
-   "priority": 0.628,
-   "why": "No tests at 18 % O₂ / 0.166 g (gap 1); closeness to ambient 0.628; physics: sustained (limit 15.19 %, p 0.943), extrapolated — a test here would confirm it.",
-   "sources": []
+   "priority": 0.005,
+   "why": "78 tests nearby at 15 % O₂ / 0.166 g (gap 0.013); closeness to ambient 0.465; physics: marginal (limit 15.19 %, p 0.454), uncertainty 0.908.",
+   "sources": [
+    "NASA ACME / Artemis Methalox Lander Line Inert Purge (0.16g Moon) — simulated values (team dataset)",
+    "NASA Apollo Pad 100% O2 Replaced by 60/40 O2/N2 Purge — simulated values (team dataset)",
+    "NASA Artemis Airlock Vacuum/Low-O2 Purge Safe — simulated values (team dataset)",
+    "NASA CaRD Closed-Loop Nitrogen-Purged Safe Operation — simulated values (team dataset)",
+    "NASA FLEX Lunar Low-Pressure Alcohol Water-Condensation Quench (0.16g) — simulated values (team dataset)",
+    "NASA FM2 Lunar Surface Nomex Below Threshold — simulated values (team dataset)",
+    "NASA FM2 Lunar Surface Non-Flammable Reference — simulated values (team dataset)",
+    "NASA Gateway HALO Automated IMV Shutoff + TCCS Charcoal Safe — simulated values (team dataset)",
+    "NASA Gateway HALO Fire-Containment Bag & Low-SOC Passive Safe — simulated values (team dataset)",
+    "NASA Electrodynamic Dust Shield (EDS) Prevents ESD Spark — simulated values (team dataset)",
+    "NASA Artemis Lunar Habitat Safe Inerted Standby (56.5 kPa, 15.2% O2, 0.16g) — simulated values (team dataset)",
+    "NASA-STD-6001B Test 4 Fluoropolymer + AFCI Protected Safe — simulated values (team dataset)",
+    "NASA-STD-3001 Lunar Dust <= 0.1 mg/m3 HEPA Filtered Safe — simulated values (team dataset)",
+    "NASA GRC LUCI Suborbital 0.16g Radiative Quench — simulated values (team dataset)",
+    "NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO) — simulated values (team dataset)",
+    "NASA MRE Isolated Vacuum Operation Safe — simulated values (team dataset)",
+    "NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B — simulated values (team dataset)",
+    "NASA-STD-6001B Test 1 Self-Extinguish <15.2 cm No Flaming Drips — simulated values (team dataset)",
+    "NASA SAFFIRE-V Post-Fire Cabin Depressurization & Vent Cut Quench — simulated values (team dataset)",
+    "NASA SAME / DAFT Lunar Regolith Dust (1-10 um) Discriminated as Non-Fire — simulated values (team dataset)",
+    "NASA-STD-3001 Minimum 30% Diluent Gas Blowoff Protection — simulated values (team dataset)",
+    "NASA NESC 60% Kevlar / 40% PBI Blend Inerted Post-Depress — simulated values (team dataset)",
+    "NASA SoFIE-NCA Narrow Channel Heat Loss Extinction — simulated values (team dataset)",
+    "NASA SoFIE-SMuRF Flame Extinction Below Spacecraft Threshold — simulated values (team dataset)",
+    "NASA Suitport External Mounting Prevents Cabin Dust Ignition — simulated values (team dataset)",
+    "NASA ZGF 0.16g Near-Limit Extinction (LOI Floor) — simulated values (team dataset)"
+   ]
   },
   {
    "cell": {
-    "o2_pct": 24,
-    "gravity_g": 0.166
+    "o2_pct": 15,
+    "gravity_g": 0
    },
-   "priority": 0.628,
-   "why": "No tests at 24 % O₂ / 0.166 g (gap 1); closeness to ambient 0.628; physics: vigorous (limit 15.19 %, p 1), extrapolated — a test here would confirm it.",
-   "sources": []
-  },
-  {
-   "cell": {
-    "o2_pct": 18,
-    "gravity_g": 0.38
-   },
-   "priority": 0.507,
-   "why": "No tests at 18 % O₂ / 0.38 g (gap 1); closeness to ambient 0.507; physics: sustained (limit 15.3 %, p 0.937), extrapolated — a test here would confirm it.",
-   "sources": []
+   "priority": 0.003,
+   "why": "179 tests nearby at 15 % O₂ / 0 g (gap 0.006); closeness to ambient 0.549; physics: marginal (limit 15.26 %, p 0.435), uncertainty 0.87.",
+   "sources": [
+    "NASA Guide 2015 - ACME BRE Extinction",
+    "NASA Guide 2015 - ACME Flame Design Quench",
+    "NASA ISS ACME (BRE, s-Flame, E-FIELD) & SOFBALL Gaseous Combustion — simulated values (team dataset)",
+    "NASA/TM-2015-218735 (NTRS: 20150016543)",
+    "NASA/TM-2018-219890 (NTRS: 20180005432)",
+    "NASA-PSI-INV-0044 (BASS-II Archive)",
+    "NASA ISS MSG BASS / BASS-II / BASS-M Solid Flammability U-Curve — simulated values (team dataset)",
+    "NASA Guide 2015 - Candle Low O2 Extinction",
+    "NASA Guide 2015 - Cool Flames Quench",
+    "NASA Guide 2015 - FLEX Extinction Limit",
+    "NASA Guide 2015 - FLEX CO2 Suppression",
+    "NASA ISS CIR FLEX / FLEX-2 Dual-Regime Hot & Cool Flame Extinction — simulated values (team dataset)",
+    "NASA Guide 2015 - Fine Water Mist Suppression",
+    "NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10) — simulated values (team dataset)",
+    "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
+    "NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106) — simulated values (team dataset)",
+    "NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142) — simulated values (team dataset)",
+    "NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159) — simulated values (team dataset)",
+    "NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20) — simulated values (team dataset)",
+    "NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21) — simulated values (team dataset)",
+    "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)",
+    "NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23) — simulated values (team dataset)",
+    "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+    "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
+    "NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39) — simulated values (team dataset)",
+    "NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47) — simulated values (team dataset)",
+    "NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62) — simulated values (team dataset)",
+    "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+    "NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69) — simulated values (team dataset)",
+    "NASA SAFFIRE I-VI Cygnus Large-Scale Spacecraft Fire & FFD — simulated values (team dataset)",
+    "NASA SAFFIRE IV-VI Post-Fire Scrubbing & Al-Wall Adsorption Safe — simulated values (team dataset)",
+    "NASA Guide 2015 - SoFIE Intrinsic Safe",
+    "NASA SoFIE-RTDFS Radiative Quenching in Quiescent Microgravity — simulated values (team dataset)",
+    "NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere Radiative Quench — simulated values (team dataset)",
+    "NASA SoFIE-MIST Convective Blowoff Limit Without Radiant Flux — simulated values (team dataset)",
+    "NASA ISS CIR SoFIE (GEL, MIST, SMuRF, RTDFS, NCA) SEA 8.2 psia — simulated values (team dataset)"
+   ]
   }
  ],
  "lunar": [
   {
    "cell": {
-    "o2_pct": 34,
-    "gravity_g": 0.166
+    "o2_pct": 17,
+    "gravity_g": 1
    },
-   "priority": 1,
-   "why": "No tests at 34 % O₂ / 0.166 g (gap 1); closeness to ambient 1; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "priority": 0.073,
+   "why": "No tests at 17 % O₂ / 1 g (gap 1); closeness to ambient 0.079; physics: marginal (limit 17.15 %, p 0.462), uncertainty 0.924.",
    "sources": []
   },
   {
    "cell": {
-    "o2_pct": 34,
+    "o2_pct": 20,
+    "gravity_g": 1
+   },
+   "priority": 0.012,
+   "why": "No tests at 20 % O₂ / 1 g (gap 1); closeness to ambient 0.107; physics: sustained (limit 17.15 %, p 0.945), uncertainty 0.11.",
+   "sources": []
+  },
+  {
+   "cell": {
+    "o2_pct": 17,
+    "gravity_g": 0.166
+   },
+   "priority": 0.004,
+   "why": "44 tests nearby at 17 % O₂ / 0.166 g (gap 0.022); closeness to ambient 0.183; physics: marginal (limit 16.78 %, p 0.554), uncertainty 0.892.",
+   "sources": [
+    "NASA Apollo LM Beta Cloth (PTFE/Silica) Non-Flammable — simulated values (team dataset)",
+    "NASA FM2 Lunar Surface Non-Flammable Reference — simulated values (team dataset)",
+    "NASA Orion OLIF Portable Suppression + ARS Scrubbing Safe — simulated values (team dataset)",
+    "NASA-STD-3001 Lunar Dust <= 0.1 mg/m3 HEPA Filtered Safe — simulated values (team dataset)",
+    "NASA GRC Partial-g Aerodynamic Blowoff Branch (0.16g Moon) — simulated values (team dataset)",
+    "NASA GRC Partial-g Flammability Map (0.16g Moon, Vb=7.2 cm/s) — simulated values (team dataset)",
+    "NASA GRC LUCI 0.16g Convective Blowoff Limit — simulated values (team dataset)",
+    "NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO) — simulated values (team dataset)",
+    "NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B — simulated values (team dataset)",
+    "NASA SAME / DAFT Lunar Regolith Dust (1-10 um) Discriminated as Non-Fire — simulated values (team dataset)",
+    "NASA Fine Water Mist Suppression at Lunar 0.16g (6x Slower Droplet Settling) — simulated values (team dataset)",
+    "NASA NESC 60% Kevlar / 40% PBI Blend Inerted Post-Depress — simulated values (team dataset)",
+    "NASA ZGF 0.16g Centrifugal Blowoff — simulated values (team dataset)"
+   ]
+  },
+  {
+   "cell": {
+    "o2_pct": 17,
     "gravity_g": 0.38
    },
-   "priority": 0.807,
-   "why": "No tests at 34 % O₂ / 0.38 g (gap 1); closeness to ambient 0.807; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
-   "sources": []
+   "priority": 0.004,
+   "why": "32 tests nearby at 17 % O₂ / 0.38 g (gap 0.03); closeness to ambient 0.147; physics: marginal (limit 16.9 %, p 0.525), uncertainty 0.95.",
+   "sources": [
+    "NASA PSI-181 ISSI Mars 0.38g Flux-Free Vacuum-Degassed Solder Repair Safe — simulated values (team dataset)",
+    "NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um) — simulated values (team dataset)",
+    "NASA 0.38g Convective Blowoff Beyond Peak — simulated values (team dataset)",
+    "NASA Grounded Mars Airlock + HEPA Dust Control Prevents ESD — simulated values (team dataset)",
+    "NASA/CSM Fine Water Mist (10-50 um) 0.38g Latent Cooling Quench — simulated values (team dataset)",
+    "NASA Mars In-Situ CO2 Diluent (+3.2% LOI Bonus) Quench — simulated values (team dataset)",
+    "NASA Mars Habitat CO2-Enriched Fire Suppression (0.38g Mars) — simulated values (team dataset)",
+    "NASA 0.38g Multi-Nozzle FWM Rack Penetration Safe — simulated values (team dataset)",
+    "NASA Mars In-Situ CO2 Diluent Radiative Reabsorption Quench (0.38g Mars) — simulated values (team dataset)",
+    "NASA Mars Partial-g Convective Blowoff Limit (0.38g Mars) — simulated values (team dataset)",
+    "NASA JSC 20584 & STD-3001 ECLSS Scrubbed Below 0.1 mg/m3 Dust & SMAC — simulated values (team dataset)",
+    "NASA Mars Habitat Hybrid Water Mist + CO2 Fire Extinguisher Suppression — simulated values (team dataset)"
+   ]
   },
   {
    "cell": {
-    "o2_pct": 31,
-    "gravity_g": 0.166
-   },
-   "priority": 0.741,
-   "why": "No tests at 31 % O₂ / 0.166 g (gap 1); closeness to ambient 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
-   "sources": []
-  },
-  {
-   "cell": {
-    "o2_pct": 37,
-    "gravity_g": 0.166
-   },
-   "priority": 0.741,
-   "why": "No tests at 37 % O₂ / 0.166 g (gap 1); closeness to ambient 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
-   "sources": []
-  },
-  {
-   "cell": {
-    "o2_pct": 31,
+    "o2_pct": 20,
     "gravity_g": 0.38
    },
-   "priority": 0.598,
-   "why": "No tests at 31 % O₂ / 0.38 g (gap 1); closeness to ambient 0.598; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
-   "sources": []
+   "priority": 0.004,
+   "why": "3 tests nearby at 20 % O₂ / 0.38 g (gap 0.25); closeness to ambient 0.199; physics: sustained (limit 16.9 %, p 0.957), uncertainty 0.086.",
+   "sources": [
+    "NASA PSI-22 ACME E-FIELD 7.5kV Ion Wind Emulating Martian 0.38g Buoyancy — simulated values (team dataset)",
+    "NASA Drop Tower Centrifuge 0.38g Thin Solid Flame Spread — simulated values (team dataset)",
+    "NASA SoFIE / Martian Partial-g de Ris Spread (0.38g Mars) — simulated values (team dataset)"
+   ]
   }
  ],
  "rover": [
   {
    "cell": {
-    "o2_pct": 34,
-    "gravity_g": 0.166
+    "o2_pct": 17,
+    "gravity_g": 1
    },
-   "priority": 1,
-   "why": "No tests at 34 % O₂ / 0.166 g (gap 1); closeness to ambient 1; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "priority": 0.073,
+   "why": "No tests at 17 % O₂ / 1 g (gap 1); closeness to ambient 0.079; physics: marginal (limit 17.15 %, p 0.462), uncertainty 0.924.",
    "sources": []
   },
   {
    "cell": {
-    "o2_pct": 34,
+    "o2_pct": 20,
+    "gravity_g": 1
+   },
+   "priority": 0.012,
+   "why": "No tests at 20 % O₂ / 1 g (gap 1); closeness to ambient 0.107; physics: sustained (limit 17.15 %, p 0.945), uncertainty 0.11.",
+   "sources": []
+  },
+  {
+   "cell": {
+    "o2_pct": 17,
+    "gravity_g": 0.166
+   },
+   "priority": 0.004,
+   "why": "44 tests nearby at 17 % O₂ / 0.166 g (gap 0.022); closeness to ambient 0.183; physics: marginal (limit 16.78 %, p 0.554), uncertainty 0.892.",
+   "sources": [
+    "NASA Apollo LM Beta Cloth (PTFE/Silica) Non-Flammable — simulated values (team dataset)",
+    "NASA FM2 Lunar Surface Non-Flammable Reference — simulated values (team dataset)",
+    "NASA Orion OLIF Portable Suppression + ARS Scrubbing Safe — simulated values (team dataset)",
+    "NASA-STD-3001 Lunar Dust <= 0.1 mg/m3 HEPA Filtered Safe — simulated values (team dataset)",
+    "NASA GRC Partial-g Aerodynamic Blowoff Branch (0.16g Moon) — simulated values (team dataset)",
+    "NASA GRC Partial-g Flammability Map (0.16g Moon, Vb=7.2 cm/s) — simulated values (team dataset)",
+    "NASA GRC LUCI 0.16g Convective Blowoff Limit — simulated values (team dataset)",
+    "NASA Lunar 0.16g Partial Gravity (LUCI, FM2, ZGF, SEA 8.2 psia, HALO) — simulated values (team dataset)",
+    "NASA NESC Li-Ion FTRC (>600C), JSC 20584 SMAC, SAME/DAFT & STD-6001B — simulated values (team dataset)",
+    "NASA SAME / DAFT Lunar Regolith Dust (1-10 um) Discriminated as Non-Fire — simulated values (team dataset)",
+    "NASA Fine Water Mist Suppression at Lunar 0.16g (6x Slower Droplet Settling) — simulated values (team dataset)",
+    "NASA NESC 60% Kevlar / 40% PBI Blend Inerted Post-Depress — simulated values (team dataset)",
+    "NASA ZGF 0.16g Centrifugal Blowoff — simulated values (team dataset)"
+   ]
+  },
+  {
+   "cell": {
+    "o2_pct": 17,
     "gravity_g": 0.38
    },
-   "priority": 0.807,
-   "why": "No tests at 34 % O₂ / 0.38 g (gap 1); closeness to ambient 0.807; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
-   "sources": []
+   "priority": 0.004,
+   "why": "32 tests nearby at 17 % O₂ / 0.38 g (gap 0.03); closeness to ambient 0.147; physics: marginal (limit 16.9 %, p 0.525), uncertainty 0.95.",
+   "sources": [
+    "NASA PSI-181 ISSI Mars 0.38g Flux-Free Vacuum-Degassed Solder Repair Safe — simulated values (team dataset)",
+    "NASA Mars 0.38g Partial Gravity (N2/Ar 1.68:1, MOXIE, ESD, FWM 10-50 um) — simulated values (team dataset)",
+    "NASA 0.38g Convective Blowoff Beyond Peak — simulated values (team dataset)",
+    "NASA Grounded Mars Airlock + HEPA Dust Control Prevents ESD — simulated values (team dataset)",
+    "NASA/CSM Fine Water Mist (10-50 um) 0.38g Latent Cooling Quench — simulated values (team dataset)",
+    "NASA Mars In-Situ CO2 Diluent (+3.2% LOI Bonus) Quench — simulated values (team dataset)",
+    "NASA Mars Habitat CO2-Enriched Fire Suppression (0.38g Mars) — simulated values (team dataset)",
+    "NASA 0.38g Multi-Nozzle FWM Rack Penetration Safe — simulated values (team dataset)",
+    "NASA Mars In-Situ CO2 Diluent Radiative Reabsorption Quench (0.38g Mars) — simulated values (team dataset)",
+    "NASA Mars Partial-g Convective Blowoff Limit (0.38g Mars) — simulated values (team dataset)",
+    "NASA JSC 20584 & STD-3001 ECLSS Scrubbed Below 0.1 mg/m3 Dust & SMAC — simulated values (team dataset)",
+    "NASA Mars Habitat Hybrid Water Mist + CO2 Fire Extinguisher Suppression — simulated values (team dataset)"
+   ]
   },
   {
    "cell": {
-    "o2_pct": 31,
-    "gravity_g": 0.166
-   },
-   "priority": 0.741,
-   "why": "No tests at 31 % O₂ / 0.166 g (gap 1); closeness to ambient 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
-   "sources": []
-  },
-  {
-   "cell": {
-    "o2_pct": 37,
-    "gravity_g": 0.166
-   },
-   "priority": 0.741,
-   "why": "No tests at 37 % O₂ / 0.166 g (gap 1); closeness to ambient 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
-   "sources": []
-  },
-  {
-   "cell": {
-    "o2_pct": 31,
+    "o2_pct": 20,
     "gravity_g": 0.38
    },
-   "priority": 0.598,
-   "why": "No tests at 31 % O₂ / 0.38 g (gap 1); closeness to ambient 0.598; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
-   "sources": []
+   "priority": 0.004,
+   "why": "3 tests nearby at 20 % O₂ / 0.38 g (gap 0.25); closeness to ambient 0.199; physics: sustained (limit 16.9 %, p 0.957), uncertainty 0.086.",
+   "sources": [
+    "NASA PSI-22 ACME E-FIELD 7.5kV Ion Wind Emulating Martian 0.38g Buoyancy — simulated values (team dataset)",
+    "NASA Drop Tower Centrifuge 0.38g Thin Solid Flame Spread — simulated values (team dataset)",
+    "NASA SoFIE / Martian Partial-g de Ris Spread (0.38g Mars) — simulated values (team dataset)"
+   ]
   }
  ]
 }
