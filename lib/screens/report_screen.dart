@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:printing/printing.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../app/i18n.dart';
 import '../app/page.dart';
 import '../app/theme.dart';
 import '../copilot/session.dart';
@@ -11,6 +13,7 @@ import '../data/habitats.dart';
 import '../data/investigations.dart';
 import '../data/reports.dart';
 import 'gap_map_screen.dart' show drawDashed, paintHatch;
+import 'report_pdf.dart';
 
 /// Investigation report: objective, flame-spread chart, findings, hardware and test sheet.
 class ReportScreen extends ConsumerWidget {
@@ -44,22 +47,25 @@ class ReportScreen extends ConsumerWidget {
       children: [
         if (r != null) ...[
           _Panel(
-            label: 'Objective',
+            label: tr('Objective', 'Objetivo'),
             child: Text(r.objective, style: _soft),
           ),
           _ChartPanel(r, h),
         ],
         if (findings.isEmpty)
           _Panel(
-            label: 'Report',
+            label: tr('Report', 'Reporte'),
             child: Text(
-              'Report not generated yet. It is built only from linked PSI records.',
+              tr(
+                'Report not generated yet. It is built only from linked PSI records.',
+                'Reporte aún no generado. Se construye solo a partir de registros PSI vinculados.',
+              ),
               style: _soft,
             ),
           )
         else
           _Panel(
-            label: 'Key findings',
+            label: tr('Key findings', 'Hallazgos clave'),
             child: Column(
               spacing: 14,
               children: [
@@ -91,7 +97,7 @@ class ReportScreen extends ConsumerWidget {
           ),
         if (i.modifications.isNotEmpty)
           _Panel(
-            label: 'Required modifications',
+            label: tr('Required modifications', 'Modificaciones requeridas'),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               spacing: 12,
@@ -125,7 +131,7 @@ class ReportScreen extends ConsumerWidget {
           spacing: 10,
           children: [
             Tappable(
-              label: 'Back to ranking',
+              label: tr('Back to ranking', 'Volver al ranking'),
               onTap: () => context.go('/ranking'),
               child: Text('Ranking', style: AppText.caption),
             ),
@@ -136,7 +142,7 @@ class ReportScreen extends ConsumerWidget {
             ),
           ],
         ),
-        _Header(i: i, r: r, h: h, rank: rank),
+        _Header(i: i, r: r, h: h, rank: rank, findings: findings),
         LayoutBuilder(
           builder: (context, box) => box.maxWidth >= 1000
               ? Row(
@@ -170,11 +176,13 @@ class _Header extends ConsumerWidget {
     required this.r,
     required this.h,
     required this.rank,
+    required this.findings,
   });
   final Investigation i;
   final int rank;
   final Report? r;
   final Habitat h;
+  final List<String> findings;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) => Container(
@@ -223,7 +231,13 @@ class _Header extends ConsumerWidget {
                 spacing: 8,
                 runSpacing: 8,
                 children: [
-                  AppTag('${i.fuelLabel} fuel', leading: FuelMarker(i.fuel)),
+                  AppTag(
+                    tr(
+                      '${i.fuelLabel} fuel',
+                      'Combustible ${i.fuelLabel.toLowerCase()}',
+                    ),
+                    leading: FuelMarker(i.fuel),
+                  ),
                   for (final d in i.domains) AppTag(d),
                   if (i.sources.isNotEmpty)
                     AppTag(i.sources.first.ref, mono: true),
@@ -242,7 +256,7 @@ class _Header extends ConsumerWidget {
               spacing: 4,
               children: [
                 Text(
-                  'RELEVANCE · ${h.name.toUpperCase()}',
+                  '${tr('RELEVANCE', 'RELEVANCIA')} · ${h.name.toUpperCase()}',
                   style: AppText.label,
                 ),
                 Text(
@@ -266,16 +280,37 @@ class _Header extends ConsumerWidget {
                           ),
                     ),
                   ),
-                  child: const Text('OPEN IN PSI'),
+                  child: Text(tr('OPEN IN PSI', 'ABRIR EN PSI')),
+                ),
+                OutlinedButton.icon(
+                  onPressed: () => Printing.layoutPdf(
+                    name:
+                        'HabitatFireAtlas_${i.code}_${h.id}_${lang.value.name}.pdf',
+                    onLayout: (format) => buildReportPdf(
+                      i: i,
+                      r: r,
+                      h: h,
+                      rank: rank,
+                      findings: findings,
+                      format: format,
+                    ),
+                  ),
+                  icon: const Icon(Icons.picture_as_pdf_outlined, size: 16),
+                  label: Text(tr('EXPORT PDF', 'EXPORTAR PDF')),
                 ),
                 FilledButton(
                   onPressed: () {
                     ref
                         .read(copilotProvider)
-                        .ask('Summarize ${i.code} findings for ${h.name}.');
+                        .ask(
+                          tr(
+                            'Summarize ${i.code} findings for ${h.name}.',
+                            'Resume los hallazgos de ${i.code} para ${h.name}.',
+                          ),
+                        );
                     context.go('/copilot');
                   },
-                  child: const Text('ASK COPILOT'),
+                  child: Text(tr('ASK COPILOT', 'PREGUNTAR AL COPILOTO')),
                 ),
               ],
             ),
@@ -353,11 +388,17 @@ class _ChartPanel extends StatelessWidget {
                 spacing: 6,
                 children: [
                   Text(
-                    'FLAME SPREAD RATE VS OXYGEN',
+                    tr(
+                      'FLAME SPREAD RATE VS OXYGEN',
+                      'VELOCIDAD DE PROPAGACIÓN VS OXÍGENO',
+                    ),
                     style: AppText.label.copyWith(color: AppColors.textMuted),
                   ),
                   Text(
-                    'Thin solid fuel, opposed flow · by flow velocity',
+                    tr(
+                      'Thin solid fuel, opposed flow · by flow velocity',
+                      'Combustible sólido delgado, flujo opuesto · por velocidad de flujo',
+                    ),
                     style: AppText.caption.copyWith(fontSize: 13),
                   ),
                 ],
@@ -370,7 +411,7 @@ class _ChartPanel extends StatelessWidget {
                     legend(swatch(_seriesColors[n]), s.label),
                   legend(
                     swatch(AppColors.secondary, dashed: true),
-                    'Extrapolated',
+                    tr('Extrapolated', 'Extrapolado'),
                   ),
                 ],
               ),
@@ -379,9 +420,12 @@ class _ChartPanel extends StatelessWidget {
           AspectRatio(
             aspectRatio: 760 / 330,
             child: Semantics(
-              label:
-                  'Flame spread rate versus oxygen. Measured up to '
-                  '${fmtO2(_maxMeasured(r))} % O₂; ${h.name} sits at ${fmtO2(h.o2)} %.',
+              label: tr(
+                'Flame spread rate versus oxygen. Measured up to '
+                    '${fmtO2(_maxMeasured(r))} % O₂; ${h.name} sits at ${fmtO2(h.o2)} %.',
+                'Velocidad de propagación frente a oxígeno. Medida hasta '
+                    '${fmtO2(_maxMeasured(r))} % O₂; ${h.name} está a ${fmtO2(h.o2)} %.',
+              ),
               child: CustomPaint(painter: _SpreadPainter(r, h)),
             ),
           ),
@@ -391,11 +435,17 @@ class _ChartPanel extends StatelessWidget {
             runSpacing: 6,
             children: [
               Text(
-                'X · O₂ (% VOL)    Y · SPREAD RATE (MM/S)',
+                tr(
+                  'X · O₂ (% VOL)    Y · SPREAD RATE (MM/S)',
+                  'X · O₂ (% VOL)    Y · VEL. DE PROPAGACIÓN (MM/S)',
+                ),
                 style: AppText.label,
               ),
               Text(
-                'Sample values · bind to PSI dataset [ID]',
+                tr(
+                  'Sample values · bind to PSI dataset [ID]',
+                  'Valores de muestra · vincular al dataset PSI [ID]',
+                ),
                 style: AppText.mono.copyWith(fontSize: 11),
               ),
             ],
@@ -466,7 +516,7 @@ class _SpreadPainter extends CustomPainter {
     paintHatch(canvas, noData);
     canvas.restore();
     text(
-      'NO MEASURED DATA',
+      tr('NO MEASURED DATA', 'SIN DATOS MEDIDOS'),
       AppColors.secondary,
       size: 10,
     ).paint(canvas, Offset(noData.center.dx - 60, _yTop + 14));
@@ -564,11 +614,13 @@ class _Aside extends StatelessWidget {
   Widget build(BuildContext context) {
     final r = this.r;
     final conditions = [
-      ('Oxygen', '${i.o2Range} %'),
-      ('Pressure', '${i.pressureRange} psi'),
-      if (i.flowRange.isNotEmpty) ('Flow velocity', '${i.flowRange} cm/s'),
-      ('Gravity', i.gravity),
-      if (i.materials.isNotEmpty) ('Materials', i.materials.join(' · ')),
+      (tr('Oxygen', 'Oxígeno'), '${i.o2Range} %'),
+      (tr('Pressure', 'Presión'), '${i.pressureRange} psi'),
+      if (i.flowRange.isNotEmpty)
+        (tr('Flow velocity', 'Velocidad de flujo'), '${i.flowRange} cm/s'),
+      (tr('Gravity', 'Gravedad'), i.gravity),
+      if (i.materials.isNotEmpty)
+        (tr('Materials', 'Materiales'), i.materials.join(' · ')),
     ];
     const rowLine = Border(bottom: BorderSide(color: AppColors.grid));
     final key = AppText.caption.copyWith(
@@ -605,7 +657,7 @@ class _Aside extends StatelessWidget {
         ),
         if (r != null)
           _Panel(
-            label: 'Fuel sample geometry',
+            label: tr('Fuel sample geometry', 'Geometría de la muestra'),
             padding: 24,
             gap: 16,
             child: Row(
@@ -645,7 +697,7 @@ class _Aside extends StatelessWidget {
             ),
           ),
         _Panel(
-          label: 'Test conditions',
+          label: tr('Test conditions', 'Condiciones de ensayo'),
           padding: 24,
           gap: 14,
           child: Column(
@@ -660,11 +712,14 @@ class _Aside extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        'PARAMETER',
+                        tr('PARAMETER', 'PARÁMETRO'),
                         style: AppText.label.copyWith(fontSize: 10),
                       ),
                     ),
-                    Text('RANGE', style: AppText.label.copyWith(fontSize: 10)),
+                    Text(
+                      tr('RANGE', 'RANGO'),
+                      style: AppText.label.copyWith(fontSize: 10),
+                    ),
                   ],
                 ),
               ),
@@ -688,7 +743,10 @@ class _Aside extends StatelessWidget {
                 ),
               const SizedBox(height: 14),
               Text(
-                'Verify each value against PSI metadata.',
+                tr(
+                  'Verify each value against PSI metadata.',
+                  'Verifica cada valor con los metadatos PSI.',
+                ),
                 style: AppText.mono.copyWith(fontSize: 11),
               ),
             ],
@@ -696,7 +754,7 @@ class _Aside extends StatelessWidget {
         ),
         if (r != null)
           _Panel(
-            label: 'Sensors',
+            label: tr('Sensors', 'Sensores'),
             padding: 24,
             child: Column(
               children: [

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../app/i18n.dart';
 import '../app/page.dart';
 import '../app/theme.dart';
 import '../copilot/session.dart';
@@ -79,15 +80,18 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
       pressurePsi: c.kpa / _psiToKpa,
       forcedFlowCmS: c.flow,
       gravityG: c.band.g,
-      materialName: f.name,
+      materialName: f.name, // English key: the 3D card matches on it
     );
     final readout = _Readout(f: f, c: c, quiet: at(flow: 0));
     final charts = [
       _ChartCard(
-        title: 'FLAME SPREAD VS O₂',
-        caption:
-            'Predicted at ${fmtO2(c.kpa)} kPa · ${c.band.short} · ${fmtO2(c.flow)} cm/s. '
-            'Dots: measured ${f.name} burns.',
+        title: tr('FLAME SPREAD VS O₂', 'PROPAGACIÓN DE LLAMA VS O₂'),
+        caption: tr(
+          'Predicted at ${fmtO2(c.kpa)} kPa · ${c.band.short} · ${fmtO2(c.flow)} cm/s. '
+              'Dots: measured ${f.name} burns.',
+          'Predicción a ${fmtO2(c.kpa)} kPa · ${c.band.short} · ${fmtO2(c.flow)} cm/s. '
+              'Puntos: combustiones medidas de ${trd(f.name)}.',
+        ),
         chart: _SpreadChart(
           curve: [
             for (var o2 = 10.0; o2 <= math.max(40, c.o2); o2 += 1)
@@ -101,10 +105,16 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
         ),
       ),
       _ChartCard(
-        title: 'FLAMMABILITY LIMIT VS FLOW',
-        caption:
-            'Minimum O₂ that sustains a flame. Above a line it burns. '
-            'Too little flow starves it, too much blows it off.',
+        title: tr(
+          'FLAMMABILITY LIMIT VS FLOW',
+          'LÍMITE DE INFLAMABILIDAD VS FLUJO',
+        ),
+        caption: tr(
+          'Minimum O₂ that sustains a flame. Above a line it burns. '
+              'Too little flow starves it, too much blows it off.',
+          'O₂ mínimo que sostiene una llama. Por encima de una línea arde. '
+              'Poco flujo la asfixia, demasiado la apaga por soplado.',
+        ),
         chart: _LimitChart(
           lines: {
             for (final b in GravityBand.values)
@@ -139,18 +149,25 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
       gap: 28,
       children: [
         PageIntro(
-          step: 'STEP 02 · PREDICT',
-          title: 'FLAME FORECAST',
+          step: tr('STEP 02 · PREDICT', 'PASO 02 · PREDECIR'),
+          title: tr('FLAME FORECAST', 'PRONÓSTICO DE LLAMA'),
           description: TextSpan(
-            text:
-                'How a flame behaves at any condition: a physics model (flammability limit vs '
-                'flow, buoyancy from gravity, pressure, de Ris spread), calibrated on '
-                '${model.summary}. It flags where it extrapolates. ',
+            text: tr(
+              'How a flame behaves at any condition: a physics model (flammability limit vs '
+                  'flow, buoyancy from gravity, pressure, de Ris spread), calibrated on '
+                  '${model.summary}. It flags where it extrapolates. ',
+              'Cómo se comporta una llama en cualquier condición: un modelo físico (límite de '
+                  'inflamabilidad vs flujo, flotabilidad por gravedad, presión, propagación de de Ris), '
+                  'calibrado con ${model.summary}. Señala dónde extrapola. ',
+            ),
             children: [
               TextSpan(
                 text: atHabitat
-                    ? 'Showing ${h.name}.'
-                    : 'What-if from ${h.name}.',
+                    ? tr('Showing ${h.name}.', 'Mostrando ${h.name}.')
+                    : tr(
+                        'What-if from ${h.name}.',
+                        'Escenario hipotético desde ${h.name}.',
+                      ),
                 style: const TextStyle(color: AppColors.text),
               ),
             ],
@@ -160,14 +177,25 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
               ref
                   .read(copilotProvider)
                   .ask(
-                    'What if we run at ${fmtO2(c.o2)}% O2, ${fmtO2(c.kpa)} kPa, '
-                    '${c.band.g < .01 ? 'microgravity' : '${c.band.g} g'}, '
-                    '${fmtO2(c.flow)} cm/s flow'
-                    '${c.material == null ? '' : ' with ${f.name}'}?',
+                    tr(
+                      'What if we run at ${fmtO2(c.o2)}% O2, ${fmtO2(c.kpa)} kPa, '
+                          '${c.band.g < .01 ? 'microgravity' : '${c.band.g} g'}, '
+                          '${fmtO2(c.flow)} cm/s flow'
+                          '${c.material == null ? '' : ' with ${f.name}'}?',
+                      '¿Qué pasa si operamos a ${fmtO2(c.o2)}% O2, ${fmtO2(c.kpa)} kPa, '
+                          '${c.band.g < .01 ? 'microgravedad' : '${c.band.g} g'}, '
+                          'flujo de ${fmtO2(c.flow)} cm/s'
+                          '${c.material == null ? '' : ' con ${trd(f.name)}'}?',
+                    ),
                   );
               context.go('/copilot');
             },
-            child: const Text('ASK COPILOT ABOUT THIS CONDITION'),
+            child: Text(
+              tr(
+                'ASK COPILOT ABOUT THIS CONDITION',
+                'PREGUNTAR AL COPILOTO POR ESTA CONDICIÓN',
+              ),
+            ),
           ),
         ),
         LayoutBuilder(
@@ -207,11 +235,14 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
           runSpacing: AppLayout.gutter,
           children: [
             _RankCard(
-              title: 'WHICH MATERIAL BURNS FIRST · THIS CONDITION',
+              title: tr(
+                'WHICH MATERIAL BURNS FIRST · THIS CONDITION',
+                'QUÉ MATERIAL ARDE PRIMERO · ESTA CONDICIÓN',
+              ),
               rows: [
                 for (final m in materials)
                   (
-                    label: m.name,
+                    label: trd(m.name),
                     f: m,
                     selected: m.material == f.material,
                     onTap: () => setState(
@@ -227,7 +258,10 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
               ],
             ),
             _RankCard(
-              title: 'HABITAT FIRE RISK · ${f.name.toUpperCase()}, VENTILATED',
+              title: tr(
+                'HABITAT FIRE RISK · ${f.name.toUpperCase()}, VENTILATED',
+                'RIESGO DE INCENDIO POR HÁBITAT · ${trd(f.name).toUpperCase()}, VENTILADO',
+              ),
               rows: [
                 for (final r in habitatRisk)
                   (
@@ -242,10 +276,16 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
           ],
         ),
         Text(
-          'Model: LOI = MOC + q·ln²(u/u*) + kP·ln(101.3/P), u = √(flow² + (${fmtO2(model.uBuoy1g)}·g^⅓)²), '
-          'spread ∝ (O₂ − LOI). Fit: q ${model.q}, u* ${fmtO2(model.uStar)} cm/s, '
-          'kP ${model.kP} · n ${model.n} · accuracy ${(model.accuracy * 100).round()} % · '
-          'spread RMSE ${model.spreadRmse} mm/s.',
+          tr(
+            'Model: LOI = MOC + q·ln²(u/u*) + kP·ln(101.3/P), u = √(flow² + (${fmtO2(model.uBuoy1g)}·g^⅓)²), '
+                'spread ∝ (O₂ − LOI). Fit: q ${model.q}, u* ${fmtO2(model.uStar)} cm/s, '
+                'kP ${model.kP} · n ${model.n} · accuracy ${(model.accuracy * 100).round()} % · '
+                'spread RMSE ${model.spreadRmse} mm/s.',
+            'Modelo: LOI = MOC + q·ln²(u/u*) + kP·ln(101.3/P), u = √(flujo² + (${fmtO2(model.uBuoy1g)}·g^⅓)²), '
+                'propagación ∝ (O₂ − LOI). Ajuste: q ${model.q}, u* ${fmtO2(model.uStar)} cm/s, '
+                'kP ${model.kP} · n ${model.n} · precisión ${(model.accuracy * 100).round()} % · '
+                'RMSE de propagación ${model.spreadRmse} mm/s.',
+          ),
           style: AppText.mono.copyWith(fontSize: 10),
         ),
       ],
@@ -279,8 +319,9 @@ class _Controls extends StatelessWidget {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          spacing: 8,
           children: [
-            Text(label, style: AppText.label),
+            Flexible(child: Text(label, style: AppText.label)),
             DataValue(
               fmtO2(double.parse(value.toStringAsFixed(1))),
               unit,
@@ -309,15 +350,15 @@ class _Controls extends StatelessWidget {
             alignment: WrapAlignment.spaceBetween,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              Text('CONDITIONS', style: AppText.label),
+              Text(tr('CONDITIONS', 'CONDICIONES'), style: AppText.label),
               TextButton(
                 onPressed: onReset,
-                child: const Text('RESET TO HABITAT'),
+                child: Text(tr('RESET TO HABITAT', 'VOLVER AL HÁBITAT')),
               ),
             ],
           ),
           slider(
-            'OXYGEN',
+            tr('OXYGEN', 'OXÍGENO'),
             '% O₂',
             c.o2,
             10,
@@ -331,7 +372,7 @@ class _Controls extends StatelessWidget {
             ),
           ),
           slider(
-            'PRESSURE',
+            tr('PRESSURE', 'PRESIÓN'),
             'kPa',
             c.kpa,
             20,
@@ -345,7 +386,7 @@ class _Controls extends StatelessWidget {
             ),
           ),
           slider(
-            'VENTILATION FLOW',
+            tr('VENTILATION FLOW', 'FLUJO DE VENTILACIÓN'),
             'cm/s',
             c.flow,
             0,
@@ -358,7 +399,7 @@ class _Controls extends StatelessWidget {
               material: c.material,
             ),
           ),
-          Text('GRAVITY', style: AppText.label),
+          Text(tr('GRAVITY', 'GRAVEDAD'), style: AppText.label),
           Wrap(
             spacing: 8,
             runSpacing: 8,
@@ -386,7 +427,7 @@ class _Controls extends StatelessWidget {
             children: [
               for (final MapEntry(:key, :value) in model.materials.entries)
                 ToggleChip(
-                  value.name,
+                  trd(value.name),
                   selected: key == (c.material ?? model.defaultMaterial),
                   accent: true,
                   onTap: () => onChanged((
@@ -421,13 +462,27 @@ class _Readout extends StatelessWidget {
     String sign(double v) => '${v > 0 ? '+' : ''}${v.toStringAsFixed(1)}';
     final why = !burns
         ? f.oxygenStarved
-              ? 'Too little flow reaches the flame (${fmtO2(f.uEff)} cm/s): it starves of oxygen and goes out.'
-              : 'The flow (${fmtO2(f.uEff)} cm/s) blows the flame off before it can spread.'
+              ? tr(
+                  'Too little flow reaches the flame (${fmtO2(f.uEff)} cm/s): it starves of oxygen and goes out.',
+                  'Llega muy poco flujo a la llama (${fmtO2(f.uEff)} cm/s): se queda sin oxígeno y se apaga.',
+                )
+              : tr(
+                  'The flow (${fmtO2(f.uEff)} cm/s) blows the flame off before it can spread.',
+                  'El flujo (${fmtO2(f.uEff)} cm/s) apaga la llama por soplado antes de que se propague.',
+                )
         : c.band.g > .01
-        ? 'Buoyancy at ${c.band.short} feeds it ${f.uBuoy.toStringAsFixed(1)} cm/s of fresh air: '
-              'turning ventilation off does not starve it (${quiet.regime.label.toLowerCase()}).'
-        : 'In microgravity only ventilation feeds it: fans off → limit '
-              '${quiet.loi.toStringAsFixed(1)} % O₂ (${quiet.regime.label.toLowerCase()}).';
+        ? tr(
+            'Buoyancy at ${c.band.short} feeds it ${f.uBuoy.toStringAsFixed(1)} cm/s of fresh air: '
+                'turning ventilation off does not starve it (${quiet.regime.label.toLowerCase()}).',
+            'La flotabilidad a ${c.band.short} le aporta ${f.uBuoy.toStringAsFixed(1)} cm/s de aire fresco: '
+                'apagar la ventilación no la asfixia (${quiet.regime.label.toLowerCase()}).',
+          )
+        : tr(
+            'In microgravity only ventilation feeds it: fans off → limit '
+                '${quiet.loi.toStringAsFixed(1)} % O₂ (${quiet.regime.label.toLowerCase()}).',
+            'En microgravedad solo la alimenta la ventilación: ventiladores apagados → límite '
+                '${quiet.loi.toStringAsFixed(1)} % O₂ (${quiet.regime.label.toLowerCase()}).',
+          );
 
     Widget stat(String label, String value, String unit) => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -450,13 +505,22 @@ class _Readout extends StatelessWidget {
             runSpacing: 10,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              Text('FORECAST · ${f.name.toUpperCase()}', style: AppText.label),
+              Text(
+                tr('FORECAST · ', 'PRONÓSTICO · ') + trd(f.name).toUpperCase(),
+                style: AppText.label,
+              ),
               AppTag(f.regime.label, mono: true, level: level),
               if (f.extrapolated.isEmpty)
-                const AppTag('WITHIN TESTED RANGE', mono: true)
+                AppTag(
+                  tr('WITHIN TESTED RANGE', 'DENTRO DEL RANGO ENSAYADO'),
+                  mono: true,
+                )
               else
-                const AppTag(
-                  'PHYSICS EXTRAPOLATION · UNTESTED',
+                AppTag(
+                  tr(
+                    'PHYSICS EXTRAPOLATION · UNTESTED',
+                    'EXTRAPOLACIÓN FÍSICA · SIN ENSAYAR',
+                  ),
                   mono: true,
                   level: TagLevel.high,
                 ),
@@ -466,16 +530,35 @@ class _Readout extends StatelessWidget {
             spacing: 36,
             runSpacing: 16,
             children: [
-              stat('P(BURN)', (f.pBurn * 100).toStringAsFixed(0), '%'),
-              stat('SPREAD RATE', f.spread.toStringAsFixed(1), 'mm/s'),
-              stat('FLAMMABILITY LIMIT', f.loi.toStringAsFixed(1), '% O₂'),
-              stat('MARGIN', sign(f.margin), '% O₂'),
-              stat('FLOW AT FLAME', f.uEff.toStringAsFixed(1), 'cm/s'),
+              stat(
+                tr('P(BURN)', 'P(ARDER)'),
+                (f.pBurn * 100).toStringAsFixed(0),
+                '%',
+              ),
+              stat(
+                tr('SPREAD RATE', 'VEL. DE PROPAGACIÓN'),
+                f.spread.toStringAsFixed(1),
+                'mm/s',
+              ),
+              stat(
+                tr('FLAMMABILITY LIMIT', 'LÍMITE DE INFLAMABILIDAD'),
+                f.loi.toStringAsFixed(1),
+                '% O₂',
+              ),
+              stat(tr('MARGIN', 'MARGEN'), sign(f.margin), '% O₂'),
+              stat(
+                tr('FLOW AT FLAME', 'FLUJO EN LA LLAMA'),
+                f.uEff.toStringAsFixed(1),
+                'cm/s',
+              ),
             ],
           ),
           Text(why, style: AppText.body.copyWith(color: AppColors.textSoft)),
           for (final e in f.extrapolated)
-            Text('· untested: $e', style: AppText.mono.copyWith(fontSize: 11)),
+            Text(
+              tr('· untested: $e', '· sin ensayar: $e'),
+              style: AppText.mono.copyWith(fontSize: 11),
+            ),
         ],
       ),
     );
@@ -573,8 +656,10 @@ class _SpreadChart extends StatelessWidget {
     final maxY =
         [...curve, ...measured].fold(1.0, (m, s) => math.max(m, s.y)) * 1.15;
     return Semantics(
-      label:
-          'Predicted flame spread rate versus oxygen, ${measured.length} measured points',
+      label: tr(
+        'Predicted flame spread rate versus oxygen, ${measured.length} measured points',
+        'Velocidad de propagación predicha frente a oxígeno, ${measured.length} puntos medidos',
+      ),
       child: LineChart(
         LineChartData(
           minY: 0,
@@ -618,7 +703,10 @@ class _LimitChart extends StatelessWidget {
       children: [
         Expanded(
           child: Semantics(
-            label: 'Flammability limit versus ventilation flow for each gravity level',
+            label: tr(
+              'Flammability limit versus ventilation flow for each gravity level',
+              'Límite de inflamabilidad frente a flujo de ventilación para cada nivel de gravedad',
+            ),
             child: LineChart(
               LineChartData(
                 minX: 0,
@@ -626,7 +714,10 @@ class _LimitChart extends StatelessWidget {
                 minY: minY,
                 maxY: maxY,
                 clipData: const FlClipData.all(),
-                titlesData: _titles('flow cm/s', 'limit % O₂'),
+                titlesData: _titles(
+                  tr('flow cm/s', 'flujo cm/s'),
+                  tr('limit % O₂', 'límite % O₂'),
+                ),
                 gridData: _grid,
                 borderData: _border,
                 lineTouchData: const LineTouchData(enabled: false),
@@ -741,7 +832,7 @@ class _RankCard extends StatelessWidget {
                       child: Text(
                         '${r.f.regime.label}\n'
                         '${r.f.spread.toStringAsFixed(1)} mm/s · lim ${r.f.loi.toStringAsFixed(1)} %'
-                        '${r.f.extrapolated.isEmpty ? '' : ' · untested'}',
+                        '${r.f.extrapolated.isEmpty ? '' : tr(' · untested', ' · sin ensayar')}',
                         textAlign: TextAlign.right,
                         style: AppText.mono.copyWith(fontSize: 10, height: 1.5),
                       ),

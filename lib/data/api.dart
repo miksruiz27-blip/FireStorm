@@ -5,6 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
+import '../app/i18n.dart';
+
 /// Override with `--dart-define=API_BASE=http://10.0.2.2:3000` for a local backend.
 const apiBase = String.fromEnvironment(
   'API_BASE',
@@ -65,7 +67,13 @@ Future<CopilotReply?> askCopilot(String question, String habitatId) async {
         .post(
           Uri.parse('$apiBase/copilot'),
           headers: {'content-type': 'application/json'},
-          body: jsonEncode({'question': question, 'habitat': habitatId}),
+          body: jsonEncode({
+            'question': question,
+            'habitat': habitatId,
+            'lang': lang
+                .value
+                .name, // answer language (backend ignores it if unknown)
+          }),
         )
         .timeout(const Duration(seconds: 16));
     if (r.statusCode == 200) {

@@ -90,6 +90,7 @@ export const FlowIn = z.object({
 export const CopilotIn = z.object({
   question: z.string().trim().min(1).max(500),
   habitat: z.string().min(1),
+  lang: z.enum(['en', 'es']).default('en'), // answer language (the app's EN/ES switch)
 });
 
 // ── GenUI ──

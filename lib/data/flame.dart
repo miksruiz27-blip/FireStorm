@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../app/i18n.dart';
 import 'api.dart';
 
 /// Physics-informed flame model: port of backend/src/flame.js (same params, parity-tested).
@@ -44,8 +45,10 @@ class FlameModel {
   final int n;
 
   /// The one model figure every screen shows (F6): same n, same definition.
-  String get summary =>
-      'n = $n test points labelled burn/extinct · accuracy ${(accuracy * 100).round()} %';
+  String get summary => tr(
+    'n = $n test points labelled burn/extinct · accuracy ${(accuracy * 100).round()} %',
+    'n = $n puntos de ensayo etiquetados arde/se extingue · precisión ${(accuracy * 100).round()} %',
+  );
 
   static double _d(Object? v) => (v as num).toDouble();
   static (double, double) _range(Object? v) => (_d((v as List)[0]), _d(v[1]));
@@ -95,27 +98,30 @@ class FlameModel {
       oxygenStarved: uEff < uStar,
       extrapolated: [
         if (o2 < o2Range.$1 - 2 || o2 > o2Range.$2 + 2)
-          'O₂ ${_f(o2)} % (tested ${_f(o2Range.$1)}–${_f(o2Range.$2)})',
+          'O₂ ${_f(o2)} % ($_tested ${_f(o2Range.$1)}–${_f(o2Range.$2)})',
         if (kpa < kpaRange.$1 - 5 || kpa > kpaRange.$2 + 5)
-          '${_f(kpa)} kPa (tested ${_f(kpaRange.$1)}–${_f(kpaRange.$2)})',
+          '${_f(kpa)} kPa ($_tested ${_f(kpaRange.$1)}–${_f(kpaRange.$2)})',
         if (!testedG.any((t) => (t - g).abs() < .05))
-          '${_f(g, 3)} g (tested ${testedG.map(_f).join(', ')} g)',
+          '${_f(g, 3)} g ($_tested ${testedG.map(_f).join(', ')} g)',
       ],
     );
   }
 }
 
+String get _tested => tr('tested', 'ensayado');
+
 String _f(num v, [int d = 1]) =>
     v % 1 == 0 ? v.toStringAsFixed(0) : v.toStringAsFixed(d);
 
 enum FlameRegime {
-  extinguishes('SELF-EXTINGUISHES'),
-  marginal('MARGINAL'),
-  sustained('SUSTAINED'),
-  vigorous('VIGOROUS');
+  extinguishes('SELF-EXTINGUISHES', 'SE AUTOEXTINGUE'),
+  marginal('MARGINAL', 'MARGINAL'),
+  sustained('SUSTAINED', 'SOSTENIDA'),
+  vigorous('VIGOROUS', 'VIGOROSA');
 
-  const FlameRegime(this.label);
-  final String label;
+  const FlameRegime(this._en, this._es);
+  final String _en, _es;
+  String get label => tr(_en, _es);
 }
 
 class FlameForecast {

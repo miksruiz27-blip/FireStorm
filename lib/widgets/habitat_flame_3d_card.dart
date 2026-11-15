@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import '../app/i18n.dart';
 import '../data/flame_3d_physics.dart';
 
 /// ============================================================================
@@ -156,9 +157,12 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      '3D REGENERATIVE DE LAVAL THRUSTER & MULTI-REGIME CONE · NASA PSI',
-                      style: TextStyle(
+                    Text(
+                      tr(
+                        '3D REGENERATIVE DE LAVAL THRUSTER & MULTI-REGIME CONE · NASA PSI',
+                        'PROPULSOR DE LAVAL REGENERATIVO 3D Y CONO MULTIRRÉGIMEN · NASA PSI',
+                      ),
+                      style: const TextStyle(
                         color: Color(0xFFB0BEC5),
                         fontSize: 10,
                         letterSpacing: 1.3,
@@ -191,12 +195,14 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
                   ),
                   child: Text(
                     isExtinct
-                        ? 'QUENCHED'
+                        ? tr('QUENCHED', 'APAGADA')
                         : (res.isCoolFlame
-                            ? 'COOL FLAME NTC'
+                            ? tr('COOL FLAME NTC', 'LLAMA FRÍA NTC')
                             : (isPulsating
-                                ? 'LEWIS PULSATING'
-                                : (liftoffMm > 4.0 ? 'LIFTED TRIPLE-FLAME' : 'SUSTAINED CONE BURN'))),
+                                ? tr('LEWIS PULSATING', 'PULSANTE (LEWIS)')
+                                : (liftoffMm > 4.0
+                                    ? tr('LIFTED TRIPLE-FLAME', 'LLAMA TRIPLE DESPEGADA')
+                                    : tr('SUSTAINED CONE BURN', 'COMBUSTIÓN EN CONO SOSTENIDA')))),
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 9.5,
@@ -260,7 +266,7 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
                     ),
                     child: Text(
                       'T_FLAME: ${res.tempK.round()} K  |  Da: ${damkohler.toStringAsFixed(2)}  |  Le: ${lewisNumber.toStringAsFixed(2)}\n'
-                      'LIFTOFF H_L: ${liftoffMm.toStringAsFixed(1)} mm  |  SOOT f_v: ${sootPpm.toStringAsFixed(2)} ppm (CMD ${smokeCmdUm.toStringAsFixed(2)}μm)',
+                      '${tr('LIFTOFF', 'DESPEGUE')} H_L: ${liftoffMm.toStringAsFixed(1)} mm  |  ${tr('SOOT', 'HOLLÍN')} f_v: ${sootPpm.toStringAsFixed(2)} ppm (CMD ${smokeCmdUm.toStringAsFixed(2)}μm)',
                       style: const TextStyle(
                         color: Color(0xFFB0BEC5),
                         fontSize: 11.5,
@@ -280,24 +286,24 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
                     spacing: 6,
                     runSpacing: 6,
                     children: [
-                      _miniBtn('COOL FLAME NTC', _coolFlameMode, () {
+                      _miniBtn(tr('COOL FLAME NTC', 'LLAMA FRÍA NTC'), _coolFlameMode, () {
                         setState(() => _coolFlameMode = !_coolFlameMode);
                       }),
-                      _miniBtn('0g TOP', false, () {
+                      _miniBtn(tr('0g TOP', 'VISTA SUPERIOR 0g'), false, () {
                         setState(() {
                           _autoRotate = false;
                           _camYaw = 0.0;
                           _camPitch = 1.3;
                         });
                       }),
-                      _miniBtn('NOZZLE PROFILE', false, () {
+                      _miniBtn(tr('NOZZLE PROFILE', 'PERFIL DE TOBERA'), false, () {
                         setState(() {
                           _autoRotate = false;
                           _camYaw = 0.0;
                           _camPitch = 0.05;
                         });
                       }),
-                      _miniBtn('3D ORBIT', _autoRotate, () {
+                      _miniBtn(tr('3D ORBIT', 'ÓRBITA 3D'), _autoRotate, () {
                         setState(() => _autoRotate = !_autoRotate);
                       }),
                     ],

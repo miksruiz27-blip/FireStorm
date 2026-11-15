@@ -1,8 +1,9 @@
 // The LLM only writes `answer` (≤60 words) and picks source numbers. Cloud first, then Ollama. 10 s each.
 import { LlmOut } from '../schemas.js';
 
-const SYSTEM =
-  'You are the Habitat Fire Atlas copilot. Respond in English, whatever the language of the question. ' +
+const LANGUAGE = { en: 'English', es: 'Spanish' };
+const system = (lang = 'en') =>
+  `You are the Habitat Fire Atlas copilot. Respond in ${LANGUAGE[lang] ?? 'English'}, whatever the language of the question. ` +
   'Answer in at most 60 words, grounded only in the numbered NASA sources. ' +
   'For any question about which materials are safe, always give both lists from the widgets: ' +
   'SAFE (MOC above the habitat O2) and BURNS (MOC at or below it), even if one is empty. ' +
@@ -30,7 +31,7 @@ const post = async (url, headers, body, ms) => {
 };
 
 const providers = {
-  anthropic: async (user, ms) => {
+  anthropic: async (user, ms, SYSTEM) => {
     const j = await post(
       'https://api.anthropic.com/v1/messages',
       { 'x-api-key': process.env.LLM_API_KEY, 'anthropic-version': '2023-06-01' },
@@ -40,7 +41,7 @@ const providers = {
     return j.content?.find((c) => c.type === 'text')?.text;
   },
   // Any OpenAI-compatible API (OpenAI, Groq, …): set LLM_BASE_URL + LLM_MODEL.
-  openai: async (user, ms) => {
+  openai: async (user, ms, SYSTEM) => {
     const j = await post(
       `${process.env.LLM_BASE_URL || 'https://api.openai.com/v1'}/chat/completions`,
       { authorization: `Bearer ${process.env.LLM_API_KEY}` },
@@ -49,7 +50,7 @@ const providers = {
     );
     return j.choices?.[0]?.message?.content;
   },
-  ollama: async (user, ms) => {
+  ollama: async (user, ms, SYSTEM) => {
     const j = await post(
       `${process.env.OLLAMA_URL}/api/chat`,
       {},
@@ -76,11 +77,12 @@ export async function askLLM(ctx, budgetMs = 12000) {
   if (cloud && process.env.LLM_API_KEY) attempts.push(['llm', cloud]);
   if (process.env.OLLAMA_URL) attempts.push(['ollama', providers.ollama]);
   const user = prompt(ctx);
+  const SYSTEM = system(ctx.lang);
   for (const [source, call] of attempts) {
     const ms = Math.min(10000, deadline - Date.now());
     if (ms < 500) break;
     try {
-      return { ...parse(await call(user, ms)), source };
+      return { ...parse(await call(user, ms, SYSTEM)), source };
     } catch (e) {
       console.warn(`copilot ${source} failed:`, e.message);
     }

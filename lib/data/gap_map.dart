@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../app/i18n.dart';
 import '../app/theme.dart';
 import 'api.dart';
 import 'habitats.dart';
@@ -27,13 +28,7 @@ class TestMark {
 
 /// Region with no tests. Values above 45 % O₂ fall in the pure-oxygen column.
 class GapZone {
-  const GapZone(
-    this.from,
-    this.to,
-    this.o2From,
-    this.o2To, [
-    this.label = 'NO DATA',
-  ]);
+  const GapZone(this.from, this.to, this.o2From, this.o2To, [this.label = '']);
   final GravityBand from, to;
   final double o2From, o2To;
   final String label;
@@ -101,8 +96,8 @@ List<GapZone> gapZonesFor(List<TestMark> marks) => [
         r.$1,
         r.$2,
         b == GravityBand.mars && r.$1 <= gapMapO2Min && r.$2 >= 45
-            ? 'NO DATA · MARTIAN GRAVITY'
-            : 'NO DATA',
+            ? tr('NO DATA · MARTIAN GRAVITY', 'SIN DATOS · GRAVEDAD MARCIANA')
+            : tr('NO DATA', 'SIN DATOS'),
       ),
     ),
     if (!marks.any((m) => m.band == b && m.o2 > 45)) GapZone(b, b, 46, 100, ''),
@@ -132,10 +127,38 @@ class Recommendation {
   final String why;
 }
 
+/// The backend's recommendation template (scoring.js `why`) in the current language.
+String whyEs(String why) {
+  if (!isEs) return why;
+  var s = why.replaceFirstMapped(
+    RegExp(r'^(\d+) tests? nearby at'),
+    (m) => '${m[1]} ensayo(s) cercano(s) a',
+  );
+  for (final (en, es) in const [
+    ('No tests at', 'Sin ensayos a'),
+    ('(gap ', '(vacío '),
+    ('closeness to habitat', 'cercanía al hábitat'),
+    ('physics: ', 'física: '),
+    ('self-extinguishes', 'se autoextingue'),
+    ('sustained', 'sostenida'),
+    ('vigorous', 'vigorosa'),
+    ('(limit ', '(límite '),
+    (
+      'extrapolated — a test here would confirm it.',
+      'extrapolado — un ensayo aquí lo confirmaría.',
+    ),
+    ('uncertainty', 'incertidumbre'),
+  ]) {
+    s = s.replaceAll(en, es);
+  }
+  return s;
+}
+
 final recommendationsProvider = FutureProvider<List<Recommendation>>((
   ref,
 ) async {
   final h = ref.watch(selectedHabitatProvider);
+  ref.watch(langProvider);
   final j = await getJson(
     '/recommendations?habitat=${h.id}',
     snapshot: 'recommendations.json',
@@ -147,7 +170,7 @@ final recommendationsProvider = FutureProvider<List<Recommendation>>((
         (r['cell']['o2_pct'] as num).toDouble(),
         bandFor((r['cell']['gravity_g'] as num).toDouble()),
         (r['priority'] as num).toDouble(),
-        r['why'] as String,
+        whyEs(r['why'] as String),
       ),
   ];
 });

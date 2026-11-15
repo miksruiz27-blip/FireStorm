@@ -2,7 +2,7 @@ import * as repo from '../repo.js';
 import { GenUI } from '../schemas.js';
 import { scoreExperiment } from '../scoring.js';
 import { askLLM } from './llm.js';
-import { buildWidgets, conditionsFrom, level } from './rules.js';
+import { HABITAT_ES, buildWidgets, conditionsFrom, level, say } from './rules.js';
 
 const MAX_SOURCES = 8;
 
@@ -12,7 +12,7 @@ export const refOf = ({ ntrs_id, url }) =>
 const citable = (s) => s?.title && /^https?:\/\/\S+$/.test(s.url ?? '');
 
 /** → { body: GenUI, source: 'llm'|'ollama'|'template' }. `llm` injectable for tests. */
-export async function copilot({ question, habitat: habitatId }, { llm = askLLM } = {}) {
+export async function copilot({ question, habitat: habitatId, lang = 'en' }, { llm = askLLM } = {}) {
   const h = await repo.habitat(habitatId);
   if (!h) throw Object.assign(new Error(`unknown habitat ${habitatId}`), { status: 400 });
 
@@ -50,20 +50,29 @@ export async function copilot({ question, habitat: habitatId }, { llm = askLLM }
     mocs,
     spreadPoints: spreadPoints.filter((t) => sources.some((s) => s.key === `exp:${t.experiment_id}`)),
     sources,
+    lang,
   });
 
   // d/e) LLM writes the answer. It is rejected unless it cites at least one numbered (resolvable)
   // source; then the rule answer + rule citations stand in.
-  const llmOut = await llm({ question, habitat: h, widgets, sources });
+  const llmOut = await llm({ question, habitat: h, widgets, sources, lang });
   const valid = new Set(sources.map((s) => s.n));
   const llmCite = llmOut ? [...new Set(llmOut.cite)].filter((n) => valid.has(n)) : [];
   const out = llmCite.length ? llmOut : null;
   const cite = out ? llmCite : ruleCite;
+  const t = say(lang);
+  const o2 = +f.conditions.o2_pct.toFixed(1);
   const answer = out?.answer ??
-    `Based on ${cite.length} NASA source${cite.length === 1 ? '' : 's'} and the physics model: ` +
-      `${{ critical: 'critical', warning: 'high', info: 'low' }[level(f.p_burn)]} risk at ${h.name} ` +
-      `at ${+f.conditions.o2_pct.toFixed(1)} % O₂ — limit ${f.loi_pct} %, spread ≈ ${f.spread_mm_s} mm/s` +
-      (f.extrapolated.length ? '; extrapolated, untested at this condition.' : '.');
+    t(
+      `Based on ${cite.length} NASA source${cite.length === 1 ? '' : 's'} and the physics model: ` +
+        `${{ critical: 'critical', warning: 'high', info: 'low' }[level(f.p_burn)]} risk at ${h.name} ` +
+        `at ${o2} % O₂ — limit ${f.loi_pct} %, spread ≈ ${f.spread_mm_s} mm/s` +
+        (f.extrapolated.length ? '; extrapolated, untested at this condition.' : '.'),
+      `Según ${cite.length} fuente${cite.length === 1 ? '' : 's'} de la NASA y el modelo físico: ` +
+        `riesgo ${{ critical: 'crítico', warning: 'alto', info: 'bajo' }[level(f.p_burn)]} en ${HABITAT_ES[h.name] ?? h.name} ` +
+        `a ${o2} % O₂ — límite ${f.loi_pct} %, propagación ≈ ${f.spread_mm_s} mm/s` +
+        (f.extrapolated.length ? '; extrapolado, sin ensayar en esta condición.' : '.'),
+    );
 
   // f) citations come from the DB-backed list only.
   const body = GenUI.parse({

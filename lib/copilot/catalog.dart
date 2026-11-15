@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:json_schema_builder/json_schema_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../app/i18n.dart';
 import '../app/theme.dart';
 
 /// The copilot's visual vocabulary. The model may only compose answers from these
@@ -76,9 +77,11 @@ final _answerCard = CatalogItem(
                 spacing: 10,
                 children: [
                   const BrandMark(size: 18),
-                  Text(
-                    (d['title'] as String).toUpperCase(),
-                    style: AppText.label.copyWith(color: AppColors.textMuted),
+                  Flexible(
+                    child: Text(
+                      (d['title'] as String).toUpperCase(),
+                      style: AppText.label.copyWith(color: AppColors.textMuted),
+                    ),
                   ),
                 ],
               ),
@@ -109,7 +112,7 @@ class _StripeProgress extends StatelessWidget {
     tween: Tween(end: value.clamp(0, 1)),
     duration: const Duration(milliseconds: 400),
     builder: (context, v, _) => Semantics(
-      label: 'Searching',
+      label: tr('Searching', 'Buscando'),
       value: '${(v * 100).round()} %',
       child: SizedBox(
         height: 3,
@@ -254,8 +257,11 @@ final _flameSpreadChart = CatalogItem(
                   Wrap(
                     spacing: 14,
                     children: [
-                      key(AppColors.red, 'Sustained'),
-                      key(AppColors.secondary, 'Self-extinguished'),
+                      key(AppColors.red, tr('Sustained', 'Sostenida')),
+                      key(
+                        AppColors.secondary,
+                        tr('Self-extinguished', 'Autoextinguida'),
+                      ),
                     ],
                   ),
                 ],
@@ -338,8 +344,10 @@ final _sourceList = CatalogItem(
       children: [
         for (final (i, s) in _list<_Json>(_data(c)['sources']).indexed)
           Tappable(
-            label:
-                'Source ${i + 1}: ${s['title']}, ${s['ref']}. Opens ${s['url']}',
+            label: tr(
+              'Source ${i + 1}: ${s['title']}, ${s['ref']}. Opens ${s['url']}',
+              'Fuente ${i + 1}: ${s['title']}, ${s['ref']}. Abre ${s['url']}',
+            ),
             onTap: () => launchUrl(Uri.parse(s['url'] as String)),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -421,7 +429,9 @@ final _actionBar = CatalogItem(
             ClipboardData(text: d['copyText'] as String? ?? ''),
           );
           ScaffoldMessenger.maybeOf(ctx)?.showSnackBar(
-            const SnackBar(content: Text('Copied with citations')),
+            SnackBar(
+              content: Text(tr('Copied with citations', 'Copiado con citas')),
+            ),
           );
       }
     }
@@ -532,7 +542,11 @@ final _riskCard = CatalogItem(
                 ),
               ),
               AppTag(
-                level.toUpperCase(),
+                switch (level) {
+                  'critical' => tr('CRITICAL', 'CRÍTICO'),
+                  'warning' => tr('WARNING', 'ADVERTENCIA'),
+                  _ => 'INFO',
+                },
                 mono: true,
                 level: switch (level) {
                   'critical' => TagLevel.critical,
@@ -680,7 +694,7 @@ final _dataChart = CatalogItem(
                                 alignment: Alignment.topRight,
                                 style: tick.copyWith(color: AppColors.red),
                                 labelResolver: (_) =>
-                                    'habitat ${fmt(threshold)} %',
+                                    '${tr('habitat', 'hábitat')} ${fmt(threshold)} %',
                               ),
                             ),
                           ],

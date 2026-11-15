@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../app/i18n.dart';
 import '../app/theme.dart';
 import 'api.dart';
 import 'habitats.dart';
@@ -47,52 +48,75 @@ class Investigation {
     }
 
     final b = (j['score_breakdown'] as Map?)?.cast<String, num>();
-    final findings = (j['key_findings'] as List?)?.cast<String>() ?? const [];
+    List<String> strings(String k) => [
+      for (final s in (j[k] as List?)?.cast<String>() ?? const <String>[])
+        trd(s),
+    ];
+    final findings = strings('key_findings');
     final o2 = range('o2_range'), psi = range('pressure_kpa_range', 6.89476);
     final g = j['gravity'] == 'micro' ? 'μg' : j['gravity'] as String;
     // Built from the linked records only: test envelope, strongest score factor, first finding.
     String? rationale;
     if (b != null) {
       final top = {
-        'its test conditions overlap this atmosphere': b['conditions']!,
-        'it covers several safety domains': b['safety']!,
-        'it has dense test data': b['data']!,
+        tr(
+          'its test conditions overlap this atmosphere',
+          'sus condiciones de ensayo se solapan con esta atmósfera',
+        ): b['conditions']!,
+        tr(
+          'it covers several safety domains',
+          'cubre varios dominios de seguridad',
+        ): b['safety']!,
+        tr('it has dense test data', 'tiene datos de ensayo densos'):
+            b['data']!,
       }.entries.reduce((x, y) => y.value > x.value ? y : x).key;
-      rationale =
-          'Tested at $o2 % O₂, $psi psi, $g. Ranked here mainly because $top.'
-          '${findings.isEmpty ? '' : ' Finding: ${findings.first}'}';
+      rationale = tr(
+        'Tested at $o2 % O₂, $psi psi, $g. Ranked here mainly because $top.'
+            '${findings.isEmpty ? '' : ' Finding: ${findings.first}'}',
+        'Ensayado a $o2 % O₂, $psi psi, $g. Está aquí sobre todo porque $top.'
+            '${findings.isEmpty ? '' : ' Hallazgo: ${findings.first}'}',
+      );
     }
     return Investigation(
       id: j['id'] as String,
-      title: j['name'] as String,
+      title: trd(j['name'] as String),
       fuel: Fuel.values.byName(j['fuel_type'] as String),
       domains: [
-        for (final d in (j['domain'] as List).cast<String>())
+        for (final d in (j['domain'] as List).cast<String>().map(trd))
           '${d[0].toUpperCase()}${d.substring(1)}',
       ],
       o2Range: o2,
       pressureRange: psi,
       flowRange: j['flow_cm_s_range'] == null ? '' : range('flow_cm_s_range'),
-      materials: (j['materials'] as List?)?.cast<String>() ?? const [],
+      materials: strings('materials'),
       gravity: g,
       rationale: rationale,
       score: (((j['score'] as num?) ?? 0) * 100).round(),
-      platform: j['platform'] as String? ?? '',
-      hardware: j['hardware'] as String? ?? '',
+      platform: trd(j['platform'] as String? ?? ''),
+      hardware: trd(j['hardware'] as String? ?? ''),
       keyFindings: findings,
-      modifications: (j['modifications'] as List?)?.cast<String>() ?? const [],
-      researchGroup: j['research_group'] as String? ?? '',
+      modifications: strings('modifications'),
+      researchGroup: trd(j['research_group'] as String? ?? ''),
       factors: b == null
           ? const []
           : [
-              ScoreFactor('Condition overlap', b['conditions']!.toDouble()),
-              ScoreFactor('Safety domains', b['safety']!.toDouble()),
-              ScoreFactor('Data density', b['data']!.toDouble()),
+              ScoreFactor(
+                tr('Condition overlap', 'Solape de condiciones'),
+                b['conditions']!.toDouble(),
+              ),
+              ScoreFactor(
+                tr('Safety domains', 'Dominios de seguridad'),
+                b['safety']!.toDouble(),
+              ),
+              ScoreFactor(
+                tr('Data density', 'Densidad de datos'),
+                b['data']!.toDouble(),
+              ),
             ],
       sources: [
         for (final s in (j['sources'] as List).cast<Map>())
           Source(
-            s['title'] as String,
+            trd(s['title'] as String),
             s['url'] as String? ?? '',
             (s['ntrs_id'] as String?)?.isNotEmpty == true
                 ? 'NTRS ${s['ntrs_id']}'
@@ -122,15 +146,16 @@ class Investigation {
   int get docs => sources.length; // PSI records linked (copilot scope)
 
   String get fuelLabel => switch (fuel) {
-    Fuel.solid => 'Solid',
-    Fuel.liquid => 'Liquid',
-    Fuel.gas => 'Gas',
+    Fuel.solid => tr('Solid', 'Sólido'),
+    Fuel.liquid => tr('Liquid', 'Líquido'),
+    Fuel.gas => tr('Gas', 'Gas'),
   };
 }
 
 /// Experiments ranked for the selected habitat: API, or the bundled snapshot after 3 s.
 final experimentsProvider = FutureProvider<List<Investigation>>((ref) async {
   final h = ref.watch(selectedHabitatProvider);
+  ref.watch(langProvider); // text is translated when parsed
   final j = await getJson(
     '/experiments?habitat=${h.id}',
     snapshot: 'experiments.json',

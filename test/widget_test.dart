@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:firestorm/app/i18n.dart';
 import 'package:firestorm/data/habitats.dart';
 import 'package:firestorm/main.dart';
 
@@ -40,7 +41,8 @@ Future<void> _answers(WidgetTester tester) async {
 const _modelN = 'n = 137 test points labelled burn/extinct · accuracy 77 %';
 
 void main() {
-  setUpAll(loadHabitats);
+  setUpAll(() => (loadHabitats(), loadDataTranslations()).wait);
+  tearDown(() => lang.value = Lang.en);
   testWidgets('selecting a habitat updates telemetry and stats', (
     tester,
   ) async {
@@ -260,4 +262,64 @@ void main() {
     expect(find.text('FLAME FORECAST'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets('EN/ES switch flips UI and catalog data, stays on the screen', (
+    tester,
+  ) async {
+    await _pumpApp(tester, const Size(1440, 1800));
+    await _settle(tester);
+    await tester.tap(find.bySemanticsLabel('Switch language to Spanish'));
+    await _settle(tester);
+    expect(find.text('ELIGE EL HÁBITAT'), findsOneWidget);
+    expect(find.text('Pronóstico'), findsOneWidget); // nav rail
+    expect(find.text('CRÍTICO'), findsOneWidget); // spacesuit card
+    expect(find.text('ALTO'), findsNWidgets(3)); // lunar + rover cards, telemetry bar (Lunar Base)
+
+    await tester.tap(find.text('VER RANKING'));
+    await _settle(tester);
+    expect(find.text('RANKING DE INVESTIGACIONES'), findsOneWidget);
+    await tester.tap(find.text('BASS-II'));
+    await tester.pump();
+    await tester.tap(find.text('ABRIR REPORTE'));
+    await _settle(tester);
+    expect(find.text('HALLAZGOS CLAVE'), findsOneWidget);
+    expect(find.text('RELEVANCIA · BASE LUNAR'), findsOneWidget);
+    expect(find.text('EXPORTAR PDF'), findsOneWidget);
+    // Catalog text back in its Spanish original (translations_en.json, inverted).
+    expect(
+      find.textContaining('Las muestras de PMMA y tejido SIBAL'),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.bySemanticsLabel('Cambiar idioma a inglés'));
+    await _settle(tester);
+    expect(find.text('KEY FINDINGS'), findsOneWidget); // same report, English
+    expect(find.text('EXPORT PDF'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  // Spanish runs longer: every screen must still fit a phone.
+  for (final tab in [
+    null,
+    'Pronóstico',
+    'Ranking',
+    'Mapa de vacíos',
+    'Copiloto',
+    'Reporte',
+    'Laboratorio',
+  ]) {
+    testWidgets('${tab ?? 'Hábitat'} (ES) lays out on a phone', (tester) async {
+      lang.value = Lang.es;
+      await _pumpApp(tester, const Size(390, 844));
+      if (tab != null) {
+        await tester.tap(find.text(tab)); // bottom bar
+        await _settle(tester);
+        if (tab == 'Copiloto') await _answers(tester);
+      } else {
+        await _settle(tester);
+      }
+      final e = tester.takeException();
+      expect(e, isNull, reason: e is FlutterError ? e.toStringDeep() : '$e');
+    });
+  }
 }

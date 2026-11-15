@@ -1,6 +1,17 @@
 // Widgets are built by rules from the flame model + real data. The LLM never builds widgets.
+import { readFileSync } from 'node:fs';
 import { flame, params } from '../flame.js';
 import { PSI_TO_KPA } from '../scoring.js';
+
+/** (en, es) → the string for `lang`. */
+export const say = (lang) => (en, es) => (lang === 'es' ? es : en);
+
+// English → Spanish for catalog text (inverse of translations_en.json, the Spanish originals).
+const ES = Object.fromEntries(
+  Object.entries(JSON.parse(readFileSync(new URL('../../data/translations_en.json', import.meta.url), 'utf8'))).map(([es, en]) => [en, es]),
+);
+export const toLang = (lang, s) => (lang === 'es' ? ES[s] ?? s : s);
+const REGIME_ES = { 'self-extinguishes': 'se autoextingue', marginal: 'marginal', sustained: 'sostenida', vigorous: 'vigorosa' };
 
 export const level = (p) => (p == null ? 'warning' : p >= 0.5 ? 'critical' : p >= 0.3 ? 'warning' : 'info');
 
@@ -21,6 +32,7 @@ const GRAVITY_WORDS = [
   [/earth|tierra/i, 1],
 ];
 const fmt = (v) => +v.toFixed(1);
+export const HABITAT_ES = { 'Lunar Base': 'Base Lunar', 'Pressurized Rover': 'Rover Presurizado', Spacesuit: 'Traje espacial' };
 
 /** Habitat conditions, overridden by any what-if in the question ("at 34% O2", "0.38 g", "fans off", "8 psi"). */
 export function conditionsFrom(question, h) {
@@ -52,19 +64,37 @@ export function conditionsFrom(question, h) {
   return { ...c, changed };
 }
 
-const forecastBody = (c, f, quiet) =>
-  [
-    `${f.regime[0].toUpperCase()}${f.regime.slice(1)} for ${f.material}-class solids: ` +
-      `p(burn) ${f.p_burn.toFixed(2)}, spread ≈ ${f.spread_mm_s} mm/s.`,
-    `Flammability limit ${f.loi_pct} % O₂ → margin ${f.margin_pct > 0 ? '+' : ''}${f.margin_pct}.`,
+const forecastBody = (c, f, quiet, lang = 'en') => {
+  const t = say(lang);
+  const regime = (r) => t(r, REGIME_ES[r] ?? r);
+  const r = regime(f.regime);
+  return [
+    t(
+      `${r[0].toUpperCase()}${r.slice(1)} for ${f.material}-class solids: `,
+      `${r[0].toUpperCase()}${r.slice(1)} para sólidos tipo ${toLang(lang, f.material)}: `,
+    ) + t(`p(burn) ${f.p_burn.toFixed(2)}, spread ≈ ${f.spread_mm_s} mm/s.`, `p(arder) ${f.p_burn.toFixed(2)}, propagación ≈ ${f.spread_mm_s} mm/s.`),
+    t(
+      `Flammability limit ${f.loi_pct} % O₂ → margin ${f.margin_pct > 0 ? '+' : ''}${f.margin_pct}.`,
+      `Límite de inflamabilidad ${f.loi_pct} % O₂ → margen ${f.margin_pct > 0 ? '+' : ''}${f.margin_pct}.`,
+    ),
     c.gravity_g > 0.01
-      ? `Buoyancy at ${c.gravity_g} g feeds the flame ≈ ${f.u_buoy_cm_s} cm/s, so ventilation off ` +
-        `does not starve it (${quiet.regime}).`
-      : `In microgravity only ventilation feeds it: fans off → limit ${quiet.loi_pct} % (${quiet.regime}).`,
-    f.extrapolated.length ? `Physics extrapolation, untested: ${f.extrapolated.join('; ')}.` : '',
+      ? t(
+          `Buoyancy at ${c.gravity_g} g feeds the flame ≈ ${f.u_buoy_cm_s} cm/s, so ventilation off ` +
+            `does not starve it (${quiet.regime}).`,
+          `La flotabilidad a ${c.gravity_g} g alimenta la llama con ≈ ${f.u_buoy_cm_s} cm/s, así que apagar la ` +
+            `ventilación no la asfixia (${regime(quiet.regime)}).`,
+        )
+      : t(
+          `In microgravity only ventilation feeds it: fans off → limit ${quiet.loi_pct} % (${quiet.regime}).`,
+          `En microgravedad solo la alimenta la ventilación: ventiladores apagados → límite ${quiet.loi_pct} % (${regime(quiet.regime)}).`,
+        ),
+    f.extrapolated.length
+      ? t(`Physics extrapolation, untested: ${f.extrapolated.join('; ')}.`, `Extrapolación física, sin ensayar: ${f.extrapolated.join('; ')}.`)
+      : '',
   ]
     .filter(Boolean)
     .join(' ');
+};
 
 /** Predicted spread (mm/s) vs O₂ at the given conditions: the curve the copilot charts. */
 export const spreadCurve = (c, from = 10, to = 40) =>
@@ -77,7 +107,8 @@ export const spreadCurve = (c, from = 10, to = 40) =>
  * ctx: { question, habitat, cond (conditionsFrom), experiments, mocs, spreadPoints, sources }
  * sources: [{ n, key }] where key is 'exp:<id>' or 'moc:<source>'. Returns { widgets, cite, forecast }.
  */
-export function buildWidgets({ question, habitat: h, cond, experiments, mocs, spreadPoints, sources }) {
+export function buildWidgets({ question, habitat: h, cond, experiments, mocs, spreadPoints, sources, lang = 'en' }) {
+  const t = say(lang);
   const c = cond ?? conditionsFrom(question, h);
   const f = flame(c);
   const quiet = flame({ ...c, flow_cm_s: 0 });
@@ -87,8 +118,10 @@ export function buildWidgets({ question, habitat: h, cond, experiments, mocs, sp
 
   widgets.push({
     type: 'answer_card',
-    title: c.changed.length ? `What-if · ${c.changed.join(' · ')}` : `Flame forecast · ${h.name}`,
-    body: forecastBody(c, f, quiet),
+    title: c.changed.length
+      ? `${t('What-if', 'Escenario')} · ${c.changed.join(' · ')}`
+      : `${t('Flame forecast', 'Pronóstico de llama')} · ${t(h.name, HABITAT_ES[h.name] ?? h.name)}`,
+    body: forecastBody(c, f, quiet, lang),
     // An untested condition the physics says burns is the worst case: no data to argue otherwise.
     level: f.extrapolated.length && f.p_burn >= 0.3 ? 'critical' : level(f.p_burn),
   });
@@ -110,22 +143,33 @@ export function buildWidgets({ question, habitat: h, cond, experiments, mocs, sp
     const safe = rows.filter((m) => m.moc_pct > o2);
     const burns = rows.filter((m) => m.moc_pct <= o2);
     const spread = (m) => flame({ ...c, material: m.material }).spread_mm_s;
-    const at = (m) => `MOC ${fmt(m.moc_pct)} % at ${fmt(m.pressure_kpa)} kPa`;
-    widgets.push({ type: 'chart', kind: 'bar', x: 'Material', y: 'MOC % O₂', points: rows.map((m) => [m.material, m.moc_pct]), threshold: o2 });
+    const at = (m) => `MOC ${fmt(m.moc_pct)} % ${t('at', 'a')} ${fmt(m.pressure_kpa)} kPa`;
+    const name = (m) => toLang(lang, m.material);
+    widgets.push({ type: 'chart', kind: 'bar', x: 'Material', y: 'MOC % O₂', points: rows.map((m) => [name(m), m.moc_pct]), threshold: o2 });
     widgets.push({
       type: 'answer_card',
-      title: `SAFE at ${fmt(o2)} % O₂ · MOC above ${fmt(o2)} %`,
+      title: t(`SAFE at ${fmt(o2)} % O₂ · MOC above ${fmt(o2)} %`, `SEGUROS a ${fmt(o2)} % O₂ · MOC por encima de ${fmt(o2)} %`),
       body: safe.length
-        ? safe.map((m) => `${m.material} (${at(m)}, margin +${fmt(m.moc_pct - o2)})`).join('; ') + '.'
-        : `None of the ${rows.length} materials in the MOC table stays below its limit at ${fmt(o2)} % O₂.`,
+        ? safe.map((m) => `${name(m)} (${at(m)}, ${t('margin', 'margen')} +${fmt(m.moc_pct - o2)})`).join('; ') + '.'
+        : t(
+            `None of the ${rows.length} materials in the MOC table stays below its limit at ${fmt(o2)} % O₂.`,
+            `Ninguno de los ${rows.length} materiales de la tabla MOC queda por debajo de su límite a ${fmt(o2)} % O₂.`,
+          ),
       level: 'info',
     });
     widgets.push({
       type: 'answer_card',
-      title: `BURNS at ${fmt(o2)} % O₂ · MOC at or below ${fmt(o2)} %`,
+      title: t(`BURNS at ${fmt(o2)} % O₂ · MOC at or below ${fmt(o2)} %`, `ARDEN a ${fmt(o2)} % O₂ · MOC igual o inferior a ${fmt(o2)} %`),
       body: burns.length
-        ? burns.map((m) => `${m.material} (${at(m)}, ${fmt(o2 - m.moc_pct)} points over; predicted spread ≈ ${spread(m)} mm/s)`).join('; ') + '.'
-        : `No material in the MOC table burns at ${fmt(o2)} % O₂.`,
+        ? burns
+            .map((m) =>
+              t(
+                `${name(m)} (${at(m)}, ${fmt(o2 - m.moc_pct)} points over; predicted spread ≈ ${spread(m)} mm/s)`,
+                `${name(m)} (${at(m)}, ${fmt(o2 - m.moc_pct)} puntos por encima; propagación predicha ≈ ${spread(m)} mm/s)`,
+              ),
+            )
+            .join('; ') + '.'
+        : t(`No material in the MOC table burns at ${fmt(o2)} % O₂.`, `Ningún material de la tabla MOC arde a ${fmt(o2)} % O₂.`),
       level: burns.length ? 'critical' : 'info',
     });
     for (const m of rows) cite.add(n(`moc:${m.source}`));
@@ -145,10 +189,13 @@ export function buildWidgets({ question, habitat: h, cond, experiments, mocs, sp
     widgets.push({
       type: 'chart',
       kind: 'bar',
-      x: 'Gravity',
+      x: t('Gravity', 'Gravedad'),
       // Fans off: only buoyancy feeds the flame, so gravity alone sets the limit.
-      y: 'Limit % O₂, fans off',
-      points: GRAVITY_WORDS.map(([, g], i) => [['μg', 'Moon', 'Mars', 'Earth'][i], flame({ ...c, gravity_g: g, flow_cm_s: 0 }).loi_pct]),
+      y: t('Limit % O₂, fans off', 'Límite % O₂, ventiladores apagados'),
+      points: GRAVITY_WORDS.map(([, g], i) => [
+        t(['μg', 'Moon', 'Mars', 'Earth'][i], ['μg', 'Luna', 'Marte', 'Tierra'][i]),
+        flame({ ...c, gravity_g: g, flow_cm_s: 0 }).loi_pct,
+      ]),
     });
   }
   if (hit.modifications) {
@@ -157,8 +204,8 @@ export function buildWidgets({ question, habitat: h, cond, experiments, mocs, sp
     for (const e of withMods) {
       widgets.push({
         type: 'answer_card',
-        title: `Required modifications · ${e.name}`,
-        body: e.modifications.slice(0, 3).map((m, i) => `${i + 1}) ${m}`).join(' '),
+        title: `${t('Required modifications', 'Modificaciones requeridas')} · ${toLang(lang, e.name)}`,
+        body: e.modifications.slice(0, 3).map((m, i) => `${i + 1}) ${toLang(lang, m)}`).join(' '),
         level: 'warning',
       });
       cite.add(n(`exp:${e.id}`));

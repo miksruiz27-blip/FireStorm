@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../app/i18n.dart';
 import '../app/page.dart';
 import '../app/theme.dart';
 import '../data/habitats.dart';
@@ -35,12 +36,15 @@ class _RankingScreenState extends ConsumerState<RankingScreen> {
       gap: 28,
       children: [
         PageIntro(
-          step: 'STEP 03 · EVIDENCE',
-          title: 'INVESTIGATION RANKING',
+          step: tr('STEP 03 · EVIDENCE', 'PASO 03 · EVIDENCIA'),
+          title: tr('INVESTIGATION RANKING', 'RANKING DE INVESTIGACIONES'),
           description: TextSpan(
-            text:
-                'PSI investigations ordered by how well their test conditions, fuels and safety '
-                'domain transfer to ',
+            text: tr(
+              'PSI investigations ordered by how well their test conditions, fuels and safety '
+                  'domain transfer to ',
+              'Investigaciones PSI ordenadas según cuánto se transfieren sus condiciones de ensayo, '
+                  'combustibles y dominio de seguridad a ',
+            ),
             children: [
               TextSpan(
                 text:
@@ -104,10 +108,10 @@ class _FuelFilter extends StatelessWidget {
   final Fuel? value;
   final ValueChanged<Fuel?> onChanged;
 
-  static const _options = [
-    ('All', null),
-    ('Solid', Fuel.solid),
-    ('Liquid', Fuel.liquid),
+  static List<(String, Fuel?)> get _options => [
+    (tr('All', 'Todos'), null),
+    (tr('Solid', 'Sólido'), Fuel.solid),
+    (tr('Liquid', 'Líquido'), Fuel.liquid),
     ('Gas', Fuel.gas),
   ];
 
@@ -117,7 +121,7 @@ class _FuelFilter extends StatelessWidget {
     mainAxisSize: MainAxisSize.min,
     spacing: 10,
     children: [
-      Text('FUEL TYPE', style: AppText.label),
+      Text(tr('FUEL TYPE', 'TIPO DE COMBUSTIBLE'), style: AppText.label),
       Wrap(
         spacing: 6,
         runSpacing: 6,
@@ -127,7 +131,7 @@ class _FuelFilter extends StatelessWidget {
               label,
               selected: value == fuel,
               accent: true,
-              semanticLabel: '$label fuel',
+              semanticLabel: tr('$label fuel', 'Combustible $label'),
               onTap: () => onChanged(fuel),
             ),
         ],
@@ -159,12 +163,21 @@ class _Table extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 22),
             child: _Cells(
               compact: compact,
-              rank: Text('RANK', style: AppText.label),
-              investigation: Text('INVESTIGATION', style: AppText.label),
-              fuel: Text('FUEL · DOMAIN', style: AppText.label),
-              conditions: Text('TEST CONDITIONS', style: AppText.label),
+              rank: Text(tr('RANK', 'PUESTO'), style: AppText.label),
+              investigation: Text(
+                tr('INVESTIGATION', 'INVESTIGACIÓN'),
+                style: AppText.label,
+              ),
+              fuel: Text(
+                tr('FUEL · DOMAIN', 'COMBUSTIBLE · DOMINIO'),
+                style: AppText.label,
+              ),
+              conditions: Text(
+                tr('TEST CONDITIONS', 'CONDICIONES DE ENSAYO'),
+                style: AppText.label,
+              ),
               relevance: Text(
-                'RELEVANCE',
+                tr('RELEVANCE', 'RELEVANCIA'),
                 style: AppText.label,
                 textAlign: TextAlign.right,
               ),
@@ -181,7 +194,10 @@ class _Table extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 6),
             child: Text(
-              'Condition ranges from the Habitat Fire Atlas API · verify against PSI metadata.',
+              tr(
+                'Condition ranges from the Habitat Fire Atlas API · verify against PSI metadata.',
+                'Rangos de condiciones de la API de Habitat Fire Atlas · verificar con los metadatos PSI.',
+              ),
               style: AppText.mono.copyWith(fontSize: 11),
             ),
           ),
@@ -237,7 +253,10 @@ class _Row extends StatelessWidget {
     final mono12 = AppText.mono.copyWith(color: AppColors.textMuted);
     return Tappable(
       selected: selected,
-      label: '${i.code}, relevance ${i.score}',
+      label: tr(
+        '${i.code}, relevance ${i.score}',
+        '${i.code}, relevancia ${i.score}',
+      ),
       onTap: onTap,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(AppLayout.radius),
@@ -364,9 +383,12 @@ class _WhyPanel extends StatelessWidget {
             spacing: 12,
             children: [
               Expanded(
-                child: Text('WHY THIS RANKS HERE', style: AppText.label),
+                child: Text(
+                  tr('WHY THIS RANKS HERE', 'POR QUÉ ESTÁ AQUÍ'),
+                  style: AppText.label,
+                ),
               ),
-              const AppTag('DATA · GROUNDED', mono: true),
+              AppTag(tr('DATA · GROUNDED', 'BASADO EN DATOS'), mono: true),
             ],
           ),
           Row(
@@ -401,7 +423,10 @@ class _WhyPanel extends StatelessWidget {
           const LiverySweep(width: 140),
           if (i.rationale == null)
             Text(
-              'Rationale not generated yet. It is built only from linked PSI records.',
+              tr(
+                'Rationale not generated yet. It is built only from linked PSI records.',
+                'Justificación aún no generada. Se construye solo a partir de registros PSI vinculados.',
+              ),
               style: soft.copyWith(color: AppColors.secondary),
             )
           else
@@ -426,7 +451,10 @@ class _WhyPanel extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               spacing: 12,
               children: [
-                Text('SCORE FACTORS', style: AppText.label),
+                Text(
+                  tr('SCORE FACTORS', 'FACTORES DE PUNTUACIÓN'),
+                  style: AppText.label,
+                ),
                 for (final f in i.factors)
                   Row(
                     spacing: 12,
@@ -465,7 +493,7 @@ class _WhyPanel extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 10,
             children: [
-              Text('SOURCES', style: AppText.label),
+              Text(tr('SOURCES', 'FUENTES'), style: AppText.label),
               for (final (n, s) in i.sources.indexed)
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -507,11 +535,15 @@ class _WhyPanel extends StatelessWidget {
           ),
           OutlinedButton(
             onPressed: () => context.go('/report/${i.code}'),
-            child: const Text('OPEN REPORT'),
+            child: Text(tr('OPEN REPORT', 'ABRIR REPORTE')),
           ),
           Text(
-            'Rationale is generated only from linked PSI records. Check sources before design '
-            'decisions.',
+            tr(
+              'Rationale is generated only from linked PSI records. Check sources before design '
+                  'decisions.',
+              'La justificación se genera solo a partir de registros PSI vinculados. Revisa las fuentes '
+                  'antes de tomar decisiones de diseño.',
+            ),
             style: AppText.caption,
           ),
         ],

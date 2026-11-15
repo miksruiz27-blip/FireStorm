@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:genui/genui.dart';
 
+import '../app/i18n.dart';
 import '../app/page.dart';
 import '../app/theme.dart';
 import '../copilot/session.dart';
@@ -25,7 +26,10 @@ class CopilotScreen extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           spacing: 24,
           children: [
-            const PageIntro(step: 'STEP 05 · ASK', title: 'AI COPILOT'),
+            PageIntro(
+              step: tr('STEP 05 · ASK', 'PASO 05 · PREGUNTAR'),
+              title: tr('AI COPILOT', 'COPILOTO IA'),
+            ),
             for (final t in session.turns) ...[
               _UserBubble(t.question),
               Surface(
@@ -107,10 +111,16 @@ class _Composer extends StatefulWidget {
 class _ComposerState extends State<_Composer> {
   final _input = TextEditingController();
 
-  static const _suggestions = [
-    'Best suppressant for this habitat?',
-    'Where would smoke detectors fail?',
-    'Compare BASS vs SAFFIRE',
+  static List<String> get _suggestions => [
+    tr(
+      'Best suppressant for this habitat?',
+      '¿Mejor supresor para este hábitat?',
+    ),
+    tr(
+      'Where would smoke detectors fail?',
+      '¿Dónde fallarían los detectores de humo?',
+    ),
+    tr('Compare BASS vs SAFFIRE', 'Compara BASS vs SAFFIRE'),
   ];
 
   void _send([String? text]) {
@@ -167,16 +177,21 @@ class _ComposerState extends State<_Composer> {
                   onSubmitted: _send,
                   textInputAction: TextInputAction.send,
                   style: AppText.body,
-                  decoration: const InputDecoration(
-                    hintText:
-                        'Ask about materials, oxygen limits, suppression…',
-                    semanticCounterText: 'Ask the copilot',
+                  decoration: InputDecoration(
+                    hintText: tr(
+                      'Ask about materials, oxygen limits, suppression…',
+                      'Pregunta por materiales, límites de oxígeno, supresión…',
+                    ),
+                    semanticCounterText: tr(
+                      'Ask the copilot',
+                      'Pregunta al copiloto',
+                    ),
                   ),
                 ),
               ),
               FilledButton(
                 onPressed: busy ? null : _send,
-                child: const Text('ASK'),
+                child: Text(tr('ASK', 'PREGUNTAR')),
               ),
             ],
           ),
@@ -220,7 +235,10 @@ class _Aside extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 14,
             children: [
-              Text('ANSWER CONTEXT', style: AppText.label),
+              Text(
+                tr('ANSWER CONTEXT', 'CONTEXTO DE RESPUESTA'),
+                style: AppText.label,
+              ),
               Row(
                 children: [
                   Expanded(child: readout('O₂', habitat.o2.toStringAsFixed(1))),
@@ -236,7 +254,10 @@ class _Aside extends StatelessWidget {
                 ],
               ),
               Text(
-                'Answers use ${habitat.name} conditions (${fmtO2(habitat.o2)} % O₂).',
+                tr(
+                  'Answers use ${habitat.name} conditions (${fmtO2(habitat.o2)} % O₂).',
+                  'Las respuestas usan las condiciones de ${habitat.name} (${fmtO2(habitat.o2)} % O₂).',
+                ),
                 style: AppText.caption,
               ),
             ],
@@ -248,11 +269,17 @@ class _Aside extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             spacing: 12,
             children: [
-              Text('SOURCES IN SCOPE', style: AppText.label),
+              Text(
+                tr('SOURCES IN SCOPE', 'FUENTES EN ALCANCE'),
+                style: AppText.label,
+              ),
               for (final i in all)
                 Tappable(
                   selected: session.inScope(i),
-                  label: '${i.code}, ${i.docs} documents',
+                  label: tr(
+                    '${i.code}, ${i.docs} documents',
+                    '${i.code}, ${i.docs} documentos',
+                  ),
                   onTap: () => session.toggleScope(i, all),
                   child: SizedBox(
                     height: 28,
@@ -291,10 +318,14 @@ class _Aside extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 10,
             children: [
-              Text('GUARDRAILS', style: AppText.label),
+              Text(tr('GUARDRAILS', 'SALVAGUARDAS'), style: AppText.label),
               Text(
-                'Every claim cites a PSI record. Outside coverage, the copilot says so before '
-                'answering.',
+                tr(
+                  'Every claim cites a PSI record. Outside coverage, the copilot says so before '
+                      'answering.',
+                  'Cada afirmación cita un registro PSI. Fuera de cobertura, el copiloto lo advierte '
+                      'antes de responder.',
+                ),
                 style: AppText.caption.copyWith(
                   fontSize: 13,
                   height: 20 / 13,

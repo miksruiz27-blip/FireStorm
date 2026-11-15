@@ -65,3 +65,14 @@ test('modifications question → the retrieved experiments’ required modificat
   assert.equal(card.body, '1) Cortar HVAC 2) Bajar MOC');
   assert.ok(cite.includes(2));
 });
+
+test('lang es → Spanish titles and forecast text; numbers unchanged', () => {
+  const en = buildWidgets(ctx('Which materials stay safe at 34% oxygen?'));
+  const es = buildWidgets({ ...ctx('Which materials stay safe at 34% oxygen?'), lang: 'es' });
+  assert.match(es.widgets[0].title, /^Pronóstico de llama · Base Lunar/);
+  assert.match(es.widgets[0].body, /Límite de inflamabilidad .* margen/);
+  assert.match(es.widgets[2].title, /^SEGUROS a 34 % O₂/);
+  assert.match(es.widgets[3].title, /^ARDEN a 34 % O₂/);
+  assert.deepEqual(es.cite, en.cite);
+  assert.deepEqual(es.widgets[1].points, en.widgets[1].points);
+});

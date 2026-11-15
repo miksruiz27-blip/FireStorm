@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../data/api.dart';
 import '../data/habitats.dart';
 import '../data/investigations.dart';
+import 'i18n.dart';
 import 'theme.dart';
 
 /// 64px top bar shared by every screen: brand, live readouts of the selected habitat, sync status.
@@ -45,7 +46,10 @@ class TelemetryBar extends ConsumerWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'NASA PSI · MICROGRAVITY COMBUSTION',
+                    tr(
+                      'NASA PSI · MICROGRAVITY COMBUSTION',
+                      'NASA PSI · COMBUSTIÓN EN MICROGRAVEDAD',
+                    ),
                     style: AppText.label.copyWith(
                       fontSize: 10,
                       letterSpacing: 1.4,
@@ -63,7 +67,7 @@ class TelemetryBar extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   _Readout(
-                    'HABITAT',
+                    tr('HABITAT', 'HÁBITAT'),
                     Text(
                       h.name.toUpperCase(),
                       style: AppText.h2.copyWith(
@@ -74,12 +78,15 @@ class TelemetryBar extends ConsumerWidget {
                   ),
                   _Readout('O₂', DataValue(h.o2.toStringAsFixed(1), '%')),
                   _Readout(
-                    'PRESSURE',
+                    tr('PRESSURE', 'PRESIÓN'),
                     DataValue(h.pressure.toStringAsFixed(1), 'psi'),
                   ),
-                  _Readout('GRAVITY', DataValue(h.gravityLabel, 'g')),
                   _Readout(
-                    'FLAMMABILITY',
+                    tr('GRAVITY', 'GRAVEDAD'),
+                    DataValue(h.gravityLabel, 'g'),
+                  ),
+                  _Readout(
+                    tr('FLAMMABILITY', 'INFLAMABILIDAD'),
                     AppTag(h.riskLabel, mono: true, level: h.risk),
                   ),
                 ],
@@ -110,9 +117,9 @@ class TelemetryBar extends ConsumerWidget {
                   ValueListenableBuilder(
                     valueListenable: apiLive,
                     builder: (_, live, _) => Text(switch (live) {
-                      true => 'API LIVE',
-                      false => 'SNAPSHOT',
-                      null => 'SYNCING',
+                      true => tr('API LIVE', 'API EN VIVO'),
+                      false => tr('SNAPSHOT', 'SIN CONEXIÓN'),
+                      null => tr('SYNCING', 'SINCRONIZANDO'),
                     }, style: AppText.label),
                   ),
                   const SizedBox(width: 10),
@@ -126,10 +133,60 @@ class TelemetryBar extends ConsumerWidget {
                 ],
               ),
             ),
+          const _LangToggle(),
         ],
       ),
     );
   }
+}
+
+/// EN | ES switch: flips the whole app (UI, data, copilot answers).
+class _LangToggle extends StatelessWidget {
+  const _LangToggle();
+
+  @override
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.symmetric(horizontal: 14),
+    decoration: const BoxDecoration(
+      border: Border(left: BorderSide(color: AppColors.line)),
+    ),
+    alignment: Alignment.center,
+    child: Semantics(
+      button: true,
+      label: tr('Switch language to Spanish', 'Cambiar idioma a inglés'),
+      excludeSemantics: true,
+      child: Tooltip(
+        message: tr('Español', 'English'),
+        child: InkWell(
+          onTap: () => lang.value = isEs ? Lang.en : Lang.es,
+          borderRadius: BorderRadius.circular(4),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+            decoration: BoxDecoration(
+              border: Border.all(color: AppColors.lineStrong),
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 6,
+              children: [
+                for (final l in Lang.values)
+                  Text(
+                    l.name.toUpperCase(),
+                    style: AppText.label.copyWith(
+                      color: l == lang.value
+                          ? AppColors.text
+                          : AppColors.secondary,
+                      fontWeight: l == lang.value ? FontWeight.w700 : null,
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
 }
 
 class _Readout extends StatelessWidget {

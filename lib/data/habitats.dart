@@ -1,27 +1,62 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../app/i18n.dart';
 import '../app/theme.dart';
 import 'api.dart';
 
 /// Gravity rows of the data gap map, top to bottom.
 enum GravityBand {
-  earth('Earth', '1 g', '1 g', 1, 'at 1 g'),
-  mars('Mars', '0.38 g', '0.38 g', .38, 'at Martian gravity'),
-  lunar('Lunar', '0.166 g', '0.166 g', .166, 'at lunar gravity'),
-  micro('Micro', '~10⁻⁶ g', 'μg', 1e-6, 'in microgravity');
+  earth('Earth', 'Tierra', '1 g', '1 g', 1, 'at 1 g', 'a 1 g'),
+  mars(
+    'Mars',
+    'Marte',
+    '0.38 g',
+    '0.38 g',
+    .38,
+    'at Martian gravity',
+    'a gravedad marciana',
+  ),
+  lunar(
+    'Lunar',
+    'Lunar',
+    '0.166 g',
+    '0.166 g',
+    .166,
+    'at lunar gravity',
+    'a gravedad lunar',
+  ),
+  micro(
+    'Micro',
+    'Micro',
+    '~10⁻⁶ g',
+    'μg',
+    1e-6,
+    'in microgravity',
+    'en microgravedad',
+  );
 
-  const GravityBand(this.label, this.axis, this.short, this.g, this.phrase);
-  final String label, axis, short, phrase;
+  const GravityBand(
+    this._en,
+    this._es,
+    this.axis,
+    this.short,
+    this.g,
+    this._phraseEn,
+    this._phraseEs,
+  );
+  final String _en, _es, axis, short, _phraseEn, _phraseEs;
   final double g;
+  String get label => tr(_en, _es);
+  String get phrase => tr(_phraseEn, _phraseEs);
 }
 
 class Habitat {
   const Habitat({
     required this.id,
     required this.code,
-    required this.zone,
-    required this.name,
-    required this.blurb,
+    required this._zone,
+    required this._name,
+    required this._blurb,
     required this.o2,
     required this.pressure,
     required this.g,
@@ -31,7 +66,16 @@ class Habitat {
   });
 
   final String id; // API habitat id
-  final String code, zone, name, blurb, source;
+  final String code, source, _name;
+  final (String, String) _zone, _blurb; // (English, Spanish)
+  String get zone => tr(_zone.$1, _zone.$2);
+  String get blurb => tr(_blurb.$1, _blurb.$2);
+  String get name => switch (_name) {
+    'Lunar Base' => tr(_name, 'Base Lunar'),
+    'Pressurized Rover' => tr(_name, 'Rover Presurizado'),
+    'Spacesuit' => tr(_name, 'Traje espacial'),
+    _ => _name,
+  };
   final double o2; // % O₂
   final double pressure; // psia
   final double g;
@@ -46,8 +90,8 @@ class Habitat {
 
   String get riskLabel => switch (risk) {
     TagLevel.neutral => 'NOMINAL',
-    TagLevel.high => 'HIGH',
-    TagLevel.critical => 'CRITICAL',
+    TagLevel.high => tr('HIGH', 'ALTO'),
+    TagLevel.critical => tr('CRITICAL', 'CRÍTICO'),
   };
 }
 
@@ -64,29 +108,38 @@ GravityBand bandFor(double g) => g < 0.05
 const _presentation = {
   'iss': (
     code: '01',
-    zone: 'LEO · ORBITAL',
-    blurb: 'Sea-level air, continuous crew',
+    zone: ('LEO · ORBITAL', 'LEO · ORBITAL'),
+    blurb: (
+      'Sea-level air, continuous crew',
+      'Aire a nivel del mar, tripulación continua',
+    ),
     risk: TagLevel.neutral,
     gravityText: null,
   ),
   'lunar': (
     code: '02',
-    zone: 'SURFACE · MOON',
-    blurb: 'Exploration atmosphere, enriched O₂',
+    zone: ('SURFACE · MOON', 'SUPERFICIE · LUNA'),
+    blurb: (
+      'Exploration atmosphere, enriched O₂',
+      'Atmósfera de exploración, O₂ enriquecido',
+    ),
     risk: TagLevel.high,
     gravityText: null,
   ),
   'rover': (
     code: '03',
-    zone: 'SURFACE · MOBILE',
-    blurb: 'Exploration atmosphere, small volume',
+    zone: ('SURFACE · MOBILE', 'SUPERFICIE · MÓVIL'),
+    blurb: (
+      'Exploration atmosphere, small volume',
+      'Atmósfera de exploración, volumen reducido',
+    ),
     risk: TagLevel.high,
     gravityText: null,
   ),
   'eva': (
     code: '04',
-    zone: 'EVA',
-    blurb: 'Pure oxygen, lowest pressure',
+    zone: ('EVA', 'EVA'),
+    blurb: ('Pure oxygen, lowest pressure', 'Oxígeno puro, presión mínima'),
     risk: TagLevel.critical,
     gravityText: 'μg–0.17',
   ),

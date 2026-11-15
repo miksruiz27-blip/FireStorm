@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../app/i18n.dart';
 import '../app/page.dart';
 import '../app/theme.dart';
 import '../data/gap_map.dart';
@@ -19,12 +20,15 @@ class HabitatScreen extends ConsumerWidget {
     return PageBody(
       children: [
         PageIntro(
-          step: 'STEP 01 · MISSION CONTEXT',
-          title: 'SELECT HABITAT',
-          description: const TextSpan(
-            text:
-                'Pick the pressurized environment. Every ranking, data gap and copilot answer '
-                'recalibrates to its atmosphere.',
+          step: tr('STEP 01 · MISSION CONTEXT', 'PASO 01 · CONTEXTO DE MISIÓN'),
+          title: tr('SELECT HABITAT', 'ELIGE EL HÁBITAT'),
+          description: TextSpan(
+            text: tr(
+              'Pick the pressurized environment. Every ranking, data gap and copilot answer '
+                  'recalibrates to its atmosphere.',
+              'Elige el entorno presurizado. Cada ranking, vacío de datos y respuesta del copiloto '
+                  'se recalibra a su atmósfera.',
+            ),
           ),
           trailing: Wrap(
             spacing: 12,
@@ -32,13 +36,13 @@ class HabitatScreen extends ConsumerWidget {
             children: [
               OutlinedButton(
                 onPressed: () => context.go('/ranking'),
-                child: const Text('VIEW RANKING'),
+                child: Text(tr('VIEW RANKING', 'VER RANKING')),
               ),
               FilledButton.icon(
                 onPressed: () => context.go('/gaps'),
                 iconAlignment: IconAlignment.end,
                 icon: const Icon(Icons.arrow_forward, size: 16),
-                label: const Text('ANALYZE HABITAT'),
+                label: Text(tr('ANALYZE HABITAT', 'ANALIZAR HÁBITAT')),
               ),
             ],
           ),
@@ -75,33 +79,48 @@ class HabitatScreen extends ConsumerWidget {
               maxCols: 3,
               children: [
                 _Stat(
-                  'RELEVANT INVESTIGATIONS',
+                  tr('RELEVANT INVESTIGATIONS', 'INVESTIGACIONES RELEVANTES'),
                   Text(
                     ranked == null
                         ? '–'
                         : '${ranked.where((i) => i.score >= 50).length} / ${ranked.length}',
                     style: AppText.data.copyWith(fontSize: 28),
                   ),
-                  'Relevance ≥ 50 for this atmosphere',
+                  tr(
+                    'Relevance ≥ 50 for this atmosphere',
+                    'Relevancia ≥ 50 para esta atmósfera',
+                  ),
                 ),
                 _Stat(
-                  'DATA COVERAGE AT CONDITION',
+                  tr(
+                    'DATA COVERAGE AT CONDITION',
+                    'COBERTURA DE DATOS EN LA CONDICIÓN',
+                  ),
                   Text(switch (series) {
                     null => '–',
-                    0 => 'EMPTY',
-                    < 3 => 'SPARSE',
-                    _ => 'DENSE',
+                    0 => tr('EMPTY', 'VACÍA'),
+                    < 3 => tr('SPARSE', 'ESCASA'),
+                    _ => tr('DENSE', 'DENSA'),
                   }, style: big),
                   series == null
-                      ? 'See Data Gap Map for empty zones'
-                      : '$series series within ±${gapWindow.round()} % O₂ ${selected.band.phrase}',
+                      ? tr(
+                          'See Data Gap Map for empty zones',
+                          'Consulta el mapa de vacíos para ver zonas sin datos',
+                        )
+                      : tr(
+                          '$series series within ±${gapWindow.round()} % O₂ ${selected.band.phrase}',
+                          '$series series a ±${gapWindow.round()} % O₂ ${selected.band.phrase}',
+                        ),
                 ),
                 _Stat(
-                  'TOP-RANKED EVIDENCE',
+                  tr('TOP-RANKED EVIDENCE', 'EVIDENCIA MEJOR CLASIFICADA'),
                   Text(top?.code ?? '–', style: big),
                   top == null
-                      ? 'From the PSI ranking'
-                      : '${top.fuelLabel} fuel · ${top.domain} · relevance ${top.score}',
+                      ? tr('From the PSI ranking', 'Del ranking PSI')
+                      : tr(
+                          '${top.fuelLabel} fuel · ${top.domain} · relevance ${top.score}',
+                          'Combustible ${top.fuelLabel.toLowerCase()} · ${top.domain} · relevancia ${top.score}',
+                        ),
                 ),
               ],
             );
@@ -143,11 +162,11 @@ class _HabitatCard extends StatelessWidget {
                 ],
               ),
               gap,
-              Text(
-                h.name.toUpperCase(),
-                style: AppText.h2,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+              // One line at any width: the card height is fixed.
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text(h.name.toUpperCase(), style: AppText.h2, maxLines: 1),
               ),
               const SizedBox(height: 6),
               Text(
@@ -159,22 +178,34 @@ class _HabitatCard extends StatelessWidget {
               gap,
               const Divider(),
               gap,
-              Text('OXYGEN', style: AppText.label),
+              Text(tr('OXYGEN', 'OXÍGENO'), style: AppText.label),
               const SizedBox(height: 2),
               DataValue(h.o2Label, '% O₂', size: 40, unitSize: 16),
               gap,
               Row(
                 children: [
-                  Expanded(child: _Metric('PRESSURE', h.pressureLabel, 'psi')),
+                  Expanded(
+                    child: _Metric(
+                      tr('PRESSURE', 'PRESIÓN'),
+                      h.pressureLabel,
+                      'psi',
+                    ),
+                  ),
                   const SizedBox(width: 16),
-                  Expanded(child: _Metric('GRAVITY', h.gravityLabel, 'g')),
+                  Expanded(
+                    child: _Metric(
+                      tr('GRAVITY', 'GRAVEDAD'),
+                      h.gravityLabel,
+                      'g',
+                    ),
+                  ),
                 ],
               ),
               const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('O₂ ENVELOPE', style: AppText.label),
+                  Text(tr('O₂ ENVELOPE', 'RANGO DE O₂'), style: AppText.label),
                   Text('0 — 100 %', style: AppText.mono.copyWith(fontSize: 11)),
                 ],
               ),
@@ -269,11 +300,17 @@ class _Footer extends StatelessWidget {
       runSpacing: 4,
       children: [
         Text(
-          'SOURCE · NASA PHYSICAL SCIENCE INFORMATICS (PSI)',
+          tr(
+            'SOURCE · NASA PHYSICAL SCIENCE INFORMATICS (PSI)',
+            'FUENTE · NASA PHYSICAL SCIENCE INFORMATICS (PSI)',
+          ),
           style: AppText.label,
         ),
         Text(
-          'Atmospheres: design values · verify before mission use',
+          tr(
+            'Atmospheres: design values · verify before mission use',
+            'Atmósferas: valores de diseño · verificar antes de usar en misión',
+          ),
           style: AppText.mono.copyWith(fontSize: 11),
         ),
       ],

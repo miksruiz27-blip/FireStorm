@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:go_router/go_router.dart';
 
+import '../app/i18n.dart';
 import '../app/page.dart';
 import '../copilot/session.dart';
 import '../app/theme.dart';
@@ -42,19 +43,25 @@ class _GapMapScreenState extends ConsumerState<GapMapScreen> {
       gap: 28,
       children: [
         PageIntro(
-          step: 'STEP 04 · COVERAGE',
-          title: 'DATA GAP MAP',
-          description: const TextSpan(
-            text:
-                'Where NASA has burned things — and where nobody has. Each mark is a test '
-                'condition from a PSI investigation; hatched zones have no data.',
+          step: tr('STEP 04 · COVERAGE', 'PASO 04 · COBERTURA'),
+          title: tr('DATA GAP MAP', 'MAPA DE VACÍOS DE DATOS'),
+          description: TextSpan(
+            text: tr(
+              'Where NASA has burned things — and where nobody has. Each mark is a test '
+                  'condition from a PSI investigation; hatched zones have no data.',
+              'Dónde la NASA ha quemado cosas y dónde nadie lo ha hecho. Cada marca es una condición '
+                  'de ensayo de una investigación PSI; las zonas rayadas no tienen datos.',
+            ),
           ),
           trailing: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
             spacing: 10,
             children: [
-              Text('FUEL LAYERS', style: AppText.label),
+              Text(
+                tr('FUEL LAYERS', 'CAPAS DE COMBUSTIBLE'),
+                style: AppText.label,
+              ),
               Wrap(
                 spacing: 6,
                 runSpacing: 6,
@@ -64,7 +71,10 @@ class _GapMapScreenState extends ConsumerState<GapMapScreen> {
                       _fuelName(f),
                       leading: FuelMarker(f),
                       selected: _layers.contains(f),
-                      semanticLabel: '${_fuelName(f)} layer',
+                      semanticLabel: tr(
+                        '${_fuelName(f)} layer',
+                        'Capa ${_fuelName(f)}',
+                      ),
                       onTap: () => setState(
                         () => _layers.contains(f)
                             ? _layers.remove(f)
@@ -108,8 +118,8 @@ class _GapMapScreenState extends ConsumerState<GapMapScreen> {
 }
 
 String _fuelName(Fuel f) => switch (f) {
-  Fuel.solid => 'Solid',
-  Fuel.liquid => 'Liquid',
+  Fuel.solid => tr('Solid', 'Sólido'),
+  Fuel.liquid => tr('Liquid', 'Líquido'),
   Fuel.gas => 'Gas',
 };
 
@@ -157,21 +167,34 @@ class _ChartCard extends StatelessWidget {
             runSpacing: 10,
             children: [
               Text(
-                'OXYGEN CONCENTRATION × GRAVITY LEVEL',
+                tr(
+                  'OXYGEN CONCENTRATION × GRAVITY LEVEL',
+                  'CONCENTRACIÓN DE OXÍGENO × NIVEL DE GRAVEDAD',
+                ),
                 style: AppText.label.copyWith(color: AppColors.textMuted),
               ),
               Wrap(
                 spacing: 18,
                 runSpacing: 8,
                 children: [
-                  item(_Swatch.solid, 'Solid'),
-                  item(_Swatch.liquid, 'Liquid'),
-                  item(_Swatch.gas, 'Gas'),
-                  item(_Swatch.partial, 'Partial-g (sparse)'),
-                  item(_Swatch.noData, 'No data'),
-                  item(_Swatch.habitat, 'Your habitat'),
-                  item(_Swatch.suggested, 'Suggested test'),
-                  if (trained != null) item(_Swatch.model, 'Model trained'),
+                  item(_Swatch.solid, _fuelName(Fuel.solid)),
+                  item(_Swatch.liquid, _fuelName(Fuel.liquid)),
+                  item(_Swatch.gas, _fuelName(Fuel.gas)),
+                  item(
+                    _Swatch.partial,
+                    tr('Partial-g (sparse)', 'g parcial (escaso)'),
+                  ),
+                  item(_Swatch.noData, tr('No data', 'Sin datos')),
+                  item(_Swatch.habitat, tr('Your habitat', 'Tu hábitat')),
+                  item(
+                    _Swatch.suggested,
+                    tr('Suggested test', 'Ensayo sugerido'),
+                  ),
+                  if (trained != null)
+                    item(
+                      _Swatch.model,
+                      tr('Model trained', 'Rango de entrenamiento'),
+                    ),
                 ],
               ),
             ],
@@ -211,9 +234,12 @@ class _ChartCard extends StatelessWidget {
               ),
               Expanded(
                 child: Semantics(
-                  label:
-                      'Map of ${marks.length} tested conditions by oxygen and gravity. '
-                      '${habitat.name} is at ${fmtO2(habitat.o2)} % O₂, ${habitat.band.short}.',
+                  label: tr(
+                    'Map of ${marks.length} tested conditions by oxygen and gravity. '
+                        '${habitat.name} is at ${fmtO2(habitat.o2)} % O₂, ${habitat.band.short}.',
+                    'Mapa de ${marks.length} condiciones ensayadas por oxígeno y gravedad. '
+                        '${habitat.name} está a ${fmtO2(habitat.o2)} % O₂, ${habitat.band.short}.',
+                  ),
                   child: RepaintBoundary(
                     child: CustomPaint(
                       painter: _GapMapPainter(
@@ -237,9 +263,18 @@ class _ChartCard extends StatelessWidget {
             spacing: 12,
             runSpacing: 4,
             children: [
-              Text('O₂ CONCENTRATION (% BY VOLUME)', style: AppText.label),
               Text(
-                'Test points from the Habitat Fire Atlas API · PSI records',
+                tr(
+                  'O₂ CONCENTRATION (% BY VOLUME)',
+                  'CONCENTRACIÓN DE O₂ (% EN VOLUMEN)',
+                ),
+                style: AppText.label,
+              ),
+              Text(
+                tr(
+                  'Test points from the Habitat Fire Atlas API · PSI records',
+                  'Puntos de ensayo de la API de Habitat Fire Atlas · registros PSI',
+                ),
                 style: AppText.mono.copyWith(fontSize: 11),
               ),
             ],
@@ -365,7 +400,7 @@ class _GapMapPainter extends CustomPainter {
         gap: 4,
       );
       _layout(
-        'MODEL TRAINED',
+        tr('MODEL TRAINED', 'MODELO ENTRENADO'),
         AppText.mono.copyWith(
           fontSize: 9,
           letterSpacing: 1.2,
@@ -678,7 +713,10 @@ class _Aside extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 16,
             children: [
-              Text('GAP AT YOUR CONDITION', style: AppText.label),
+              Text(
+                tr('GAP AT YOUR CONDITION', 'VACÍO EN TU CONDICIÓN'),
+                style: AppText.label,
+              ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.baseline,
                 textBaseline: TextBaseline.alphabetic,
@@ -693,7 +731,10 @@ class _Aside extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      'investigations within ±${gapWindow.round()} % O₂ ${h.band.phrase}',
+                      tr(
+                        'investigations within ±${gapWindow.round()} % O₂ ${h.band.phrase}',
+                        'investigaciones a ±${gapWindow.round()} % O₂ ${h.band.phrase}',
+                      ),
                       style: AppText.body.copyWith(
                         fontSize: 14,
                         height: 20 / 14,
@@ -705,7 +746,7 @@ class _Aside extends StatelessWidget {
               ),
               if (count == 0)
                 AppTag(
-                  'UNVALIDATED ZONE',
+                  tr('UNVALIDATED ZONE', 'ZONA SIN VALIDAR'),
                   mono: true,
                   level: TagLevel.high,
                   leading: Container(
@@ -719,11 +760,16 @@ class _Aside extends StatelessWidget {
                 )
               else
                 AppTag(
-                  count < 3 ? 'SPARSE EVIDENCE' : 'EVIDENCE PRESENT',
+                  count < 3
+                      ? tr('SPARSE EVIDENCE', 'EVIDENCIA ESCASA')
+                      : tr('EVIDENCE PRESENT', 'HAY EVIDENCIA'),
                   mono: true,
                 ),
               const Divider(),
-              Text('NEAREST EVIDENCE', style: AppText.label),
+              Text(
+                tr('NEAREST EVIDENCE', 'EVIDENCIA MÁS CERCANA'),
+                style: AppText.label,
+              ),
               for (final (m, delta) in nearestEvidence(marks, h))
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -775,9 +821,21 @@ class _Aside extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             spacing: 14,
             children: [
-              Text('SUGGESTED NEXT EXPERIMENTS', style: AppText.label),
+              Text(
+                tr(
+                  'SUGGESTED NEXT EXPERIMENTS',
+                  'PRÓXIMOS EXPERIMENTOS SUGERIDOS',
+                ),
+                style: AppText.label,
+              ),
               if (recs.isEmpty)
-                Text('Loading the priority ranking…', style: AppText.caption)
+                Text(
+                  tr(
+                    'Loading the priority ranking…',
+                    'Cargando el ranking de prioridades…',
+                  ),
+                  style: AppText.caption,
+                )
               else ...[
                 for (final (i, r) in recs.take(3).indexed)
                   Row(
@@ -805,7 +863,10 @@ class _Aside extends StatelessWidget {
                           spacing: 4,
                           children: [
                             Text(
-                              'Burn tests at ${fmtO2(r.o2)} % O₂ · ${r.band.short}',
+                              tr(
+                                'Burn tests at ${fmtO2(r.o2)} % O₂ · ${r.band.short}',
+                                'Ensayos de combustión a ${fmtO2(r.o2)} % O₂ · ${r.band.short}',
+                              ),
                               style: AppText.body.copyWith(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
@@ -822,7 +883,10 @@ class _Aside extends StatelessWidget {
                     ],
                   ),
                 Text(
-                  'Priority = data gap × closeness to habitat × model uncertainty.',
+                  tr(
+                    'Priority = data gap × closeness to habitat × model uncertainty.',
+                    'Prioridad = vacío de datos × cercanía al hábitat × incertidumbre del modelo.',
+                  ),
                   style: AppText.mono.copyWith(fontSize: 10),
                 ),
                 FilledButton(
@@ -831,12 +895,21 @@ class _Aside extends StatelessWidget {
                     ProviderScope.containerOf(context)
                         .read(copilotProvider)
                         .ask(
-                          'What would it take to validate flame spread at '
-                          '${fmtO2(r.o2)} % O₂ ${r.band.phrase}?',
+                          tr(
+                            'What would it take to validate flame spread at '
+                                '${fmtO2(r.o2)} % O₂ ${r.band.phrase}?',
+                            '¿Qué haría falta para validar la propagación de llama a '
+                                '${fmtO2(r.o2)} % O₂ ${r.band.phrase}?',
+                          ),
                         );
                     context.go('/copilot');
                   },
-                  child: const Text('ASK COPILOT ABOUT THIS GAP'),
+                  child: Text(
+                    tr(
+                      'ASK COPILOT ABOUT THIS GAP',
+                      'PREGUNTAR AL COPILOTO POR ESTE VACÍO',
+                    ),
+                  ),
                 ),
               ],
             ],
@@ -848,7 +921,10 @@ class _Aside extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             spacing: 12,
             children: [
-              Text('MARKS PER GRAVITY LEVEL', style: AppText.label),
+              Text(
+                tr('MARKS PER GRAVITY LEVEL', 'MARCAS POR NIVEL DE GRAVEDAD'),
+                style: AppText.label,
+              ),
               for (final b in GravityBand.values)
                 Row(
                   spacing: 12,
@@ -899,15 +975,23 @@ class _ModelCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 12,
         children: [
-          Text('FLAMMABILITY MODEL', style: AppText.label),
           Text(
-            'Physics model · ${m.summary}',
+            tr('FLAMMABILITY MODEL', 'MODELO DE INFLAMABILIDAD'),
+            style: AppText.label,
+          ),
+          Text(
+            tr('Physics model · ${m.summary}', 'Modelo físico · ${m.summary}'),
             style: AppText.mono.copyWith(color: AppColors.text),
           ),
           Text(
-            'The model behind every forecast. Tested at '
-            '${m.testedG.map((g) => g == 0 ? 'μg' : '${fmtO2(g)} g').join(' and ')}; '
-            'outside that envelope it extrapolates, and we recommend testing instead of guessing.',
+            tr(
+              'The model behind every forecast. Tested at '
+                  '${m.testedG.map((g) => g == 0 ? 'μg' : '${fmtO2(g)} g').join(' and ')}; '
+                  'outside that envelope it extrapolates, and we recommend testing instead of guessing.',
+              'El modelo detrás de cada pronóstico. Ensayado a '
+                  '${m.testedG.map((g) => g == 0 ? 'μg' : '${fmtO2(g)} g').join(' y ')}; '
+                  'fuera de ese rango extrapola, y recomendamos ensayar en lugar de suponer.',
+            ),
             style: AppText.caption.copyWith(
               fontSize: 13,
               height: 19 / 13,
@@ -915,9 +999,16 @@ class _ModelCard extends StatelessWidget {
             ),
           ),
           if (blind.isEmpty)
-            const AppTag('IN TRAINING RANGE', mono: true)
+            AppTag(
+              tr('IN TRAINING RANGE', 'EN RANGO DE ENTRENAMIENTO'),
+              mono: true,
+            )
           else ...[
-            const AppTag('MODEL BLIND HERE', mono: true, level: TagLevel.high),
+            AppTag(
+              tr('MODEL BLIND HERE', 'EL MODELO NO VE AQUÍ'),
+              mono: true,
+              level: TagLevel.high,
+            ),
             for (final b in blind)
               Text('· $b', style: AppText.mono.copyWith(fontSize: 11)),
           ],

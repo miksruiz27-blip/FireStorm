@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'app/i18n.dart';
 import 'app/telemetry_bar.dart';
 import 'app/theme.dart';
 import 'data/habitats.dart';
@@ -15,22 +16,33 @@ import 'screens/report_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await loadHabitats(); // atmospheres from the API (snapshot offline) before the first frame
+  await (
+    loadHabitats(),
+    loadDataTranslations(),
+  ).wait; // atmospheres from the API (snapshot offline) before the first frame
   runApp(const ProviderScope(child: FirestormApp()));
 }
 
-const _destinations = [
-  (path: '/', label: 'Habitat', icon: Icons.public),
+List<({String path, String label, IconData icon})> get _destinations => [
+  (path: '/', label: tr('Habitat', 'Hábitat'), icon: Icons.public),
   (
     path: '/forecast',
-    label: 'Forecast',
+    label: tr('Forecast', 'Pronóstico'),
     icon: Icons.local_fire_department_outlined,
   ),
   (path: '/ranking', label: 'Ranking', icon: Icons.format_list_numbered),
-  (path: '/gaps', label: 'Gap map', icon: Icons.grid_on),
-  (path: '/copilot', label: 'Copilot', icon: Icons.chat_bubble_outline),
-  (path: '/report', label: 'Report', icon: Icons.description_outlined),
-  (path: '/lab', label: 'Lab', icon: Icons.science_outlined),
+  (path: '/gaps', label: tr('Gap map', 'Mapa de vacíos'), icon: Icons.grid_on),
+  (
+    path: '/copilot',
+    label: tr('Copilot', 'Copiloto'),
+    icon: Icons.chat_bubble_outline,
+  ),
+  (
+    path: '/report',
+    label: tr('Report', 'Reporte'),
+    icon: Icons.description_outlined,
+  ),
+  (path: '/lab', label: tr('Lab', 'Laboratorio'), icon: Icons.science_outlined),
 ];
 
 class FirestormApp extends StatefulWidget {
@@ -41,7 +53,24 @@ class FirestormApp extends StatefulWidget {
 }
 
 class _FirestormAppState extends State<FirestormApp> {
-  final _router = GoRouter(
+  late var _router = _buildRouter('/');
+
+  /// A language switch rebuilds every screen: new router (fresh pages) at the same location.
+  void _onLang() {
+    final at = _router.routerDelegate.currentConfiguration.uri.toString();
+    final old = _router;
+    setState(() => _router = _buildRouter(at));
+    WidgetsBinding.instance.addPostFrameCallback((_) => old.dispose());
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    lang.addListener(_onLang);
+  }
+
+  GoRouter _buildRouter(String initial) => GoRouter(
+    initialLocation: initial,
     routes: [
       ShellRoute(
         builder: (context, state, child) =>
@@ -70,12 +99,14 @@ class _FirestormAppState extends State<FirestormApp> {
 
   @override
   void dispose() {
+    lang.removeListener(_onLang);
     _router.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) => MaterialApp.router(
+    key: ValueKey(_router), // remount with the new router
     title: 'Habitat Fire Atlas',
     debugShowCheckedModeBanner: false,
     theme: buildAppTheme(),

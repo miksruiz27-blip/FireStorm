@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:genui/genui.dart';
 
+import '../app/i18n.dart';
 import '../app/theme.dart';
 import '../data/api.dart';
 import '../data/gap_map.dart';
@@ -84,7 +85,16 @@ class CopilotSession extends ChangeNotifier {
     final h = habitat();
     _emit(_create(id));
     _emit(
-      _components(id, [_card('Copilot · searching PSI records', .3, const [])]),
+      _components(id, [
+        _card(
+          tr(
+            'Copilot · searching PSI records',
+            'Copiloto · buscando registros PSI',
+          ),
+          .3,
+          const [],
+        ),
+      ]),
     );
 
     final reply = await backend(turn.question, h.id);
@@ -105,8 +115,18 @@ class CopilotSession extends ChangeNotifier {
 
   /// Opening state of the mockup: one answered question, one follow-up.
   Future<void> _seed() async {
-    await ask('Which materials stay safe at 34% oxygen?');
-    await ask('Does that still hold at lunar gravity?');
+    await ask(
+      tr(
+        'Which materials stay safe at 34% oxygen?',
+        '¿Qué materiales siguen siendo seguros al 34% de oxígeno?',
+      ),
+    );
+    await ask(
+      tr(
+        'Does that still hold at lunar gravity?',
+        '¿Se mantiene eso a gravedad lunar?',
+      ),
+    );
   }
 
   Future<List<Json>> _offline(String id, Habitat h) async {
@@ -117,9 +137,12 @@ class CopilotSession extends ChangeNotifier {
       all,
       h.o2,
       h.band,
-    ).map((b) => b.short).join(' and ');
+    ).map((b) => b.short).join(tr(' and ', ' y '));
     final lead = covered ? <String>[] : ['warning'];
-    final searching = 'Copilot · searching $scoped investigations';
+    final searching = tr(
+      'Copilot · searching $scoped investigations',
+      'Copiloto · buscando en $scoped investigaciones',
+    );
     return [
       _components(id, [
         _card(searching, .6, lead),
@@ -127,23 +150,30 @@ class CopilotSession extends ChangeNotifier {
           {
             'id': 'warning',
             'component': 'CoverageWarning',
-            'text':
-                'Outside data coverage: no PSI test matches ${fmtO2(h.o2)} % O₂ at ${h.band.short}. '
-                'The answer will extrapolate from ${from.isEmpty ? 'the nearest' : from} tests '
-                'and be flagged as such.',
+            'text': tr(
+              'Outside data coverage: no PSI test matches ${fmtO2(h.o2)} % O₂ at ${h.band.short}. '
+                  'The answer will extrapolate from ${from.isEmpty ? 'the nearest' : from} tests '
+                  'and be flagged as such.',
+              'Fuera de la cobertura de datos: ningún ensayo PSI coincide con ${fmtO2(h.o2)} % O₂ a '
+                  '${h.band.short}. La respuesta extrapolará desde los ensayos '
+                  '${from.isEmpty ? 'más cercanos' : 'a $from'} y se marcará como tal.',
+            ),
           },
       ]),
       _components(id, [
         {
-          ..._card('Copilot · answer', null, [...lead, 'text']),
-          'tags': ['Offline'],
+          ..._card(_answerTitle, null, [...lead, 'text']),
+          'tags': [tr('Offline', 'Sin conexión')],
         },
         {
           'id': 'text',
           'component': 'AnswerText',
-          'text':
-              'The copilot backend is unreachable and this question is not in the cached demo '
-              'script. Coverage above is computed from the bundled gap-map snapshot.',
+          'text': tr(
+            'The copilot backend is unreachable and this question is not in the cached demo '
+                'script. Coverage above is computed from the bundled gap-map snapshot.',
+            'No se puede contactar con el backend del copiloto y esta pregunta no está en el guion '
+                'de demo en caché. La cobertura de arriba se calcula con la instantánea del mapa de vacíos.',
+          ),
         },
       ]),
     ];
@@ -160,6 +190,8 @@ class CopilotSession extends ChangeNotifier {
     super.dispose();
   }
 }
+
+String get _answerTitle => tr('Copilot · answer', 'Copiloto · respuesta');
 
 Json _create(String id) => {
   'version': 'v0.9',
@@ -208,7 +240,10 @@ List<Json> genuiToA2ui(Map<String, Object?> body, String source) {
         'actions': [
           for (final e in (w['ids'] as List).cast<String>())
             {
-              'label': 'Open ${e.toUpperCase()}',
+              'label': tr(
+                'Open ${e.toUpperCase()}',
+                'Abrir ${e.toUpperCase()}',
+              ),
               'action': 'report',
               'investigation': e,
             },
@@ -220,7 +255,7 @@ List<Json> genuiToA2ui(Map<String, Object?> body, String source) {
   }
   return [
     {
-      ..._card('Copilot · answer', null, [
+      ..._card(_answerTitle, null, [
         'text',
         for (final w in widgets) w['id'] as String,
         'sources',
@@ -228,14 +263,14 @@ List<Json> genuiToA2ui(Map<String, Object?> body, String source) {
       // "N sources · AI grounded" only when N > 0 resolvable citations back the answer.
       'tags': [
         if (cites.isNotEmpty)
-          '${cites.length} source${cites.length == 1 ? '' : 's'} · ${switch (source) {
-            'llm' => 'AI grounded',
-            'ollama' => 'AI local',
-            'snapshot' => 'Offline cache',
-            _ => 'Rule-based',
+          '${cites.length} ${tr('source', 'fuente')}${cites.length == 1 ? '' : 's'} · ${switch (source) {
+            'llm' => tr('AI grounded', 'IA fundamentada'),
+            'ollama' => tr('AI local', 'IA local'),
+            'snapshot' => tr('Offline cache', 'Caché sin conexión'),
+            _ => tr('Rule-based', 'Basado en reglas'),
           }}'
         else
-          'No sources',
+          tr('No sources', 'Sin fuentes'),
       ],
     },
     {
