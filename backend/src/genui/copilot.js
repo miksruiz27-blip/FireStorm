@@ -15,7 +15,7 @@ const citable = (s) => s?.title && /^https?:\/\/\S+$/.test(s.url ?? '');
 /** → { body: GenUI, source: 'llm'|'ollama'|'template' }. `llm` injectable for tests. */
 export async function copilot({ question, habitat: habitatId, lang = 'en' }, { llm = askLLM } = {}) {
   const h = await repo.habitat(habitatId);
-  if (!h) throw Object.assign(new Error(`unknown habitat ${habitatId}`), { status: 400 });
+  if (!h) throw Object.assign(new Error(`unknown ambient ${habitatId}`), { status: 400 });
 
   // a) retrieve: FTS hits, else the best-scoring experiments for this habitat.
   let experiments = await repo.searchExperiments(question);

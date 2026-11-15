@@ -14,7 +14,7 @@ import 'session.dart';
 part 'catalog_extras.dart';
 
 /// The copilot's visual vocabulary. The model may only compose answers from these
-/// components, so every answer renders in the Habitat Fire Atlas design system.
+/// components, so every answer renders in the FireStorm design system.
 const copilotCatalogId = 'firestorm.copilot';
 
 final copilotCatalog = Catalog(
@@ -641,7 +641,7 @@ final _dataChart = CatalogItem(
         items: S.list(),
       ),
       'threshold': S.number(
-        description: 'bar only: horizontal line (e.g. habitat O₂). Bars above it are safe, at or below it burn.',
+        description: 'bar only: horizontal line (e.g. ambient O₂). Bars above it are safe, at or below it burn.',
       ),
     },
     required: ['kind', 'x', 'y', 'points'],

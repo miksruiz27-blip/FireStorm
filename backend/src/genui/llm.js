@@ -3,13 +3,14 @@ import { LlmOut } from '../schemas.js';
 
 const LANGUAGE = { en: 'English', es: 'Spanish' };
 const system = (lang = 'en') =>
-  `You are the Habitat Fire Atlas copilot. Respond in ${LANGUAGE[lang] ?? 'English'}, whatever the language of the question. ` +
+  `You are the FireStorm copilot. Respond in ${LANGUAGE[lang] ?? 'English'}, whatever the language of the question. ` +
   'Answer in at most 60 words, grounded only in the numbered NASA sources and the widgets. ' +
-  'Answer exactly what was asked, using the widget made for it: the habitat table for comparisons, ' +
+  'Answer exactly what was asked, using the widget made for it: the ambient table for comparisons, ' +
   'the suggested next tests for what to test, the SAFE/BURNS cards for materials, the forecast for what-ifs. ' +
   'Give the verdict first, then at most 2-3 numbers from the widgets with symbols (%, mm/s, g). ' +
   'If coverage says there is no test data, say once that it is physics extrapolation, untested. ' +
   'Plain prose: no brackets, no markdown, no lists, no source numbers in the text. ' +
+  'Call the pressurized environment an "ambient" (e.g. "this ambient", "across ambients"); never say "habitat". ' +
   'Reply with JSON only: {"answer": "...", "cite": [numbers]}. Cite only numbers from the list.';
 
 const describe = (w) =>
@@ -23,11 +24,11 @@ const describe = (w) =>
 const prompt = ({ question, habitat, widgets, sources, coverage, retry }) =>
   [
     `Question: ${question}`,
-    `Habitat: ${habitat.name} · ${habitat.o2_pct} % O2 · ${habitat.pressure_psia} psia · ${habitat.gravity_g} g`,
+    `Ambient: ${habitat.name} · ${habitat.o2_pct} % O2 · ${habitat.pressure_psia} psia · ${habitat.gravity_g} g`,
     ...(coverage ? [`Coverage: ${coverage}`] : []),
     // Materials question: both lists, always, even if one is empty.
     ...(widgets.some((w) => /^(SAFE|SEGUROS) /.test(w.title ?? ''))
-      ? ['Give both lists from the SAFE and BURNS cards (MOC above vs at/below the habitat O2), even if one is empty.']
+      ? ['Give both lists from the SAFE and BURNS cards (MOC above vs at/below the ambient O2), even if one is empty.']
       : []),
     'Widgets shown (rule-built from the physics model and NASA data; the first card is the physics forecast):',
     ...widgets.map(describe).filter(Boolean).map((d) => `- ${d}`),

@@ -566,7 +566,7 @@ Future<CopilotReply?> askCopilotOrOffline(
 // ── Extra widgets: port of backend/src/genui/extras.js (rules + data, never the LLM) ──
 
 final _habitatsTopic = RegExp(
-  r'habitat|hábitat|compar|risky|riesg|atmospher|atmósfera|suit|traje|rover|\biss\b',
+  r'habitat|ambient|hábitat|compar|risky|riesg|atmospher|atmósfera|suit|traje|rover|\biss\b',
   caseSensitive: false,
 );
 final _nextTopic = RegExp(
@@ -660,11 +660,11 @@ _Extras _extras(String question, Habitat h, Cond c, FlameForecast f, _Data d) {
     table = {
       'type': 'table',
       'title': tr(
-        'Fire risk by habitat · ${f.name}, ventilated',
+        'Fire risk by ambient · ${f.name}, ventilated',
         'Riesgo de incendio por hábitat · ${trd(f.name)}, ventilado',
       ),
       'columns': [
-        tr('Habitat', 'Hábitat'),
+        tr('Ambient', 'Hábitat'),
         'O₂ %',
         'kPa',
         'g',
@@ -750,7 +750,7 @@ _Extras _extras(String question, Habitat h, Cond c, FlameForecast f, _Data d) {
     (
       _habitatsTopic,
       tr(
-        'Compare fire risk across habitats',
+        'Compare fire risk across ambients',
         'Compara el riesgo de incendio entre hábitats',
       ),
     ),

@@ -93,7 +93,7 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
         if (!atHabitat)
           TextButton(
             onPressed: () => setState(() => _c = _fromHabitat(h)),
-            child: Text(tr('RESET TO HABITAT', 'VOLVER AL HÁBITAT')),
+            child: Text(tr('RESET TO AMBIENT', 'VOLVER AL HÁBITAT')),
           ),
       ],
     );
@@ -272,7 +272,7 @@ class _ForecastScreenState extends ConsumerState<ForecastScreen> {
             ),
             _RankCard(
               title: tr(
-                'HABITAT FIRE RISK · ${f.name.toUpperCase()}, VENTILATED',
+                'AMBIENT FIRE RISK · ${f.name.toUpperCase()}, VENTILATED',
                 'RIESGO DE INCENDIO POR HÁBITAT · ${trd(f.name).toUpperCase()}, VENTILADO',
               ),
               rows: [

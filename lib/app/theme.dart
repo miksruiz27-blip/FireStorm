@@ -1,4 +1,4 @@
-// Habitat Fire Atlas · Design system v0.1
+// FireStorm · Design system v0.1
 // Red is semantic: fire, danger, the one action that matters. If everything is red, nothing is.
 import 'dart:math' as math;
 

@@ -137,7 +137,7 @@ String whyEs(String why) {
   for (final (en, es) in const [
     ('No tests at', 'Sin ensayos a'),
     ('(gap ', '(vacío '),
-    ('closeness to habitat', 'cercanía al hábitat'),
+    ('closeness to ambient', 'cercanía al hábitat'),
     ('physics: ', 'física: '),
     ('self-extinguishes', 'se autoextingue'),
     ('sustained', 'sostenida'),

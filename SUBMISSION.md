@@ -1,13 +1,13 @@
 # Space Apps 2026 submission — copy/paste fields
 
-**Project name:** Habitat Fire Atlas
+**Project name:** FireStorm
 **Challenge:** Flame in Freefall: AI-Powered Fire Safety Insights from Microgravity Combustion Data
 **Team:** Dartline Tech Racing · Saltillo
 
 ## High-level summary (≤ 150 words)
 
 Fire behaves differently without gravity, and what was learned on the ISS does not transfer as-is to the Moon or
-Mars. Habitat Fire Atlas turns decades of NASA microgravity combustion experiments into habitat-specific
+Mars. FireStorm turns decades of NASA microgravity combustion experiments into habitat-specific
 fire-safety decisions. Pick a habitat (ISS, lunar base, rover, spacesuit) and the app ranks the 58 most relevant
 investigations, forecasts whether each material burns at that oxygen, pressure, gravity and airflow with a
 physics-informed model, maps where NASA has data and where it has none, and recommends the next experiment to run.
@@ -17,7 +17,7 @@ input outside its tested range. It runs on web and Android, offline, with NASA s
 ## Links
 
 - Demo: https://web-production-29998460.up.railway.app
-- Android APK: https://web-production-29998460.up.railway.app/download/habitat-fire-atlas.apk
+- Android APK: https://web-production-29998460.up.railway.app/download/firestorm.apk
 - Repository: <GitHub URL>
 - Video / slides: <link>
 

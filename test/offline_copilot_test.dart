@@ -63,9 +63,9 @@ void main() {
     expect(title, contains('ventilation off'));
   });
 
-  test('compare + validate questions add the habitat table and next experiments', () async {
+  test('compare + validate questions add the ambient table and next experiments', () async {
     habitats = [lunar];
-    final r = await offlineCopilot('Compare habitats: which experiment is missing to validate this?', lunar);
+    final r = await offlineCopilot('Compare ambients: which experiment is missing to validate this?', lunar);
     final types = [for (final w in (r.body['widgets'] as List).cast<Map>()) w['type']];
     expect(types, containsAll(['table', 'next_tests', 'metrics', 'follow_ups']));
   });

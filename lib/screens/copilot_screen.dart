@@ -211,7 +211,7 @@ class _ComposerState extends State<_Composer> {
 
   static List<String> get _suggestions => [
     tr(
-      'Best suppressant for this habitat?',
+      'Best suppressant for this ambient?',
       '¿Mejor supresor para este hábitat?',
     ),
     tr(

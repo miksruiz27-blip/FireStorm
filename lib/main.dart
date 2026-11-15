@@ -24,7 +24,7 @@ Future<void> main() async {
 }
 
 List<({String path, String label, IconData icon})> get _destinations => [
-  (path: '/', label: tr('Habitat', 'Hábitat'), icon: Icons.public),
+  (path: '/', label: tr('Ambient', 'Hábitat'), icon: Icons.public),
   (
     path: '/forecast',
     label: tr('Forecast', 'Pronóstico'),
@@ -107,7 +107,7 @@ class _FirestormAppState extends State<FirestormApp> {
   @override
   Widget build(BuildContext context) => MaterialApp.router(
     key: ValueKey(_router), // remount with the new router
-    title: 'Habitat Fire Atlas',
+    title: 'FireStorm',
     debugShowCheckedModeBanner: false,
     theme: buildAppTheme(),
     routerConfig: _router,

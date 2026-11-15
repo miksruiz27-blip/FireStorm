@@ -21,7 +21,7 @@ class HabitatScreen extends ConsumerWidget {
       children: [
         PageIntro(
           step: tr('STEP 01 · MISSION CONTEXT', 'PASO 01 · CONTEXTO DE MISIÓN'),
-          title: tr('SELECT HABITAT', 'ELIGE EL HÁBITAT'),
+          title: tr('SELECT AMBIENT', 'ELIGE EL HÁBITAT'),
           description: TextSpan(
             text: tr(
               'Pick the pressurized environment. Every ranking, data gap and copilot answer '
@@ -42,7 +42,7 @@ class HabitatScreen extends ConsumerWidget {
                 onPressed: () => context.go('/gaps'),
                 iconAlignment: IconAlignment.end,
                 icon: const Icon(Icons.arrow_forward, size: 16),
-                label: Text(tr('ANALYZE HABITAT', 'ANALIZAR HÁBITAT')),
+                label: Text(tr('ANALYZE AMBIENT', 'ANALIZAR HÁBITAT')),
               ),
             ],
           ),

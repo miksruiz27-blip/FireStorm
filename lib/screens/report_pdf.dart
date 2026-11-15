@@ -172,8 +172,8 @@ Future<Uint8List> buildReportPdf({
   final doc = pw.Document(
     title:
         '${i.code} · ${tr('Investigation report', 'Reporte de investigación')}',
-    author: 'Habitat Fire Atlas',
-    creator: 'Habitat Fire Atlas',
+    author: 'FireStorm',
+    creator: 'FireStorm',
     subject: '${i.title} · ${h.name}',
     keywords: 'NASA PSI, ${i.code}, ${h.name}',
   );
@@ -203,7 +203,7 @@ Future<Uint8List> buildReportPdf({
               crossAxisAlignment: pw.CrossAxisAlignment.start,
               children: [
                 pw.Text(
-                  'HABITAT FIRE ATLAS',
+                  'FIRESTORM',
                   style: st(9, font: display, spacing: 1.6),
                 ),
                 pw.SizedBox(height: 2),
@@ -536,10 +536,10 @@ Future<Uint8List> buildReportPdf({
         pw.SizedBox(height: 18),
         pw.Text(
           tr(
-            'Content is generated only from linked NASA PSI records and the Habitat Fire Atlas '
+            'Content is generated only from linked NASA PSI records and the FireStorm '
                 'physics model. Check sources before design decisions.',
             'El contenido se genera solo a partir de registros NASA PSI vinculados y del modelo físico '
-                'de Habitat Fire Atlas. Revisa las fuentes antes de tomar decisiones de diseño.',
+                'de FireStorm. Revisa las fuentes antes de tomar decisiones de diseño.',
           ),
           style: st(7.5, color: _muted),
         ),

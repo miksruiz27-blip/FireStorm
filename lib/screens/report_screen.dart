@@ -285,7 +285,7 @@ class _Header extends ConsumerWidget {
                 OutlinedButton.icon(
                   onPressed: () => Printing.layoutPdf(
                     name:
-                        'HabitatFireAtlas_${i.code}_${h.id}_${lang.value.name}.pdf',
+                        'FireStorm_${i.code}_${h.id}_${lang.value.name}.pdf',
                     onLayout: (format) => buildReportPdf(
                       i: i,
                       r: r,

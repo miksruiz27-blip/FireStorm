@@ -6,7 +6,7 @@
     "gravity_g": 0.166
    },
    "priority": 1,
-   "why": "No tests at 100 % O₂ / 0.166 g (gap 1); closeness to habitat 1; physics: vigorous (limit 18.55 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 100 % O₂ / 0.166 g (gap 1); closeness to ambient 1; physics: vigorous (limit 18.55 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -15,7 +15,7 @@
     "gravity_g": 0.38
    },
    "priority": 0.807,
-   "why": "No tests at 100 % O₂ / 0.38 g (gap 1); closeness to habitat 0.807; physics: vigorous (limit 18.67 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 100 % O₂ / 0.38 g (gap 1); closeness to ambient 0.807; physics: vigorous (limit 18.67 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -24,7 +24,7 @@
     "gravity_g": 0
    },
    "priority": 0.424,
-   "why": "1 test nearby at 100 % O₂ / 0 g (gap 0.5); closeness to habitat 0.847; physics: vigorous (limit 18.63 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "1 test nearby at 100 % O₂ / 0 g (gap 0.5); closeness to ambient 0.847; physics: vigorous (limit 18.63 %, p 1), extrapolated — a test here would confirm it.",
    "sources": [
     "NASA SMA - Apollo 13 Tank 2 (65V DC Overheat)"
    ]
@@ -35,7 +35,7 @@
     "gravity_g": 1
    },
    "priority": 0.217,
-   "why": "1 test nearby at 100 % O₂ / 1 g (gap 0.5); closeness to habitat 0.434; physics: vigorous (limit 18.92 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "1 test nearby at 100 % O₂ / 1 g (gap 0.5); closeness to ambient 0.434; physics: vigorous (limit 18.92 %, p 1), extrapolated — a test here would confirm it.",
    "sources": [
     "NASA SMA - Apollo 1 (100% O2, 16.7 psi)"
    ]
@@ -46,7 +46,7 @@
     "gravity_g": 0.166
    },
    "priority": 0.002,
-   "why": "No tests at 35 % O₂ / 0.166 g (gap 1); closeness to habitat 0.002; physics: vigorous (limit 18.55 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 35 % O₂ / 0.166 g (gap 1); closeness to ambient 0.002; physics: vigorous (limit 18.55 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   }
  ],
@@ -57,7 +57,7 @@
     "gravity_g": 0.166
    },
    "priority": 0.847,
-   "why": "No tests at 21 % O₂ / 0.166 g (gap 1); closeness to habitat 0.847; physics: vigorous (limit 15.19 %, p 0.997), extrapolated — a test here would confirm it.",
+   "why": "No tests at 21 % O₂ / 0.166 g (gap 1); closeness to ambient 0.847; physics: vigorous (limit 15.19 %, p 0.997), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -66,7 +66,7 @@
     "gravity_g": 0.38
    },
    "priority": 0.684,
-   "why": "No tests at 21 % O₂ / 0.38 g (gap 1); closeness to habitat 0.684; physics: vigorous (limit 15.3 %, p 0.997), extrapolated — a test here would confirm it.",
+   "why": "No tests at 21 % O₂ / 0.38 g (gap 1); closeness to ambient 0.684; physics: vigorous (limit 15.3 %, p 0.997), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -75,7 +75,7 @@
     "gravity_g": 0.166
    },
    "priority": 0.628,
-   "why": "No tests at 18 % O₂ / 0.166 g (gap 1); closeness to habitat 0.628; physics: sustained (limit 15.19 %, p 0.943), extrapolated — a test here would confirm it.",
+   "why": "No tests at 18 % O₂ / 0.166 g (gap 1); closeness to ambient 0.628; physics: sustained (limit 15.19 %, p 0.943), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -84,7 +84,7 @@
     "gravity_g": 0.166
    },
    "priority": 0.628,
-   "why": "No tests at 24 % O₂ / 0.166 g (gap 1); closeness to habitat 0.628; physics: vigorous (limit 15.19 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 24 % O₂ / 0.166 g (gap 1); closeness to ambient 0.628; physics: vigorous (limit 15.19 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -93,7 +93,7 @@
     "gravity_g": 0.38
    },
    "priority": 0.507,
-   "why": "No tests at 18 % O₂ / 0.38 g (gap 1); closeness to habitat 0.507; physics: sustained (limit 15.3 %, p 0.937), extrapolated — a test here would confirm it.",
+   "why": "No tests at 18 % O₂ / 0.38 g (gap 1); closeness to ambient 0.507; physics: sustained (limit 15.3 %, p 0.937), extrapolated — a test here would confirm it.",
    "sources": []
   }
  ],
@@ -104,7 +104,7 @@
     "gravity_g": 0.166
    },
    "priority": 1,
-   "why": "No tests at 34 % O₂ / 0.166 g (gap 1); closeness to habitat 1; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 34 % O₂ / 0.166 g (gap 1); closeness to ambient 1; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -113,7 +113,7 @@
     "gravity_g": 0.38
    },
    "priority": 0.807,
-   "why": "No tests at 34 % O₂ / 0.38 g (gap 1); closeness to habitat 0.807; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 34 % O₂ / 0.38 g (gap 1); closeness to ambient 0.807; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -122,7 +122,7 @@
     "gravity_g": 0.166
    },
    "priority": 0.741,
-   "why": "No tests at 31 % O₂ / 0.166 g (gap 1); closeness to habitat 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 31 % O₂ / 0.166 g (gap 1); closeness to ambient 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -131,7 +131,7 @@
     "gravity_g": 0.166
    },
    "priority": 0.741,
-   "why": "No tests at 37 % O₂ / 0.166 g (gap 1); closeness to habitat 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 37 % O₂ / 0.166 g (gap 1); closeness to ambient 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -140,7 +140,7 @@
     "gravity_g": 0.38
    },
    "priority": 0.598,
-   "why": "No tests at 31 % O₂ / 0.38 g (gap 1); closeness to habitat 0.598; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 31 % O₂ / 0.38 g (gap 1); closeness to ambient 0.598; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   }
  ],
@@ -151,7 +151,7 @@
     "gravity_g": 0.166
    },
    "priority": 1,
-   "why": "No tests at 34 % O₂ / 0.166 g (gap 1); closeness to habitat 1; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 34 % O₂ / 0.166 g (gap 1); closeness to ambient 1; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -160,7 +160,7 @@
     "gravity_g": 0.38
    },
    "priority": 0.807,
-   "why": "No tests at 34 % O₂ / 0.38 g (gap 1); closeness to habitat 0.807; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 34 % O₂ / 0.38 g (gap 1); closeness to ambient 0.807; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -169,7 +169,7 @@
     "gravity_g": 0.166
    },
    "priority": 0.741,
-   "why": "No tests at 31 % O₂ / 0.166 g (gap 1); closeness to habitat 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 31 % O₂ / 0.166 g (gap 1); closeness to ambient 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -178,7 +178,7 @@
     "gravity_g": 0.166
    },
    "priority": 0.741,
-   "why": "No tests at 37 % O₂ / 0.166 g (gap 1); closeness to habitat 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 37 % O₂ / 0.166 g (gap 1); closeness to ambient 0.741; physics: vigorous (limit 16.78 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   },
   {
@@ -187,7 +187,7 @@
     "gravity_g": 0.38
    },
    "priority": 0.598,
-   "why": "No tests at 31 % O₂ / 0.38 g (gap 1); closeness to habitat 0.598; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
+   "why": "No tests at 31 % O₂ / 0.38 g (gap 1); closeness to ambient 0.598; physics: vigorous (limit 16.9 %, p 1), extrapolated — a test here would confirm it.",
    "sources": []
   }
  ]

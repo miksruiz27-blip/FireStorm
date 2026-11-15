@@ -195,8 +195,8 @@ class _Table extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 6),
             child: Text(
               tr(
-                'Condition ranges from the Habitat Fire Atlas API · verify against PSI metadata.',
-                'Rangos de condiciones de la API de Habitat Fire Atlas · verificar con los metadatos PSI.',
+                'Condition ranges from the FireStorm API · verify against PSI metadata.',
+                'Rangos de condiciones de la API de FireStorm · verificar con los metadatos PSI.',
               ),
               style: AppText.mono.copyWith(fontSize: 11),
             ),

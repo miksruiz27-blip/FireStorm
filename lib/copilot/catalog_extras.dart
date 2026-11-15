@@ -61,13 +61,13 @@ final _metricTiles = CatalogItem(
 final _comparisonTable = CatalogItem(
   name: 'ComparisonTable',
   dataSchema: S.object(
-    description: 'Rule-built comparison, e.g. fire risk per habitat. One highlighted row.',
+    description: 'Rule-built comparison, e.g. fire risk per ambient. One highlighted row.',
     properties: {
       'title': S.string(),
       'columns': S.list(items: S.string()),
       'rows': S.list(items: S.list(items: S.string())),
       'highlight': S.integer(
-        description: 'Row index to highlight (current habitat).',
+        description: 'Row index to highlight (current ambient).',
       ),
     },
     required: ['title', 'columns', 'rows'],

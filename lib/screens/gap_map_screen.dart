@@ -180,12 +180,15 @@ class _ChartCard extends StatelessWidget {
                   item(_Swatch.solid, _fuelName(Fuel.solid)),
                   item(_Swatch.liquid, _fuelName(Fuel.liquid)),
                   item(_Swatch.gas, _fuelName(Fuel.gas)),
-                  item(
-                    _Swatch.partial,
-                    tr('Partial-g (sparse)', 'g parcial (escaso)'),
-                  ),
+                  // Only when partial-g tests exist: today there are none, and the
+                  // hatched lunar/Mars rows already say so.
+                  if (marks.any((m) => m.partialG))
+                    item(
+                      _Swatch.partial,
+                      tr('Partial-g (sparse)', 'g parcial (escaso)'),
+                    ),
                   item(_Swatch.noData, tr('No data', 'Sin datos')),
-                  item(_Swatch.habitat, tr('Your habitat', 'Tu hábitat')),
+                  item(_Swatch.habitat, tr('Your ambient', 'Tu hábitat')),
                   item(
                     _Swatch.suggested,
                     tr('Suggested test', 'Ensayo sugerido'),
@@ -272,8 +275,8 @@ class _ChartCard extends StatelessWidget {
               ),
               Text(
                 tr(
-                  'Test points from the Habitat Fire Atlas API · PSI records',
-                  'Puntos de ensayo de la API de Habitat Fire Atlas · registros PSI',
+                  'Test points from the FireStorm API · PSI records',
+                  'Puntos de ensayo de la API de FireStorm · registros PSI',
                 ),
                 style: AppText.mono.copyWith(fontSize: 11),
               ),
@@ -363,10 +366,12 @@ class _GapMapPainter extends CustomPainter {
           color: AppColors.secondary,
         ),
       );
-      final chip = Rect.fromCenter(
-        center: rect.center,
-        width: label.width + 12,
-        height: label.height + 6,
+      // Bottom-left: the suggested-test squares sit mid-row and the ambient badge sits on top.
+      final chip = Rect.fromLTWH(
+        rect.left + 8,
+        rect.bottom - label.height - 14,
+        label.width + 12,
+        label.height + 6,
       );
       if (z.label.isNotEmpty) {
         canvas.drawRect(chip, Paint()..color = AppColors.card);
@@ -884,7 +889,7 @@ class _Aside extends StatelessWidget {
                   ),
                 Text(
                   tr(
-                    'Priority = data gap × closeness to habitat × model uncertainty.',
+                    'Priority = data gap × closeness to ambient × model uncertainty.',
                     'Prioridad = vacío de datos × cercanía al hábitat × incertidumbre del modelo.',
                   ),
                   style: AppText.mono.copyWith(fontSize: 10),

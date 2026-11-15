@@ -44,5 +44,5 @@ export function grid() {
 /** fc: flame forecast at the cell (habitat pressure, cabin flow). */
 export const why = (c, f, n, fc) =>
   `${n ? `${n} test${n > 1 ? 's' : ''} nearby` : 'No tests'} at ${c.o2_pct} % O₂ / ${c.gravity_g} g (gap ${f.gap}); ` +
-  `closeness to habitat ${f.near}; physics: ${fc.regime} (limit ${fc.loi_pct} %, p ${fc.p_burn})` +
+  `closeness to ambient ${f.near}; physics: ${fc.regime} (limit ${fc.loi_pct} %, p ${fc.p_burn})` +
   (fc.extrapolated.length ? ', extrapolated — a test here would confirm it.' : `, uncertainty ${f.uncertainty}.`);

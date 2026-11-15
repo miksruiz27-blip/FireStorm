@@ -699,7 +699,7 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
             ),
           ),
           const SizedBox(height: 8),
-          _dropdownLabel('1. HABITAT / GRAVITY PRESET'),
+          _dropdownLabel('1. AMBIENT / GRAVITY PRESET'),
           const SizedBox(height: 5),
           _buildStyledDropdown<String>(
             value: _selectedPreset,
@@ -707,7 +707,7 @@ class _HabitatFlame3DCardState extends State<HabitatFlame3DCard>
               DropdownMenuItem(value: 'CUSTOM', child: Text('Custom (Manual Slider Values)', overflow: TextOverflow.ellipsis, maxLines: 1)),
               DropdownMenuItem(value: 'ISS', child: Text('ISS Destiny (0.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
               DropdownMenuItem(value: 'LUNAR', child: Text('Lunar Artemis SEA (0.166g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
-              DropdownMenuItem(value: 'MARS', child: Text('Mars Habitat (0.38g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
+              DropdownMenuItem(value: 'MARS', child: Text('Mars Ambient (0.38g · 34% O2 · 8.2 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
               DropdownMenuItem(value: 'EARTH', child: Text('Earth Sea Level (1.0g · 21% O2 · 14.7 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
               DropdownMenuItem(value: 'VAC_HYPOXIC', child: Text('Hypoxic Extinguish (0.0g · 15.2% O2 · 6 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),
               DropdownMenuItem(value: 'HYPER_O2', child: Text('Hyperbaric Enriched (1.0g · 42% O2 · 30 psi)', overflow: TextOverflow.ellipsis, maxLines: 1)),

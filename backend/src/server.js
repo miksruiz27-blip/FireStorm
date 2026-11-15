@@ -8,4 +8,4 @@ process.on('uncaughtException', (e) => console.error('uncaughtException', e));
 await loadModel();
 await loadClassifiers();
 const port = Number(process.env.PORT) || 3000;
-app.listen(port, () => console.log(`Habitat Fire Atlas API on :${port}`));
+app.listen(port, () => console.log(`FireStorm API on :${port}`));

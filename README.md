@@ -1,4 +1,4 @@
-# Habitat Fire Atlas
+# FireStorm
 
 **NASA Space Apps Challenge 2026 · Flame in Freefall** — team Dartline Tech Racing (Saltillo).
 
@@ -7,7 +7,7 @@ Decades of microgravity combustion results, turned into fire-safety decisions fo
 **map** where NASA has data and where it has none, and **recommend** the next experiment to run.
 
 - **Live demo (web):** https://web-production-29998460.up.railway.app
-- **Android APK (works offline):** https://web-production-29998460.up.railway.app/download/habitat-fire-atlas.apk
+- **Android APK (works offline):** https://web-production-29998460.up.railway.app/download/firestorm.apk
 - **API:** https://api-production-34edefa4.up.railway.app/health
 
 ## Why a predictive model

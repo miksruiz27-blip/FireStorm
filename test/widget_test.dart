@@ -43,12 +43,12 @@ const _modelN = 'n = 137 test points labelled burn/extinct · accuracy 77 %';
 void main() {
   setUpAll(() => (loadHabitats(), loadDataTranslations()).wait);
   tearDown(() => lang.value = Lang.en);
-  testWidgets('selecting a habitat updates telemetry and stats', (
+  testWidgets('selecting an ambient updates telemetry and stats', (
     tester,
   ) async {
     await _pumpApp(tester, const Size(1440, 1400));
     await _settle(tester);
-    expect(find.text('SELECT HABITAT'), findsOneWidget);
+    expect(find.text('SELECT AMBIENT'), findsOneWidget);
     expect(
       find.text('6 / 49'),
       findsOneWidget,
@@ -92,7 +92,7 @@ void main() {
     tester,
   ) async {
     await _pumpApp(tester, const Size(1440, 1400));
-    await tester.tap(find.text('ANALYZE HABITAT'));
+    await tester.tap(find.text('ANALYZE AMBIENT'));
     await _settle(tester);
 
     expect(find.text('DATA GAP MAP'), findsOneWidget);
@@ -105,7 +105,7 @@ void main() {
     expect(find.textContaining(_modelN), findsOneWidget); // same figure as Forecast (F6)
     expect(find.text('Burn tests at 34 % O₂ · 0.166 g'), findsOneWidget);
 
-    await tester.tap(find.text('Habitat')); // nav rail
+    await tester.tap(find.text('Ambient')); // nav rail
     await _settle(tester);
     await tester.tap(find.text('ISS'));
     await tester.tap(find.text('Gap map'));
@@ -155,7 +155,7 @@ void main() {
     },
   );
 
-  for (final button in [null, 'VIEW RANKING', 'ANALYZE HABITAT']) {
+  for (final button in [null, 'VIEW RANKING', 'ANALYZE AMBIENT']) {
     testWidgets('${button ?? 'habitat'} lays out on a phone without overflow', (
       tester,
     ) async {
@@ -188,7 +188,7 @@ void main() {
   });
 
   testWidgets(
-    'report: open from ranking, chart marks the habitat, breadcrumb back',
+    'report: open from ranking, chart marks the ambient, breadcrumb back',
     (tester) async {
       await _pumpApp(tester, const Size(1440, 1800));
       await tester.tap(find.text('VIEW RANKING'));
@@ -246,8 +246,8 @@ void main() {
       find.text('μg'),
     ); // gravity → microgravity, cabin flow 10 cm/s
     await tester.pump();
-    expect(find.text('RESET TO HABITAT'), findsOneWidget);
-    await tester.tap(find.text('RESET TO HABITAT'));
+    expect(find.text('RESET TO AMBIENT'), findsOneWidget);
+    await tester.tap(find.text('RESET TO AMBIENT'));
     await tester.pump();
     expect(find.text('PHYSICS EXTRAPOLATION · UNTESTED'), findsOneWidget);
     expect(tester.takeException(), isNull);
@@ -261,42 +261,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('EN/ES switch flips UI and catalog data, stays on the screen', (
-    tester,
-  ) async {
-    await _pumpApp(tester, const Size(1440, 1800));
-    await _settle(tester);
-    await tester.tap(find.bySemanticsLabel('Switch language to Spanish'));
-    await _settle(tester);
-    expect(find.text('ELIGE EL HÁBITAT'), findsOneWidget);
-    expect(find.text('Pronóstico'), findsOneWidget); // nav rail
-    expect(find.text('CRÍTICO'), findsOneWidget); // spacesuit card
-    expect(find.text('ALTO'), findsNWidgets(3)); // lunar + rover cards, telemetry bar (Lunar Base)
-
-    await tester.tap(find.text('VER RANKING'));
-    await _settle(tester);
-    expect(find.text('RANKING DE INVESTIGACIONES'), findsOneWidget);
-    await tester.tap(find.text('BASS-II'));
-    await tester.pump();
-    await tester.tap(find.text('ABRIR REPORTE'));
-    await _settle(tester);
-    expect(find.text('HALLAZGOS CLAVE'), findsOneWidget);
-    expect(find.text('RELEVANCIA · BASE LUNAR'), findsOneWidget);
-    expect(find.text('EXPORTAR PDF'), findsOneWidget);
-    // Catalog text back in its Spanish original (translations_en.json, inverted).
-    expect(
-      find.textContaining('Las muestras de PMMA y tejido SIBAL'),
-      findsOneWidget,
-    );
-
-    await tester.tap(find.bySemanticsLabel('Cambiar idioma a inglés'));
-    await _settle(tester);
-    expect(find.text('KEY FINDINGS'), findsOneWidget); // same report, English
-    expect(find.text('EXPORT PDF'), findsOneWidget);
-    expect(tester.takeException(), isNull);
-  });
-
-  // Spanish runs longer: every screen must still fit a phone.
+  // English only: the EN/ES switch was removed from the app bar.
   for (final tab in [
     null,
     'Pronóstico',

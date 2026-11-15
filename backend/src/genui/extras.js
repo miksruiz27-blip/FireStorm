@@ -30,7 +30,7 @@ export function recommend(h, points) {
 }
 
 const topics = {
-  habitats: /habitat|hábitat|compar|risky|riesg|atmospher|atmósfera|suit|traje|rover|\biss\b/i,
+  habitats: /habitat|ambient|hábitat|compar|risky|riesg|atmospher|atmósfera|suit|traje|rover|\biss\b/i,
   next: /next|próxim|recommend|recomiend|recomend|gap|vac[ií]o|validat|valid|missing|falta|should we test|ensayar|untested|sin ensayar/i,
 };
 
@@ -74,8 +74,8 @@ export function extraWidgets({ question, habitat: h, cond: c, forecast: f, point
       .sort((a, b) => b.fc.margin_pct - a.fc.margin_pct);
     out.table = {
       type: 'table',
-      title: t(`Fire risk by habitat · ${f.material}, ventilated`, `Riesgo de incendio por hábitat · ${f.material}, ventilado`),
-      columns: [t('Habitat', 'Hábitat'), 'O₂ %', 'kPa', 'g', t('Limit %', 'Límite %'), t('p(burn)', 'p(arder)'), t('Regime', 'Régimen')],
+      title: t(`Fire risk by ambient · ${f.material}, ventilated`, `Riesgo de incendio por hábitat · ${f.material}, ventilado`),
+      columns: [t('Ambient', 'Hábitat'), 'O₂ %', 'kPa', 'g', t('Limit %', 'Límite %'), t('p(burn)', 'p(arder)'), t('Regime', 'Régimen')],
       rows: rows.map(({ x, fc }) => [
         hName(x), `${fmt(x.o2_pct)}`, `${fmt(x.pressure_psia * PSI_TO_KPA)}`, `${x.gravity_g}`, `${fmt(fc.loi_pct)}`, fc.p_burn.toFixed(2), regime(fc.regime),
       ]),
@@ -106,7 +106,7 @@ export function extraWidgets({ question, habitat: h, cond: c, forecast: f, point
     [/fan|ventila|flow|flujo/, t('What if we turn the fans off?', '¿Qué pasa con la ventilación apagada?')],
     [/mars|marte|gravit|gravedad/, t('Does it change at Mars gravity?', '¿Cambia a gravedad de Marte?')],
     [topics.next, t('Which experiment is missing to validate this?', '¿Qué experimento falta para validar esto?')],
-    [topics.habitats, t('Compare fire risk across habitats', 'Compara el riesgo de incendio entre hábitats')],
+    [topics.habitats, t('Compare fire risk across ambients', 'Compara el riesgo de incendio entre hábitats')],
   ];
   out.followUps = { type: 'follow_ups', questions: options.filter(([re]) => !re.test(q)).slice(0, 3).map(([, s]) => s) };
   return out;

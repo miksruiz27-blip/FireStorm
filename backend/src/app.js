@@ -18,7 +18,7 @@ app.use(express.json({ limit: '32kb' }));
 const fail = (status, error) => Object.assign(new Error(error), { status });
 const habitatFrom = async (req) => {
   const h = await repo.habitat(String(req.query.habitat ?? ''));
-  if (!h) throw fail(400, `unknown habitat "${req.query.habitat ?? ''}"`);
+  if (!h) throw fail(400, `unknown ambient "${req.query.habitat ?? ''}"`);
   return h;
 };
 

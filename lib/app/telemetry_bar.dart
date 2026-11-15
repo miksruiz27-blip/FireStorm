@@ -38,7 +38,7 @@ class TelemetryBar extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'HABITAT FIRE ATLAS',
+                    'FIRESTORM',
                     style: AppText.h2.copyWith(
                       fontSize: 13,
                       letterSpacing: 1.82,
@@ -67,7 +67,7 @@ class TelemetryBar extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   _Readout(
-                    tr('HABITAT', 'HÁBITAT'),
+                    tr('AMBIENT', 'HÁBITAT'),
                     Text(
                       h.name.toUpperCase(),
                       style: AppText.h2.copyWith(
@@ -133,60 +133,10 @@ class TelemetryBar extends ConsumerWidget {
                 ],
               ),
             ),
-          const _LangToggle(),
         ],
       ),
     );
   }
-}
-
-/// EN | ES switch: flips the whole app (UI, data, copilot answers).
-class _LangToggle extends StatelessWidget {
-  const _LangToggle();
-
-  @override
-  Widget build(BuildContext context) => Container(
-    padding: const EdgeInsets.symmetric(horizontal: 14),
-    decoration: const BoxDecoration(
-      border: Border(left: BorderSide(color: AppColors.line)),
-    ),
-    alignment: Alignment.center,
-    child: Semantics(
-      button: true,
-      label: tr('Switch language to Spanish', 'Cambiar idioma a inglés'),
-      excludeSemantics: true,
-      child: Tooltip(
-        message: tr('Español', 'English'),
-        child: InkWell(
-          onTap: () => lang.value = isEs ? Lang.en : Lang.es,
-          borderRadius: BorderRadius.circular(4),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-            decoration: BoxDecoration(
-              border: Border.all(color: AppColors.lineStrong),
-              borderRadius: BorderRadius.circular(4),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              spacing: 6,
-              children: [
-                for (final l in Lang.values)
-                  Text(
-                    l.name.toUpperCase(),
-                    style: AppText.label.copyWith(
-                      color: l == lang.value
-                          ? AppColors.text
-                          : AppColors.secondary,
-                      fontWeight: l == lang.value ? FontWeight.w700 : null,
-                    ),
-                  ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
 }
 
 class _Readout extends StatelessWidget {

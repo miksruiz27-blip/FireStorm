@@ -1,4 +1,4 @@
-# Habitat Fire Atlas · API
+# FireStorm · API
 
 Express + Postgres (Railway) + ONNX. Flutter app → this API → Postgres.
 
@@ -16,7 +16,7 @@ npm test                  # unit + contract tests (needs DATABASE_URL)
 
 ## Deploy (Railway)
 
-The project `habitat-fire-atlas` has two services: `Postgres` and `api`.
+The project `firestorm` has two services: `Postgres` and `api`.
 - `railway.json` runs `npm run migrate` as the pre-deploy step, then starts the server and health-checks `/health`.
 - `api` variables: `DATABASE_URL=${{Postgres.DATABASE_URL}}`, plus `LLM_PROVIDER` and `LLM_API_KEY` if you want LLM answers. Do not set `OLLAMA_URL` there.
 - Deploy: `railway up --service api` from `backend/`.
