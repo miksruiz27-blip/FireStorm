@@ -91,7 +91,7 @@ const range = (xs) => [Math.min(...xs), Math.max(...xs)];
 // Prefixes with rows in psi_repositories_simulated.csv (PSI*, and the partial-g LUNA/MARS/… series).
 const SIMULATED = new Set(Object.keys(psi).map(prefix));
 const simulated = (p) => SIMULATED.has(p);
-const G_BANDS = { micro: 0, lunar: 0.165, mars: 0.38, earth: 1 };
+const G_BANDS = { micro: 0, lunar: 0.166, mars: 0.38, earth: 1 };
 /** Gravity band most rows were run at. */
 const gravityBand = (gs) => {
   const band = (g) => Object.entries(G_BANDS).reduce((a, b) => (Math.abs(b[1] - g) < Math.abs(a[1] - g) ? b : a))[0];

@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../app/theme.dart';
+import 'api.dart';
 
 /// Gravity rows of the data gap map, top to bottom.
 enum GravityBand {
@@ -22,22 +23,26 @@ class Habitat {
     required this.name,
     required this.blurb,
     required this.o2,
-    required this.o2Label,
     required this.pressure,
-    required this.pressureLabel,
-    required this.gravityLabel,
-    required this.band,
+    required this.g,
     required this.risk,
+    required this.source,
+    this.gravityText,
   });
 
   final String id; // API habitat id
-  final String code, zone, name, blurb;
-  final double o2; // % O₂, positions the envelope tick
-  final String o2Label;
-  final double pressure; // psi
-  final String pressureLabel, gravityLabel;
-  final GravityBand band;
+  final String code, zone, name, blurb, source;
+  final double o2; // % O₂
+  final double pressure; // psia
+  final double g;
+  final String? gravityText; // presentation override (spacesuit spans μg–lunar)
   final TagLevel risk;
+
+  static String _num(double v) => v % 1 == 0 ? v.toStringAsFixed(0) : '$v';
+  String get o2Label => _num(o2);
+  String get pressureLabel => _num(pressure);
+  String get gravityLabel => gravityText ?? (g < 0.05 ? 'μg' : _num(g));
+  GravityBand get band => bandFor(g);
 
   String get riskLabel => switch (risk) {
     TagLevel.neutral => 'NOMINAL',
@@ -46,69 +51,77 @@ class Habitat {
   };
 }
 
-// Atmospheres: design values, verify before mission use.
-const habitats = [
-  Habitat(
-    id: 'iss',
+GravityBand bandFor(double g) => g < 0.05
+    ? GravityBand.micro
+    : g < 0.25
+    ? GravityBand.lunar
+    : g < 0.6
+    ? GravityBand.mars
+    : GravityBand.earth;
+
+/// Presentation only. Atmospheres (O₂, pressure, gravity, source) come from GET /habitats,
+/// the single source of truth; the bundled snapshot answers offline.
+const _presentation = {
+  'iss': (
     code: '01',
     zone: 'LEO · ORBITAL',
-    name: 'ISS',
     blurb: 'Sea-level air, continuous crew',
-    o2: 21,
-    o2Label: '21',
-    pressure: 14.7,
-    pressureLabel: '14.7',
-    gravityLabel: 'μg',
-    band: GravityBand.micro,
     risk: TagLevel.neutral,
+    gravityText: null,
   ),
-  Habitat(
-    id: 'lunar',
+  'lunar': (
     code: '02',
     zone: 'SURFACE · MOON',
-    name: 'Lunar Base',
-    blurb: 'Enriched O₂ at reduced pressure',
-    o2: 30,
-    o2Label: '≥30',
-    pressure: 10.2,
-    pressureLabel: '≤10.2',
-    gravityLabel: '0.166',
-    band: GravityBand.lunar,
+    blurb: 'Exploration atmosphere, enriched O₂',
     risk: TagLevel.high,
+    gravityText: null,
   ),
-  Habitat(
-    id: 'rover',
+  'rover': (
     code: '03',
     zone: 'SURFACE · MOBILE',
-    name: 'Pressurized Rover',
     blurb: 'Exploration atmosphere, small volume',
-    o2: 34,
-    o2Label: '34',
-    pressure: 8.2,
-    pressureLabel: '8.2',
-    gravityLabel: '0.166',
-    band: GravityBand.lunar,
     risk: TagLevel.high,
+    gravityText: null,
   ),
-  Habitat(
-    id: 'eva',
+  'eva': (
     code: '04',
     zone: 'EVA',
-    name: 'Spacesuit',
     blurb: 'Pure oxygen, lowest pressure',
-    o2: 100,
-    o2Label: '100',
-    pressure: 4.3,
-    pressureLabel: '4.3',
-    gravityLabel: 'μg–0.17',
-    band: GravityBand.lunar,
     risk: TagLevel.critical,
+    gravityText: 'μg–0.17',
   ),
-];
+};
+
+/// Filled by [loadHabitats] before the app starts.
+List<Habitat> habitats = const [];
+
+Future<void> loadHabitats() async {
+  final rows = (await getJson('/habitats', snapshot: 'habitats.json') as List)
+      .cast<Map>();
+  final byId = {for (final r in rows) r['id'] as String: r};
+  habitats = [
+    for (final MapEntry(key: id, value: p) in _presentation.entries)
+      if (byId[id] case final r?)
+        Habitat(
+          id: id,
+          code: p.code,
+          zone: p.zone,
+          name: r['name'] as String,
+          blurb: p.blurb,
+          o2: (r['o2_pct'] as num).toDouble(),
+          pressure: (r['pressure_psia'] as num).toDouble(),
+          g: (r['gravity_g'] as num).toDouble(),
+          risk: p.risk,
+          source: r['source'] as String,
+          gravityText: p.gravityText,
+        ),
+  ];
+}
 
 class SelectedHabitat extends Notifier<Habitat> {
   @override
-  Habitat build() => habitats[1];
+  Habitat build() =>
+      habitats.firstWhere((h) => h.id == 'lunar', orElse: () => habitats.first);
   void select(Habitat h) => state = h;
 }
 

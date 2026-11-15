@@ -16,7 +16,7 @@ const topics = {
 };
 const GRAVITY_WORDS = [
   [/micro|μg|orbit|\biss\b/i, 0],
-  [/lunar|moon|\bluna/i, 0.165],
+  [/lunar|moon|\bluna/i, 0.166],
   [/mars|marte/i, 0.38],
   [/earth|tierra/i, 1],
 ];

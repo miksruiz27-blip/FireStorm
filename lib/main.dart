@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'app/telemetry_bar.dart';
 import 'app/theme.dart';
+import 'data/habitats.dart';
 import 'screens/copilot_screen.dart';
 import 'screens/forecast_screen.dart';
 import 'screens/gap_map_screen.dart';
@@ -12,7 +13,11 @@ import 'screens/lab_screen.dart';
 import 'screens/ranking_screen.dart';
 import 'screens/report_screen.dart';
 
-void main() => runApp(const ProviderScope(child: FirestormApp()));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await loadHabitats(); // atmospheres from the API (snapshot offline) before the first frame
+  runApp(const ProviderScope(child: FirestormApp()));
+}
 
 const _destinations = [
   (path: '/', label: 'Habitat', icon: Icons.public),

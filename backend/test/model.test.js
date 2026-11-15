@@ -21,9 +21,9 @@ test('Node p_burn = team model.onnx (±0.001)', async () => {
 
 test('domain guard: ISS conditions in, partial gravity out', () => {
   assert.equal(domainCheck({ o2_pct: 20.9, pressure_kpa: 101.3, flow_cm_s: 5, gravity_g: 0 }).ok, true);
-  const lunar = domainCheck({ o2_pct: 30, pressure_kpa: 70.3, flow_cm_s: 0, gravity_g: 0.165 });
+  const lunar = domainCheck({ o2_pct: 34, pressure_kpa: 56.5, flow_cm_s: 0, gravity_g: 0.166 });
   assert.equal(lunar.ok, false);
-  assert.deepEqual(lunar.reasons, ['gravity 0.165 g (trained 0 g)']);
+  assert.deepEqual(lunar.reasons, ['gravity 0.166 g (trained 0 g)']);
   assert.equal(domainCheck({ o2_pct: 60, pressure_kpa: 101.3, flow_cm_s: 0, gravity_g: 0 }).ok, false); // > 3σ O₂
 });
 

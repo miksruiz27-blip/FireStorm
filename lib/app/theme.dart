@@ -536,7 +536,7 @@ class MeterBar extends StatelessWidget {
   );
 }
 
-/// Mono number + smaller gray unit: `30.0 %`, `10.2 psi`.
+/// Mono number + smaller gray unit: `34.0 %`, `8.2 psi`.
 class DataValue extends StatelessWidget {
   const DataValue(
     this.value,

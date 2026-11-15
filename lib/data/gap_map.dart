@@ -42,14 +42,6 @@ class GapZone {
 String fmtO2(double o2) =>
     o2 % 1 == 0 ? o2.toStringAsFixed(0) : o2.toStringAsFixed(1);
 
-GravityBand bandFor(double g) => g < 0.05
-    ? GravityBand.micro
-    : g < 0.25
-    ? GravityBand.lunar
-    : g < 0.6
-    ? GravityBand.mars
-    : GravityBand.earth;
-
 /// Test points from /gapmap (snapshot after 3 s), one mark per series × O₂ × gravity.
 /// Fuel comes from the experiment the point belongs to.
 final testMarksProvider = FutureProvider<List<TestMark>>((ref) async {

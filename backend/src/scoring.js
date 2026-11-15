@@ -1,7 +1,7 @@
 // Pure scoring functions. See README for the one-line rationale of each term.
 export const PSI_TO_KPA = 6.89476;
-export const GRAVITY_GRID = [0, 0.165, 0.38, 1];
-const EXPERIMENT_G = { micro: 0, lunar: 0.165, mars: 0.38, earth: 1 };
+export const GRAVITY_GRID = [0, 0.166, 0.38, 1];
+const EXPERIMENT_G = { micro: 0, lunar: 0.166, mars: 0.38, earth: 1 };
 const round = (v, d = 3) => Math.round(v * 10 ** d) / 10 ** d;
 
 /** 1 inside [lo,hi], linear decay to 0 at `span` outside. */

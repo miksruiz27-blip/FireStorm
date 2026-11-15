@@ -68,7 +68,7 @@ test('GET /model', async () => {
 test('POST /predict validates physical ranges', async () => {
   const { body } = await request(app)
     .post('/predict')
-    .send({ o2_pct: 30, pressure_kpa: 70.3, flow_cm_s: 0, gravity_g: 0.165 })
+    .send({ o2_pct: 34, pressure_kpa: 56.5, flow_cm_s: 0, gravity_g: 0.166 })
     .expect(200);
   exact(
     z.object({ p_burn: z.number().min(0).max(1), label: z.enum(['burn', 'extinct']), model: z.enum(['onnx', 'fallback']) }).strict(),

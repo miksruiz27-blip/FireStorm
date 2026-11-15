@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import { buildWidgets, level } from '../src/genui/rules.js';
 import { GenUI } from '../src/schemas.js';
 
-const ctx = (question, habitat = { name: 'Lunar Base', o2_pct: 30, pressure_psia: 10.2, gravity_g: 0.165 }) => ({
+const ctx = (question, habitat = { name: 'Lunar Base', o2_pct: 34, pressure_psia: 8.2, gravity_g: 0.166 }) => ({
   question,
   habitat,
   experiments: [{ id: 'saffire' }, { id: 'bass-ii' }],

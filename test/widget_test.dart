@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:firestorm/data/habitats.dart';
 import 'package:firestorm/main.dart';
 
 Future<void> _pumpApp(WidgetTester tester, Size size) async {
@@ -36,6 +37,7 @@ Future<void> _answers(WidgetTester tester) async {
 }
 
 void main() {
+  setUpAll(loadHabitats);
   testWidgets('selecting a habitat updates telemetry and stats', (
     tester,
   ) async {
@@ -91,8 +93,8 @@ void main() {
     expect(find.text('DATA GAP MAP'), findsOneWidget);
     expect(find.text('EVIDENCE PRESENT'), findsOneWidget);
     // nearest evidence for Lunar Base (snapshot): SoFIE at 32 % in μg, LUCI at 26.5 % at 0.166 g.
-    expect(find.text('ΔO₂ +2'), findsOneWidget);
-    expect(find.text('26.5 % O₂ · 0.166 g'), findsOneWidget);
+    expect(find.text('ΔO₂ +3'), findsOneWidget);
+    expect(find.text('34 % O₂ · 0.166 g'), findsOneWidget);
     // The data model has no gravity input → still blind here, even with partial-g burns.
     expect(find.text('MODEL BLIND HERE'), findsOneWidget);
     expect(find.text('Burn tests at 17 % O₂ · 1 g'), findsOneWidget);
@@ -191,7 +193,7 @@ void main() {
       expect(find.text('RELEVANCE · LUNAR BASE'), findsOneWidget);
       expect(
         find.bySemanticsLabel(
-          RegExp('Measured up to 21 % O₂; Lunar Base sits at 30 %'),
+          RegExp('Measured up to 21 % O₂; Lunar Base sits at 34 %'),
         ),
         findsOneWidget,
       );

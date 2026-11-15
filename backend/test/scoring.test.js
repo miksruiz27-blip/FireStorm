@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { closeness, grid, priority, scoreExperiment } from '../src/scoring.js';
 
-const lunar = { o2_pct: 30, pressure_psia: 10.2, gravity_g: 0.165 };
+const lunar = { o2_pct: 34, pressure_psia: 8.2, gravity_g: 0.166 };
 const exp = { o2_range: [21, 35], pressure_kpa_range: [56.5, 101.3], gravity: 'micro', domain: ['prevention'] };
 
 test('closeness: 1 inside, linear decay outside', () => {
@@ -19,7 +19,7 @@ test('score = .5 conditions + .3 safety + .2 data', () => {
 });
 
 test('priority peaks with no data, at the habitat, at p = 0.5', () => {
-  const at = { o2_pct: 30, gravity_g: 0.165 };
+  const at = { o2_pct: 34, gravity_g: 0.166 };
   assert.equal(priority(at, lunar, 0, 0.5).priority, 1);
   assert.ok(priority(at, lunar, 3, 0.5).priority < 1);
   assert.equal(priority(at, lunar, 0, 1).priority, 0);

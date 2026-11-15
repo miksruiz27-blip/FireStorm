@@ -20,11 +20,11 @@ test('physics: U-shaped limit, lower pressure raises it, partial g is the most f
   assert.ok(lim({ gravity_g: 0, flow_cm_s: 0 }) > lim({ gravity_g: 0, flow_cm_s: 10 })); // starved without flow
   assert.ok(lim({ gravity_g: 0, flow_cm_s: 100 }) > lim({ gravity_g: 0, flow_cm_s: 10 })); // blow-off
   assert.ok(lim({ pressure_kpa: 50 }) > lim({ pressure_kpa: 101.3 }));
-  assert.ok(lim({ gravity_g: 0.165 }) < lim({ gravity_g: 1 }));
+  assert.ok(lim({ gravity_g: 0.166 }) < lim({ gravity_g: 1 }));
   assert.ok(at({ o2_pct: 30, gravity_g: 1 }).spread_mm_s > at({ o2_pct: 21, gravity_g: 1 }).spread_mm_s);
   assert.deepEqual(at({ o2_pct: 30, gravity_g: 1 }).extrapolated, []);
   // Moon and Mars are tested since the partial-g drop; in-between gravity is still extrapolated.
-  assert.deepEqual(at({ o2_pct: 30, gravity_g: 0.165 }).extrapolated, []);
+  assert.deepEqual(at({ o2_pct: 34, gravity_g: 0.166 }).extrapolated, []);
   assert.deepEqual(at({ o2_pct: 30, gravity_g: 0.38 }).extrapolated, []);
   assert.equal(at({ o2_pct: 30, gravity_g: 0.6 }).extrapolated.length, 1);
 });
@@ -35,7 +35,7 @@ test('materials: fuzzy names, what-if parsing', () => {
   assert.equal(materialKey('SIBAL_Cotton_Fiberglass_75_25_Opposed', P), 'cotton-fiberglass fabric');
   assert.equal(materialKey('Nomex_fabric', P), 'aramid fabric');
   assert.equal(materialKey('PMMA_slab_1.2mm', P), 'pmma');
-  const lunar = { o2_pct: 30, pressure_psia: 10.2, gravity_g: 0.165 };
+  const lunar = { o2_pct: 34, pressure_psia: 8.2, gravity_g: 0.166 };
   const c = conditionsFrom('What if we go to 34% O2 on Mars with fans off?', lunar);
   assert.deepEqual([c.o2_pct, c.gravity_g, c.flow_cm_s], [34, 0.38, 0]);
   assert.deepEqual(conditionsFrom('Is the lunar base risky?', lunar).changed, []);
@@ -45,7 +45,7 @@ test('POST /forecast: physics everywhere, data model only in its domain', async 
   const { default: request } = await import('supertest');
   const { app } = await import('../src/app.js');
   const { pool } = await import('../src/db.js');
-  const lunar = (await request(app).post('/forecast').send({ o2_pct: 30, pressure_kpa: 70.3, flow_cm_s: 10, gravity_g: 0.165 }).expect(200)).body;
+  const lunar = (await request(app).post('/forecast').send({ o2_pct: 34, pressure_kpa: 56.5, flow_cm_s: 10, gravity_g: 0.166 }).expect(200)).body;
   assert.ok(lunar.p_burn > 0.5 && !lunar.extrapolated.length && lunar.data_model === null); // data model has no gravity input
   const between = (await request(app).post('/forecast').send({ o2_pct: 30, pressure_kpa: 70.3, flow_cm_s: 10, gravity_g: 0.6 }).expect(200)).body;
   assert.ok(between.extrapolated.length);
