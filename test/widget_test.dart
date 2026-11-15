@@ -132,7 +132,7 @@ void main() {
       ); // RiskCard: physics forecast at the habitat (34 % O₂)
       expect(find.text('SAFE AT 34 % O₂ · MOC ABOVE 34 %'), findsOneWidget);
       expect(find.text('BURNS AT 34 % O₂ · MOC AT OR BELOW 34 %'), findsOneWidget);
-      expect(find.textContaining('Con base en'), findsOneWidget);
+      expect(find.textContaining('Based on'), findsOneWidget);
       // Turn 2 is not cached → offline coverage check from the gap-map snapshot.
       expect(
         find.textContaining('no PSI test matches 34 % O₂ at 0.166 g'),

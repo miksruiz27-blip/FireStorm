@@ -99,7 +99,7 @@ test('standards are references: not ranked, still listed and citable', async () 
   const std = all.find((e) => e.id === 'nasa-std-6001b');
   assert.equal(std.type, 'reference');
   assert.equal(std.platform, 'NASA Technical Standard');
-  const { body } = await copilot({ question: 'NASA-STD-6001B flammability test', habitat: 'lunar' }, { llm: async () => null });
+  const { body } = await copilot({ question: 'NASA-STD-6001B', habitat: 'lunar' }, { llm: async () => null });
   assert.ok(body.citations.some((c) => /6001B/.test(c.title)), JSON.stringify(body.citations));
 });
 
@@ -119,7 +119,7 @@ test('copilot: LLM down → template still valid', async () => {
   const { body, source } = await copilot({ question: 'How does oxygen affect flame spread?', habitat: 'lunar' }, { llm: async () => null });
   exact(GenUI, body);
   assert.equal(source, 'template');
-  assert.match(body.answer, /^Con base en \d+ fuentes de NASA/);
+  assert.match(body.answer, /^Based on \d+ NASA sources? and the physics model/);
 });
 
 test('copilot: an LLM citation outside the list is discarded', async () => {

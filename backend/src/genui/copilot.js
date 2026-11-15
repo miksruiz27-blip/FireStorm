@@ -60,10 +60,10 @@ export async function copilot({ question, habitat: habitatId }, { llm = askLLM }
   const out = llmCite.length ? llmOut : null;
   const cite = out ? llmCite : ruleCite;
   const answer = out?.answer ??
-    `Con base en ${cite.length} fuentes de NASA y el modelo físico: riesgo ` +
-      `${{ critical: 'crítico', warning: 'alto', info: 'bajo' }[level(f.p_burn)]} en ${h.name} ` +
-      `a ${+f.conditions.o2_pct.toFixed(1)} % O₂ — límite ${f.loi_pct} %, propagación ≈ ${f.spread_mm_s} mm/s` +
-      (f.extrapolated.length ? '; extrapolado, sin ensayos en esta condición.' : '.');
+    `Based on ${cite.length} NASA source${cite.length === 1 ? '' : 's'} and the physics model: ` +
+      `${{ critical: 'critical', warning: 'high', info: 'low' }[level(f.p_burn)]} risk at ${h.name} ` +
+      `at ${+f.conditions.o2_pct.toFixed(1)} % O₂ — limit ${f.loi_pct} %, spread ≈ ${f.spread_mm_s} mm/s` +
+      (f.extrapolated.length ? '; extrapolated, untested at this condition.' : '.');
 
   // f) citations come from the DB-backed list only.
   const body = GenUI.parse({

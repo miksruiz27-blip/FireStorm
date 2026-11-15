@@ -10,7 +10,12 @@ const team = new URL('../../firestorm_modelos_y_csv_equipo/', import.meta.url);
 const csv = (f) => parseCsv(readFileSync(new URL(f, team), 'utf8'));
 const tests = csv('bass_experiments.csv');
 const psi = Object.fromEntries(csv('psi_repositories_simulated.csv').map((r) => [r.test_id, r]));
-const catalog = Object.fromEntries(csv('unified_experiments_and_modifications.csv').map((r) => [r.id, r]));
+// F7: the team's catalog text is Spanish; the app is English. data/translations_en.json maps each visible
+// Spanish string to English (technical content unchanged); unmapped strings are reported below.
+const EN = JSON.parse(readFileSync(new URL('../data/translations_en.json', import.meta.url), 'utf8'));
+const en = (v) => (typeof v === 'string' ? EN[v] ?? v : Array.isArray(v) ? v.map(en) : v);
+const enRow = (r) => Object.fromEntries(Object.entries(r).map(([k, v]) => [k, en(v)]));
+const catalog = Object.fromEntries(csv('unified_experiments_and_modifications.csv').map((r) => [r.id, enRow(r)]));
 
 // test_id prefix → [experiment id, catalog id, overrides]
 const EXPERIMENTS = {
@@ -195,13 +200,16 @@ out('test_points.json', test_points);
 for (const f of ['model.onnx', 'experiment_classifier.onnx', 'psi166_flow_classifier.onnx'])
   copyFileSync(new URL(f, team), new URL(`../models/${f}`, import.meta.url));
 const meta = JSON.parse(readFileSync(new URL('model.json', team), 'utf8'));
+meta.extended_capabilities.catalog_summary.entries = meta.extended_capabilities.catalog_summary.entries.map(enRow);
+const groups = meta.extended_capabilities.experiment_classifier.modifications_by_group;
+for (const g of Object.keys(groups)) groups[g] = enRow(groups[g]);
 // PSI-166 flow classes → the action the team wrote most often for that class.
 const flow = meta.extended_capabilities.psi166_mhd_classifier;
 const actions = Object.groupBy(csv('psi166_part01_dataset.csv'), (r) => r.modification_class);
 flow.class_modifications = Object.fromEntries(
   flow.classes.map((k) => {
     const n = Object.groupBy(actions[k] ?? [], (r) => r.modificaciones_necesarias);
-    return [k, Object.entries(n).sort((a, b) => b[1].length - a[1].length)[0]?.[0] ?? ''];
+    return [k, en(Object.entries(n).sort((a, b) => b[1].length - a[1].length)[0]?.[0] ?? '')];
   }),
 );
 // Catalog entries whose only experiments are unverified are hidden from /catalog (kept in the file).
@@ -210,6 +218,20 @@ for (const e of experiments) catalogVerified[e.catalog_id] ||= e.is_verified;
 for (const entry of meta.extended_capabilities.catalog_summary.entries)
   if (catalogVerified[entry.id] === false) entry.is_verified = false;
 writeAudit();
+// Catalog fields the Lab screen shows (lib/screens/lab_screen.dart).
+const LAB_FIELDS = ['codigo_corto', 'experimento_investigacion', 'instalacion_hardware', 'investigador_responsable',
+  'fecha_periodo', 'material_combustible', 'condiciones', 'descripcion_objetivo', 'consecuencia_hallazgo',
+  'modificaciones_necesarias', 'fuente', 'referencia'];
+// Any Spanish left in what the app shows (verified experiments, visible catalog, classifier outputs)?
+const SPANISH = /[áéíóúñ¿¡]|\b(de|del|los|las|para|con|por|una|que|en|el|la)\b/i;
+const shown = [
+  ...experiments.filter((e) => e.is_verified).flatMap((e) => [e.name, e.hardware, ...e.key_findings, ...e.modifications]),
+  ...meta.extended_capabilities.catalog_summary.entries.filter((e) => catalogVerified[e.id] !== false)
+    .flatMap((e) => LAB_FIELDS.map((k) => e[k])),
+  ...Object.values(groups).flatMap((g) => Object.values(g).flat()),
+  ...Object.values(flow.class_modifications),
+].filter((s) => typeof s === 'string' && SPANISH.test(s.replace(/de Ris/g, ''))); // de Ris: a surname
+if (shown.length) console.warn(`⚠ ${shown.length} untranslated strings in the UI:\n  ${[...new Set(shown)].slice(0, 10).join('\n  ')}`);
 writeFileSync(
   new URL('../models/model.json', import.meta.url),
   `${JSON.stringify({ ...meta, classes: ['extinct', 'burn'] }, null, 1)}\n`,

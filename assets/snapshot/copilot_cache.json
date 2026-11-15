@@ -2,7 +2,7 @@
  {
   "q": "Which materials stay safe at 34% oxygen?",
   "response": {
-   "answer": "Con base en 6 fuentes de NASA y el modelo físico: riesgo crítico en Lunar Base a 34 % O₂ — límite 16.78 %, propagación ≈ 0.95 mm/s; extrapolado, sin ensayos en esta condición.",
+   "answer": "Based on 3 NASA sources and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.78 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
    "widgets": [
     {
      "type": "answer_card",
@@ -150,82 +150,28 @@
       [
        21,
        0.58
-      ],
-      [
-       20.8,
-       0.6
-      ],
-      [
-       21,
-       0.85
-      ],
-      [
-       21,
-       0.65
-      ],
-      [
-       21.5,
-       0.92
-      ],
-      [
-       18.8,
-       1.42
-      ],
-      [
-       20.8,
-       1.15
-      ],
-      [
-       21,
-       1.65
-      ],
-      [
-       21,
-       2.1
-      ],
-      [
-       21,
-       0.22
       ]
      ]
     }
    ],
    "citations": [
     {
-     "n": 2,
-     "title": "NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181) — simulated values (team dataset)",
-     "ref": "PSI-181",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-181"
-    },
-    {
-     "n": 3,
-     "title": "NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99) — simulated values (team dataset)",
-     "ref": "PSI-99",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99"
-    },
-    {
-     "n": 5,
+     "n": 6,
      "title": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)",
      "ref": "PSI-100",
      "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
     },
     {
-     "n": 6,
+     "n": 7,
      "title": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)",
      "ref": "PSI-101",
      "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
     },
     {
-     "n": 7,
+     "n": 8,
      "title": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
      "ref": "PSI-102",
      "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
-    },
-    {
-     "n": 8,
-     "title": "NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115) — simulated values (team dataset)",
-     "ref": "PSI-115",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
     }
    ]
   }
@@ -233,7 +179,7 @@
  {
   "q": "What has been tested at lunar gravity?",
   "response": {
-   "answer": "Con base en 5 fuentes de NASA y el modelo físico: riesgo crítico en Lunar Base a 34 % O₂ — límite 16.78 %, propagación ≈ 0.95 mm/s; extrapolado, sin ensayos en esta condición.",
+   "answer": "Based on 5 NASA sources and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.78 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
    "widgets": [
     {
      "type": "answer_card",
@@ -268,44 +214,44 @@
     {
      "type": "experiment_list",
      "ids": [
-      "nasa-std-6001b",
       "apollo-13",
-      "bass",
-      "bass-psi-archive",
-      "psi-26"
+      "acme-bre",
+      "nasa-std-6001b",
+      "saffire-iv-vi",
+      "apollo-1"
      ]
     }
    ],
    "citations": [
     {
      "n": 1,
-     "title": "NASA Technical Standards (NASA-STD-6001B, NASA-STD-3001 Vol. 2, JSC 20584) · https://standards.nasa.gov/",
-     "ref": "standards.nasa.gov",
-     "url": "https://standards.nasa.gov/"
-    },
-    {
-     "n": 2,
      "title": "NASA SMA - Apollo 13 Tank 2 (65V DC Overheat)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     },
     {
+     "n": 2,
+     "title": "NASA Guide 2015 - ACME BRE Sustained",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
+    },
+    {
      "n": 3,
-     "title": "NASA/TM-2015-218735 (NTRS: 20150016543)",
-     "ref": "NTRS 20150016543",
-     "url": "https://ntrs.nasa.gov/citations/20150016543"
+     "title": "NASA Technical Standards (NASA-STD-6001B, NASA-STD-3001 Vol. 2, JSC 20584) · https://standards.nasa.gov/",
+     "ref": "standards.nasa.gov",
+     "url": "https://standards.nasa.gov/"
     },
     {
      "n": 4,
-     "title": "NASA-PSI-INV-0023 (BASS Archive)",
+     "title": "NASA SAFFIRE IV-VI Far-Field Diagnostics HCl/HF Acid Gas & Smoke Eater — simulated values (team dataset)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     },
     {
      "n": 5,
-     "title": "NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26) — simulated values (team dataset)",
-     "ref": "PSI-26",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26"
+     "title": "NASA SMA - Apollo 1 (100% O2, 16.7 psi)",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
     }
    ]
   }
@@ -313,7 +259,7 @@
  {
   "q": "How does oxygen affect flame spread?",
   "response": {
-   "answer": "Con base en 3 fuentes de NASA y el modelo físico: riesgo crítico en Lunar Base a 34 % O₂ — límite 16.78 %, propagación ≈ 0.95 mm/s; extrapolado, sin ensayos en esta condición.",
+   "answer": "Based on 5 NASA sources and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.78 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
    "widgets": [
     {
      "type": "answer_card",
@@ -424,28 +370,80 @@
       [
        21,
        0.58
+      ],
+      [
+       20.8,
+       0.6
+      ],
+      [
+       21,
+       0.85
+      ],
+      [
+       18.2,
+       0.62
+      ],
+      [
+       18.4,
+       0.19
+      ],
+      [
+       18.5,
+       1.85
+      ],
+      [
+       18.9,
+       0.41
+      ],
+      [
+       19.2,
+       2.35
+      ],
+      [
+       19.4,
+       0.48
+      ],
+      [
+       20.1,
+       0.34
+      ],
+      [
+       20.8,
+       0.28
       ]
      ]
     }
    ],
    "citations": [
     {
-     "n": 6,
+     "n": 2,
+     "title": "NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25) — simulated values (team dataset)",
+     "ref": "PSI-25",
+     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
+    },
+    {
+     "n": 3,
      "title": "NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100) — simulated values (team dataset)",
      "ref": "PSI-100",
      "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
     },
     {
-     "n": 7,
+     "n": 6,
      "title": "NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101) — simulated values (team dataset)",
      "ref": "PSI-101",
      "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
     },
     {
-     "n": 8,
+     "n": 7,
      "title": "NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102) — simulated values (team dataset)",
      "ref": "PSI-102",
      "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
+    },
+    {
+     "n": 8,
+     "title": "NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115) — simulated values (team dataset)",
+     "ref": "PSI-115",
+     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
     }
    ]
   }
@@ -453,7 +451,7 @@
  {
   "q": "Is the lunar base atmosphere risky?",
   "response": {
-   "answer": "Con base en 1 fuentes de NASA y el modelo físico: riesgo crítico en Lunar Base a 34 % O₂ — límite 16.78 %, propagación ≈ 0.95 mm/s; extrapolado, sin ensayos en esta condición.",
+   "answer": "Based on 1 NASA source and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.78 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
    "widgets": [
     {
      "type": "answer_card",
@@ -499,7 +497,7 @@
  {
   "q": "Which experiments cover suppression?",
   "response": {
-   "answer": "Con base en 5 fuentes de NASA y el modelo físico: riesgo crítico en Lunar Base a 34 % O₂ — límite 16.78 %, propagación ≈ 0.95 mm/s; extrapolado, sin ensayos en esta condición.",
+   "answer": "Based on 5 NASA sources and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.78 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
    "widgets": [
     {
      "type": "answer_card",
@@ -510,18 +508,18 @@
     {
      "type": "experiment_list",
      "ids": [
-      "mist",
+      "flex",
       "psi-69",
-      "bass",
-      "bass-ii",
-      "flex"
+      "mist",
+      "psi-22",
+      "psi-68"
      ]
     }
    ],
    "citations": [
     {
      "n": 1,
-     "title": "NASA Guide 2015 - Mist Control Flame",
+     "title": "NASA Guide 2015 - FLEX (ISS CIR)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     },
@@ -533,21 +531,21 @@
     },
     {
      "n": 3,
-     "title": "NASA/TM-2015-218735 (NTRS: 20150016543)",
-     "ref": "NTRS 20150016543",
-     "url": "https://ntrs.nasa.gov/citations/20150016543"
+     "title": "NASA Guide 2015 - Mist Control Flame",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
     },
     {
      "n": 4,
-     "title": "NASA/TM-2018-219890 (NTRS: 20180005432)",
-     "ref": "NTRS 20180005432",
-     "url": "https://ntrs.nasa.gov/citations/20180005432"
+     "title": "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)",
+     "ref": "PSI-22",
+     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
     },
     {
      "n": 5,
-     "title": "NASA Guide 2015 - FLEX (ISS CIR)",
-     "ref": "psi.nasa.gov",
-     "url": "https://psi.nasa.gov"
+     "title": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
+     "ref": "PSI-68",
+     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-68"
     }
    ]
   }
@@ -555,7 +553,7 @@
  {
   "q": "What if the lunar base drops to 21% O2?",
   "response": {
-   "answer": "Con base en 3 fuentes de NASA y el modelo físico: riesgo crítico en Lunar Base a 21 % O₂ — límite 16.78 %, propagación ≈ 0.23 mm/s; extrapolado, sin ensayos en esta condición.",
+   "answer": "Based on 3 NASA sources and the physics model: critical risk at Lunar Base at 21 % O₂ — limit 16.78 %, spread ≈ 0.23 mm/s; extrapolated, untested at this condition.",
    "widgets": [
     {
      "type": "answer_card",
@@ -719,7 +717,7 @@
  {
   "q": "What if we turn the fans off?",
   "response": {
-   "answer": "Con base en 5 fuentes de NASA y el modelo físico: riesgo crítico en Lunar Base a 34 % O₂ — límite 16.74 %, propagación ≈ 0.95 mm/s; extrapolado, sin ensayos en esta condición.",
+   "answer": "Based on 5 NASA sources and the physics model: critical risk at Lunar Base at 34 % O₂ — limit 16.74 %, spread ≈ 0.95 mm/s; extrapolated, untested at this condition.",
    "widgets": [
     {
      "type": "answer_card",
@@ -730,44 +728,44 @@
     {
      "type": "experiment_list",
      "ids": [
-      "saffire-iv-vi",
-      "sofie-iss-cir",
-      "sofie",
-      "bass",
-      "psi-68"
+      "apollo-13",
+      "bass-ii",
+      "candle-flames",
+      "n2-jet-suppression",
+      "psi-22"
      ]
     }
    ],
    "citations": [
     {
      "n": 1,
-     "title": "NASA SAFFIRE IV-VI Far-Field Diagnostics HCl/HF Acid Gas & Smoke Eater — simulated values (team dataset)",
+     "title": "NASA SMA - Apollo 13 Tank 2 (65V DC Overheat)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     },
     {
      "n": 2,
-     "title": "NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere 8.2 psia / 34% O2 — simulated values (team dataset)",
-     "ref": "psi.nasa.gov",
-     "url": "https://psi.nasa.gov"
+     "title": "NASA/TM-2018-219890 (NTRS: 20180005432)",
+     "ref": "NTRS 20180005432",
+     "url": "https://ntrs.nasa.gov/citations/20180005432"
     },
     {
      "n": 3,
-     "title": "NASA Guide 2015 - SoFIE (10.2 psi, 34% O2)",
+     "title": "NASA Guide 2015 - Mir/Shuttle Candle (45 min)",
      "ref": "psi.nasa.gov",
      "url": "https://psi.nasa.gov"
     },
     {
      "n": 4,
-     "title": "NASA/TM-2015-218735 (NTRS: 20150016543)",
-     "ref": "NTRS 20150016543",
-     "url": "https://ntrs.nasa.gov/citations/20150016543"
+     "title": "NASA Guide 2015 - Hallazgo Chorro Local N2",
+     "ref": "psi.nasa.gov",
+     "url": "https://psi.nasa.gov"
     },
     {
      "n": 5,
-     "title": "NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68) — simulated values (team dataset)",
-     "ref": "PSI-68",
-     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-68"
+     "title": "NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22) — simulated values (team dataset)",
+     "ref": "PSI-22",
+     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
     }
    ]
   }
