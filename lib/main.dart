@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'app/i18n.dart';
 import 'app/telemetry_bar.dart';
+import 'app/flame_splash.dart';
 import 'app/theme.dart';
 import 'data/habitats.dart';
 import 'screens/copilot_screen.dart';
@@ -16,11 +17,14 @@ import 'screens/report_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await (
-    loadHabitats(),
-    loadDataTranslations(),
-  ).wait; // atmospheres from the API (snapshot offline) before the first frame
-  runApp(const ProviderScope(child: FirestormApp()));
+  // The animated flame splash covers loading: atmospheres from the API (snapshot offline)
+  // must be in before the app's first screen.
+  runApp(
+    FlameBoot(
+      load: (loadHabitats(), loadDataTranslations()).wait,
+      app: const ProviderScope(child: FirestormApp()),
+    ),
+  );
 }
 
 List<({String path, String label, IconData icon})> get _destinations => [
