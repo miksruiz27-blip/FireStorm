@@ -126,22 +126,21 @@ void main() {
       await _answers(tester);
 
       // Tests have no network → snapshot. Turn 1 is in the cached demo script.
-      expect(find.text('COPILOT · ANSWER'), findsWidgets);
-      expect(find.textContaining('OFFLINE CACHE'), findsOneWidget);
-      expect(
-        find.text('FLAME FORECAST · LUNAR BASE'),
-        findsNWidgets(2),
-      ); // RiskCard: physics forecast at the habitat (34 % O₂), cached turn + offline turn
-      expect(find.text('SAFE AT 34 % O₂ · MOC ABOVE 34 %'), findsOneWidget);
-      // Offline cache still cites real records: title, PSI/NTRS ref and link (F2 + F8).
-      expect(find.textContaining('https://psi.nasa.gov/physci/repo/data/investigations/PSI-'), findsWidgets);
-      expect(find.text('BURNS AT 34 % O₂ · MOC AT OR BELOW 34 %'), findsOneWidget);
+      // Chat view: answer text + only the interface for the question (materials → MOC chart);
+      // the SAFE/BURNS cards and the forecast card stay out, sources fold behind one line.
+      expect(find.textContaining('Offline cache'), findsOneWidget);
       expect(find.textContaining('Based on'), findsNWidgets(2));
+      expect(find.text('SAFE AT 34 % O₂ · MOC ABOVE 34 %'), findsNothing);
+      expect(find.text('FLAME FORECAST · LUNAR BASE'), findsNothing);
+      expect(find.textContaining('NASA source'), findsWidgets);
+      // Offline cache still cites real records once the list is opened (F2 + F8).
+      await tester.tap(find.textContaining('NASA source').last);
+      await tester.pump(const Duration(milliseconds: 500)); // expand animation
+      expect(find.textContaining(RegExp(r'^https?://')), findsWidgets); // the cited record's link
       // Turn 2 is not cached → offline copilot, retrieval routed by the ONNX classifier (FFI).
-      expect(find.textContaining('ON-DEVICE AI · ONNX'), findsOneWidget);
-      expect(find.textContaining('ON-DEVICE ONNX CLASSIFIER ·'), findsOneWidget);
-      // Lunar gravity is untested → flagged as a physics extrapolation.
-      expect(find.textContaining('Physics extrapolation, untested'), findsWidgets);
+      expect(find.textContaining('On-device AI · ONNX'), findsOneWidget);
+      // Lunar gravity is untested → coverage note above the answer.
+      expect(find.textContaining('Outside data coverage'), findsWidgets);
 
       await tester.tap(find.text('Gap map'));
       await _settle(tester);
@@ -152,7 +151,7 @@ void main() {
         find.textContaining('What would it take to validate'),
         findsOneWidget,
       );
-      expect(find.textContaining('ON-DEVICE AI · ONNX'), findsNWidgets(2));
+      expect(find.textContaining('On-device AI · ONNX'), findsNWidgets(2));
     },
   );
 

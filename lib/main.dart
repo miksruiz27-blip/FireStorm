@@ -134,7 +134,11 @@ class _Shell extends StatelessWidget {
 
     final content = Column(
       children: [
-        const TelemetryBar(),
+        // Phones: keep the telemetry bar below the system status bar.
+        const ColoredBox(
+          color: AppColors.rail,
+          child: SafeArea(bottom: false, child: TelemetryBar()),
+        ),
         Expanded(child: child),
       ],
     );

@@ -51,7 +51,9 @@ void main() {
 
     // Maps onto the GenUI catalog without dropping widgets.
     final a2ui = genuiToA2ui(body, r.source);
-    expect(a2ui.length, widgets.length + 3); // root + text + sources
+    final shown = [for (final m in a2ui) m['component']];
+    expect(shown, containsAll(['AnswerCard', 'AnswerText', 'DataChart', 'SourceList', 'FollowUps']));
+    expect(shown, isNot(contains('RiskCard'))); // materials → the MOC chart answers, no card stack
   });
 
   test('conditions parse fans-off and pressure what-ifs', () async {

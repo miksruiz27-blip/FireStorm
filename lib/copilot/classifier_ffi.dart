@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:onnxruntime/onnxruntime.dart';
 
-// Mobile copy of backend/models/experiment_classifier.onnx re-stamped to opset 19 / IR 9:
-// the bundled ORT 1.15 rejects opset 21. Same graph, identical probabilities (checked in Python).
+// Mobile copy of backend/models/experiment_classifier.onnx re-stamped to opset 14 / IR 8:
+// the bundled ORT 1.15 rejects opset 21 and has no Android Reshape(19) kernel. Same graph, identical probabilities (checked in Python).
 const _asset = 'assets/models/experiment_classifier.onnx';
 
 Future<OrtSession?>? _session;

@@ -65,46 +65,72 @@ final _answerCard = CatalogItem(
     },
     required: ['title', 'children'],
   ),
+  // Chat bubble: avatar + the answer; the title only shows while searching (typing indicator),
+  // tags (sources · provenance) as a quiet footnote.
   widgetBuilder: (c) {
     final d = _data(c);
     final progress = (d['progress'] as num?)?.toDouble();
-    return ChamferCard(
-      padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        spacing: progress == null ? 20 : 16,
-        children: [
-          Wrap(
-            alignment: WrapAlignment.spaceBetween,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            spacing: 10,
-            runSpacing: 8,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                spacing: 10,
-                children: [
-                  const BrandMark(size: 18),
-                  Flexible(
-                    child: Text(
-                      (d['title'] as String).toUpperCase(),
-                      style: AppText.label.copyWith(color: AppColors.textMuted),
-                    ),
+    final tags = _list<String>(d['tags']);
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 760),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 12,
+          children: [
+            Container(
+              width: 32,
+              height: 32,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: AppColors.chip,
+                shape: BoxShape.circle,
+                border: Border.all(color: AppColors.line),
+              ),
+              child: const BrandMark(size: 14),
+            ),
+            Flexible(
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(18, 14, 18, 12),
+                decoration: const BoxDecoration(
+                  color: AppColors.card,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(2),
+                    topRight: Radius.circular(14),
+                    bottomLeft: Radius.circular(14),
+                    bottomRight: Radius.circular(14),
                   ),
-                ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  spacing: 14,
+                  children: [
+                    if (progress != null) ...[
+                      Text(
+                        d['title'] as String,
+                        style: AppText.caption.copyWith(
+                          color: AppColors.textMuted,
+                        ),
+                      ),
+                      _StripeProgress(progress),
+                    ],
+                    for (final id in _list<String>(d['children']))
+                      c.buildChild(id),
+                    if (tags.isNotEmpty)
+                      Text(
+                        tags.join(' · '),
+                        style: AppText.mono.copyWith(
+                          fontSize: 10,
+                          color: AppColors.secondary,
+                        ),
+                      ),
+                  ],
+                ),
               ),
-              Wrap(
-                spacing: 6,
-                children: [
-                  for (final t in _list<String>(d['tags']))
-                    AppTag(t.toUpperCase(), mono: true),
-                ],
-              ),
-            ],
-          ),
-          if (progress != null) _StripeProgress(progress),
-          for (final id in _list<String>(d['children'])) c.buildChild(id),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   },
@@ -346,52 +372,78 @@ final _sourceList = CatalogItem(
   ),
   widgetBuilder: (c) {
     final mono = AppText.mono.copyWith(fontSize: 13);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      spacing: 8,
-      children: [
-        for (final (i, s) in _list<_Json>(_data(c)['sources']).indexed)
-          Tappable(
-            label: tr(
-              'Source ${i + 1}: ${s['title']}, ${s['ref']}. Opens ${s['url']}',
-              'Fuente ${i + 1}: ${s['title']}, ${s['ref']}. Abre ${s['url']}',
+    final sources = _list<_Json>(_data(c)['sources']);
+    if (sources.isEmpty) return const SizedBox.shrink();
+    // Collapsed by default: the numbered marks in the answer stay; the list opens on demand.
+    return Theme(
+      data: Theme.of(c.buildContext).copyWith(dividerColor: Colors.transparent),
+      child: Material(
+        type: MaterialType.transparency,
+        child: ExpansionTile(
+          tilePadding: EdgeInsets.zero,
+          childrenPadding: const EdgeInsets.only(bottom: 4),
+          visualDensity: VisualDensity.compact,
+          dense: true,
+          iconColor: AppColors.textMuted,
+          collapsedIconColor: AppColors.secondary,
+          title: Text(
+            tr(
+              '${sources.length} NASA source${sources.length == 1 ? '' : 's'}',
+              '${sources.length} fuente${sources.length == 1 ? '' : 's'} NASA',
             ),
-            onTap: () => launchUrl(Uri.parse(s['url'] as String)),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 8,
-              children: [
-                SizedBox(width: 28, child: Text('[${i + 1}]', style: mono)),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 2,
-                    children: [
-                      Text(
-                        s['title'] as String,
-                        style: AppText.caption.copyWith(
-                          fontSize: 13,
-                          height: 19 / 13,
-                          color: AppColors.textSoft,
-                        ),
-                      ),
-                      Text(
-                        s['url'] as String,
-                        style: mono.copyWith(
-                          fontSize: 11,
-                          decoration: TextDecoration.underline,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Text(s['ref'] as String, style: mono),
-              ],
-            ),
+            style: AppText.caption.copyWith(color: AppColors.textMuted),
           ),
-      ],
+          children: [_sourceRows(sources, mono)],
+        ),
+      ),
     );
   },
+);
+
+Widget _sourceRows(List<_Json> sources, TextStyle mono) => Column(
+  crossAxisAlignment: CrossAxisAlignment.stretch,
+  spacing: 8,
+  children: [
+    for (final (i, s) in sources.indexed)
+      Tappable(
+        label: tr(
+          'Source ${i + 1}: ${s['title']}, ${s['ref']}. Opens ${s['url']}',
+          'Fuente ${i + 1}: ${s['title']}, ${s['ref']}. Abre ${s['url']}',
+        ),
+        onTap: () => launchUrl(Uri.parse(s['url'] as String)),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 8,
+          children: [
+            SizedBox(width: 28, child: Text('[${i + 1}]', style: mono)),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 2,
+                children: [
+                  Text(
+                    s['title'] as String,
+                    style: AppText.caption.copyWith(
+                      fontSize: 13,
+                      height: 19 / 13,
+                      color: AppColors.textSoft,
+                    ),
+                  ),
+                  Text(
+                    s['url'] as String,
+                    style: mono.copyWith(
+                      fontSize: 11,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Text(s['ref'] as String, style: mono),
+          ],
+        ),
+      ),
+  ],
 );
 
 // ───────────────────────── ActionBar ─────────────────────────
@@ -477,32 +529,29 @@ final _coverageWarning = CatalogItem(
     properties: {'text': S.string()},
     required: ['text'],
   ),
-  widgetBuilder: (c) => Container(
-    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-    decoration: BoxDecoration(
-      border: Border.all(color: AppColors.red),
-      borderRadius: BorderRadius.circular(AppLayout.radius),
-    ),
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 12,
-      children: [
-        const Padding(
-          padding: EdgeInsets.only(top: 2),
-          child: Icon(
-            Icons.warning_amber_rounded,
-            size: 18,
-            color: AppColors.red,
+  widgetBuilder: (c) => Row(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    spacing: 8,
+    children: [
+      const Padding(
+        padding: EdgeInsets.only(top: 1),
+        child: Icon(
+          Icons.warning_amber_rounded,
+          size: 15,
+          color: AppColors.red,
+        ),
+      ),
+      Expanded(
+        child: Text(
+          _data(c)['text'] as String,
+          style: AppText.caption.copyWith(
+            fontSize: 12,
+            height: 17 / 12,
+            color: AppColors.textMuted,
           ),
         ),
-        Expanded(
-          child: Text(
-            _data(c)['text'] as String,
-            style: AppText.body.copyWith(fontSize: 14, height: 21 / 14),
-          ),
-        ),
-      ],
-    ),
+      ),
+    ],
   ),
 );
 

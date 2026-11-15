@@ -263,32 +263,34 @@ List<Json> genuiToA2ui(Map<String, Object?> body, String source) {
       'follow_ups' => {'component': 'FollowUps', 'questions': w['questions']},
       _ => null,
     };
-    if (c != null) widgets.add({'id': id, ...c});
+    if (c != null) widgets.add({'id': id, 'type': w['type'], ...c});
   }
-  // Coverage warnings go above the answer text; follow-ups below the sources.
-  bool isCoverage(Json w) => w['component'] == 'CoverageWarning';
-  bool isFollowUp(Json w) => w['component'] == 'FollowUps';
+  final shown = pickInterface(widgets);
   return [
     {
       ..._card(_answerTitle, null, [
-        for (final w in widgets.where(isCoverage)) w['id'] as String,
+        for (final w in shown.where((w) => w['type'] == 'coverage'))
+          w['id'] as String,
         'text',
-        for (final w in widgets)
-          if (!isCoverage(w) && !isFollowUp(w)) w['id'] as String,
+        for (final w in shown)
+          if (w['type'] != 'coverage' && w['type'] != 'follow_ups')
+            w['id'] as String,
         'sources',
-        for (final w in widgets.where(isFollowUp)) w['id'] as String,
+        for (final w in shown.where((w) => w['type'] == 'follow_ups'))
+          w['id'] as String,
       ]),
       // "N sources · AI grounded" only when N > 0 resolvable citations back the answer.
       'tags': [
         if (cites.isNotEmpty)
-          '${cites.length} ${tr('source', 'fuente')}${cites.length == 1 ? '' : 's'} · ${switch (source) {
+          // The source count is on the collapsed source list; the footnote says where it came from.
+          switch (source) {
             'llm' => tr('AI grounded', 'IA fundamentada'),
             'ollama' => tr('AI local', 'IA local'),
             'snapshot' => tr('Offline cache', 'Caché sin conexión'),
             'onnx' => tr('On-device AI · ONNX', 'IA en el dispositivo · ONNX'),
             'rules' => tr('Offline · rule-based', 'Sin conexión · reglas'),
             _ => tr('Rule-based', 'Basado en reglas'),
-          }}'
+          }
         else
           tr('No sources', 'Sin fuentes'),
       ],
@@ -299,7 +301,7 @@ List<Json> genuiToA2ui(Map<String, Object?> body, String source) {
       'text': body['answer'],
       'citations': [for (var n = 1; n <= cites.length; n++) n],
     },
-    ...widgets,
+    for (final w in shown) {...w}..remove('type'),
     {
       'id': 'sources',
       'component': 'SourceList',
@@ -317,6 +319,30 @@ List<Json> genuiToA2ui(Map<String, Object?> body, String source) {
       ],
     },
   ];
+}
+
+/// Chat view: of everything the rules built, only the interface that answers the question.
+/// Asked-for views first (habitat table, next experiments), else the topic chart, else rule
+/// cards (e.g. required modifications), else the forecast tiles. The forecast card is never shown:
+/// the answer text states it. Coverage (top) and follow-ups (bottom) always stay; the experiment
+/// links only when nothing more specific answers.
+@visibleForTesting
+List<Json> pickInterface(List<Json> widgets) {
+  Iterable<Json> of(String type) => widgets.where((w) => w['type'] == type);
+  final cards = of('answer_card').skip(1).where((w) {
+    final t = '${w['title']}';
+    // SAFE/BURNS lists come with the MOC chart; the ONNX routing card is in the header tag.
+    return !RegExp(r'^(SAFE|SEGUROS|BURNS|ARDEN) |ONNX').hasMatch(t);
+  });
+  final main = [...of('table'), ...of('next_tests')].take(1).toList();
+  if (main.isEmpty) main.addAll(of('chart').take(1));
+  if (main.isEmpty) main.addAll(cards.take(2));
+  if (main.isEmpty) {
+    main
+      ..addAll(of('metrics'))
+      ..addAll(of('experiment_list'));
+  }
+  return [...of('coverage'), ...main, ...of('follow_ups')];
 }
 
 final copilotProvider = Provider<CopilotSession>((ref) {

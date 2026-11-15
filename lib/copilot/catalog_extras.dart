@@ -5,7 +5,8 @@ part of 'catalog.dart';
 final _metricTiles = CatalogItem(
   name: 'MetricTiles',
   dataSchema: S.object(
-    description: 'Key numbers of the physics forecast as tiles. Red only for critical.',
+    description:
+        'Key numbers of the physics forecast as tiles. Red only for critical.',
     properties: {
       'items': S.list(
         items: S.object(
@@ -65,7 +66,9 @@ final _comparisonTable = CatalogItem(
       'title': S.string(),
       'columns': S.list(items: S.string()),
       'rows': S.list(items: S.list(items: S.string())),
-      'highlight': S.integer(description: 'Row index to highlight (current habitat).'),
+      'highlight': S.integer(
+        description: 'Row index to highlight (current habitat).',
+      ),
     },
     required: ['title', 'columns', 'rows'],
   ),
@@ -93,7 +96,9 @@ final _comparisonTable = CatalogItem(
             ),
             columns: [
               for (final col in _list<String>(d['columns']))
-                DataColumn(label: Text(col.toUpperCase(), style: AppText.label)),
+                DataColumn(
+                  label: Text(col.toUpperCase(), style: AppText.label),
+                ),
             ],
             rows: [
               for (final (i, r) in _list<List>(d['rows']).indexed)
@@ -210,7 +215,10 @@ final _followUps = CatalogItem(
             size: 16,
             color: AppColors.red,
           ),
-          label: Text(q, style: AppText.caption.copyWith(color: AppColors.text)),
+          label: Text(
+            q,
+            style: AppText.caption.copyWith(color: AppColors.text),
+          ),
           backgroundColor: AppColors.chip,
           side: const BorderSide(color: AppColors.line),
           onPressed: () => ProviderScope.containerOf(
