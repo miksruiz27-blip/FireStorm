@@ -7,7 +7,11 @@ const ctx = (question, habitat = { name: 'Lunar Base', o2_pct: 34, pressure_psia
   question,
   habitat,
   experiments: [{ id: 'saffire' }, { id: 'bass-ii' }],
-  mocs: [{ material: 'PMMA', moc_pct: 15.5, source: 'm' }],
+  mocs: [
+    { material: 'PMMA', moc_pct: 15.5, pressure_kpa: 101.3, source: 'm' },
+    { material: 'PMMA', moc_pct: 16.5, pressure_kpa: 70.3, source: 'm' },
+    { material: 'test-safe', moc_pct: 40, pressure_kpa: 101.3, source: 'm' },
+  ],
   spreadPoints: [{ experiment_id: 'bass-ii', o2_pct: 21, spread_rate_mm_s: 4.1 }],
   sources: [
     { n: 1, key: 'exp:saffire' },
@@ -31,11 +35,17 @@ test('lunar forecast: burns (tested at 0.16 g) → critical; buoyancy noted; 0.6
   assert.ok(forecast.p_burn > 0.5);
 });
 
-test('materials → limit bar ranked + burn card; spread → predicted line with measured points', () => {
-  const m = buildWidgets(ctx('Which materials are safe?'));
-  assert.deepEqual(types(m.widgets), ['answer_card', 'bar', 'answer_card']);
-  assert.match(m.widgets[2].body, /PMMA/);
-  assert.deepEqual(m.cite, [3]);
+test('safe question → MOC bar with habitat O₂ line + SAFE and BURNS lists; spread → predicted line', () => {
+  const m = buildWidgets(ctx('Which materials stay safe at 34% oxygen?'));
+  assert.deepEqual(types(m.widgets), ['answer_card', 'bar', 'answer_card', 'answer_card', 'line']); // 'oxygen' also asks for spread
+  assert.equal(m.widgets[1].threshold, 34);
+  assert.deepEqual(m.widgets[1].points, [['PMMA', 16.5], ['test-safe', 40]]); // PMMA: row closest to 56.5 kPa
+  assert.match(m.widgets[2].title, /^SAFE at 34 % O₂/);
+  assert.match(m.widgets[2].body, /test-safe \(MOC 40 % at 101.3 kPa, margin \+6\)/);
+  assert.match(m.widgets[3].title, /^BURNS at 34 % O₂/);
+  assert.match(m.widgets[3].body, /PMMA \(MOC 16.5 % at 70.3 kPa, 17.5 points over; predicted spread/);
+  assert.equal(buildWidgets(ctx('Which materials are safe?', { name: 'ISS', o2_pct: 21, pressure_psia: 14.7, gravity_g: 0 })).widgets[1].threshold, 21);
+  assert.deepEqual(m.cite, [2, 3]); // MOC source + the measured spread point's experiment
   const s = buildWidgets(ctx('How does oxygen affect spread?')).widgets[1];
   assert.equal(s.kind, 'line');
   assert.equal(s.measured.length, 1);

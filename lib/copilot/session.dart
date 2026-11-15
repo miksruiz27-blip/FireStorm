@@ -201,6 +201,7 @@ List<Json> genuiToA2ui(Map<String, Object?> body, String source) {
         'y': w['y'],
         'points': w['points'],
         'measured': ?w['measured'],
+        'threshold': ?w['threshold'],
       },
       'experiment_list' => {
         'component': 'ActionBar',

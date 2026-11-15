@@ -100,6 +100,7 @@ export const Widget = z.discriminatedUnion('type', [
     y: z.string(),
     points: z.array(z.tuple([z.union([z.number(), z.string()]), z.number()])),
     measured: z.array(z.tuple([z.number(), z.number()])).optional(), // line: test points over the predicted curve
+    threshold: z.number().optional(), // bar: habitat O₂ line; above = safe, at/below = burns
   }),
   z.object({ type: z.literal('experiment_list'), ids: z.array(z.string()) }),
 ]);

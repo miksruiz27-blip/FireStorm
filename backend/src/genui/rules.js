@@ -95,23 +95,40 @@ export function buildWidgets({ question, habitat: h, cond, experiments, mocs, sp
 
   const hit = Object.fromEntries(Object.entries(topics).map(([k, re]) => [k, re.test(question)]));
 
-  if (hit.materials) {
-    // Rank: every modelled material at these conditions, most dangerous first.
-    const ranked = Object.keys(params.materials)
-      .map((m) => flame({ ...c, material: m }))
-      .sort((a, b) => b.margin_pct - a.margin_pct);
-    widgets.push({ type: 'chart', kind: 'bar', x: 'Material', y: 'Limit % O₂', points: ranked.map((r) => [r.material, r.loi_pct]) });
-    const burn = ranked.filter((r) => r.margin_pct > 0);
+  if (hit.materials && mocs.length) {
+    // SAFE / BURNS from the MOC table (material_moc), at the active O₂ (habitat or the question's what-if).
+    // Per material, the MOC row measured at the pressure closest to the condition.
+    const rows = Object.values(
+      mocs.reduce((best, m) => {
+        const k = m.material.toLowerCase();
+        const d = (r) => Math.abs(r.pressure_kpa - c.pressure_kpa);
+        if (!best[k] || d(m) < d(best[k])) best[k] = m;
+        return best;
+      }, {}),
+    ).sort((a, b) => a.moc_pct - b.moc_pct);
+    const o2 = c.o2_pct;
+    const safe = rows.filter((m) => m.moc_pct > o2);
+    const burns = rows.filter((m) => m.moc_pct <= o2);
+    const spread = (m) => flame({ ...c, material: m.material }).spread_mm_s;
+    const at = (m) => `MOC ${fmt(m.moc_pct)} % at ${fmt(m.pressure_kpa)} kPa`;
+    widgets.push({ type: 'chart', kind: 'bar', x: 'Material', y: 'MOC % O₂', points: rows.map((m) => [m.material, m.moc_pct]), threshold: o2 });
     widgets.push({
       type: 'answer_card',
-      title: `Materials that burn at ${fmt(c.o2_pct)} % O₂`,
-      body: burn.length
-        ? `Predicted to sustain flame (limit below ${fmt(c.o2_pct)} %): ` +
-          burn.map((r) => `${r.material} (+${fmt(r.margin_pct)}, ${r.spread_mm_s} mm/s)`).join(', ') + '.'
-        : `No modelled material sustains flame at ${fmt(c.o2_pct)} % O₂ here.`,
-      level: burn.length ? 'warning' : 'info',
+      title: `SAFE at ${fmt(o2)} % O₂ · MOC above ${fmt(o2)} %`,
+      body: safe.length
+        ? safe.map((m) => `${m.material} (${at(m)}, margin +${fmt(m.moc_pct - o2)})`).join('; ') + '.'
+        : `None of the ${rows.length} materials in the MOC table stays below its limit at ${fmt(o2)} % O₂.`,
+      level: 'info',
     });
-    for (const m of mocs) cite.add(n(`moc:${m.source}`));
+    widgets.push({
+      type: 'answer_card',
+      title: `BURNS at ${fmt(o2)} % O₂ · MOC at or below ${fmt(o2)} %`,
+      body: burns.length
+        ? burns.map((m) => `${m.material} (${at(m)}, ${fmt(o2 - m.moc_pct)} points over; predicted spread ≈ ${spread(m)} mm/s)`).join('; ') + '.'
+        : `No material in the MOC table burns at ${fmt(o2)} % O₂.`,
+      level: burns.length ? 'critical' : 'info',
+    });
+    for (const m of rows) cite.add(n(`moc:${m.source}`));
   }
   if (hit.spread) {
     widgets.push({

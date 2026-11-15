@@ -569,6 +569,9 @@ final _dataChart = CatalogItem(
         description: 'line only: measured [x, y] points drawn over the curve.',
         items: S.list(),
       ),
+      'threshold': S.number(
+        description: 'bar only: horizontal line (e.g. habitat O₂). Bars above it are safe, at or below it burn.',
+      ),
     },
     required: ['kind', 'x', 'y', 'points'],
   ),
@@ -583,12 +586,14 @@ final _dataChart = CatalogItem(
     final measured = _list<List>(d['measured']);
     FlSpot spot(List p) =>
         FlSpot((p[0] as num).toDouble(), (p[1] as num).toDouble());
+    final threshold = (d['threshold'] as num?)?.toDouble();
     final ys = [
       for (final p in [...points, ...measured]) (p[1] as num).toDouble(),
     ];
-    final maxY = ys.isEmpty
+    final scale = [...ys, ?threshold];
+    final maxY = scale.isEmpty
         ? 1.0
-        : (ys.reduce((a, b) => a > b ? a : b) * 1.15).ceilToDouble();
+        : (scale.reduce((a, b) => a > b ? a : b) * 1.15).ceilToDouble();
 
     final titles = FlTitlesData(
       topTitles: const AxisTitles(),
@@ -651,7 +656,8 @@ final _dataChart = CatalogItem(
       ),
       child: Semantics(
         label:
-            '${d['kind']} chart of ${d['y']} by ${d['x']}, ${points.length} points',
+            '${d['kind']} chart of ${d['y']} by ${d['x']}, ${points.length} points'
+            '${threshold == null ? '' : ', line at ${fmt(threshold)}: above it safe, at or below it burns'}',
         child: bar
             ? BarChart(
                 BarChartData(
@@ -660,6 +666,25 @@ final _dataChart = CatalogItem(
                   gridData: grid,
                   borderData: border,
                   barTouchData: BarTouchData(enabled: false),
+                  extraLinesData: threshold == null
+                      ? null
+                      : ExtraLinesData(
+                          horizontalLines: [
+                            HorizontalLine(
+                              y: threshold,
+                              color: AppColors.red,
+                              strokeWidth: 1.5,
+                              dashArray: const [5, 3],
+                              label: HorizontalLineLabel(
+                                show: true,
+                                alignment: Alignment.topRight,
+                                style: tick.copyWith(color: AppColors.red),
+                                labelResolver: (_) =>
+                                    'habitat ${fmt(threshold)} %',
+                              ),
+                            ),
+                          ],
+                        ),
                   barGroups: [
                     for (final (i, y) in ys.indexed)
                       BarChartGroupData(
@@ -668,7 +693,12 @@ final _dataChart = CatalogItem(
                           BarChartRodData(
                             toY: y,
                             width: 14,
-                            color: AppColors.textMuted,
+                            // Safe (above the line) light, burns red: lightness differs too.
+                            color: threshold == null
+                                ? AppColors.textMuted
+                                : y > threshold
+                                ? AppColors.text
+                                : AppColors.red,
                             borderRadius: BorderRadius.circular(1),
                           ),
                         ],
