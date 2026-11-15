@@ -131,6 +131,8 @@ void main() {
         findsOneWidget,
       ); // RiskCard: physics forecast at the habitat (34 % O₂)
       expect(find.text('SAFE AT 34 % O₂ · MOC ABOVE 34 %'), findsOneWidget);
+      // Offline cache still cites real records: title, PSI/NTRS ref and link (F2 + F8).
+      expect(find.textContaining('https://psi.nasa.gov/physci/repo/data/investigations/PSI-'), findsWidgets);
       expect(find.text('BURNS AT 34 % O₂ · MOC AT OR BELOW 34 %'), findsOneWidget);
       expect(find.textContaining('Based on'), findsOneWidget);
       // Turn 2 is not cached → offline coverage check from the gap-map snapshot.
