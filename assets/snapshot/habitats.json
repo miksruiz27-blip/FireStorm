@@ -1,0 +1,34 @@
+[
+ {
+  "id": "eva",
+  "name": "Spacesuit",
+  "o2_pct": 100,
+  "pressure_psia": 4.3,
+  "gravity_g": 0.165,
+  "source": "SAMPLE seed (app mockup values) — replace with normalizer data"
+ },
+ {
+  "id": "iss",
+  "name": "ISS",
+  "o2_pct": 21,
+  "pressure_psia": 14.7,
+  "gravity_g": 0,
+  "source": "SAMPLE seed (app mockup values) — replace with normalizer data"
+ },
+ {
+  "id": "lunar",
+  "name": "Lunar Base",
+  "o2_pct": 30,
+  "pressure_psia": 10.2,
+  "gravity_g": 0.165,
+  "source": "SAMPLE seed (app mockup values) — replace with normalizer data"
+ },
+ {
+  "id": "rover",
+  "name": "Pressurized Rover",
+  "o2_pct": 34,
+  "pressure_psia": 8.2,
+  "gravity_g": 0.165,
+  "source": "SAMPLE seed (app mockup values) — replace with normalizer data"
+ }
+]

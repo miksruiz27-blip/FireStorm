@@ -1,0 +1,38 @@
+[
+ {
+  "material": "PMMA",
+  "moc_pct": 15.5,
+  "pressure_kpa": 101.3,
+  "source": "Material MOC (SAMPLE seed (app mockup values) — replace with normalizer data)"
+ },
+ {
+  "material": "cotton-fiberglass fabric",
+  "moc_pct": 18.5,
+  "pressure_kpa": 101.3,
+  "source": "Material MOC (SAMPLE seed (app mockup values) — replace with normalizer data)"
+ },
+ {
+  "material": "silicone",
+  "moc_pct": 27,
+  "pressure_kpa": 101.3,
+  "source": "Material MOC (SAMPLE seed (app mockup values) — replace with normalizer data)"
+ },
+ {
+  "material": "aramid fabric",
+  "moc_pct": 32,
+  "pressure_kpa": 101.3,
+  "source": "Material MOC (SAMPLE seed (app mockup values) — replace with normalizer data)"
+ },
+ {
+  "material": "PMMA",
+  "moc_pct": 16.5,
+  "pressure_kpa": 70.3,
+  "source": "Material MOC (SAMPLE seed (app mockup values) — replace with normalizer data)"
+ },
+ {
+  "material": "cotton-fiberglass fabric",
+  "moc_pct": 19.5,
+  "pressure_kpa": 70.3,
+  "source": "Material MOC (SAMPLE seed (app mockup values) — replace with normalizer data)"
+ }
+]

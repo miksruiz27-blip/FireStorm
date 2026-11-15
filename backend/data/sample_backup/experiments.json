@@ -1,0 +1,289 @@
+[
+ {
+  "id": "saffire",
+  "name": "Spacecraft Fire Safety Demonstration",
+  "platform": "ISS",
+  "fuel_type": "solid",
+  "domain": [
+   "prevention"
+  ],
+  "hardware": "Uncrewed Cygnus vehicle flow duct",
+  "o2_range": [
+   21,
+   35
+  ],
+  "pressure_kpa_range": [
+   56.5,
+   101.4
+  ],
+  "gravity": "micro",
+  "flow_cm_s_range": [
+   0,
+   25
+  ],
+  "materials": [
+   "cotton-fiberglass fabric",
+   "PMMA",
+   "silicone"
+  ],
+  "key_findings": [],
+  "sources": [
+   {
+    "url": "https://psi.nasa.gov",
+    "title": "SAFFIRE — NASA PSI investigation (SAMPLE seed (app mockup values) — replace with normalizer data)",
+    "ntrs_id": ""
+   }
+  ]
+ },
+ {
+  "id": "bass-ii",
+  "name": "Burning and Suppression of Solids II",
+  "platform": "ISS",
+  "fuel_type": "solid",
+  "domain": [
+   "prevention",
+   "suppression"
+  ],
+  "hardware": "Microgravity Science Glovebox",
+  "o2_range": [
+   16,
+   21
+  ],
+  "pressure_kpa_range": [
+   101.4,
+   101.4
+  ],
+  "gravity": "micro",
+  "flow_cm_s_range": [
+   0,
+   20
+  ],
+  "materials": [
+   "PMMA",
+   "fabrics"
+  ],
+  "key_findings": [
+   "In microgravity, flame spread over solids depends strongly on slow ventilation flow — remove the flow and many flames weaken or go out.",
+   "Some materials kept burning at oxygen levels below what normal-gravity screening predicts: ground tests are not always conservative.",
+   "Measured conditions stop near sea-level oxygen. The enriched atmospheres planned for lunar habitats remain untested in this dataset."
+  ],
+  "sources": [
+   {
+    "url": "https://psi.nasa.gov",
+    "title": "BASS-II — NASA PSI investigation (SAMPLE seed (app mockup values) — replace with normalizer data)",
+    "ntrs_id": ""
+   }
+  ]
+ },
+ {
+  "id": "bass",
+  "name": "Burning and Suppression of Solids",
+  "platform": "ISS",
+  "fuel_type": "solid",
+  "domain": [
+   "suppression"
+  ],
+  "hardware": "Microgravity Science Glovebox",
+  "o2_range": [
+   16,
+   21
+  ],
+  "pressure_kpa_range": [
+   101.4,
+   101.4
+  ],
+  "gravity": "micro",
+  "flow_cm_s_range": [
+   0,
+   20
+  ],
+  "materials": [
+   "PMMA",
+   "paper"
+  ],
+  "key_findings": [],
+  "sources": [
+   {
+    "url": "https://psi.nasa.gov",
+    "title": "BASS — NASA PSI investigation (SAMPLE seed (app mockup values) — replace with normalizer data)",
+    "ntrs_id": ""
+   }
+  ]
+ },
+ {
+  "id": "same",
+  "name": "Smoke Aerosol Measurement Experiment",
+  "platform": "ISS",
+  "fuel_type": "solid",
+  "domain": [
+   "detection"
+  ],
+  "hardware": "Microgravity Science Glovebox",
+  "o2_range": [
+   21,
+   21
+  ],
+  "pressure_kpa_range": [
+   101.4,
+   101.4
+  ],
+  "gravity": "micro",
+  "flow_cm_s_range": [
+   0,
+   10
+  ],
+  "materials": [
+   "silicone rubber",
+   "Teflon",
+   "Kapton"
+  ],
+  "key_findings": [],
+  "sources": [
+   {
+    "url": "https://psi.nasa.gov",
+    "title": "SAME — NASA PSI investigation (SAMPLE seed (app mockup values) — replace with normalizer data)",
+    "ntrs_id": ""
+   }
+  ]
+ },
+ {
+  "id": "flex-2",
+  "name": "Flame Extinguishment Experiment 2",
+  "platform": "ISS",
+  "fuel_type": "liquid",
+  "domain": [
+   "prevention"
+  ],
+  "hardware": "Combustion Integrated Rack",
+  "o2_range": [
+   15,
+   40
+  ],
+  "pressure_kpa_range": [
+   48.3,
+   101.4
+  ],
+  "gravity": "micro",
+  "flow_cm_s_range": [
+   0,
+   0
+  ],
+  "materials": [
+   "heptane",
+   "decane"
+  ],
+  "key_findings": [],
+  "sources": [
+   {
+    "url": "https://psi.nasa.gov",
+    "title": "FLEX-2 — NASA PSI investigation (SAMPLE seed (app mockup values) — replace with normalizer data)",
+    "ntrs_id": ""
+   }
+  ]
+ },
+ {
+  "id": "flex",
+  "name": "Flame Extinguishment Experiment",
+  "platform": "ISS",
+  "fuel_type": "liquid",
+  "domain": [
+   "suppression"
+  ],
+  "hardware": "Combustion Integrated Rack",
+  "o2_range": [
+   15,
+   40
+  ],
+  "pressure_kpa_range": [
+   48.3,
+   101.4
+  ],
+  "gravity": "micro",
+  "flow_cm_s_range": [
+   0,
+   0
+  ],
+  "materials": [
+   "heptane",
+   "methanol"
+  ],
+  "key_findings": [],
+  "sources": [
+   {
+    "url": "https://psi.nasa.gov",
+    "title": "FLEX — NASA PSI investigation (SAMPLE seed (app mockup values) — replace with normalizer data)",
+    "ntrs_id": ""
+   }
+  ]
+ },
+ {
+  "id": "acme",
+  "name": "Advanced Combustion via Microgravity Experiments",
+  "platform": "ISS",
+  "fuel_type": "gas",
+  "domain": [
+   "prevention"
+  ],
+  "hardware": "Combustion Integrated Rack",
+  "o2_range": [
+   15,
+   40
+  ],
+  "pressure_kpa_range": [
+   101.4,
+   101.4
+  ],
+  "gravity": "micro",
+  "flow_cm_s_range": [
+   0,
+   50
+  ],
+  "materials": [
+   "methane",
+   "ethylene"
+  ],
+  "key_findings": [],
+  "sources": [
+   {
+    "url": "https://psi.nasa.gov",
+    "title": "ACME — NASA PSI investigation (SAMPLE seed (app mockup values) — replace with normalizer data)",
+    "ntrs_id": ""
+   }
+  ]
+ },
+ {
+  "id": "spice",
+  "name": "Smoke Point In Co-flow Experiment",
+  "platform": "ISS",
+  "fuel_type": "gas",
+  "domain": [
+   "detection"
+  ],
+  "hardware": "Microgravity Science Glovebox",
+  "o2_range": [
+   21,
+   21
+  ],
+  "pressure_kpa_range": [
+   101.4,
+   101.4
+  ],
+  "gravity": "micro",
+  "flow_cm_s_range": [
+   0,
+   50
+  ],
+  "materials": [
+   "ethylene",
+   "propane"
+  ],
+  "key_findings": [],
+  "sources": [
+   {
+    "url": "https://psi.nasa.gov",
+    "title": "SPICE — NASA PSI investigation (SAMPLE seed (app mockup values) — replace with normalizer data)",
+    "ntrs_id": ""
+   }
+  ]
+ }
+]

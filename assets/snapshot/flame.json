@@ -1,0 +1,62 @@
+{
+ "u_buoy_1g": 30,
+ "u_min": 0.5,
+ "k_p": 2.737,
+ "default_material": "pmma",
+ "materials": {
+  "pmma": {
+   "name": "PMMA",
+   "moc_1g": 15.5,
+   "c": 0.062
+  },
+  "cotton-fiberglass fabric": {
+   "name": "cotton-fiberglass fabric",
+   "moc_1g": 18.5,
+   "c": 0.341
+  },
+  "silicone": {
+   "name": "silicone",
+   "moc_1g": 27,
+   "c": 0.573
+  },
+  "aramid fabric": {
+   "name": "aramid fabric",
+   "moc_1g": 32,
+   "c": 0.312
+  }
+ },
+ "aliases": {
+  "pmma": "pmma|acrylic|plexiglas",
+  "cotton-fiberglass fabric": "sibal|cotton.?fiberglass",
+  "silicone": "silicone",
+  "aramid fabric": "nomex|aramid|kevlar"
+ },
+ "b": 0,
+ "fit_range": {
+  "o2_pct": [
+   12,
+   40
+  ],
+  "pressure_kpa": [
+   56.5,
+   101.5
+  ],
+  "gravity_g": [
+   0,
+   0.16,
+   0.38,
+   1
+  ]
+ },
+ "q": 0.75,
+ "u_star": 15,
+ "s": 1,
+ "metrics": {
+  "n": 156,
+  "accuracy": 0.78,
+  "log_loss": 0.761,
+  "n_spread": 42,
+  "spread_rmse_mm_s": 0.92
+ },
+ "source": "fitted on 156 solid-fuel test points + 6 MOC rows (2026-11-15)"
+}

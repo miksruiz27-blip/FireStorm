@@ -1,0 +1,348 @@
+test_id,material,o2_pct,pressure_kpa,flow_cm_s,gravity_g,outcome,source,label
+BASS-01,PMMA_slab_1.2mm,20.9,101.3,5.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-02,PMMA_slab_1.2mm,20.9,101.3,10.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-03,PMMA_slab_1.2mm,20.9,101.3,1.8,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-04,PMMA_slab_1.2mm,20.9,101.3,0.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-05,PMMA_slab_1.2mm,20.9,101.3,21.5,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-06,PMMA_slab_1.2mm,20.9,101.3,35.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-07,PMMA_slab_1.2mm,19.5,101.2,5.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-08,PMMA_slab_1.2mm,19.5,101.2,2.5,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-09,PMMA_slab_1.2mm,19.5,101.2,0.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-10,PMMA_slab_1.2mm,19.5,101.2,28.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-11,PMMA_slab_2.0mm,18.4,101.1,8.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-12,PMMA_slab_2.0mm,18.4,101.1,4.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-13,PMMA_slab_2.0mm,18.2,101.1,0.8,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-14,PMMA_slab_2.0mm,18.2,101.1,25.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-15,PMMA_slab_2.0mm,17.9,100.9,6.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-16,PMMA_slab_2.0mm,17.2,100.8,1.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-17,PMMA_slab_2.0mm,17.2,100.8,24.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-18,PMMA_slab_2.0mm,16.5,100.6,5.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-19,PMMA_slab_2.0mm,16.4,100.6,2.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-20,PMMA_slab_2.0mm,16.0,100.6,5.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-21,PMMA_slab_2.0mm,15.8,100.5,4.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-22,PMMA_rod_9.5mm,21.2,101.4,6.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-23,PMMA_rod_9.5mm,21.2,101.4,2.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-24,PMMA_rod_9.5mm,21.2,101.4,0.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-25,PMMA_rod_9.5mm,21.2,101.4,20.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-26,PMMA_rod_9.5mm,20.0,101.3,4.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-27,PMMA_rod_9.5mm,20.0,101.3,2.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-28,PMMA_rod_9.5mm,20.0,101.3,27.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-29,PMMA_rod_9.5mm,18.5,101.0,5.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-30,PMMA_rod_9.5mm,18.5,101.0,0.7,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-31,PMMA_rod_9.5mm,18.5,101.0,25.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-32,PMMA_rod_12.7mm,18.0,100.8,6.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-33,PMMA_rod_12.7mm,17.0,100.6,1.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-34,PMMA_rod_12.7mm,16.5,100.5,4.8,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-35,PMMA_rod_12.7mm,16.3,100.5,4.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-36,Cotton_blend,21.0,101.3,3.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-37,Cotton_blend,21.0,101.3,1.9,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-38,Cotton_blend,21.0,101.3,0.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-39,Cotton_blend,21.0,101.3,12.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-40,Cotton_blend,19.0,101.1,4.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-41,Cotton_blend,19.0,101.1,2.2,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-42,Cotton_blend,19.0,101.1,0.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-43,Cotton_blend,18.2,100.9,5.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-44,Cotton_blend,18.0,100.9,0.7,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-45,Cotton_blend,17.8,100.8,5.0,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-46,Cotton_blend,16.8,100.6,1.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-47,Cotton_blend,17.7,100.8,4.5,0.0,burn,NASA/TM-2015-218735 (NTRS: 20150016543),1
+BASS-48,Cotton_blend,16.4,100.6,1.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-49,Cotton_blend,15.9,100.4,4.0,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS-50,Cotton_blend,15.5,100.3,3.5,0.0,extinct,NASA/TM-2015-218735 (NTRS: 20150016543),0
+BASS2-01,PMMA_slab_thick,21.8,101.5,7.5,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-02,PMMA_slab_thick,21.8,101.5,2.2,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-03,PMMA_slab_thick,21.8,101.5,0.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-04,PMMA_slab_thick,21.8,101.5,21.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-05,PMMA_slab_thick,21.8,101.5,32.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-06,PMMA_slab_thick,20.5,101.2,5.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-07,PMMA_slab_thick,20.5,101.2,2.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-08,PMMA_slab_thick,20.5,101.2,0.5,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-09,PMMA_slab_thick,20.5,101.2,27.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-10,PMMA_slab_thick,19.8,101.1,6.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-11,PMMA_slab_thick,19.8,101.1,2.5,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-12,PMMA_slab_thick,19.8,101.1,0.7,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-13,PMMA_slab_thick,19.8,101.1,26.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-14,PMMA_slab_thick,18.7,100.9,8.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-15,PMMA_slab_thick,18.7,100.9,3.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-16,PMMA_slab_thick,18.7,100.9,0.7,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-17,PMMA_slab_thick,18.7,100.9,25.5,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-18,PMMA_slab_thick,18.0,100.8,6.5,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-19,PMMA_slab_thick,16.9,100.6,1.2,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-20,PMMA_slab_thick,17.5,100.7,25.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-21,PMMA_slab_thick,16.6,100.5,5.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-22,PMMA_slab_thick,16.6,100.5,1.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-23,PMMA_slab_thick,16.4,100.4,4.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-24,PMMA_slab_thick,16.1,100.3,5.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-25,Cotton_fabric_thin,21.5,101.4,4.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-26,Cotton_fabric_thin,21.5,101.4,1.9,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-27,Cotton_fabric_thin,21.5,101.4,0.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-28,Cotton_fabric_thin,21.5,101.4,15.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-29,Cotton_fabric_thin,19.3,101.1,5.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-30,Cotton_fabric_thin,19.3,101.1,2.1,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-31,Cotton_fabric_thin,19.3,101.1,0.4,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-32,Cotton_fabric_thin,18.4,100.9,6.0,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-33,Cotton_fabric_thin,18.4,100.9,0.7,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-34,Cotton_fabric_thin,17.9,100.8,5.5,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-35,Cotton_fabric_thin,16.8,100.6,1.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-36,Cotton_fabric_thin,17.8,100.8,4.5,0.0,burn,NASA/TM-2018-219890 (NTRS: 20180005432),1
+BASS2-37,Cotton_fabric_thin,16.5,100.5,0.8,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-38,Cotton_fabric_thin,16.2,100.5,3.5,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-39,Cotton_fabric_thin,15.7,100.3,4.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-40,Nomex_fabric,16.5,100.5,0.5,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+BASS2-41,Nomex_fabric,16.8,100.6,30.0,0.0,extinct,NASA/TM-2018-219890 (NTRS: 20180005432),0
+PSI-01,PMMA_cast_sheet,21.1,101.3,8.0,0.0,burn,NASA-PSI-INV-0023 (BASS Archive),1
+PSI-02,PMMA_cast_sheet,21.1,101.3,3.5,0.0,burn,NASA-PSI-INV-0023 (BASS Archive),1
+PSI-03,PMMA_cast_sheet,21.1,101.3,0.2,0.0,extinct,NASA-PSI-INV-0023 (BASS Archive),0
+PSI-04,PMMA_cast_sheet,21.1,101.3,21.0,0.0,burn,NASA-PSI-INV-0023 (BASS Archive),1
+PSI-05,PMMA_cast_sheet,21.1,101.3,33.0,0.0,extinct,NASA-PSI-INV-0023 (BASS Archive),0
+PSI-06,PMMA_cast_sheet,20.2,101.2,5.0,0.0,burn,NASA-PSI-INV-0023 (BASS Archive),1
+PSI-07,PMMA_cast_sheet,20.2,101.2,2.2,0.0,burn,NASA-PSI-INV-0023 (BASS Archive),1
+PSI-08,PMMA_cast_sheet,20.2,101.2,0.6,0.0,extinct,NASA-PSI-INV-0023 (BASS Archive),0
+PSI-09,PMMA_cast_sheet,19.1,101.0,6.0,0.0,burn,NASA-PSI-INV-0044 (BASS-II Archive),1
+PSI-10,PMMA_cast_sheet,19.1,101.0,2.4,0.0,burn,NASA-PSI-INV-0044 (BASS-II Archive),1
+PSI-11,PMMA_cast_sheet,19.1,101.0,0.5,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-12,PMMA_cast_sheet,19.1,101.0,26.0,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-13,PMMA_cast_sheet,18.2,100.8,7.0,0.0,burn,NASA-PSI-INV-0044 (BASS-II Archive),1
+PSI-14,PMMA_cast_sheet,18.2,100.8,2.8,0.0,burn,NASA-PSI-INV-0044 (BASS-II Archive),1
+PSI-15,PMMA_cast_sheet,18.1,100.8,0.7,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-16,PMMA_cast_sheet,18.1,100.8,25.0,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-17,PMMA_cast_sheet,17.8,100.8,5.0,0.0,burn,NASA-PSI-INV-0044 (BASS-II Archive),1
+PSI-18,PMMA_cast_sheet,16.8,100.6,1.0,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-19,PMMA_cast_sheet,16.5,100.5,4.5,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-20,PMMA_cast_sheet,16.3,100.4,4.0,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+PSI-21,PMMA_cast_sheet,15.8,100.2,3.5,0.0,extinct,NASA-PSI-INV-0044 (BASS-II Archive),0
+INC-AP1-01,Apollo1_Nylon_Velcro_100O2,100.0,115.1,5.0,1.0,burn,"NASA SMA - Apollo 1 (100% O2, 16.7 psi)",1
+INC-AP1-02,Apollo_BlockII_60O2_40N2,60.0,110.3,4.0,1.0,burn,NASA SMA - Apollo 1 Redesign Test (60% O2),1
+INC-AP1-03,Apollo_BetaCloth_Cabin,16.2,100.4,0.4,0.0,extinct,NASA SMA - Apollo Block II Beta Cloth,0
+INC-AP13-01,Apollo13_Teflon_CryoO2,100.0,115.0,2.0,0.0,burn,NASA SMA - Apollo 13 Tank 2 (65V DC Overheat),1
+FLEX-01,Heptane_droplet_3mm,21.0,101.3,2.0,0.0,burn,NASA Guide 2015 - FLEX (ISS CIR),1
+FLEX-02,Heptane_droplet_coolflame,18.5,101.3,2.2,0.0,burn,NASA Guide 2015 - FLEX Cool Flame Reignition,1
+FLEX-03,Heptane_droplet_N2_diluted,14.5,100.2,0.5,0.0,extinct,NASA Guide 2015 - FLEX Extinction Limit,0
+FLEX-04,Methanol_droplet_4mm,20.5,101.3,3.0,0.0,burn,NASA Guide 2015 - FLEX Methanol,1
+FLEX-05,Methanol_droplet_CO2_suppr,15.2,100.4,1.5,0.0,extinct,NASA Guide 2015 - FLEX CO2 Suppression,0
+FLEX2-01,Biofuel_droplet_array,21.0,101.3,4.0,0.0,burn,NASA Guide 2015 - FLEX-2 Droplet Array,1
+FLEX2-02,Heptane_droplet_high_flow,17.0,100.5,24.0,0.0,extinct,NASA Guide 2015 - FLEX-2 Convective Blowoff,0
+COOL-01,Decane_cool_flame_CIR,19.5,101.2,2.5,0.0,burn,NASA Guide 2015 - Cool Flames Initiative,1
+COOL-02,Decane_cool_flame_quench,15.0,100.1,0.2,0.0,extinct,NASA Guide 2015 - Cool Flames Quench,0
+SOFIE-01,PMMA_exploration_atm,34.0,70.3,10.0,0.0,burn,"NASA Guide 2015 - SoFIE (10.2 psi, 34% O2)",1
+SOFIE-02,Delrin_exploration_atm,32.0,70.3,8.0,0.0,burn,"NASA Guide 2015 - SoFIE (10.2 psi, 32% O2)",1
+SOFIE-03,PMMA_high_O2_40pct,40.0,101.5,10.0,0.0,burn,NASA Guide 2015 - SoFIE Max O2,1
+SOFIE-04,PMMA_low_O2_12pct,12.0,99.8,5.0,0.0,extinct,NASA Guide 2015 - SoFIE Low O2 Limit,0
+SOFIE-05,PMMA_sphere_growth,21.5,101.3,6.0,0.0,burn,NASA Guide 2015 - SoFIE Flame Growth,1
+SOFIE-06,PMMA_sphere_radiative_ext,16.2,100.3,1.0,0.0,extinct,NASA Guide 2015 - SoFIE Radiative Extinction,0
+SOFIE-07,Thin_solid_species_field,20.0,101.2,7.0,0.0,burn,NASA Guide 2015 - SoFIE Thermal/Species,1
+SOFIE-08,Thin_solid_subcritical,15.8,100.2,2.0,0.0,extinct,NASA Guide 2015 - SoFIE Intrinsic Safe,0
+SOFIE-09,External_heat_flux_ign,21.0,101.3,5.0,0.0,burn,NASA Guide 2015 - SoFIE External Heat Flux,1
+SOFIE-10,Narrow_Channel_opposing,20.5,101.2,8.0,0.0,burn,NASA Guide 2015 - SoFIE Narrow Channel,1
+SOFIE-11,Narrow_Channel_blowoff,17.0,100.5,29.0,0.0,extinct,NASA Guide 2015 - SoFIE High Ventilation,0
+ACME-BRE-01,Methane_flat_burner_BRE,21.0,101.3,4.0,0.0,burn,NASA Guide 2015 - ACME BRE Sustained,1
+ACME-BRE-02,Ethylene_BRE_radiative_loss,15.5,100.2,0.5,0.0,extinct,NASA Guide 2015 - ACME BRE Extinction,0
+ACME-CLD-01,Methane_coflow_lifted,20.8,101.3,6.0,0.0,burn,NASA Guide 2015 - ACME CLD Flame,1
+ACME-CLD-02,Methane_coflow_blowoff,16.5,100.4,26.0,0.0,extinct,NASA Guide 2015 - ACME CLD Blowoff,0
+ACME-EF-01,Ion_driven_flame_EFIELD,20.9,101.3,5.0,0.0,burn,NASA Guide 2015 - ACME E-FIELD Flame,1
+ACME-FD-01,Ethylene_spherical_FlameDesign,21.2,101.4,3.5,0.0,burn,NASA Guide 2015 - ACME Flame Design,1
+ACME-FD-02,Ethylene_radiative_quench,15.9,100.3,0.4,0.0,extinct,NASA Guide 2015 - ACME Flame Design Quench,0
+ACME-SF-01,Spherical_diffusion_sFlame,20.5,101.2,3.0,0.0,burn,NASA Guide 2015 - ACME s-Flame,1
+SPICE-01,Propane_jet_SPICE,21.0,101.3,7.0,0.0,burn,NASA Guide 2015 - SPICE (MSG),1
+SLICE-01,Methane_coflow_SLICE,20.9,101.3,5.5,0.0,burn,NASA Guide 2015 - SLICE (MSG),1
+SOFBALL-01,H2_O2_lean_flame_ball,20.5,101.3,1.5,0.0,burn,NASA Guide 2015 - SOFBALL (40 min burn),1
+CANDLE-01,Paraffin_candle_hemisphere,20.2,101.2,2.0,0.0,burn,NASA Guide 2015 - Mir/Shuttle Candle (45 min),1
+CANDLE-02,Paraffin_candle_osc_extinct,15.6,100.2,0.0,0.0,extinct,NASA Guide 2015 - Candle Low O2 Extinction,0
+MIST-01,Premixed_tube_unmitigated,21.0,101.3,8.0,0.0,burn,NASA Guide 2015 - Mist Control Flame,1
+MIST-02,Premixed_tube_WaterMist_PFE,16.0,100.4,25.0,0.0,extinct,NASA Guide 2015 - Fine Water Mist Suppression,0
+HAL-HVAC-01,Spacecraft_HVAC_10cm_s_peak,20.5,101.3,10.0,0.0,burn,NASA Guide 2015 - Hallazgo HVAC 10 cm/s Max Spread,1
+HAL-HVAC-02,Spacecraft_HVAC_shutoff_0cm_s,16.2,100.4,0.0,0.0,extinct,NASA Guide 2015 - Hallazgo HVAC Cut-off Quench,0
+HAL-N2JET-01,Localized_N2_jet_entrainment,20.0,101.2,6.0,0.0,burn,NASA Guide 2015 - Hallazgo Chorro Local N2,1
+PSI25-01,SIBAL_Cotton_Fiberglass_75_25_Opposed,18.5,101.3,3.5,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-02,SIBAL_Cotton_Fiberglass_75_25_UltraLow,18.2,101.2,2.2,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-03,SIBAL_Cotton_Fiberglass_75_25_MOC_Quench,15.6,100.8,1.0,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-04,SIBAL_Cotton_Fiberglass_75_25_Blowoff,17.8,101.1,38.0,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-05,PMMA_Black_Cast_Slab_3.2mm_Concurrent,19.4,101.3,8.5,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-06,PMMA_Black_Cast_Slab_3.2mm_LowFlow_Blue,18.4,101.1,2.5,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-07,PMMA_Black_Cast_Slab_3.2mm_RadQuench,16.2,100.6,0.4,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-08,PMMA_Clear_Slab_6.35mm_Opposed,20.1,101.3,12.0,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-09,PMMA_Clear_Slab_6.35mm_HighFlow_Blowoff,18.0,101.0,45.0,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-10,PMMA_Cylinder_Rod_6.35mm_Opposed,18.9,101.2,5.0,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-11,PMMA_Cylinder_Rod_6.35mm_N2_Vitiated,15.9,100.5,2.0,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-12,PMMA_Sphere_19mm_Concurrent,20.8,101.4,6.5,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI25-13,PMMA_Sphere_19mm_StepDown_Quench,16.5,100.7,0.2,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-14,Ultem_Polyetherimide_Film_Opposed,16.4,100.5,0.5,0.0,extinct,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),0
+PSI25-15,Cotton_Thin_Towel_10cm_s_HVAC_Peak,19.2,101.2,10.0,0.0,burn,NASA PSI-25 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25),1
+PSI68-01,n_Heptane_Droplet_3.8mm_Hot_to_CoolFlame,21.0,101.3,2.2,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-02,n_Heptane_Droplet_3.2mm_HighP_2atm,19.2,202.6,2.0,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-03,n_Heptane_Droplet_2.9mm_N2_LOI_Quench,13.8,101.3,0.5,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI68-04,n_Decane_Droplet_4.1mm_TwoStage_CoolFlame,21.0,152.0,2.0,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-05,n_Decane_Droplet_3.5mm_CO2_Diluted_Ext,15.5,101.3,1.5,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI68-06,n_Dodecane_Droplet_4.0mm_3atm_Enriched,25.0,304.0,2.5,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-07,n_Octane_IsoOctane_PRF50_BiComponent,20.5,101.3,2.5,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-08,n_Octane_IsoOctane_PRF50_He_Diluted_Ext,16.0,101.3,3.0,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI68-09,Methanol_Water_Droplet_3.6mm_Absorptive,21.0,101.3,2.0,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-10,Methanol_Droplet_WaterAccum_Quench,16.4,70.9,0.5,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI68-11,Ethanol_Droplet_3.4mm_Convective_Flow,19.8,101.3,4.5,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-12,Ethanol_Droplet_Convective_Blowoff,17.2,101.3,22.0,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI68-13,Decane_Propylbenzene_JetSurrogate_3.9mm,21.0,202.6,3.0,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-14,Binary_Heptane_Droplet_Array_LD4_Interact,20.2,101.3,2.0,0.0,burn,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),1
+PSI68-15,Binary_Heptane_Droplet_Array_O2_Starve,15.2,101.3,0.2,0.0,extinct,NASA PSI-68 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-68),0
+PSI26-01,PMMA_Sphere_20mm_Opposed_BASS1,20.9,101.3,5.0,0.0,burn,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),1
+PSI26-02,PMMA_Sphere_20mm_N2_Jet_Intensified,19.5,101.2,4.0,0.0,burn,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),1
+PSI26-03,PMMA_Sphere_20mm_ZeroFlow_Quench,16.5,100.8,0.0,0.0,extinct,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),0
+PSI26-04,Paraffin_Wax_Candle_Porous_BASS1,19.0,101.1,2.5,0.0,burn,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),1
+PSI26-05,Paraffin_Wax_Candle_Hypoxic_Ext,15.8,100.4,0.5,0.0,extinct,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),0
+PSI26-06,Cotton_Fiberglass_SIBAL_BASS1_LowO2,18.4,101.1,3.0,0.0,burn,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),1
+PSI26-07,Cotton_Fiberglass_SIBAL_BASS1_Blowoff,17.5,100.9,34.0,0.0,extinct,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),0
+PSI26-08,PMMA_Flat_Sheet_1.5mm_Upwind_Spread,18.8,101.0,3.0,0.0,burn,NASA PSI-26 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-26),1
+PSI62-01,FGM_CFD_PMMA_Slab_Concurrent_5cm_s,21.0,101.3,5.0,0.0,burn,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),1
+PSI62-02,FGM_CFD_PMMA_Slab_Concurrent_10cm_s,19.5,101.2,10.0,0.0,burn,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),1
+PSI62-03,FGM_CFD_SIBAL_TwoColor_Soot_18O2,18.5,101.1,4.0,0.0,burn,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),1
+PSI62-04,FGM_CFD_PMMA_Radiative_Quench_0.5cm_s,16.0,100.5,0.5,0.0,extinct,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),0
+PSI62-05,FGM_CFD_PMMA_Strain_Blowoff_35cm_s,17.2,100.8,35.0,0.0,extinct,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),0
+PSI62-06,UFGM_Transient_StepDown_Hysteresis,16.4,100.6,0.8,0.0,extinct,NASA PSI-62 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-62),0
+PSI69-01,FLEX1_Heptane_Droplet_3.5mm_CoolFlame,21.0,101.3,2.0,0.0,burn,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),1
+PSI69-02,FLEX1_Heptane_Droplet_N2_Diluted_15O2,15.0,101.3,0.5,0.0,extinct,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),0
+PSI69-03,FLEX1_Heptane_Droplet_CO2_Suppressed,16.8,100.6,1.0,0.0,extinct,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),0
+PSI69-04,FLEX1_Heptane_Droplet_SF6_Enhanced_Rad,16.5,100.5,0.5,0.0,extinct,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),0
+PSI69-05,FLEX1_Methanol_Droplet_4.0mm_Sustained,20.5,101.3,2.2,0.0,burn,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),1
+PSI69-06,FLEX1_Methanol_Droplet_He_Quench,16.2,100.8,2.0,0.0,extinct,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),0
+PSI69-07,FLEX1_Heptane_HighPressure_2.5atm,19.5,253.3,2.0,0.0,burn,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),1
+PSI69-08,FLEX1_Methanol_LowPressure_0.7atm_Ext,16.5,70.9,0.5,0.0,extinct,NASA PSI-69 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-69),0
+PSI98-01,SAFFIRE1_Large_SIBAL_0.4x0.94m_TopIgn,21.0,101.3,20.0,0.0,burn,NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98),1
+PSI98-02,SAFFIRE1_Large_SIBAL_0.4x0.94m_BaseIgn,20.9,101.2,20.0,0.0,burn,NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98),1
+PSI98-03,SAFFIRE1_Large_SIBAL_FlowShutoff_Quench,16.8,100.8,0.0,0.0,extinct,NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98),0
+PSI98-04,SAFFIRE1_Large_SIBAL_Steady_LimitLength,20.8,101.5,20.0,0.0,burn,NASA PSI-98 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-98),1
+PSI99-01,SAFFIRE2_S1_SIBAL_5x29cm_20cm_s,21.0,101.3,20.0,0.0,burn,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),1
+PSI99-02,SAFFIRE2_S2_SIBAL_5x29cm_30cm_s_Blowoff,17.5,100.9,30.0,0.0,extinct,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),0
+PSI99-03,SAFFIRE2_S3_Nomex_HT90_40_NonProp,16.6,100.6,28.0,0.0,extinct,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),0
+PSI99-04,SAFFIRE2_S4_Silicone_0.25mm_Thin_Burn,21.0,101.3,20.0,0.0,burn,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),1
+PSI99-05,SAFFIRE2_S5_Silicone_0.60mm_Med_Burn,20.8,101.2,20.0,0.0,burn,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),1
+PSI99-06,SAFFIRE2_S6_Silicone_1.57mm_Thick_Quench,16.8,100.6,26.0,0.0,extinct,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),0
+PSI99-07,SAFFIRE2_S7_PMMA_Grooved_Ribs_10mm,21.0,101.3,20.0,0.0,burn,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),1
+PSI99-08,SAFFIRE2_S8_PMMA_Flat_10mm_Thick_Quench,16.5,100.5,25.0,0.0,extinct,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),0
+PSI99-09,SAFFIRE2_S9_Cotton_Blend_MOC_Limit,18.8,101.1,16.0,0.0,burn,NASA PSI-99 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-99),1
+PSI100-01,SAFFIRE3_Large_SIBAL_0.4x0.94m_30cm_s,21.2,101.4,20.0,0.0,burn,NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100),1
+PSI100-02,SAFFIRE3_Large_SIBAL_20cm_s_Comparison,20.9,101.3,18.0,0.0,burn,NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100),1
+PSI100-03,SAFFIRE3_Large_SIBAL_PostBurn_O2_Depl,16.2,100.6,0.0,0.0,extinct,NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100),0
+PSI100-04,SAFFIRE3_Large_SIBAL_HighBlowoff_42cm_s,17.4,100.8,42.0,0.0,extinct,NASA PSI-100 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-100),0
+PSI101-01,SAMER_Kapton_Pyrolysis_Aged_Aerosol,16.2,100.4,0.5,0.0,extinct,NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101),0
+PSI101-02,SAMER_Teflon_Overheat_Ultrafine_Smoke,16.4,100.5,0.6,0.0,extinct,NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101),0
+PSI101-03,SAMER_Silicone_Rubber_Smolder_Agglom,21.0,101.3,5.0,0.0,burn,NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101),1
+PSI101-04,SAMER_Cellulose_Paper_Flaming_Smoke,21.0,101.3,6.0,0.0,burn,NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101),1
+PSI101-05,SAMER_PMMA_Pyrolysis_HighTemp_Aerosol,20.5,101.2,4.0,0.0,burn,NASA PSI-101 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-101),1
+PSI102-01,SAME1_LampOil_Wick_Standard_Aerosol,20.9,101.3,4.5,0.0,burn,NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102),1
+PSI102-02,SAME1_Kapton_Wire_Insulation_NonFlaming,16.1,100.4,0.4,0.0,extinct,NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102),0
+PSI102-03,SAME1_Teflon_Wire_Pyrolysis_LowFlow,15.9,100.3,0.3,0.0,extinct,NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102),0
+PSI102-04,SAME1_Silicone_Wire_Smolder_HighMoment,21.0,101.3,5.5,0.0,burn,NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102),1
+PSI102-05,SAME1_Cellulose_Overheat_IonPhoto_Det,21.0,101.3,7.0,0.0,burn,NASA PSI-102 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-102),1
+PSI10-01,ACME_FlameDesign_Spherical_Ethylene_HighZst,28.0,101.3,3.0,0.0,burn,NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10),1
+PSI10-02,ACME_FlameDesign_Inverse_Spherical_Methane,25.0,101.3,4.5,0.0,burn,NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10),1
+PSI10-03,ACME_FlameDesign_LowZst_Radiative_Quench,15.6,100.4,0.4,0.0,extinct,NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10),0
+PSI10-04,ACME_FlameDesign_QuasiSteady_Extinction,16.2,100.6,0.8,0.0,extinct,NASA PSI-10 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-10),0
+PSI20-01,ACME_BRE_Ethylene_PMMA_Emulator_Burn,21.0,101.3,4.0,0.0,burn,NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20),1
+PSI20-02,ACME_BRE_Methane_POM_Delrin_Emulator,19.5,101.2,5.5,0.0,burn,NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20),1
+PSI20-03,ACME_BRE_HighGasificationHeat_Quench,15.8,100.5,0.5,0.0,extinct,NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20),0
+PSI20-04,ACME_BRE_PaperCellulose_Emulator_LowO2,16.4,100.7,1.0,0.0,extinct,NASA PSI-20 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-20),0
+PSI21-01,ACME_CLD_Methane_N2Diluted_Lifted_Burn,21.0,101.3,8.0,0.0,burn,NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21),1
+PSI21-02,ACME_CLD_Ethylene_SootThreshold_Coflow,20.9,101.3,12.0,0.0,burn,NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21),1
+PSI21-03,ACME_CLD_ExtremeDilution_Liftoff_Blowoff,16.5,100.6,28.0,0.0,extinct,NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21),0
+PSI21-04,ACME_CLD_Methane_LowO2_BaseQuench,15.4,100.3,2.0,0.0,extinct,NASA PSI-21 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-21),0
+PSI22-01,ACME_EFIELD_Methane_6kV_IonWind_SootFree,21.0,101.3,6.0,0.0,burn,NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22),1
+PSI22-02,ACME_EFIELD_Ethylene_9kV_IonCurrent_Stab,20.5,101.2,8.5,0.0,burn,NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22),1
+PSI22-03,ACME_EFIELD_PolarityReversal_Blowoff,16.8,100.7,26.0,0.0,extinct,NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22),0
+PSI22-04,ACME_EFIELD_ZeroVoltage_RadiativeQuench,15.7,100.4,0.5,0.0,extinct,NASA PSI-22 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-22),0
+PSI23-01,ACME_sFlame_Methane_Spherical_Steady,21.0,101.3,2.5,0.0,burn,NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23),1
+PSI23-02,ACME_sFlame_Hydrogen_HeDiluted_LowLe,19.5,101.1,3.5,0.0,burn,NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23),1
+PSI23-03,ACME_sFlame_Ethylene_Pulsating_RadQuench,15.8,100.5,0.3,0.0,extinct,NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23),0
+PSI23-04,ACME_sFlame_HighCO2_RadiativeLoss_Ext,16.3,100.6,0.6,0.0,extinct,NASA PSI-23 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-23),0
+PSI39-01,CFI_nDodecane_Droplet_4.2mm_CoolFlame,21.0,152.0,1.8,0.0,burn,NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39),1
+PSI39-02,CFI_nDecane_Droplet_NTC_SecondStage,20.5,202.6,2.2,0.0,burn,NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39),1
+PSI39-03,CFI_MethylButanoate_Submm_RadiativeExt,16.0,101.3,0.5,0.0,extinct,NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39),0
+PSI39-04,CFI_Heptane_IsoOctane_CoolFlame_Quench,14.8,101.3,0.2,0.0,extinct,NASA PSI-39 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-39),0
+PSI47-01,DAFT_PTrak_CPC_Cabin_Background_LowDust,16.0,100.4,0.0,0.0,extinct,NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47),0
+PSI47-02,DAFT2_PTrak_Ultrafine_Combustion_Spike,20.9,101.3,10.0,0.0,burn,NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47),1
+PSI47-03,DAFT2_Capillary_Alcohol_Wick_ZeroG_Pass,21.0,101.3,5.0,0.0,burn,NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47),1
+PSI47-04,DAFT_HEPA_Filtered_CleanRoom_Baseline,15.8,100.3,0.0,0.0,extinct,NASA PSI-47 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-47),0
+PSI60-01,SPICE_CFD_Ethylene_Coflow_SmokePoint,21.0,101.3,10.0,0.0,burn,NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60),1
+PSI60-02,SPICE_CFD_Propane_SootOxidation_Wing,20.8,101.2,8.0,0.0,burn,NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60),1
+PSI60-03,SPICE_CFD_Overventilated_RadiativeQuench,16.2,100.6,1.0,0.0,extinct,NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60),0
+PSI60-04,SPICE_CFD_HighCoflow_TipBlowoff,17.4,100.9,32.0,0.0,extinct,NASA PSI-60 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-60),0
+PSI106-01,SLICE_Methane_Coflow_Lifted_Stabilized,21.0,101.3,9.0,0.0,burn,NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106),1
+PSI106-02,SLICE_Ethylene_PartiallyPremixed_EdgeFlame,20.9,101.3,11.0,0.0,burn,NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106),1
+PSI106-03,SLICE_Propane_Critical_Liftoff_Blowout,17.0,100.8,29.0,0.0,extinct,NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106),0
+PSI106-04,SLICE_N2Diluted_Nozzle_Quench,15.9,100.5,1.5,0.0,extinct,NASA PSI-106 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-106),0
+PSI107-01,SPICE_Propylene_NonSooting_to_Sooting,21.0,101.3,6.0,0.0,burn,NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107),1
+PSI107-02,SPICE_Ethylene_Laminar_SmokePoint_MSG,21.0,101.3,8.5,0.0,burn,NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107),1
+PSI107-03,SPICE_nButane_Radiative_TipOpening_Ext,16.4,100.7,0.8,0.0,extinct,NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107),0
+PSI107-04,SPICE_Methane_HighVelocity_Coflow_Blowoff,17.2,100.9,31.0,0.0,extinct,NASA PSI-107 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-107),0
+PSI108-01,STDCE1_Marangoni_ConstantHeatFlux_20W,20.9,101.3,4.5,0.0,burn,NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108),1
+PSI108-02,STDCE1_Marangoni_ConstantTemp_CurvedFreeSurf,20.9,101.3,6.0,0.0,burn,NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108),1
+PSI108-03,STDCE1_LowMa_Subcritical_Conductive_Quiescent,16.5,100.5,0.2,0.0,extinct,NASA PSI-108 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-108),0
+PSI115-01,SAME_CFD_PopulationBalance_Silicone_Coag,21.0,101.3,4.0,0.0,burn,NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115),1
+PSI115-02,SAME_CFD_Cellulose_Pyrolysis_LogNormal,20.8,101.2,5.5,0.0,burn,NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115),1
+PSI115-03,SAME_CFD_Teflon_Nucleation_WallLoss_Quench,16.8,100.8,1.0,0.0,extinct,NASA PSI-115 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-115),0
+PSI117-01,CFD_3D_Heptane_CoolFlame_ConvectivePulse,21.0,152.0,3.5,0.0,burn,NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117),1
+PSI117-02,CFD_3D_Spray_Droplet_NTC_HotReignition,22.0,202.6,5.0,0.0,burn,NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117),1
+PSI117-03,CFD_3D_StrongVortex_CoolFlame_Blowoff,16.5,101.3,24.0,0.0,extinct,NASA PSI-117 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-117),0
+PSI142-01,Counterflow_nDecane_Hot_to_Cool_Transition,21.0,152.0,7.0,0.0,burn,NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142),1
+PSI142-02,Counterflow_nHeptane_OzoneAssisted_CoolFlame,19.5,101.3,5.0,0.0,burn,NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142),1
+PSI142-03,Counterflow_HighStretch_CoolFlame_Extinction,16.0,101.3,27.0,0.0,extinct,NASA PSI-142 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-142),0
+PSI159-01,ACME_CFIG_nButane_Spherical_Gas_CoolFlame,21.0,152.0,2.0,0.0,burn,NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159),1
+PSI159-02,ACME_CFIG_nPentane_PorousBurner_NTC_Glow,24.0,202.6,3.0,0.0,burn,NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159),1
+PSI159-03,ACME_CFIG_Propane_LowO2_Diffusive_Quench,15.2,101.3,0.4,0.0,extinct,NASA PSI-159 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-159),0
+PSI181-01,ISSI_PbSn_Solder_ZeroG_GasVoid_Overheat,21.0,101.3,4.0,0.0,burn,NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181),1
+PSI181-02,ISSI_SnAgCu_LeadFree_CryoToHighTemp_Safe,16.5,100.5,2.0,0.0,extinct,NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181),0
+PSI181-03,ISSI_FluxVapor_BubbleTrapping_ArcHazard,21.5,101.4,6.0,0.0,burn,NASA PSI-181 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-181),1
+LUNA-01,Lunar_0.16g_SIBAL_PeakFlammability_Goldilocks,18.2,101.3,6.8,0.16,burn,NASA GRC Olson-Ferkul-Tien Partial-g Centrifuge / LUCI (0.16g Moon),1
+LUNA-02,Lunar_0.16g_Cellulose_Upward_BuoyantSpread,18.0,101.3,7.2,0.16,burn,"NASA GRC Partial-g Flammability Map (0.16g Moon, Vb=7.2 cm/s)",1
+LUNA-03,Lunar_0.16g_PMMA_Thin_DeRis_Scaling_Burn,18.8,101.3,7.5,0.16,burn,NASA SoFIE / FM2 Lunar Surface Payload (0.16g Moon de Ris Scaling),1
+LUNA-04,Lunar_0.16g_SIBAL_SubLOI_RadiativeQuench,13.5,101.3,0.4,0.16,extinct,NASA GRC Olson-Ferkul Minimum LOI Quench at Lunar 0.16g (13.7% Limit),0
+LUNA-05,Lunar_0.16g_PMMA_HighFlow_Blowoff_34cm_s,16.8,101.3,34.0,0.16,extinct,NASA GRC Partial-g Aerodynamic Blowoff Branch (0.16g Moon),0
+LUNA-06,Lunar_0.16g_Nomex_Pass1g_FailLunar_34O2,34.0,56.5,6.8,0.16,burn,"NASA EAWG Exploration Atmosphere 8.2 psia (56.5 kPa, 34% O2, 0.16g Moon)",1
+LUNA-07,Lunar_0.16g_PMMA_Cast_SEA_8.2psia_34O2,34.0,56.5,8.5,0.16,burn,"NASA Artemis HLS / Gateway SEA 8.2 psia (56.5 kPa, 34% O2, 0.16g Moon)",1
+LUNA-08,Lunar_0.16g_Ultem_SEA_8.2psia_34O2_Burn,34.0,56.5,7.0,0.16,burn,"NASA SoFIE-MIST Lunar Exploration Atmosphere (56.5 kPa, 34% O2, 0.16g)",1
+LUNA-09,Lunar_0.16g_BetaCloth_SEA_LowO2_Safe,15.2,56.5,0.5,0.16,extinct,"NASA Artemis Lunar Habitat Safe Inerted Standby (56.5 kPa, 15.2% O2, 0.16g)",0
+LUNA-10,Lunar_0.16g_Delrin_Gateway_10.2psia_26.5O2,26.5,70.3,7.0,0.16,burn,"NASA Lunar Gateway Normoxic Equivalent (70.3 kPa, 26.5% O2, 0.16g)",1
+MARS-01,Mars_0.38g_SIBAL_BuoyantPlume_Spread,18.6,101.3,10.2,0.38,burn,"NASA GRC Olson-Ferkul Partial-g Martian Buoyancy (0.38g Mars, Vb=10.2 cm/s)",1
+MARS-02,Mars_0.38g_PMMA_Slab_DeRis_Concurrent,19.2,101.3,10.8,0.38,burn,NASA SoFIE / Martian Partial-g de Ris Spread (0.38g Mars),1
+MARS-03,Mars_0.38g_PMMA_SEA_8.2psia_34O2_Burn,34.0,56.5,10.5,0.38,burn,"NASA Mars Surface Habitat SEA (56.5 kPa, 34% O2, 0.38g Mars)",1
+MARS-04,Mars_0.38g_Cotton_Blend_SEA_70kPa_28O2,28.0,70.3,9.5,0.38,burn,"NASA Mars Transit / Surface Cabin (70.3 kPa, 28% O2, 0.38g Mars)",1
+MARS-05,Mars_0.38g_SIBAL_CO2_Diluent_Quench,16.2,56.5,0.6,0.38,extinct,NASA Mars In-Situ CO2 Diluent Radiative Reabsorption Quench (0.38g Mars),0
+MARS-06,Mars_0.38g_PMMA_CO2_BufferGas_Extinct,16.0,70.3,0.8,0.38,extinct,NASA Mars Habitat CO2-Enriched Fire Suppression (0.38g Mars),0
+MARS-07,Mars_0.38g_Nomex_HighVent_Blowoff_36cm_s,17.0,56.5,36.0,0.38,extinct,NASA Mars Partial-g Convective Blowoff Limit (0.38g Mars),0
+MARS-08,Mars_0.38g_MOXIE_ISRU_O2_Line_Overheat,45.0,120.0,6.0,0.38,burn,NASA Mars ISRU MOXIE Oxygen Compressor Thermal Runaway Hazard (0.38g),1
+SAFFIRE-LM-01,SAFFIRE4_Large_SIBAL_SEA_8.2psia_34O2,34.0,56.5,15.0,0.16,burn,"NASA SAFFIRE-IV / PSI Large-Scale Exploration Atmosphere (56.5 kPa, 34% O2)",1
+SAFFIRE-LM-02,SAFFIRE5_PMMA_Ribbed_SEA_8.2psia_34O2,34.0,56.5,12.0,0.16,burn,"NASA SAFFIRE-V / PSI Multi-Material Exploration Atmosphere (56.5 kPa, 34% O2)",1
+SAFFIRE-LM-03,SAFFIRE6_Silicone_Elec_SEA_8.2psia_34O2,34.0,56.5,18.0,0.38,burn,"NASA SAFFIRE-VI / PSI Exploration Fire & Far-Field Scrubbing (56.5 kPa, 34% O2)",1
+SAFFIRE-LM-04,SAFFIRE5_Depress_Quench_LowP_LowO2,14.8,52.0,0.0,0.16,extinct,NASA SAFFIRE-V Post-Fire Cabin Depressurization & Vent Cut Quench,0
+FLEX-LUNA-01,Lunar_0.16g_nHeptane_Droplet_BuoyantCoolFlame,21.0,101.3,4.5,0.16,burn,NASA FLEX / CFI Partial-g Droplet Cool-to-Hot Transition (0.16g Moon),1
+FLEX-LUNA-02,Lunar_0.16g_Methanol_Droplet_WaterQuench,15.8,56.5,0.4,0.16,extinct,NASA FLEX Lunar Low-Pressure Alcohol Water-Condensation Quench (0.16g),0
+FLEX-MARS-01,Mars_0.38g_nDecane_Droplet_Plume_Reignition,22.0,101.3,8.0,0.38,burn,NASA PSI-117 / FLEX Martian 0.38g Plume RO2 Secondary Reignition,1
+FLEX-MARS-02,Mars_0.38g_nHeptane_CO2_Atmosphere_Quench,15.5,70.3,0.5,0.38,extinct,NASA FLEX Martian CO2-Diluted Droplet Radiative Extinction (0.38g),0
+ACME-LUNA-01,Lunar_0.16g_EFIELD_IonWind_Emulated_Flame,21.0,101.3,6.8,0.16,burn,NASA PSI-22 ACME E-FIELD 4.2kV Ion Wind Emulating Lunar 0.16g Buoyancy,1
+ACME-MARS-01,Mars_0.38g_EFIELD_IonWind_Emulated_Flame,21.0,101.3,10.4,0.38,burn,NASA PSI-22 ACME E-FIELD 7.5kV Ion Wind Emulating Martian 0.38g Buoyancy,1
+ACME-LUNA-02,Lunar_0.16g_CH4_O2_Lander_Engine_Purge_Safe,15.0,56.5,0.3,0.16,extinct,NASA ACME / Artemis Methalox Lander Line Inert Purge (0.16g Moon),0
+SAME-LUNA-01,Lunar_0.16g_Regolith_Dust_FalseAlarm_Rejected,16.0,56.5,0.5,0.16,extinct,NASA SAME / DAFT Lunar Regolith Dust (1-10 um) Discriminated as Non-Fire,0
+SAME-LUNA-02,Lunar_0.16g_Kapton_Overheat_Under_DustLoad,34.0,56.5,5.5,0.16,burn,NASA SAME-R / Artemis Dual-Wavelength Smoke Detection in Dusty Lunar Cabin,1
+SAME-MARS-01,Mars_0.38g_Perchlorate_Dust_Airlock_Safe,15.8,70.3,0.4,0.38,extinct,NASA DAFT Martian Iron-Oxide/Perchlorate Dust Filtered Without False Alarm,0
+SAME-MARS-02,Mars_0.38g_Silicone_Smolder_TrueFire_Alarm,28.0,70.3,7.5,0.38,burn,NASA SAME Martian Habitat True Smoldering Fire Detected Over Dust Background,1
+MIST-LUNA-01,Lunar_0.16g_FineWaterMist_SlowSettling_Quench,16.2,56.5,26.0,0.16,extinct,NASA Fine Water Mist Suppression at Lunar 0.16g (6x Slower Droplet Settling),0
+MIST-MARS-01,Mars_0.38g_FineWaterMist_CO2_Hybrid_Quench,16.4,70.3,28.0,0.38,extinct,NASA Mars Habitat Hybrid Water Mist + CO2 Fire Extinguisher Suppression,0
+ISSI-LUNA-01,Lunar_0.16g_PbSn_Solder_ReducedBuoyancy_Void,34.0,56.5,6.0,0.16,burn,NASA PSI-181 ISSI Lunar 0.16g Flux Bubble Trapping & Cryo-Night Hotspot,1
+ISSI-MARS-01,Mars_0.38g_SAC305_VacuumReflow_SafeJoint,16.2,70.3,0.5,0.38,extinct,NASA PSI-181 ISSI Mars 0.38g Flux-Free Vacuum-Degassed Solder Repair Safe,0
+SOFIE-GEL-01,PMMA_Sphere_CIR_34O2_SEA_SlowFlow,34.0,56.5,5.0,0.0,burn,NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere 8.2 psia / 34% O2,1
+SOFIE-GEL-02,PMMA_Sphere_CIR_Quench_LowO2,15.6,56.5,0.5,0.0,extinct,NASA SoFIE-GEL (PI J.S. T'ien) PMMA Sphere Radiative Quench,0
+SOFIE-MIST-01,PMMA_Cylinder_RadiantFlux_37O2_SEA,37.0,56.5,8.0,0.0,burn,NASA SoFIE-MIST (PI C. Fernandez-Pello) External Radiant Heater 37% O2,1
+SOFIE-MIST-02,PMMA_Cylinder_NoRadiant_Blowoff,16.0,56.5,26.5,0.0,extinct,NASA SoFIE-MIST Convective Blowoff Limit Without Radiant Flux,0
+SOFIE-SMURF-01,Spacecraft_Material_37O2_LunarSEA,37.0,56.5,6.5,0.16,burn,NASA SoFIE-SMuRF (PI S. Olson) Real Spacecraft Material 1g vs 0.16g/0g,1
+SOFIE-SMURF-02,Spacecraft_Material_Pass_LowO2_16pct,15.8,101.3,0.4,0.16,extinct,NASA SoFIE-SMuRF Flame Extinction Below Spacecraft Threshold,0
+SOFIE-RTDFS-01,Thin_PMMA_Sheet_34O2_SEA_Spread,34.0,56.5,4.5,0.0,burn,NASA SoFIE-RTDFS (PI S. Bhattacharjee) Thin Sheet Flame Growth 34% O2,1
+SOFIE-RTDFS-02,Thin_PMMA_Sheet_RadiativeQuench,15.4,56.5,0.4,0.0,extinct,NASA SoFIE-RTDFS Radiative Quenching in Quiescent Microgravity,0
+SOFIE-NCA-01,Thick_PMMA_NarrowChannel_OpposedFlow,34.0,56.5,7.0,0.16,burn,NASA SoFIE-NCA (PI F. Miller) Narrow Channel Apparatus 8.2 psia,1
+SOFIE-NCA-02,Thick_PMMA_NarrowChannel_Quench,15.5,101.3,0.3,0.16,extinct,NASA SoFIE-NCA Narrow Channel Heat Loss Extinction,0
+STD6001-01,Nomex_Fabric_37O2_8.2psia_Test1_Fail,37.0,56.5,5.5,0.16,burn,NASA-STD-6001B Test 1 (>15.2 cm / 6 in Burn Length) at 8.2 psia 37% O2,1
+STD6001-02,BetaCloth_Fiberglass_21O2_Test1_Pass,15.8,101.3,0.5,0.16,extinct,NASA-STD-6001B Test 1 Self-Extinguish <15.2 cm No Flaming Drips,0
+SAFFIRE-FFD-01,SAFFIRE_HCl_HF_AcidGas_Release,34.0,56.5,10.0,0.0,burn,NASA SAFFIRE IV-VI Far-Field Diagnostics HCl/HF Acid Gas & Smoke Eater,1
+SAFFIRE-FFD-02,SAFFIRE_CO2_Scrubber_SmokeEater_Safe,16.0,56.5,27.0,0.0,extinct,NASA SAFFIRE IV-VI Post-Fire Scrubbing & Al-Wall Adsorption Safe,0
+SMAC-01,JSC20584_HF_0.3ppm_CO_Perchlorate_Toxic,34.0,56.5,6.0,0.38,burn,NASA JSC 20584 SMAC & NASA-STD-3001 Post-Fire Acid/Dust T_grp >= 1,1
+SMAC-02,JSC20584_ECLSS_Scrubbed_Below_SMAC,16.0,70.3,0.4,0.38,extinct,NASA JSC 20584 & STD-3001 ECLSS Scrubbed Below 0.1 mg/m3 Dust & SMAC,0
+LIION-01,LiIon_18650_ISC_600C_Runaway_34O2,34.0,56.5,6.5,0.16,burn,NASA NESC Li-ion ISC >600C Thermal Runaway + LiPF6 HF/POF3 Venting,1
+LIION-02,LiIon_FTRC_Module_Propagation_Mars,28.0,70.3,8.0,0.38,burn,NASA FTRC Li-ion Cell-to-Cell Thermal Runaway Propagation,1
+LIION-03,LiIon_Gateway_ContainmentBag_LowSOC,15.8,56.5,0.4,0.16,extinct,NASA Gateway HALO Fire-Containment Bag & Low-SOC Passive Safe,0
